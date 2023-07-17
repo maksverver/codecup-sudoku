@@ -57,16 +57,22 @@ std::optional<std::pair<Move, bool>> SelectMove(State &state) {
 }
 
 std::string ReadInputLine() {
-  std::string line;
-  if (!std::getline(std::cin, line)) {
-    std::cerr << "Unxpected end of input!" << std::endl;
+  std::string s;
+  if (!std::getline(std::cin, s)) {
+    std::cerr << "Unxpected end of input!\n";
     exit(1);
   }
-  if (line == "Quit") {
-    std::cerr << "Quit received. Exiting." << std::endl;
+  if (s == "Quit") {
+    std::cerr << "Quit received. Exiting.\n";
     exit(0);
   }
-  return line;
+  std::cerr << ("Received: [" + s + "]\n");
+  return s;
+}
+
+void WriteOutputLine(const std::string &s) {
+  std::cerr << ("Sending: [" + s + "]\n");
+  std::cout << s << std::endl;
 }
 
 } // namespace
@@ -80,41 +86,39 @@ int main() {
     std::cerr << turn << ' ' << state.DebugString() << '\n';
 
     if (turn % 2 == my_player) {
-      // My turn! First, check if the current state is already unique.
-      // (Maybe this isn't necessary?)
+      // My turn!
+
+      // First, check if the current state is already unique.
+      // (Maybe this isn't necessary? I can still make a winning move.)
       if (int k = state.CountSolutions(max_work); k == 0) {
-        std::cerr << "No solutions left!" << std::endl;
+        std::cerr << "No solutions left!\n";
         return 1;
       } else if (k == 1) {
-        std::cerr << "Sending: !" << std::endl;
-        std::cout << "!" << std::endl;
+        WriteOutputLine("!");
         break;
       }
 
       // Select my move and print it.
       if (auto m = SelectMove(state); !m) {
-        std::cerr << "No valid moves left!" << std::endl;
+        std::cerr << "No valid moves left!\n";
         return 1;
       } else {
         auto [move, winning] = *m;
         CHECK(state.CanPlay(move));
         state.Play(move);
 
-        std::string output = FormatMove(move);
-        if (winning) output += '!';
-        std::cerr << "Sending " << output << std::endl;
-        std::cout << output << std::endl;
+        WriteOutputLine(FormatMove(move) + (winning ? "!" :""));
       }
 
     } else {
+      // Opponent's turn.
       if (turn > 0) line = ReadInputLine();
 
-      // Opponent's turn. I have already read the input in `line`.
       if (auto m = ParseMove(line); !m) {
-        std::cerr << "Could not parse move: " << line << std::endl;
+        std::cerr << "Could not parse move!\n";
         return 1;
       } else if (!state.CanPlay(*m)) {
-        std::cerr << "Invalid move: " << line << std::endl;
+        std::cerr << "Invalid move!\n";
         return 1;
       } else {
         state.Play(*m);
@@ -122,6 +126,6 @@ int main() {
     }
   }
 
-  std::cerr << "Exiting normally." << std::endl;
+  std::cerr << "Exiting normally.\n" << std::flush;
   return 0;
 }
