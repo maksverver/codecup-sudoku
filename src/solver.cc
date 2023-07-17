@@ -20,5 +20,8 @@ int main(int argc, char *argv[]) {
       return 1;
     }
   }
-  std::cout << state.CountSolutions(1e18) << " solutions" << std::endl;
+  CountState cs = state.CountSolutions(1000);
+  assert(!cs.WorkLimitExceeded());
+  if (cs.CountLimitReached()) std::cout << "At least ";
+  std::cout << cs.count << " solutions" << std::endl;
 }

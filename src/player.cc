@@ -39,21 +39,31 @@ std::string FormatMove(const Move &m) {
 }
 
 std::optional<std::pair<Move, bool>> SelectMove(State &state) {
-  std::vector<Move> moves;
+  std::vector<Move> moves[3];
+
   for (int i = 0; i < 81; ++i) if (state.IsFree(i)) {
     unsigned used = state.CellUsed(i);
     for (int d = 1; d <= 9; ++d) if ((used & (1u << d)) == 0) {
       Move move = {i, d};
       assert(state.CanPlay(move));
       state.Play(move);
-      int k = state.CountSolutions(max_work);
+      CountState cs = state.CountSolutions(2, max_work);
       state.Undo(move);
-      if (k == 1) return {{move, true}};  // Winning move!
-      if (k > 1) moves.push_back(move);
+      if (cs.WorkLimitExceeded()) {
+        std::cerr << ("Work limit exceeded! " + state.DebugString() + "\n");
+      } else if (cs.count == 1) {
+        // Actual winning move detected! Prioritize this over everything else.
+        return {{move, true}};
+      }
+      moves[cs.count].push_back(move);
     }
   }
-  if (moves.empty()) return {};
-  return {{RandomSample(moves), false}};
+  // Pick a random move that keeps the most options open (accounting for the
+  // fact that the move count may only be a lower bound if we ran out of time).
+  int n = 2;
+  while (n >= 0 && moves[n].empty()) --n;
+  if (n < 0) return {};
+  return {{RandomSample(moves[n]), false}};
 }
 
 std::string ReadInputLine() {
@@ -90,10 +100,13 @@ int main() {
 
       // First, check if the current state is already unique.
       // (Maybe this isn't necessary? I can still make a winning move.)
-      if (int k = state.CountSolutions(max_work); k == 0) {
+      if (CountState cs = state.CountSolutions(2, max_work); cs.WorkLimitExceeded()) {
+        std::cerr << "Work limit exceeded.\n";
+      } else if (cs.count == 0) {
         std::cerr << "No solutions left!\n";
         return 1;
-      } else if (k == 1) {
+      } else if (cs.count == 1) {
+        // Solution is already unique! Claim the win.
         WriteOutputLine("!");
         break;
       }

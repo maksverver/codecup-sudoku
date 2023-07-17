@@ -20,3 +20,41 @@ void State::DebugPrint(std::ostream &os) const {
   }
   os << '\n';
 }
+
+std::optional<std::pair<int, unsigned>> State::FindFree() const {
+  int best_index;
+  unsigned best_used;
+  int max_used_count = -1;
+  for (int i = 0; i < 81; ++i) if (digit[i] == 0) {
+    unsigned used = CellUsed(i);
+    int used_count = std::popcount(used);
+    if (used_count > max_used_count) {
+      best_index = i;
+      best_used = used;
+      max_used_count = used_count;
+    }
+  }
+  if (max_used_count < 0) return {};
+  return {{best_index, best_used}};
+}
+
+void State::CountSolutions(CountState &cs) {
+  auto opt_free = FindFree();
+  if (!opt_free) {
+    ++cs.count;
+    return;
+  }
+
+  auto [i, used] = *opt_free;
+  for (int d = 1; d <= 9; ++d) if ((used & (1u << d)) == 0) {
+    if (cs.max_work <= 0) break;
+    --cs.max_work;
+
+    Move move = {i, d};
+    Play(move);
+    CountSolutions(cs);
+    Undo(move);
+
+    if (cs.count >= cs.max_count) break;
+  }
+}

@@ -22,6 +22,15 @@ inline int Row(int i) { return (unsigned) i / 9; }
 inline int Col(int i) { return (unsigned) i % 9; }
 inline int Blk(int i) { return ((unsigned) i % 9 / 3) + 3*((unsigned)i / 27); }
 
+struct CountState {
+  int count = 0;
+  int max_count = 2;
+  int64_t max_work = 1e18;
+
+  bool WorkLimitExceeded() const { return max_work < 0; }
+  bool CountLimitReached() const { return count >= max_count; }
+};
+
 class State {
 public:
   bool IsFree(int i) const { return digit[i] == 0; }
@@ -52,13 +61,14 @@ public:
     used_blk[Blk(m.pos)] &= mask;
   }
 
-  int CountSolutions(int64_t max_work = std::numeric_limits<decltype(max_work)>::max()) {
-    int res = CountSolutionsRecursively(max_work);
+  CountState CountSolutions(int max_count = 1e9, int64_t max_work = 1e18) {
+    assert(max_count >= 0);
     assert(max_work >= 0);
-    if (max_work == 0) {
-      std::cerr << "Work limit exceeded! " << DebugString() << std::endl;
-    }
-    return res;
+    CountState state = {.max_count = max_count, .max_work = max_work};
+    CountSolutions(state);
+    assert(state.count <= state.max_count);
+    assert(state.max_work >= 0);
+    return state;
   }
 
   std::string DebugString() const;
@@ -66,44 +76,12 @@ public:
   void DebugPrint(std::ostream &os = std::cerr) const;
 
 private:
-
-  int CountSolutionsRecursively(int64_t &work) {
-    auto opt_free = FindFree();
-    if (!opt_free) return 1;
-
-    int res = 0;
-    auto [i, used] = *opt_free;
-    for (int d = 1; d <= 9; ++d) if ((used & (1u << d)) == 0) {
-      if (work == 0) return 2;
-      --work;
-
-      Move move = {i, d};
-      Play(move);
-      res += CountSolutionsRecursively(work);
-      Undo(move);
-      if (res >= 2) break;
-    }
-    return res;
-  }
-
   // Returns the index and the mask if used digits of the position where most
   // digits are already used (i.e., one of the most constrained cells).
-  std::optional<std::pair<int, unsigned>> FindFree() const {
-    int best_index;
-    unsigned best_used;
-    int max_used_count = -1;
-    for (int i = 0; i < 81; ++i) if (digit[i] == 0) {
-      unsigned used = CellUsed(i);
-      int used_count = std::popcount(used);
-      if (used_count > max_used_count) {
-        best_index = i;
-        best_used = used;
-        max_used_count = used_count;
-      }
-    }
-    if (max_used_count < 0) return {};
-    return {{best_index, best_used}};
-  }
+  std::optional<std::pair<int, unsigned>> FindFree() const;
+
+  // Recursively counts solutions.
+  void CountSolutions(CountState &cs);
 
   uint8_t digit[81] = {};
   unsigned used_row[9] = {};
