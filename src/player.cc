@@ -68,8 +68,13 @@ std::optional<std::pair<Move, bool>> SelectMove(State &state) {
 
 std::string ReadInputLine() {
   std::string s;
-  if (!std::getline(std::cin, s)) {
-    std::cerr << "Unxpected end of input!\n";
+  // I would rather do:
+  //
+  //  if (!std::getline(std::cin, s)) {
+  //
+  // but the CodeCup judging system doesn't seem to like it!
+  if (!(std::cin >> s)) {
+    std::cerr << "Unexpected end of input!\n";
     exit(1);
   }
   if (s == "Quit") {
@@ -88,8 +93,8 @@ void WriteOutputLine(const std::string &s) {
 } // namespace
 
 int main() {
-  std::string line = ReadInputLine();
-  const int my_player = (line == "Start" ? 0 : 1);
+  std::string input = ReadInputLine();
+  const int my_player = (input == "Start" ? 0 : 1);
 
   State state;
   for (int turn = 0;; ++turn) {
@@ -125,9 +130,9 @@ int main() {
 
     } else {
       // Opponent's turn.
-      if (turn > 0) line = ReadInputLine();
+      if (turn > 0) input = ReadInputLine();
 
-      if (auto m = ParseMove(line); !m) {
+      if (auto m = ParseMove(input); !m) {
         std::cerr << "Could not parse move!\n";
         return 1;
       } else if (!state.CanPlay(*m)) {

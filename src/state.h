@@ -20,7 +20,7 @@ struct Move {
 
 inline int Row(int i) { return (unsigned) i / 9; }
 inline int Col(int i) { return (unsigned) i % 9; }
-inline int Blk(int i) { return ((unsigned) i % 9 / 3) + 3*((unsigned)i / 27); }
+inline int Box(int i) { return ((unsigned) i % 9 / 3) + 3*((unsigned)i / 27); }
 
 struct CountState {
   int count = 0;
@@ -36,7 +36,7 @@ public:
   bool IsFree(int i) const { return digit[i] == 0; }
 
   unsigned CellUsed(int i) const {
-    return used_row[Row(i)] | used_col[Col(i)] | used_blk[Blk(i)];
+    return used_row[Row(i)] | used_col[Col(i)] | used_box[Box(i)];
   }
 
   bool CanPlay(const Move &m) const {
@@ -49,7 +49,7 @@ public:
     unsigned mask = 1u << m.digit;
     used_row[Row(m.pos)] |= mask;
     used_col[Col(m.pos)] |= mask;
-    used_blk[Blk(m.pos)] |= mask;
+    used_box[Box(m.pos)] |= mask;
   }
 
   void Undo(const Move &m) {
@@ -58,7 +58,7 @@ public:
     unsigned mask = ~(1u << m.digit);
     used_row[Row(m.pos)] &= mask;
     used_col[Col(m.pos)] &= mask;
-    used_blk[Blk(m.pos)] &= mask;
+    used_box[Box(m.pos)] &= mask;
   }
 
   CountState CountSolutions(int max_count = 1e9, int64_t max_work = 1e18) {
@@ -86,7 +86,7 @@ private:
   uint8_t digit[81] = {};
   unsigned used_row[9] = {};
   unsigned used_col[9] = {};
-  unsigned used_blk[9] = {};
+  unsigned used_box[9] = {};
 };
 
 #endif // ndef STATE_H_INCLUDED
