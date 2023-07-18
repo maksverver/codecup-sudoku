@@ -22,12 +22,13 @@ inline int Row(int i) { return (unsigned) i / 9; }
 inline int Col(int i) { return (unsigned) i % 9; }
 inline int Box(int i) { return ((unsigned) i % 9 / 3) + 3*((unsigned)i / 27); }
 
-struct CountState {
+struct CountResult {
   int count = 0;
   int max_count = 2;
+  int64_t work = 0;
   int64_t max_work = 1e18;
 
-  bool WorkLimitExceeded() const { return max_work <= 0; }
+  bool WorkLimitReached() const { return work >= max_work; }
   bool CountLimitReached() const { return count >= max_count; }
 };
 
@@ -61,14 +62,18 @@ public:
     used_box[Box(m.pos)] &= mask;
   }
 
-  CountState CountSolutions(int max_count = 1e9, int64_t max_work = 1e18) {
+  CountResult CountSolutions(int max_count = 1e9, int64_t max_work = 1e18) {
     assert(max_count >= 0);
     assert(max_work >= 0);
-    CountState state = {.max_count = max_count, .max_work = max_work};
+    CountState state = {.count_left = max_count, .work_left = max_work};
     CountSolutions(state);
-    assert(state.count <= state.max_count);
-    assert(state.max_work >= 0);
-    return state;
+    assert(state.count_left >= 0);
+    assert(state.work_left >= 0);
+    return CountResult{
+      .count = max_count - state.count_left,
+      .max_count = max_count,
+      .work = max_work - state.work_left,
+      .max_work = max_work};
   }
 
   std::string DebugString() const;
@@ -79,6 +84,11 @@ private:
   // Returns the index and the mask if used digits of the position where most
   // digits are already used (i.e., one of the most constrained cells).
   std::optional<std::pair<int, unsigned>> FindFree() const;
+
+  struct CountState {
+    int count_left = 2;
+    int64_t work_left = 1e18;
+  };
 
   // Recursively counts solutions.
   void CountSolutions(CountState &cs);

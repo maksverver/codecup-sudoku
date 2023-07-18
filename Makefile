@@ -32,9 +32,11 @@ output/combined-player.cc: $(COMBINED_SRCS)
 output/combined-player: output/combined-player.cc
 	$(CXX) $(CXXFLAGS) -o $@ $<  $(LDFLAGS) $(LDLIBS)
 
+player: output/player
+solver: output/solver
 combined: output/combined-player
 
 clean:
 	rm -f $(BINS) build/*.o output/combined-player.cc output/combined-player
 
-.PHONY: all clean combined
+.PHONY: all clean player solver combined

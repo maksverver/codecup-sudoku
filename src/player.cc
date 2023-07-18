@@ -47,15 +47,15 @@ std::optional<std::pair<Move, bool>> SelectMove(State &state) {
       Move move = {i, d};
       assert(state.CanPlay(move));
       state.Play(move);
-      CountState cs = state.CountSolutions(2, max_work);
+      CountResult cr = state.CountSolutions(2, max_work);
       state.Undo(move);
-      if (cs.WorkLimitExceeded()) {
+      if (cr.WorkLimitReached()) {
         std::cerr << ("Work limit exceeded! " + state.DebugString() + "\n");
-      } else if (cs.count == 1) {
+      } else if (cr.count == 1) {
         // Actual winning move detected! Prioritize this over everything else.
         return {{move, true}};
       }
-      moves[cs.count].push_back(move);
+      moves[cr.count].push_back(move);
     }
   }
   // Pick a random move that keeps the most options open (accounting for the
@@ -105,12 +105,12 @@ int main() {
 
       // First, check if the current state is already unique.
       // (Maybe this isn't necessary? I can still make a winning move.)
-      if (CountState cs = state.CountSolutions(2, max_work); cs.WorkLimitExceeded()) {
+      if (CountResult cr = state.CountSolutions(2, max_work); cr.WorkLimitReached()) {
         std::cerr << "Work limit exceeded.\n";
-      } else if (cs.count == 0) {
+      } else if (cr.count == 0) {
         std::cerr << "No solutions left!\n";
         return 1;
-      } else if (cs.count == 1) {
+      } else if (cr.count == 1) {
         // Solution is already unique! Claim the win.
         WriteOutputLine("!");
         break;

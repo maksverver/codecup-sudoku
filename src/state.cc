@@ -41,20 +41,18 @@ std::optional<std::pair<int, unsigned>> State::FindFree() const {
 void State::CountSolutions(CountState &cs) {
   auto opt_free = FindFree();
   if (!opt_free) {
-    ++cs.count;
+    --cs.count_left;
     return;
   }
 
   auto [i, used] = *opt_free;
-  for (int d = 1; d <= 9; ++d) if ((used & (1u << d)) == 0) {
-    if (cs.max_work <= 0) break;
-    --cs.max_work;
-
-    Move move = {i, d};
-    Play(move);
-    CountSolutions(cs);
-    Undo(move);
-
-    if (cs.count >= cs.max_count) break;
+  for (int d = 1; d <= 9 && cs.count_left && cs.work_left; ++d) {
+    if ((used & (1u << d)) == 0) {
+      --cs.work_left;
+      Move move = {i, d};
+      Play(move);
+      CountSolutions(cs);
+      Undo(move);
+    }
   }
 }

@@ -18,10 +18,10 @@ bool Solve(const char *desc) {
       return false;
     }
   }
-  CountState cs = state.CountSolutions(1000);
-  assert(!cs.WorkLimitExceeded());
-  if (cs.CountLimitReached()) std::cout << "At least ";
-  std::cout << cs.count << " solutions" << std::endl;
+  CountResult cr = state.CountSolutions(1000);
+  assert(!cr.WorkLimitReached());
+  if (cr.CountLimitReached()) std::cout << "At least ";
+  std::cout << cr.count << " solutions" << std::endl;
   return true;
 }
 
