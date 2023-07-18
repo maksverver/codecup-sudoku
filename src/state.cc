@@ -46,13 +46,24 @@ void State::CountSolutions(CountState &cs) {
   }
 
   auto [i, used] = *opt_free;
-  for (int d = 1; d <= 9 && cs.count_left && cs.work_left; ++d) {
-    if ((used & (1u << d)) == 0) {
-      --cs.work_left;
-      Move move = {i, d};
-      Play(move);
-      CountSolutions(cs);
-      Undo(move);
-    }
+  unsigned unused = used ^ 0b1111111110;
+  while (unused && cs.count_left && cs.work_left) {
+    --cs.work_left;
+
+    unsigned mask = unused;
+    unused &= unused - 1;
+    mask ^= unused;
+
+    digit[i] = -1;
+    used_row[Row(i)] ^= mask;
+    used_col[Col(i)] ^= mask;
+    used_box[Box(i)] ^= mask;
+
+    CountSolutions(cs);
+
+    digit[i] = 0;
+    used_row[Row(i)] ^= mask;
+    used_col[Col(i)] ^= mask;
+    used_box[Box(i)] ^= mask;
   }
 }
