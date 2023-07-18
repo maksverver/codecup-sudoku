@@ -27,7 +27,7 @@ struct CountState {
   int max_count = 2;
   int64_t max_work = 1e18;
 
-  bool WorkLimitExceeded() const { return max_work < 0; }
+  bool WorkLimitExceeded() const { return max_work <= 0; }
   bool CountLimitReached() const { return count >= max_count; }
 };
 
