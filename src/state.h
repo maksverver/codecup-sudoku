@@ -1,6 +1,8 @@
 #ifndef STATE_H_INCLUDED
 #define STATE_H_INCLUDED
 
+#include <array>
+#include <bit>
 #include <cassert>
 #include <cstdint>
 #include <iostream>
@@ -28,8 +30,19 @@ struct CountResult {
   int64_t work = 0;
   int64_t max_work = 1e18;
 
+  bool Accurate() const { return work < max_work && count < max_count; }
   bool WorkLimitReached() const { return work >= max_work; }
   bool CountLimitReached() const { return count >= max_count; }
+};
+
+struct EnumerateResult {
+  // `true` iff. the callback never returned false (including if it was never
+  // called because there weren't any solutions.
+  bool success;
+  int64_t work = 0;
+  int64_t max_work = 0;
+
+  bool WorkLimitReached() const { return work >= max_work; }
 };
 
 class State {
@@ -43,6 +56,11 @@ public:
   bool CanPlay(const Move &m) const {
     m.AssertValid();
     return digit[m.pos] == 0 && (CellUsed(m.pos) & (1u << m.digit)) == 0;
+  }
+
+  int Digit(int pos) const {
+    assert(pos >= 0 && pos < 81);
+    return digit[pos];
   }
 
   void Play(const Move &m) {
@@ -76,11 +94,44 @@ public:
       .max_work = max_work};
   }
 
+  template<typename Callback>
+  EnumerateResult EnumerateSolutions(const Callback &c, int64_t max_work = 1e18) {
+    int64_t work_left = max_work;
+    bool success = EnumerateSolutionsImpl(c, work_left);
+    assert(work_left >= 0);
+    return EnumerateResult{
+      .success = success,
+      .work = max_work - work_left,
+      .max_work = max_work};
+  }
+
   std::string DebugString() const;
 
   void DebugPrint(std::ostream &os = std::cerr) const;
 
 private:
+
+  // Enumerates solutions and invokes callback(digits) until it returns
+  // false, or until work_left is 0. Returns `false` if the callback ever returned
+  // false, or true otherwise.
+  template<typename C>
+  bool EnumerateSolutionsImpl(const C &callback, int64_t &work_left) {
+    auto opt_free = FindFree();
+    if (!opt_free) return callback(const_cast<const uint8_t(&)[81]>(digit));
+
+    auto [i, used] = *opt_free;
+    unsigned unused = used ^ 0b1111111110;
+    while (unused && work_left) {
+      int d = std::countr_zero(unused);
+      unused &= unused - 1;
+      Move move = {i, d};
+      Play(move);
+      if (!EnumerateSolutionsImpl<C>(callback, work_left)) return false;
+      Undo(move);
+    }
+    return true;
+  }
+
   // Returns the index and the mask if used digits of the position where most
   // digits are already used (i.e., one of the most constrained cells).
   std::optional<std::pair<int, unsigned>> FindFree() const;
