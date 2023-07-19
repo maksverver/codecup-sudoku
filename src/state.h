@@ -105,6 +105,10 @@ public:
       .max_work = max_work};
   }
 
+  // Recursively fixes all cells that only have a single option left, and
+  // returns number of cell values fixed this waty.
+  int FixDetermined();
+
   std::string DebugString() const;
 
   void DebugPrint(std::ostream &os = std::cerr) const;

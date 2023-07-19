@@ -1,7 +1,10 @@
 #include "state.h"
 
+#include <bit>
 #include <iostream>
 #include <string>
+
+constexpr unsigned ALL_DIGITS = 0b1111111110;
 
 std::string State::DebugString() const {
   std::string s(81, '.');
@@ -46,7 +49,7 @@ void State::CountSolutions(CountState &cs) {
   }
 
   auto [i, used] = *opt_free;
-  unsigned unused = used ^ 0b1111111110;
+  unsigned unused = used ^ ALL_DIGITS;
   while (unused && cs.count_left && cs.work_left) {
     --cs.work_left;
 
@@ -65,5 +68,27 @@ void State::CountSolutions(CountState &cs) {
     used_row[Row(i)] ^= mask;
     used_col[Col(i)] ^= mask;
     used_box[Box(i)] ^= mask;
+  }
+}
+
+// This is currently unused!
+int State::FixDetermined() {
+  int fixed = 0;
+  for (;;) {
+    int pos[81];
+    int val[81];
+    int n = 0;
+    for (int i = 0; i < 81; ++i) if (digit[i] == 0) {
+      unsigned unused = CellUsed(i) ^ ALL_DIGITS;
+      assert(unused != 0);
+      if ((unused & (unused - 1)) == 0) {
+        pos[n] = i;
+        val[n] = std::countr_zero(unused);
+        ++n;
+      }
+    }
+    if (n == 0) return fixed;
+    for (int i = 0; i < n; ++i) Play(Move{.pos = pos[i], .digit=val[i]});
+    fixed += n;
   }
 }
