@@ -98,7 +98,16 @@ int main() {
 
   State state;
   for (int turn = 0;; ++turn) {
+
+#if 0
+    // Print current state for debugging.
     std::cerr << turn << ' ' << state.DebugString() << '\n';
+#else
+    // Extra rich debug info (slow!)
+    CountResult cr = state.CountSolutions(1000, max_work);
+    std::cerr << turn << ' ' << state.DebugString() << ' ' <<
+        cr.count << (cr.Accurate() ? "" : "+") << '\n';
+#endif
 
     if (turn % 2 == my_player) {
       // My turn!
