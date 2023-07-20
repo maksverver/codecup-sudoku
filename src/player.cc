@@ -1,3 +1,4 @@
+#include "analysis.h"
 #include "check.h"
 #include "random.h"
 #include "state.h"
@@ -14,7 +15,9 @@
 
 namespace {
 
-constexpr int max_work = 10000;
+constexpr int max_work1 =  1000;
+constexpr int max_work2 = 10000;
+constexpr int max_count =  2000;
 
 std::optional<Move> ParseMove(const std::string &s) {
   if (s.size() != 3 ||
@@ -38,16 +41,18 @@ std::string FormatMove(const Move &m) {
   return s;
 }
 
+// TODO: remove this
+#if 0
+// Looks ahead only one move, picking a unique solution if possible.
 std::optional<std::pair<Move, bool>> SelectMove(State &state) {
   std::vector<Move> moves[3];
-
   for (int i = 0; i < 81; ++i) if (state.IsFree(i)) {
     unsigned used = state.CellUsed(i);
     for (int d = 1; d <= 9; ++d) if ((used & (1u << d)) == 0) {
       Move move = {i, d};
       assert(state.CanPlay(move));
       state.Play(move);
-      CountResult cr = state.CountSolutions(2, max_work);
+      CountResult cr = state.CountSolutions(2, max_work1);
       state.Undo(move);
       if (cr.WorkLimitReached()) {
         std::cerr << ("Work limit exceeded! " + state.DebugString() + "\n");
@@ -65,6 +70,7 @@ std::optional<std::pair<Move, bool>> SelectMove(State &state) {
   if (n < 0) return {};
   return {{RandomSample(moves[n]), false}};
 }
+#endif
 
 std::string ReadInputLine() {
   std::string s;
@@ -90,52 +96,104 @@ void WriteOutputLine(const std::string &s) {
   std::cout << s << std::endl;
 }
 
+Move PickRandomMove(const State &state) {
+  std::vector<Move> moves;
+  for (int pos = 0; pos < 81; ++pos) {
+    if (state.Digit(pos) == 0) {
+      int used = state.CellUsed(pos);
+      for (int digit = 1; digit <= 9; ++digit) if ((used & (1u << digit)) == 0) {
+        moves.push_back(Move{.pos = pos, .digit = digit});
+      }
+    }
+  }
+  return RandomSample(moves);
+}
+
+// Pick a move that maximizes the number of solutions remaining.
+Move PickMoveIncomplete(const State &state, solutions_t &solutions) {
+  assert(!solutions.empty());
+  int count[81][10] = {};
+  for (const auto &solution : solutions) {
+    for (int i = 0; i < 81; ++i) {
+      ++count[i][solution[i]];
+    }
+  }
+
+  int max_count = 0;
+  Move best_move;
+  for (int pos = 0; pos < 81; ++pos) {
+    if (state.Digit(pos) == 0) {
+      for (int digit = 1; digit <= 9; ++digit) {
+        if (int c = count[pos][digit]; c > max_count) {
+          best_move = Move{.pos = pos, .digit = digit};
+          max_count = c;
+        }
+      }
+    }
+  }
+  assert(max_count > 0);
+  return best_move;
+}
+
 } // namespace
 
 int main() {
   std::string input = ReadInputLine();
   const int my_player = (input == "Start" ? 0 : 1);
 
-  State state;
+  State state = {};
+  solutions_t solutions = {};
+  bool analysis_complete = false;
+
   for (int turn = 0;; ++turn) {
 
-#if 0
     // Print current state for debugging.
     std::cerr << turn << ' ' << state.DebugString() << '\n';
-#else
-    // Extra rich debug info (slow!)
-    CountResult cr = state.CountSolutions(1000, max_work);
-    std::cerr << turn << ' ' << state.DebugString() << ' ' <<
-        cr.count << (cr.Accurate() ? "" : "+") << '\n';
-#endif
+
+    std::optional<Move> selected_move;
 
     if (turn % 2 == my_player) {
       // My turn!
 
-      // First, check if the current state is already unique.
-      // (Maybe this isn't necessary? I can still make a winning move.)
-      if (CountResult cr = state.CountSolutions(2, max_work); cr.WorkLimitReached()) {
-        std::cerr << "Work limit exceeded.\n";
-      } else if (cr.count == 0) {
-        std::cerr << "No solutions left!\n";
-        return 1;
-      } else if (cr.count == 1) {
-        // Solution is already unique! Claim the win.
+      if (turn >= 15 && !analysis_complete) {
+        EnumerateResult er = state.EnumerateSolutions(solutions, max_count, max_work2);
+        if (er.Accurate()) {
+          analysis_complete = true;
+          assert(!solutions.empty());
+        } else if (solutions.empty()) {
+          std::cerr << "WARNING: no solutions found! (this doesn't mean there aren't any)\n";
+        }
+      }
+
+      std::cerr << solutions.size() << (analysis_complete ? "" : "+") << " solutions\n";
+
+      bool claim_winning = false;
+
+      if (solutions.empty()) {
+        // I don't know anything about solutions. Just pick randomly.
+        selected_move = PickRandomMove(state);
+      } else if (!analysis_complete) {
+        // I have some solutions but it's not the complete set.
+        selected_move = PickMoveIncomplete(state, solutions);
+      } else if (solutions.size() == 1) {
+        // Only one solution left. I have already won! (This should be rare.)
+        std::cerr << "Solution is already unique!\n";
         WriteOutputLine("!");
-        break;
-      }
-
-      // Select my move and print it.
-      if (auto m = SelectMove(state); !m) {
-        std::cerr << "No valid moves left!\n";
-        return 1;
+        return 0;
       } else {
-        auto [move, winning] = *m;
-        CHECK(state.CanPlay(move));
-        state.Play(move);
+        // The hard case: select optimal move given the complete set of solutions.
+        grid_t givens;
+        for (int i = 0; i < 81; ++i) givens[i] = state.Digit(i);
+        auto [move, winning] = SelectMoveFromSolutions(givens, solutions);
+        selected_move = move;
+        claim_winning = winning;
 
-        WriteOutputLine(FormatMove(move) + (winning ? "!" :""));
+        // TODO: to save time, I should reuse the analsysis information if both
+        // players pick from the set of inferred digits!
       }
+
+      // Output
+      WriteOutputLine(FormatMove(*selected_move) + (claim_winning ? "!" :""));
 
     } else {
       // Opponent's turn.
@@ -144,11 +202,33 @@ int main() {
       if (auto m = ParseMove(input); !m) {
         std::cerr << "Could not parse move!\n";
         return 1;
-      } else if (!state.CanPlay(*m)) {
-        std::cerr << "Invalid move!\n";
-        return 1;
       } else {
-        state.Play(*m);
+        selected_move = *m;
+      }
+    }
+
+    assert(selected_move);
+    if (!state.CanPlay(*selected_move)) {
+      std::cerr << "Invalid move!\n";
+      return 1;
+    }
+
+    state.Play(*selected_move);
+
+    if (!solutions.empty()) {
+      if (!analysis_complete) {
+        // Just clear solutions. We'll regenerate them next turn.
+        solutions.clear();
+      } else {
+        // Narrow down set of solutions.
+        solutions_t next_solutions;
+        for (const auto &solution : solutions) {
+          if (solution[selected_move->pos] == selected_move->digit) {
+            next_solutions.push_back(solution);
+          }
+        }
+        solutions.swap(next_solutions);
+        if (analysis_complete) assert(!solutions.empty());
       }
     }
   }

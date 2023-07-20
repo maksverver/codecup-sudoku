@@ -1,3 +1,4 @@
+#include "analysis.h"
 #include "state.h"
 
 #include <array>
@@ -52,34 +53,27 @@ int GetSingleDigit(unsigned mask) {
 }
 
 // For each cell, calculates a bitmask of possible digits.
-std::array<unsigned, 81> CalculateOptions(
-    const std::vector<std::array<uint8_t, 81>> &solutions) {
-  std::array<unsigned, 81> options = {};
+candidates_t CalculateOptions(const solutions_t &solutions) {
+  candidates_t options = {};
   for (const auto &solution : solutions) {
     for (int i = 0; i < 81; ++i) options[i] |= 1u << solution[i];
   }
   return options;
 }
 
-std::array<uint8_t, 81> ToArray(const uint8_t (&digits)[81]) {
-  std::array<uint8_t, 81> a;
-  std::copy(digits, digits + 81, a.begin());
-  return a;
-}
-
 void EnumerateSolutions(State &state) {
-  std::array<uint8_t, 81> givens = {};
+  grid_t givens = {};
   for (int i = 0; i < 81; ++i) givens[i] = state.Digit(i);
 
-  std::vector<std::array<uint8_t, 81>> solutions;
-  EnumerateResult er = state.EnumerateSolutions(
-      [&solutions](const uint8_t (&digits)[81]){
-        solutions.emplace_back(ToArray(digits));
-        // Print solution (TODO: make this optional?)
-        for (auto d : digits) std::cout << Char(d);
-        std::cout << '\n';
-        return solutions.size() < max_count;
-      });
+  solutions_t solutions;
+  EnumerateResult er = state.EnumerateSolutions(solutions, max_count);
+
+  // Print solutions (TODO: make this optional?)
+  for (auto solution : solutions) {
+    for (auto d : solution) std::cout << Char(d);
+    std::cout << '\n';
+  }
+
   assert(!er.WorkLimitReached());
   if (!er.success) {
     std::cout << "(further solutions omitted)\n";
@@ -93,7 +87,7 @@ void EnumerateSolutions(State &state) {
   }
   std::cout << " (" << given_count << " given)\n";
 
-  std::array<unsigned, 81> options = CalculateOptions(solutions);
+  candidates_t options = CalculateOptions(solutions);
   int inferred_count = 0;
   for (int i = 0; i < 81; ++i) {
     if (givens[i] != 0) {
@@ -137,6 +131,8 @@ void EnumerateSolutions(State &state) {
   for (int r = 0; r < 9; ++r) {
     if (r > 0 && r % 3 == 0) std::cout << '\n';
     for (int y = 0; y < 3; ++y) {
+      if (y == 1) std::cout << " " << (char) ('A' + r) << "  ";
+      if (y != 1) std::cout << "    ";
       for (int c = 0; c < 9; ++c) {
         if (c > 0) {
           std::cout << "  ";
@@ -168,6 +164,22 @@ void EnumerateSolutions(State &state) {
       std::cout << '\n';
     }
     std::cout << '\n';
+  }
+  std::cout << " ";
+  for (int c = 0; c < 9; ++c) {
+    if (c > 0 && c % 3 == 0) std::cout << "  ";
+    std::cout << "    " << (char) ('a' + c);
+  }
+  std::cout << "\n\n";
+
+  if (solutions.size() == 0) {
+    std::cerr << "No solution possible!\n";
+  } else if (solutions.size() == 1) {
+    std::cerr << "Solution is unique!\n";
+  } else {
+    auto [move, won] = SelectMoveFromSolutions(givens, solutions);
+    std::cerr << "Optimal move: pos=" << move.pos << " digit=" << move.digit << " ("
+        << (char)('A' + move.pos/9) << (char)('a' + move.pos%9) << move.digit << (won ? "!" : "") << ")\n";
   }
 }
 

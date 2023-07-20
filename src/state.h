@@ -9,6 +9,7 @@
 #include <limits>
 #include <optional>
 #include <string>
+#include <vector>
 
 struct Move {
   int pos;
@@ -94,6 +95,9 @@ public:
       .work = max_work - state.work_left,
       .max_work = max_work};
   }
+
+  EnumerateResult EnumerateSolutions(
+    std::vector<std::array<uint8_t, 81>> &solutions, int max_count = 1e9, int64_t max_work = 1e18);
 
   template<typename Callback>
   EnumerateResult EnumerateSolutions(const Callback &c, int64_t max_work = 1e18) {

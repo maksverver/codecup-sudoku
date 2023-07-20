@@ -6,6 +6,16 @@
 
 constexpr unsigned ALL_DIGITS = 0b1111111110;
 
+namespace {
+
+std::array<uint8_t, 81> ToArray(const uint8_t (&digits)[81]) {
+  std::array<uint8_t, 81> a;
+  std::copy(digits, digits + 81, a.begin());
+  return a;
+}
+
+}  // namespace
+
 std::string State::DebugString() const {
   std::string s(81, '.');
   for (int i = 0; i < 81; ++i) s[i] = digit[i] ? '0' + digit[i] : '.';
@@ -25,20 +35,17 @@ void State::DebugPrint(std::ostream &os) const {
 }
 
 std::optional<std::pair<int, unsigned>> State::FindFree() const {
-  int best_index;
-  unsigned best_used;
+  std::optional<std::pair<int, unsigned>> result;
   int max_used_count = -1;
   for (int i = 0; i < 81; ++i) if (digit[i] == 0) {
     unsigned used = CellUsed(i);
     int used_count = std::popcount(used);
     if (used_count > max_used_count) {
-      best_index = i;
-      best_used = used;
+      result = {{i, used}};
       max_used_count = used_count;
     }
   }
-  if (max_used_count < 0) return {};
-  return {{best_index, best_used}};
+  return result;
 }
 
 void State::CountSolutions(CountState &cs) {
@@ -69,6 +76,17 @@ void State::CountSolutions(CountState &cs) {
     used_col[Col(i)] ^= mask;
     used_box[Box(i)] ^= mask;
   }
+}
+
+EnumerateResult State::EnumerateSolutions(std::vector<std::array<uint8_t, 81>> &solutions, int max_count, int64_t max_work) {
+  assert(max_count >= 0);
+  solutions.clear();
+  return EnumerateSolutions(
+    [&solutions, max_count](const uint8_t (&digits)[81]){
+      solutions.emplace_back(ToArray(digits));
+      return solutions.size() < (size_t) max_count;
+    },
+    max_work);
 }
 
 // This is currently unused!
