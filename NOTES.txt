@@ -1,0 +1,83 @@
+STRATEGY
+
+Let's call the digits that were already placed in the grid the *givens*, or more
+accurately: the givens are nonconflicting (cell, digit) pairs.
+
+For a set of givens, we can (sometimes) enumerate all possible solutions in the
+grid. Assume we have a full set of solutions.
+
+Let's call the candidates of a cell the set of digits that occurs in that cell
+in some solution. That means our move should chose exactly one candidate to fill
+in.
+
+Let's distinguish between cells with a single candidate (I call those
+*inferred digits/cells* because the digit is fixed but not yet filled in), and
+multiple candidates (I call those *choice cells* because if I fill in this cell
+I have to make a choice which candidate to use). I call the set of inferred
+cell/digit pairs F with size |F|.
+
+Now we want to determine if the current state is winning or losing, and (if
+winning) what a winning move is.
+
+If |F| is even, then the value of the state is the same as the state in which
+all the inferred cells have been filled in.
+
+Proof: let's call the states S and T0 respectively. If I have a winning strategy
+in T0, I can infer a winning strategy in S by playing according to the winning
+stategy in T0, except that whenever my opponent makes a move in F, I respond with
+a move in F too. Eventually F is empty (if I don't win earlier).
+
+Conversely, if I don't have a winning strategy in T, I can either keep making
+losing moves in T, or make a move in F which my opponent can counter.
+
+This means that whenever |F| is even we can solve the problem recursively, and
+pick an arbitrary move that leads to a state that is losing for the opponent.
+
+When |F| is odd the situation is interesting. If I have an immediately-winnning
+move (i.e., a single move that creates a unique solution) I can still win.
+Otherwise, moves in F are always optimal! Why? Let T1 be the state where all
+cells in F have been filled in except 1, and T0 the state where all cells in F
+have been filled in, as before.
+
+Then if I have a winning strategy in T0 that takes more than 1 move, that means
+there is a move in T0 that leads to a state that is losing for my opponent. But
+in T1, the opponent can respond by filling in the remaining cell in F,
+effectively skipping a turn in T0. That means T1 is actually losing for me and
+I may make any move.
+
+Note that it's important that immediately-winning moves are exempt from this
+logic, because as soon as one player creates a unique solution they win, and
+the opponent can no longer flip the state!
+
+Conversely, if T0 is losing (that means all moves lead to states that are
+winning for the opponent) then I can win by filling in the remaining cell in F,
+turning T1 into T0.
+
+So in both cases turning T1 into T0 is the correct move. And for the difference
+between S and T1 the same move-mirroring argument applies as before.
+
+This leads to an interesting algorithm:
+
+  1. Calculate all solutions.
+  2. Identify inferred cells (F) and choice cells (C).
+  3. Search for a move in C that leads to a unique solution. If there is one,
+     it is immediately winning, so return it.
+  4. Otherwise, if |F| is odd, fill in any cell in |F|.
+  5. Otherwise, fix all cells in |F|, try each option in C, and if a successor
+     state is losing for the opponent, pick the corresponding move as winning.
+  6. Otherwise, all moves are losing. Pick an arbitrary move (or maybe pick a
+     move in F to avoid narrowing down the solution space).
+
+The hard parts of the algorithms are 1 and 5.
+
+
+OBSERVATIONS
+
+The game is technically an impartial game, but that doesn't seem to help.
+
+Dividing a game state into choice cells and inferred cells seems to almost make
+it a composition of two impartial games, but it doesn't quite work, because when
+there are no choice cells, then the inferred cells no longer matter, so these
+games don't compose in the usual way to
+
+
