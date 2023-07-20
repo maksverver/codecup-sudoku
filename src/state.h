@@ -42,6 +42,7 @@ struct EnumerateResult {
   int64_t work = 0;
   int64_t max_work = 0;
 
+  bool Accurate() const { return success && work < max_work; }
   bool WorkLimitReached() const { return work >= max_work; }
 };
 
@@ -130,8 +131,9 @@ private:
       unused &= unused - 1;
       Move move = {i, d};
       Play(move);
-      if (!EnumerateSolutionsImpl<C>(callback, work_left)) return false;
+      bool result = EnumerateSolutionsImpl<C>(callback, work_left);
       Undo(move);
+      if (!result) return false;
     }
     return true;
   }

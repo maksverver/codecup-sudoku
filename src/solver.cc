@@ -1,10 +1,13 @@
 #include "state.h"
 
+#include <array>
 #include <bit>
 #include <cassert>
 #include <cstring>
 #include <iostream>
 #include <optional>
+#include <string>
+#include <vector>
 
 namespace {
 
@@ -40,26 +43,47 @@ void CountSolutions(State &state) {
   std::cout << cr.count << " solutions" << std::endl;
 }
 
-bool Determined(unsigned mask) {
-  return (mask & (mask - 1)) == 0;
+bool Determined(unsigned mask) { return (mask & (mask - 1)) == 0; }
+
+int GetSingleDigit(unsigned mask) {
+  int d = 9;
+  while (d > 0 && mask != (1u << d)) --d;
+  return d;
+}
+
+// For each cell, calculates a bitmask of possible digits.
+std::array<unsigned, 81> CalculateOptions(
+    const std::vector<std::array<uint8_t, 81>> &solutions) {
+  std::array<unsigned, 81> options = {};
+  for (const auto &solution : solutions) {
+    for (int i = 0; i < 81; ++i) options[i] |= 1u << solution[i];
+  }
+  return options;
+}
+
+std::array<uint8_t, 81> ToArray(const uint8_t (&digits)[81]) {
+  std::array<uint8_t, 81> a;
+  std::copy(digits, digits + 81, a.begin());
+  return a;
 }
 
 void EnumerateSolutions(State &state) {
-  int givens[81] = {};
+  std::array<uint8_t, 81> givens = {};
   for (int i = 0; i < 81; ++i) givens[i] = state.Digit(i);
 
-  int solution_count = 0;
-  unsigned options[81] = {};
+  std::vector<std::array<uint8_t, 81>> solutions;
   EnumerateResult er = state.EnumerateSolutions(
-      [&options, &solution_count](const uint8_t (&digits)[81]){
+      [&solutions](const uint8_t (&digits)[81]){
+        solutions.emplace_back(ToArray(digits));
+        // Print solution (TODO: make this optional?)
         for (auto d : digits) std::cout << Char(d);
         std::cout << '\n';
-        for (int i = 0; i < 81; ++i) options[i] |= 1u << digits[i];
-        return ++solution_count < max_count;
+        return solutions.size() < max_count;
       });
   assert(!er.WorkLimitReached());
   if (!er.success) {
-    std::cout << "(further solutions omitted; options below are incomplete!)\n";
+    std::cout << "(further solutions omitted)\n";
+    return;  // doesn't make sense to analyze options with incomplete data
   }
 
   int given_count = 0;
@@ -69,13 +93,13 @@ void EnumerateSolutions(State &state) {
   }
   std::cout << " (" << given_count << " given)\n";
 
+  std::array<unsigned, 81> options = CalculateOptions(solutions);
   int inferred_count = 0;
   for (int i = 0; i < 81; ++i) {
     if (givens[i] != 0) {
       std::cout << '_';
     } else {
-      int d = 9;
-      while (d > 0 && options[i] != (1u << d)) --d;
+      int d = GetSingleDigit(options[i]);
       std::cout << Char(d);
       if (d) ++inferred_count;
     }
@@ -118,7 +142,7 @@ void EnumerateSolutions(State &state) {
           std::cout << "  ";
           if (c % 3 == 0) std::cout << "  ";
         }
-        int i = 3*r + c;
+        int i = 9*r + c;
         if (givens[i]) {
           // Given
           if (y == 0) std::cout << "===";
@@ -126,8 +150,7 @@ void EnumerateSolutions(State &state) {
           if (y == 2) std::cout << "===";
         } else {
           unsigned o = options[i];
-          int d = 9;
-          while (d > 0 && o != (1u << d)) --d;
+          int d = GetSingleDigit(o);
           if (d) {
             // Uniquely determined
             if (y == 0) std::cout << "---";
