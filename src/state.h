@@ -8,6 +8,7 @@
 #include <iostream>
 #include <limits>
 #include <optional>
+#include <span>
 #include <string>
 #include <vector>
 
@@ -48,7 +49,11 @@ struct EnumerateResult {
 };
 
 class State {
+
 public:
+
+  static constexpr unsigned ALL_DIGITS = 0b1111111110;
+
   bool IsFree(int i) const { return digit[i] == 0; }
 
   unsigned CellUsed(int i) const {
@@ -82,11 +87,29 @@ public:
     used_box[Box(m.pos)] &= mask;
   }
 
+  struct Position { uint8_t i, r, c, b; };
+
+  std::span<Position> GetEmptyPositions(std::array<Position, 81> &buf) {
+    int n = 0;
+    for (uint8_t r = 0; r < 9; ++r) {
+      for (uint8_t c = 0; c < 9; ++c) {
+        uint8_t i = 9*r + c;
+        if (digit[i] == 0) {
+          uint8_t b = 3*(r / 3) + (c / 3);
+          buf[n++] = Position{.i = i, .r = r, .c = c, .b = b};
+        }
+      }
+    }
+    return std::span<Position>(buf.data(), n);
+  }
+
   CountResult CountSolutions(int max_count = 1e9, int64_t max_work = 1e18) {
     assert(max_count >= 0);
     assert(max_work >= 0);
     CountState state = {.count_left = max_count, .work_left = max_work};
-    CountSolutions(state);
+    std::array<Position, 81> buf;
+    std::span<Position> todo = GetEmptyPositions(buf);
+    CountSolutions(todo, state);
     assert(state.count_left >= 0);
     assert(state.work_left >= 0);
     return CountResult{
@@ -100,9 +123,11 @@ public:
     std::vector<std::array<uint8_t, 81>> &solutions, int max_count = 1e9, int64_t max_work = 1e18);
 
   template<typename Callback>
-  EnumerateResult EnumerateSolutions(const Callback &c, int64_t max_work = 1e18) {
+  EnumerateResult EnumerateSolutions(const Callback &callback, int64_t max_work = 1e18) {
     int64_t work_left = max_work;
-    bool success = EnumerateSolutionsImpl(c, work_left);
+    std::array<Position, 81> buf;
+    std::span<Position> todo = GetEmptyPositions(buf);
+    bool success = EnumerateSolutionsImpl(callback, todo, work_left);
     assert(work_left >= 0);
     return EnumerateResult{
       .success = success,
@@ -120,31 +145,65 @@ public:
 
 private:
 
-  // Enumerates solutions and invokes callback(digits) until it returns
-  // false, or until work_left is 0. Returns `false` if the callback ever returned
+  // Enumerates solutions and invokes callback(digits) until it returns false,
+  // or until work_left is 0. Returns `false` if the callback ever returned
   // false, or true otherwise.
+  //
+  // The logic here is very similar to CountSolutions().
   template<typename C>
-  bool EnumerateSolutionsImpl(const C &callback, int64_t &work_left) {
-    auto opt_free = FindFree();
-    if (!opt_free) return callback(const_cast<const uint8_t(&)[81]>(digit));
+  bool EnumerateSolutionsImpl(const C &callback, std::span<Position> todo, int64_t &work_left) {
+    if (todo.empty()) {
+      // Solution found!
+      return callback(const_cast<const uint8_t(&)[81]>(digit));
+    }
 
-    auto [i, used] = *opt_free;
-    unsigned unused = used ^ 0b1111111110;
+    // Find most constrained cell to fill in.
+    int max_used_count = -1;
+    int max_used_index = -1;
+    unsigned max_used_mask = 0;
+    for (int j = 0; j < (int) todo.size(); ++j) {
+      auto [i, r, c, b] = todo[j];
+      unsigned used = used_row[r] | used_col[c] | used_box[b];
+      if (used == ALL_DIGITS) return true;  // unsolvable
+      int used_count = std::popcount(used);
+      if (used_count > max_used_count) {
+        max_used_index = j;
+        max_used_count = used_count;
+        max_used_mask = used;
+      }
+    }
+
+    std::swap(todo[max_used_index], todo.back());
+    auto [i, r, c, b] = todo.back();
+    std::span<Position> remaining(todo.begin(), todo.end() - 1);
+
+    // Try all possible digits.
+    unsigned unused = max_used_mask ^ ALL_DIGITS;
     while (unused && work_left) {
+      --work_left;
+
       int d = std::countr_zero(unused);
-      unused &= unused - 1;
-      Move move = {i, d};
-      Play(move);
-      bool result = EnumerateSolutionsImpl<C>(callback, work_left);
-      Undo(move);
+      digit[i] = d;
+
+      unsigned mask = 1 << d;
+      unused ^= mask;
+
+      used_row[r] ^= mask;
+      used_col[c] ^= mask;
+      used_box[b] ^= mask;
+
+      bool result = EnumerateSolutionsImpl<C>(callback, remaining, work_left);
+
+      used_row[r] ^= mask;
+      used_col[c] ^= mask;
+      used_box[b] ^= mask;
+
+      digit[i] = 0;
+
       if (!result) return false;
     }
     return true;
   }
-
-  // Returns the index and the mask if used digits of the position where most
-  // digits are already used (i.e., one of the most constrained cells).
-  std::optional<std::pair<int, unsigned>> FindFree() const;
 
   struct CountState {
     int count_left = 2;
@@ -152,7 +211,7 @@ private:
   };
 
   // Recursively counts solutions.
-  void CountSolutions(CountState &cs);
+  void CountSolutions(std::span<Position> todo, CountState &cs);
 
   uint8_t digit[81] = {};
   unsigned used_row[9] = {};

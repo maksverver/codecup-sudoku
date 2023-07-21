@@ -4,8 +4,6 @@
 #include <iostream>
 #include <string>
 
-constexpr unsigned ALL_DIGITS = 0b1111111110;
-
 namespace {
 
 std::array<uint8_t, 81> ToArray(const uint8_t (&digits)[81]) {
@@ -34,29 +32,37 @@ void State::DebugPrint(std::ostream &os) const {
   os << '\n';
 }
 
-std::optional<std::pair<int, unsigned>> State::FindFree() const {
-  std::optional<std::pair<int, unsigned>> result;
-  int max_used_count = -1;
-  for (int i = 0; i < 81; ++i) if (digit[i] == 0) {
-    unsigned used = CellUsed(i);
-    int used_count = std::popcount(used);
-    if (used_count > max_used_count) {
-      result = {{i, used}};
-      max_used_count = used_count;
-    }
-  }
-  return result;
-}
-
-void State::CountSolutions(CountState &cs) {
-  auto opt_free = FindFree();
-  if (!opt_free) {
+// Note: the logic here is very similar to EnumerateSolutionsImpl(), except
+// that this version never actually fills in any digits.
+void State::CountSolutions(std::span<Position> todo, CountState &cs) {
+  if (todo.empty()) {
+    // Solution found!
     --cs.count_left;
     return;
   }
 
-  auto [i, used] = *opt_free;
-  unsigned unused = used ^ ALL_DIGITS;
+  // Find most constrained cell to fill in.
+  int max_used_count = -1;
+  int max_used_index = -1;
+  unsigned max_used_mask = 0;
+  for (int j = 0; j < (int) todo.size(); ++j) {
+    auto [i, r, c, b] = todo[j];
+    unsigned used = used_row[r] | used_col[c] | used_box[b];
+    if (used == ALL_DIGITS) return;  // unsolvable
+    int used_count = std::popcount(used);
+    if (used_count > max_used_count) {
+      max_used_index = j;
+      max_used_count = used_count;
+      max_used_mask = used;
+    }
+  }
+  std::swap(todo[max_used_index], todo.back());
+
+  auto [i, r, c, b] = todo.back();
+  std::span<Position> remaining(todo.begin(), todo.end() - 1);
+
+  // Try all possible digits.
+  unsigned unused = max_used_mask ^ ALL_DIGITS;
   while (unused && cs.count_left && cs.work_left) {
     --cs.work_left;
 
@@ -64,17 +70,15 @@ void State::CountSolutions(CountState &cs) {
     unused &= unused - 1;
     mask ^= unused;
 
-    digit[i] = -1;
-    used_row[Row(i)] ^= mask;
-    used_col[Col(i)] ^= mask;
-    used_box[Box(i)] ^= mask;
+    used_row[r] ^= mask;
+    used_col[c] ^= mask;
+    used_box[b] ^= mask;
 
-    CountSolutions(cs);
+    CountSolutions(remaining, cs);
 
-    digit[i] = 0;
-    used_row[Row(i)] ^= mask;
-    used_col[Col(i)] ^= mask;
-    used_box[Box(i)] ^= mask;
+    used_row[r] ^= mask;
+    used_col[c] ^= mask;
+    used_box[b] ^= mask;
   }
 }
 

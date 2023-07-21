@@ -38,10 +38,20 @@ std::optional<State> ParseDesc(const char *desc) {
 }
 
 void CountSolutions(State &state) {
+#if 1
   CountResult cr = state.CountSolutions(max_count);
   assert(!cr.WorkLimitReached());
   if (cr.CountLimitReached()) std::cout << "At least ";
   std::cout << cr.count << " solutions" << std::endl;
+#else
+  // Slightly slower implementation using EnumerateSolutions() instead.
+  int count = 0;
+  EnumerateResult er = state.EnumerateSolutions([&count](const uint8_t(&)[81]){
+    return ++count < max_count;
+  });
+  if (!er.Accurate()) std::cout << "At least ";
+  std::cout << count << " solutions" << std::endl;
+#endif
 }
 
 bool Determined(unsigned mask) { return (mask & (mask - 1)) == 0; }
