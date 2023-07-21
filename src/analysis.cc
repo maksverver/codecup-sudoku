@@ -20,7 +20,7 @@ candidates_t CalculateCandidates(std::span<const solution_t> solutions) {
 
 bool Determined(unsigned mask) { return (mask & (mask - 1)) == 0; }
 
-template<typename T> std::vector<T> Remove(const std::vector<T> &v, int i) {
+template<typename T> std::vector<T> Remove(std::span<const T> v, int i) {
   std::vector<T> res;
   res.reserve(v.size() - 1);
   for (const auto &j : v) if (j != i) res.push_back(j);
@@ -63,15 +63,17 @@ bool IsWinning(
   assert(!old_choice_positions.empty());
 
   candidates_t candidates = CalculateCandidates(solutions);
-  std::vector<int> choice_positions;
+  int choice_positions_data[81];
+  size_t choice_positions_size = 0;
   bool inferred_odd = false;
   for (int i : old_choice_positions) {
     if (Determined(candidates[i])) {
       inferred_odd = !inferred_odd;
     } else {
-      choice_positions.push_back(i);
+      choice_positions_data[choice_positions_size++] = i;
     }
   }
+  std::span<const int> choice_positions(choice_positions_data, choice_positions_size);
 
   if (auto result = FindImmediatelyWinningMove(solutions, choice_positions)) {
     return true;
@@ -136,7 +138,7 @@ std::pair<Move, bool> SelectMoveFromSolutions(
 
   // Otherwise, recursively search for a winning move.
   for (int pos : choice_positions) {
-    std::vector<int> new_choice_positions = Remove(choice_positions, pos);
+    std::vector<int> new_choice_positions = Remove<int>(choice_positions, pos);
 
     std::ranges::sort(solutions, [pos](const solution_t &a, const solution_t &b) {
       return a[pos] < b[pos];
