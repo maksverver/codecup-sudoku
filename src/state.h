@@ -1,6 +1,7 @@
 #ifndef STATE_H_INCLUDED
 #define STATE_H_INCLUDED
 
+#include <algorithm>
 #include <array>
 #include <bit>
 #include <cassert>
@@ -8,6 +9,7 @@
 #include <iostream>
 #include <limits>
 #include <optional>
+#include <random>
 #include <span>
 #include <string>
 #include <vector>
@@ -119,14 +121,23 @@ public:
       .max_work = max_work};
   }
 
+  // Enumerates up to `max_count` solutions and stores them in the given vector.
+  // (The vector is cleared at the start.)
   EnumerateResult EnumerateSolutions(
-    std::vector<std::array<uint8_t, 81>> &solutions, int max_count = 1e9, int64_t max_work = 1e18);
+    std::vector<std::array<uint8_t, 81>> &solutions,
+    int max_count = 1e9, int64_t max_work = 1e18,
+    std::mt19937 *rng = nullptr);
 
+  // Enumerates solutions and invokes callback(digits) until it returns false,
+  // or until work_left is 0. Returns `false` if the callback ever returned
+  // false, or true otherwise.
   template<typename Callback>
-  EnumerateResult EnumerateSolutions(const Callback &callback, int64_t max_work = 1e18) {
-    int64_t work_left = max_work;
+  EnumerateResult EnumerateSolutions(
+      const Callback &callback, int64_t max_work = 1e18, std::mt19937 *rng = nullptr) {
     std::array<Position, 81> buf;
     std::span<Position> todo = GetEmptyPositions(buf);
+    if (rng) std::shuffle(todo.begin(), todo.end(), *rng);
+    int64_t work_left = max_work;
     bool success = EnumerateSolutionsImpl(callback, todo, work_left);
     assert(work_left >= 0);
     return EnumerateResult{
@@ -145,11 +156,7 @@ public:
 
 private:
 
-  // Enumerates solutions and invokes callback(digits) until it returns false,
-  // or until work_left is 0. Returns `false` if the callback ever returned
-  // false, or true otherwise.
-  //
-  // The logic here is very similar to CountSolutions().
+  // Note: the logic here is very similar to CountSolutions().
   template<typename C>
   bool EnumerateSolutionsImpl(const C &callback, std::span<Position> todo, int64_t &work_left) {
     if (todo.empty()) {

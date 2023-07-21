@@ -1,7 +1,9 @@
 #include "state.h"
 
+#include <algorithm>
 #include <bit>
 #include <iostream>
+#include <random>
 #include <string>
 
 namespace {
@@ -82,7 +84,10 @@ void State::CountSolutions(std::span<Position> todo, CountState &cs) {
   }
 }
 
-EnumerateResult State::EnumerateSolutions(std::vector<std::array<uint8_t, 81>> &solutions, int max_count, int64_t max_work) {
+EnumerateResult State::EnumerateSolutions(
+    std::vector<std::array<uint8_t, 81>> &solutions,
+    int max_count, int64_t max_work,
+    std::mt19937 *rng) {
   assert(max_count >= 0);
   solutions.clear();
   return EnumerateSolutions(
@@ -90,7 +95,8 @@ EnumerateResult State::EnumerateSolutions(std::vector<std::array<uint8_t, 81>> &
       solutions.emplace_back(ToArray(digits));
       return solutions.size() < (size_t) max_count;
     },
-    max_work);
+    max_work,
+    rng);
 }
 
 // This is currently unused!

@@ -1,5 +1,4 @@
 #include "analysis.h"
-
 #include "random.h"
 #include "state.h"
 

@@ -1,6 +1,6 @@
 #include "random.h"
 
-#include <array>
+#include <random>
 
 #ifdef DETERMINISTIC
 
@@ -8,8 +8,8 @@ std::mt19937 rng;
 
 #else
 
+#include <array>
 #include <algorithm>
-#include <random>
 
 static std::mt19937 InitializeRng() {
   std::array<int, 624> seed_data;

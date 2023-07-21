@@ -125,7 +125,8 @@ Move PickRandomMove(const State &state) {
   return RandomSample(moves);
 }
 
-// Pick a move that maximizes the number of solutions remaining.
+// Pick a move from an incomplete list of solutions.
+// It returns a random move that maximizes the number of solutions remaining.
 Move PickMoveIncomplete(const State &state, solutions_t &solutions) {
   assert(!solutions.empty());
   int count[81][10] = {};
@@ -135,20 +136,24 @@ Move PickMoveIncomplete(const State &state, solutions_t &solutions) {
     }
   }
 
+  std::vector<Move> best_moves;
   int max_count = 0;
-  Move best_move;
   for (int pos = 0; pos < 81; ++pos) {
     if (state.Digit(pos) == 0) {
       for (int digit = 1; digit <= 9; ++digit) {
-        if (int c = count[pos][digit]; c > max_count) {
-          best_move = Move{.pos = pos, .digit = digit};
+        int c = count[pos][digit];
+        if (c > max_count) {
           max_count = c;
+          best_moves.clear();
+        }
+        if (max_count > 0 && c == max_count) {
+          best_moves.push_back(Move{.pos = pos, .digit = digit});
         }
       }
     }
   }
-  assert(max_count > 0);
-  return best_move;
+  assert(max_count > 0 && !best_moves.empty());
+  return RandomSample(best_moves);
 }
 
 } // namespace
@@ -173,7 +178,7 @@ int main() {
 
       Timer timer;
       if (!analysis_complete) {
-        EnumerateResult er = state.EnumerateSolutions(solutions, max_count, max_work2);
+        EnumerateResult er = state.EnumerateSolutions(solutions, max_count, max_work2, &rng);
         if (er.Accurate()) {
           analysis_complete = true;
           assert(!solutions.empty());
