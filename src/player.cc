@@ -127,7 +127,7 @@ Move PickRandomMove(const State &state) {
 
 // Pick a move from an incomplete list of solutions.
 // It returns a random move that maximizes the number of solutions remaining.
-Move PickMoveIncomplete(const State &state, solutions_t &solutions) {
+Move PickMoveIncomplete(const State &state, std::span<const solution_t> solutions) {
   assert(!solutions.empty());
   int count[81][10] = {};
   for (const auto &solution : solutions) {
@@ -163,7 +163,7 @@ int main() {
   const int my_player = (input == "Start" ? 0 : 1);
 
   State state = {};
-  solutions_t solutions = {};
+  std::vector<solution_t> solutions = {};
   bool analysis_complete = false;
 
   for (int turn = 0;; ++turn) {
@@ -245,14 +245,14 @@ int main() {
         solutions.clear();
       } else {
         // Narrow down set of solutions.
-        solutions_t next_solutions;
+        std::vector<solution_t> next_solutions;
         for (const auto &solution : solutions) {
           if (solution[selected_move->pos] == selected_move->digit) {
             next_solutions.push_back(solution);
           }
         }
         solutions.swap(next_solutions);
-        if (analysis_complete) assert(!solutions.empty());
+        assert(!analysis_complete || !solutions.empty());
       }
     }
   }

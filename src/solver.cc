@@ -7,6 +7,7 @@
 #include <cstring>
 #include <iostream>
 #include <optional>
+#include <span>
 #include <string>
 #include <vector>
 
@@ -63,7 +64,7 @@ int GetSingleDigit(unsigned mask) {
 }
 
 // For each cell, calculates a bitmask of possible digits.
-candidates_t CalculateOptions(const solutions_t &solutions) {
+candidates_t CalculateOptions(std::span<const solution_t> solutions) {
   candidates_t options = {};
   for (const auto &solution : solutions) {
     for (int i = 0; i < 81; ++i) options[i] |= 1u << solution[i];
@@ -75,7 +76,7 @@ void EnumerateSolutions(State &state) {
   grid_t givens = {};
   for (int i = 0; i < 81; ++i) givens[i] = state.Digit(i);
 
-  solutions_t solutions;
+  std::vector<solution_t> solutions;
   EnumerateResult er = state.EnumerateSolutions(solutions, max_count);
 
   // Print solutions (TODO: make this optional?)

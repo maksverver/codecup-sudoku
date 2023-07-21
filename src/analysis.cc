@@ -2,18 +2,18 @@
 #include "random.h"
 #include "state.h"
 
+#include <algorithm>
 #include <optional>
+#include <span>
 #include <vector>
 
 namespace {
 
 // For each cell, calculates a bitmask of possible digits.
-candidates_t CalculateCandidates(
-    const solutions_t &all_solutions,
-    const std::vector<size_t> &possibilities) {
+candidates_t CalculateCandidates(std::span<const solution_t> solutions) {
   candidates_t candidates = {};
-  for (size_t i : possibilities) {
-    for (int j = 0; j < 81; ++j) candidates[j] |= 1u << all_solutions[i][j];
+  for (const solution_t &solution : solutions) {
+    for (int i = 0; i < 81; ++i) candidates[i] |= 1u << solution[i];
   }
   return candidates;
 }
@@ -27,35 +27,20 @@ template<typename T> std::vector<T> Remove(const std::vector<T> &v, int i) {
   return res;
 }
 
-std::vector<size_t> NarrowPossibilities(
-    const solutions_t &all_solutions,
-    const std::vector<size_t> &possibilities,
-    int pos, int digit) {
-  std::vector<size_t> remaining;
-  for (size_t i : possibilities) {
-    if (all_solutions[i][pos] == digit) {
-      remaining.push_back(i);
-    }
-  }
-  return remaining;
-}
-
 // Let solutions be the subset {all_solutions[i] for all i in possibilites}.
 //
 // An immediately-winning move is a move that reduces the set of solutions to a
 // single solution. i.e., it is a position and digit such that only one solution
 // has that digit in that position.
 std::optional<Move> FindImmediatelyWinningMove(
-    const solutions_t &all_solutions,
-    const std::vector<size_t> &possibilities,
-    const std::vector<int> &choice_positions) {
-  assert(possibilities.size() > 1);
+    std::span<const solution_t> solutions,
+    std::span<const int> choice_positions) {
+  assert(solutions.size() > 1);
   assert(choice_positions.size() > 0);
-  // TODO: this could be optimized by only checking the position that we know are still different
   for (int pos : choice_positions) {
     int solution_count[10] = {};
-    for (auto i : possibilities) {
-      ++solution_count[all_solutions[i][pos]];
+    for (const solution_t &solution : solutions) {
+      ++solution_count[solution[pos]];
     }
     for (int digit = 1; digit <= 9; ++digit) {
       if (solution_count[digit] == 1) {
@@ -72,14 +57,12 @@ std::optional<Move> FindImmediatelyWinningMove(
 //  - avoid unnecessary vector copying
 //  - how to prevent timeout?
 bool IsWinning(
-    const solutions_t &all_solutions,
-    const std::vector<size_t> &possibilities,
-    const std::vector<int> &old_choice_positions,
-    int depth) {
-  assert(possibilities.size() > 1);
+    std::span<solution_t> solutions,
+    std::span<const int> old_choice_positions) {
+  assert(solutions.size() > 1);
   assert(!old_choice_positions.empty());
 
-  candidates_t candidates = CalculateCandidates(all_solutions, possibilities);
+  candidates_t candidates = CalculateCandidates(solutions);
   std::vector<int> choice_positions;
   bool inferred_odd = false;
   for (int i : old_choice_positions) {
@@ -90,22 +73,29 @@ bool IsWinning(
     }
   }
 
-  if (auto result = FindImmediatelyWinningMove(all_solutions, possibilities, choice_positions)) {
+  if (auto result = FindImmediatelyWinningMove(solutions, choice_positions)) {
     return true;
   }
 
   for (int pos : choice_positions) {
     std::vector<int> new_choice_positions = Remove(choice_positions, pos);
 
-    for (int digit = 1; digit <= 9; ++digit) if ((candidates[pos] & (1u << digit)) != 0) {
-      std::vector<size_t> new_possibilities = NarrowPossibilities(all_solutions, possibilities, pos, digit);
+    // TODO: maybe replace by a counting sort if this is a performance bottleneck
+    std::ranges::sort(solutions, [pos](const solution_t &a, const solution_t &b) {
+      return a[pos] < b[pos];
+    });
 
+    size_t i = 0;
+    while (i < solutions.size()) {
+      int digit = solutions[i][pos];
+      size_t j = i + 1;
+      while (j < solutions.size() && solutions[j][pos] == digit) ++j;
       // We should have found immediately-winning moves already before.
-      assert(new_possibilities.size() > 1 && new_possibilities.size() < possibilities.size());
-
-      if (!IsWinning(all_solutions, new_possibilities, new_choice_positions, depth + 1)) {
+      assert(j - i > 1 && j - i < solutions.size());
+      if (!IsWinning(solutions.subspan(i, j - i), new_choice_positions)) {
         return !inferred_odd;
       }
+      i = j;
     }
   }
 
@@ -115,12 +105,10 @@ bool IsWinning(
 }  // namespace
 
 std::pair<Move, bool> SelectMoveFromSolutions(
-    const grid_t &givens, const solutions_t &solutions) {
+    const grid_t &givens, std::span<solution_t> solutions) {
   assert(solutions.size() > 1);
 
-  std::vector<size_t> possibilities(solutions.size());
-  std::iota(possibilities.begin(), possibilities.end(), 0);
-  candidates_t candidates = CalculateCandidates(solutions, possibilities);
+  candidates_t candidates = CalculateCandidates(solutions);
   std::vector<int> choice_positions;
   std::vector<Move> inferred_moves;
   for (int i = 0; i < 81; ++i) {
@@ -135,7 +123,7 @@ std::pair<Move, bool> SelectMoveFromSolutions(
   }
 
   // If there is an immediately winning move, always take it!
-  if (auto immediately_winning = FindImmediatelyWinningMove(solutions, possibilities, choice_positions)) {
+  if (auto immediately_winning = FindImmediatelyWinningMove(solutions, choice_positions)) {
     std::cerr << "Immediately winning move found!\n";
     return {*immediately_winning, true};
   }
@@ -150,17 +138,23 @@ std::pair<Move, bool> SelectMoveFromSolutions(
   for (int pos : choice_positions) {
     std::vector<int> new_choice_positions = Remove(choice_positions, pos);
 
-    for (int digit = 1; digit <= 9; ++digit) if (candidates[pos] & (1u << digit)) {
-      std::vector<size_t> new_possibilities = NarrowPossibilities(solutions, possibilities, pos, digit);
+    std::ranges::sort(solutions, [pos](const solution_t &a, const solution_t &b) {
+      return a[pos] < b[pos];
+    });
 
+    size_t i = 0;
+    while (i < solutions.size()) {
+      int digit = solutions[i][pos];
+      size_t j = i + 1;
+      while (j < solutions.size() && solutions[j][pos] == digit) ++j;
       // We should have found immediately-winning moves already before.
-      assert(new_possibilities.size() > 1);
-
-      if (!IsWinning(solutions, new_possibilities, new_choice_positions, 0)) {
+      assert(j - i > 1 && j - i < solutions.size());
+      if (!IsWinning(solutions.subspan(i, j - i), new_choice_positions)) {
         // Losing for the next player => winning for the previous player.
         std::cerr << "Winning move found!\n";
         return {Move{.pos = pos, .digit = digit}, false};
       }
+      i = j;
     }
   }
 
