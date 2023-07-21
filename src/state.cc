@@ -6,16 +6,6 @@
 #include <random>
 #include <string>
 
-namespace {
-
-std::array<uint8_t, 81> ToArray(const uint8_t (&digits)[81]) {
-  std::array<uint8_t, 81> a;
-  std::copy(digits, digits + 81, a.begin());
-  return a;
-}
-
-}  // namespace
-
 std::string State::DebugString() const {
   std::string s(81, '.');
   for (int i = 0; i < 81; ++i) s[i] = digit[i] ? '0' + digit[i] : '.';
@@ -91,8 +81,8 @@ EnumerateResult State::EnumerateSolutions(
   assert(max_count >= 0);
   solutions.clear();
   return EnumerateSolutions(
-    [&solutions, max_count](const uint8_t (&digits)[81]){
-      solutions.emplace_back(ToArray(digits));
+    [&solutions, max_count](const std::array<uint8_t, 81> &digits){
+      solutions.push_back(digits);
       return solutions.size() < (size_t) max_count;
     },
     max_work,

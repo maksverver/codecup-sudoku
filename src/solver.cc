@@ -46,7 +46,7 @@ void CountSolutions(State &state) {
 #else
   // Slightly slower implementation using EnumerateSolutions() instead.
   int count = 0;
-  EnumerateResult er = state.EnumerateSolutions([&count](const uint8_t(&)[81]){
+  EnumerateResult er = state.EnumerateSolutions([&count](const std::array<uint8_t, 81>&){
     return ++count < max_count;
   });
   if (!er.Accurate()) std::cout << "At least ";

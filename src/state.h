@@ -161,7 +161,7 @@ private:
   bool EnumerateSolutionsImpl(const C &callback, std::span<Position> todo, int64_t &work_left) {
     if (todo.empty()) {
       // Solution found!
-      return callback(const_cast<const uint8_t(&)[81]>(digit));
+      return callback(const_cast<const std::array<uint8_t, 81>&>(digit));
     }
 
     // Find most constrained cell to fill in.
@@ -220,7 +220,7 @@ private:
   // Recursively counts solutions.
   void CountSolutions(std::span<Position> todo, CountState &cs);
 
-  uint8_t digit[81] = {};
+  std::array<uint8_t, 81> digit = {};
   unsigned used_row[9] = {};
   unsigned used_col[9] = {};
   unsigned used_box[9] = {};
