@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <array>
 #include <cassert>
+#include <chrono>
 #include <cstdlib>
 #include <iostream>
 #include <optional>
@@ -15,9 +16,24 @@
 
 namespace {
 
-constexpr int max_work1 =  1000;
-constexpr int max_work2 = 10000;
-constexpr int max_count =  2000;
+constexpr int max_work1 =   1000;
+constexpr int max_work2 = 100000;
+constexpr int max_count =   2000;
+
+struct Timer {
+  std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
+
+  int64_t ElapsedMillis(bool reset = false) {
+    std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
+    int64_t result = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    if (reset) start = end;
+    return result;
+  }
+
+  void Reset() {
+    start = std::chrono::steady_clock::now();
+  }
+};
 
 std::optional<Move> ParseMove(const std::string &s) {
   if (s.size() != 3 ||
@@ -155,7 +171,8 @@ int main() {
     if (turn % 2 == my_player) {
       // My turn!
 
-      if (turn >= 15 && !analysis_complete) {
+      Timer timer;
+      if (!analysis_complete) {
         EnumerateResult er = state.EnumerateSolutions(solutions, max_count, max_work2);
         if (er.Accurate()) {
           analysis_complete = true;
@@ -165,7 +182,8 @@ int main() {
         }
       }
 
-      std::cerr << solutions.size() << (analysis_complete ? "" : "+") << " solutions\n";
+      std::cerr << solutions.size() << (analysis_complete ? "" : "+") <<
+          " solutions in " << timer.ElapsedMillis(true) << " ms\n";
 
       bool claim_winning = false;
 
@@ -188,11 +206,12 @@ int main() {
         selected_move = move;
         claim_winning = winning;
 
-        // TODO: to save time, I should reuse the analsysis information if both
+        // TODO: to save time, I should reuse the analysis information if both
         // players pick from the set of inferred digits!
       }
 
       // Output
+      std::cerr << "Selected move in " << timer.ElapsedMillis(true) << " ms\n";
       WriteOutputLine(FormatMove(*selected_move) + (claim_winning ? "!" :""));
 
     } else {
