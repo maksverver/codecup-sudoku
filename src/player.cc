@@ -210,13 +210,13 @@ int main() {
         auto [move, winning] = SelectMoveFromSolutions(givens, solutions);
         selected_move = move;
         claim_winning = winning;
+        std::cerr << "Selected move in " << timer.ElapsedMillis(true) << " ms\n";
 
         // TODO: to save time, I should reuse the analysis information if both
         // players pick from the set of inferred digits!
       }
 
       // Output
-      std::cerr << "Selected move in " << timer.ElapsedMillis(true) << " ms\n";
       WriteOutputLine(FormatMove(*selected_move) + (claim_winning ? "!" :""));
 
     } else {
