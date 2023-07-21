@@ -9,7 +9,8 @@ COMMON_OBJS=build/analysis.o build/check.o build/random.o build/state.o
 PLAYER_OBJS=$(COMMON_OBJS) build/player.o
 SOLVER_OBJS=$(COMMON_OBJS) build/solver.o
 
-COMBINED_SRCS=$(COMMON_HDRS) $(COMMON_SRCS) src/player.cc
+# Note that headers must be included in dependency order.
+COMBINED_SRCS=src/check.h src/check.cc src/random.h src/random.cc src/state.h src/state.cc src/analysis.h src/analysis.cc src/player.cc
 
 all: $(BINS)
 
