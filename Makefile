@@ -1,4 +1,3 @@
-#CXXFLAGS=-std=c++20 -O3 -Wall -Wextra -march=native
 CXXFLAGS=-std=c++20 -Og -g -D_GLIBCXX_DEBUG -Wall -Wextra
 
 BINS=output/player output/solver
