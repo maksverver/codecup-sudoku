@@ -137,6 +137,8 @@ std::pair<Move, bool> SelectMoveFromSolutions(
   }
 
   // Otherwise, recursively search for a winning move.
+  std::vector<Move> losing_moves = inferred_moves;
+  int max_solutions_remaining = inferred_moves.empty() ? 0 : solutions.size();
   for (int pos : choice_positions) {
     std::vector<int> new_choice_positions = Remove<int>(choice_positions, pos);
 
@@ -149,17 +151,28 @@ std::pair<Move, bool> SelectMoveFromSolutions(
       int digit = solutions[i][pos];
       size_t j = i + 1;
       while (j < solutions.size() && solutions[j][pos] == digit) ++j;
+      size_t n = j - i;
       // We should have found immediately-winning moves already before.
-      assert(j - i > 1 && j - i < solutions.size());
-      if (!IsWinning(solutions.subspan(i, j - i), new_choice_positions)) {
+      assert(n > 1 && n < solutions.size());
+      Move move = {.pos = pos, .digit = digit};
+      if (IsWinning(solutions.subspan(i, n), new_choice_positions)) {
+        // Winning for the next player => losing for the previous player.
+        if ((int) n > max_solutions_remaining) {
+          max_solutions_remaining = n;
+          losing_moves.clear();
+        }
+        if ((int) n == max_solutions_remaining) {
+          losing_moves.push_back(move);
+        }
+      } else {
         // Losing for the next player => winning for the previous player.
         std::cerr << "Winning move found!\n";
-        return {Move{.pos = pos, .digit = digit}, false};
+        return {move, false};
       }
       i = j;
     }
   }
 
   std::cerr << "Losing :-(\n";
-  return {RandomSample(inferred_moves), false};
+  return {RandomSample(losing_moves), false};
 }
