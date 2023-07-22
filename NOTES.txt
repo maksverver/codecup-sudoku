@@ -1,3 +1,14 @@
+BUILDING
+
+To build the player and solver:
+
+% make -j4
+
+Or for an optimized build:
+
+% make -f Makefile.opt -j4
+
+
 STRATEGY
 
 Let's call the digits that were already placed in the grid the *givens*, or more
