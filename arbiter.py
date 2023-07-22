@@ -51,7 +51,7 @@ def Launch(command, logfile):
   return subprocess.Popen(command, shell=True, text=True, stdin=PIPE, stdout=PIPE, stderr=stderr)
 
 
-def RunGame(command1, command2, logfile1, logfile2):
+def RunGame(command1, command2, logfile1, logfile2, fast):
   roles = ['First', 'Second']
   commands = [command1, command2]
   procs = [Launch(command1, logfile1), Launch(command2, logfile2)]
@@ -69,9 +69,10 @@ def RunGame(command1, command2, logfile1, logfile2):
     assert grid[i] == 0
     grid[i] = d
 
-    # Recalculate solution count
-    nonlocal solution_count
-    solution_count = sudoku.CountSolutions(grid, 2)
+    if not fast:
+      # Recalculate solution count
+      nonlocal solution_count
+      solution_count = sudoku.CountSolutions(grid, 2)
 
   def Fail(outcome):
     outcomes[turn % 2] = outcome
@@ -110,6 +111,9 @@ def RunGame(command1, command2, logfile1, logfile2):
 
     # Player claimed the win.
     if claim_win:
+      if fast:
+        # Calculate solution count (since we haven't before in fast mode)
+        solution_count = sudoku.CountSolutions(grid, 2)
       if solution_count == 1:
         outcomes[turn % 2] = Outcome.WIN
       else:
@@ -134,7 +138,7 @@ def RunGame(command1, command2, logfile1, logfile2):
   return outcomes, times
 
 
-def RunGames(commands, names, rounds, logdir):
+def RunGames(commands, names, rounds, logdir, fast=False):
   P = len(commands)
 
   if rounds == 0:
@@ -165,7 +169,7 @@ def RunGames(commands, names, rounds, logdir):
     print('%4d %-18s %-18s ' % (game_id, name1, name2), end='')
     sys.stdout.flush()
 
-    outcomes, times = RunGame(command1, command2, logfilename1, logfilename2)
+    outcomes, times = RunGame(command1, command2, logfilename1, logfilename2, fast)
 
     # Add global statistics
     player_time_total[i] += times[0]
@@ -217,6 +221,8 @@ def Main():
       help='command to execute for player 2')
   parser.add_argument('commandN', type=str, nargs='*',
       help='command to execute for player N')
+  parser.add_argument('-f', '--fast', action='store_true',
+      help='increase speed by disabling checking for unsolvable grids')
   parser.add_argument('--rounds', type=int, default=0,
       help='number of full rounds to play (or 0 for a single game)')
   parser.add_argument('--logdir', type=str, default=None,
@@ -229,7 +235,7 @@ def Main():
 
   names = DeduplicateNames([os.path.basename(shlex.split(command)[0]) for command in commands])
 
-  RunGames(commands, names, args.rounds, args.logdir)
+  RunGames(commands, names, args.rounds, args.logdir, fast=args.fast)
 
 
 if __name__ == '__main__':
