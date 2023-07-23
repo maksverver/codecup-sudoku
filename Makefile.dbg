@@ -1,0 +1,8 @@
+include vars.make
+
+CXXFLAGS=-std=c++20 -Og -g -D_GLIBCXX_DEBUG -Wall -Wextra
+
+OBJ=build/dbg/
+BIN=output/dbg/
+
+include rules.make

@@ -1,13 +1,12 @@
 BUILDING
 
-To build the player and solver:
+To build the player and solver, run one of:
 
-% make -j4
-
-Or for an optimized build:
+% make -f Makefile.dbg -j4
 
 % make -f Makefile.opt -j4
 
+The output files are written to output/dbg/player etc.
 
 STRATEGY
 
