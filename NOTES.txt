@@ -83,11 +83,27 @@ The hard parts of the algorithms are 1 and 5.
 
 OBSERVATIONS
 
-The game is technically an impartial game, but that doesn't seem to help.
+The game is technically an impartial game.
 
-Dividing a game state into choice cells and inferred cells seems to almost make
-it a composition of two impartial games, but it doesn't quite work, because when
-there are no choice cells, then the inferred cells no longer matter, so these
-games don't compose in the usual way to
+Moreover, if there is not an immediately winning move, then we can fill in all
+inferred digits, and the remaining game can be decomposed and analyzed using
+the Sprague Grundy theorem! (Then the final game value must be negated if the
+number of inferred digits was odd.)
 
+To decompose the grid into independent components, we need to consider that
+cells are dependent if they are in the same row/column/box and share at least
+1 candidate. Unfortunately, it doesn't seem to happen naturally that there are
+multiple components until very close to the end of the game.
 
+For example, if we have only the top-left box with the following candidates:
+
+    [123] [123] [123]   4  5  6   7  8  9
+    [456] [456] [456]   7  8  9   1  2  3
+    [78]  [78]    9     1  2  3   4  5  6
+
+Then the puzzle can be decomposed into 3 parts (the rows of the box) which
+are solved independently. The Grundy numbers are 0, 0 and 1, and 0 ^ 0 ^ 1 == 1,
+so the overall Grundy number is 1 too, meaning the next player can win.
+
+Unfortunately it looks like states that allow decomposition don't occur often
+in pratice.
