@@ -181,15 +181,15 @@ void EnumerateSolutions(State &state) {
     if (c > 0 && c % 3 == 0) std::cout << "  ";
     std::cout << "    " << (char) ('a' + c);
   }
-  std::cout << "\n\n";
+  std::cout << "\n\n" << std::flush;
 
   if (solutions.size() == 0) {
-    std::cerr << "No solution possible!\n";
+    std::cout << "No solution possible!\n";
   } else if (solutions.size() == 1) {
-    std::cerr << "Solution is unique!\n";
+    std::cout << "Solution is unique!\n";
   } else {
     auto [move, won] = SelectMoveFromSolutions(givens, solutions);
-    std::cerr << "Optimal move: pos=" << move.pos << " digit=" << move.digit << " ("
+    std::cout << "Optimal move: pos=" << move.pos << " digit=" << move.digit << " ("
         << (char)('A' + move.pos/9) << (char)('a' + move.pos%9) << move.digit << (won ? "!" : "") << ")\n";
   }
 }
