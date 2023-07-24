@@ -24,6 +24,8 @@ struct Move {
   }
 };
 
+std::ostream &operator<<(std::ostream &os, const Move &move);
+
 inline int Row(int i) { return (unsigned) i / 9; }
 inline int Col(int i) { return (unsigned) i % 9; }
 inline int Box(int i) { return ((unsigned) i % 9 / 3) + 3*((unsigned)i / 27); }

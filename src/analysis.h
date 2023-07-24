@@ -5,6 +5,7 @@
 
 #include <array>
 #include <cstdint>
+#include <iostream>
 #include <optional>
 #include <utility>
 #include <vector>
@@ -18,14 +19,23 @@ using solution_t = grid_t;
 // A set of candidates is a bitmask of possible digits per field (note bit 0 is not used!)
 using candidates_t = std::array<unsigned, 81>;
 
+struct AnalysisStats {
+    int depth = 0, max_depth = 0;
+    int64_t recusive_calls = 0;
+    int64_t total_solutions = 0;
+    int64_t immediately_won = 0;
+    int64_t memo_accessed = 0;
+    int64_t memo_returned = 0;
+};
+
+std::ostream &operator<<(std::ostream &os, const AnalysisStats &stats);
+
 // Given the set of given digits, and a *complete* set of solutions, determines
 // the optimal move (first element of the result) and whether it is a winning
 // immediately (second element of the result).
 //
-// Note: this function will rearrange the elements of `solutions`!
-//
 // Preconditions: solutions.size() > 1
 std::pair<Move, bool> SelectMoveFromSolutions(
-    const grid_t &givens, std::span<solution_t> solutions);
+    const grid_t &givens, std::span<const solution_t> solutions, AnalysisStats *stats);
 
 #endif  // ndef ANALYSIS_H

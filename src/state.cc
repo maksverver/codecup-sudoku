@@ -10,6 +10,10 @@ static char Char(int d, char zero='.') {
   return d == 0 ? zero : (char) ('0' + d);
 }
 
+std::ostream &operator<<(std::ostream &os, const Move &move) {
+  return os << "Move{pos=" << move.pos << ", digit=" << move.digit << "}";
+}
+
 std::string State::DebugString() const {
   std::string s(81, '.');
   for (int i = 0; i < 81; ++i) s[i] = Char(digit[i]);

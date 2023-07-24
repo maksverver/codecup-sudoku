@@ -11,11 +11,11 @@ PLAYER_OBJS=$(COMMON_OBJS) $(OBJ)player.o
 SOLVER_OBJS=$(COMMON_OBJS) $(OBJ)solver.o
 
 # Note that headers must be included in dependency order.
-COMBINED_SRCS=$(SRC)check.h $(SRC)check.cc $(SRC)random.h $(SRC)random.cc $(SRC)state.h $(SRC)state.cc $(SRC)analysis.h $(SRC)analysis.cc $(SRC)player.cc
+COMBINED_SRCS=$(SRC)check.h $(SRC)check.cc $(SRC)random.h $(SRC)random.cc $(SRC)state.h $(SRC)state.cc $(SRC)memo.h $(SRC)analysis.h $(SRC)analysis.cc $(SRC)player.cc
 
 all: $(BINARIES)
 
-$(OBJ)analysis.o: $(SRC)analysis.cc $(SRC)analysis.h $(SRC)random.h $(SRC)state.h
+$(OBJ)analysis.o: $(SRC)analysis.cc $(SRC)analysis.h $(SRC)memo.h $(SRC)random.h $(SRC)state.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 $(OBJ)check.o:  $(SRC)check.cc    $(SRC)check.h;  $(CXX) $(CXXFLAGS) -c $< -o $@
 $(OBJ)random.o: $(SRC)random.cc   $(SRC)random.h; $(CXX) $(CXXFLAGS) -c $< -o $@
