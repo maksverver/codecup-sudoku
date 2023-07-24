@@ -266,8 +266,12 @@ bool PlayGame() {
 } // namespace
 
 int main() {
-  std::cerr << player_name <<
-      " (" <<std::numeric_limits<size_t>::digits << " bit)\n";
+  std::cerr << player_name
+      << " (" << std::numeric_limits<size_t>::digits << " bit)"
+#ifdef __VERSION__
+      << " (compiler version " __VERSION__ << ")"
+#endif
+      << "\n";
 
   return PlayGame() ? EXIT_SUCCESS : EXIT_FAILURE;
 }
