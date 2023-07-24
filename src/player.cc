@@ -9,12 +9,15 @@
 #include <chrono>
 #include <cstdlib>
 #include <iostream>
+#include <limits>
 #include <optional>
 #include <random>
 #include <string>
 #include <vector>
 
 namespace {
+
+const std::string player_name = "Numberwang!";
 
 constexpr int max_work1 =   1000;
 constexpr int max_work2 = 100000;
@@ -94,7 +97,8 @@ std::string ReadInputLine() {
   //
   //  if (!std::getline(std::cin, s)) {
   //
-  // but the CodeCup judging system doesn't seem to like it!
+  // but the CodeCup judging system sometimes writes empty lines before the
+  // actual input! See: https://forum.codecup.nl/read.php?31,2221
   if (!(std::cin >> s)) {
     std::cerr << "Unexpected end of input!\n";
     exit(1);
@@ -156,9 +160,7 @@ Move PickMoveIncomplete(const State &state, std::span<const solution_t> solution
   return RandomSample(best_moves);
 }
 
-} // namespace
-
-int main() {
+bool PlayGame() {
   std::string input = ReadInputLine();
   const int my_player = (input == "Start" ? 0 : 1);
 
@@ -202,7 +204,7 @@ int main() {
         // Only one solution left. I have already won! (This should be rare.)
         std::cerr << "Solution is already unique!\n";
         WriteOutputLine("!");
-        return 0;
+        return true;
       } else {
         // The hard case: select optimal move given the complete set of solutions.
         grid_t givens;
@@ -225,7 +227,7 @@ int main() {
 
       if (auto m = ParseMove(input); !m) {
         std::cerr << "Could not parse move!\n";
-        return 1;
+        return false;
       } else {
         selected_move = *m;
       }
@@ -234,7 +236,7 @@ int main() {
     assert(selected_move);
     if (!state.CanPlay(*selected_move)) {
       std::cerr << "Invalid move!\n";
-      return 1;
+      return false;
     }
 
     state.Play(*selected_move);
@@ -258,5 +260,14 @@ int main() {
   }
 
   std::cerr << "Exiting normally.\n" << std::flush;
-  return 0;
+  return true;
+}
+
+} // namespace
+
+int main() {
+  std::cerr << player_name <<
+      " (" <<std::numeric_limits<size_t>::digits << " bit)\n";
+
+  return PlayGame() ? EXIT_SUCCESS : EXIT_FAILURE;
 }
