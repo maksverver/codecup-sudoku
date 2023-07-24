@@ -180,7 +180,7 @@ def RunGames(commands, names, rounds, logdir, fast=False):
     player_outcomes[j][outcomes[1]] += 1
 
     print('%-10s %-10s %6.2f %6.2f' % (outcomes[0].name, outcomes[1].name, times[0], times[1]))
-  print('---- --------------- --------------- ---------- ---------- ------ ------')
+  print('---- ------------------ ------------------ ---------- ---------- ------ ------')
 
   # Print summary of players.
   if len(pairings) > 1:
