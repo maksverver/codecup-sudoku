@@ -1,6 +1,8 @@
 #ifndef STATE_H_INCLUDED
 #define STATE_H_INCLUDED
 
+#include "random.h"
+
 #include <algorithm>
 #include <array>
 #include <bit>
@@ -128,14 +130,14 @@ public:
   EnumerateResult EnumerateSolutions(
     std::vector<std::array<uint8_t, 81>> &solutions,
     int max_count = 1e9, int64_t max_work = 1e18,
-    std::mt19937 *rng = nullptr);
+    rng_t *rng = nullptr);
 
   // Enumerates solutions and invokes callback(digits) until it returns false,
   // or until work_left is 0. Returns `false` if the callback ever returned
   // false, or true otherwise.
   template<typename Callback>
   EnumerateResult EnumerateSolutions(
-      const Callback &callback, int64_t max_work = 1e18, std::mt19937 *rng = nullptr) {
+      const Callback &callback, int64_t max_work = 1e18, rng_t *rng = nullptr) {
     std::array<Position, 81> buf;
     std::span<Position> todo = GetEmptyPositions(buf);
     if (rng) std::shuffle(todo.begin(), todo.end(), *rng);
