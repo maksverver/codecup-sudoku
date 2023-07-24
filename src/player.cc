@@ -178,7 +178,7 @@ int main() {
 
       Timer timer;
       if (!analysis_complete) {
-        EnumerateResult er = state.EnumerateSolutions(solutions, max_count, max_work2, &rng);
+        EnumerateResult er = state.EnumerateSolutions(solutions, max_count, max_work2, &Rng());
         if (er.Accurate()) {
           analysis_complete = true;
           assert(!solutions.empty());
