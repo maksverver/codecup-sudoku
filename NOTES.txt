@@ -1,12 +1,25 @@
+DEPENDENCIES
+
+ - C/C++
+ - GNU Make
+
+
 BUILDING
 
-To build the player and solver, run one of:
+To build everything, simply run make:
 
-% make -f Makefile.dbg -j4
+% make -j4
 
-% make -f Makefile.opt -j4
+Output files are in output/
 
-The output files are written to output/dbg/player etc.
+To only build e.g. a release build of the solver:
+
+% make -f Makefile.release solver
+
+To build a combined sourcefile in output/player-combined.cc, run e.g.:
+
+%  make -f Makefile.release combined
+
 
 STRATEGY
 
