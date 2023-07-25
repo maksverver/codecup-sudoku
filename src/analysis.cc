@@ -10,10 +10,14 @@
 #include <vector>
 
 namespace {
-
 memo_t memo;
 
-uint64_t Fnv1a_64(std::span<const uint8_t> bytes) {
+struct HashedSolution {
+  memo_key_t hash;
+  solution_t solution;
+};
+
+constexpr uint64_t Fnv1a_64(std::span<const uint8_t> bytes) {
   uint64_t hash = 0xcbf29ce484222325;
   for (uint8_t byte : bytes) {
     hash ^= byte;
@@ -27,10 +31,14 @@ memo_key_t Hash(const solution_t &solution) {
   return Fnv1a_64(solution);
 }
 
-struct HashedSolution {
-  memo_key_t hash;
-  solution_t solution;
-};
+// Note: this is an order-independent hash! All permutations of solutions
+// have the same hash value. That's intentional, since the span of solutions
+// is supposed to model a set of solutions, not an ordered sequence.
+memo_key_t HashSolutionSet(std::span<const HashedSolution> solutions) {
+  memo_key_t hash = 0;
+  for (const auto &entry : solutions) hash ^= Hash(entry.solution);
+  return hash;
+}
 
 // For each cell, calculates a bitmask of possible digits.
 candidates_t CalculateCandidates(std::span<const HashedSolution> solutions) {
@@ -126,15 +134,12 @@ bool IsWinning(
     return true;
   }
 
-  // Order-independent hash of solution set.
-  memo_key_t hash = 0;
-  for (const auto &entry : solutions) hash ^= entry.hash;
-
   bool winning;
 
   // Memoization happens here.
+  const memo_key_t key = HashSolutionSet(solutions);
   if (stats) ++stats->memo_accessed;
-  auto mem = memo.Lookup(hash);
+  auto mem = memo.Lookup(key);
   if (mem.HasValue()) {
     if (stats) ++stats->memo_returned;
     winning = mem.GetWinning();
