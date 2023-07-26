@@ -9,6 +9,7 @@
 #ifndef MEMO_H_INCLUDED
 #define MEMO_H_INCLUDED
 
+#include <array>
 #include <cassert>
 #include <cstdint>
 #include <unordered_map>
@@ -32,7 +33,7 @@ public:
 class WriteonlyMemo {
 public:
   struct Value {
-    uint8_t *data = 0;
+    uint8_t *data = nullptr;
 
     bool HasValue() const { return false; }
     bool GetWinning() const { assert(false); }
@@ -52,7 +53,7 @@ private:
 class RealMemo {
 public:
   struct Value {
-    uint8_t *data = 0;
+    uint8_t *data = nullptr;
 
     bool HasValue() const { return *data != 0; }
     bool GetWinning() const { return *data - 1; }
@@ -63,6 +64,48 @@ public:
 
 private:
   std::unordered_map<memo_key_t, uint8_t> data;
+};
+
+class LossyMemo {
+public:
+  // 64 × 2^20 = about 67 million entries. Each entry takes 16 bytes, so total memory used is 1 GB.
+  static const size_t size = 64 << 20;
+
+  struct Entry {
+    uint64_t key;
+    uint8_t data;
+  };
+
+  static_assert(sizeof(Entry) == 16);
+
+  struct Value {
+    uint64_t key;
+    Entry *entry;
+
+    bool HasValue() const {
+      return key == entry->key && entry->data != 0;
+    }
+
+    bool GetWinning() const {
+      return entry->data - 1;
+    }
+
+    void SetWinning(bool b) {
+      // TODO: stats on collisions?
+      // if (entry->key != 0 && key != entry->key) ReportCollision();
+
+      // Unconditionally overwrite previous value!
+      entry->key = key;
+      entry->data = b + 1;
+    }
+  };
+
+  Value Lookup(memo_key_t key) {
+    return Value{key, &data[(size_t) key % size]};
+  }
+
+private:
+  std::array<Entry, size> data;
 };
 
 // Change the type of memo here to enable/disable memoization.
