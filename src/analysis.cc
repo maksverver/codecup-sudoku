@@ -4,6 +4,7 @@
 #include "state.h"
 
 #include <algorithm>
+#include <cstdint>
 #include <optional>
 #include <random>
 #include <span>
@@ -42,12 +43,22 @@ memo_key_t HashSolutionSet(std::span<const HashedSolution> solutions) {
 }
 
 // For each cell, calculates a bitmask of possible digits.
-candidates_t CalculateCandidates(std::span<const HashedSolution> solutions) {
+candidates_t CalculateCandidates(std::span<const solution_t> solutions) {
   candidates_t candidates = {};
-  for (auto const &entry : solutions) {
-    for (int i = 0; i < 81; ++i) candidates[i] |= 1u << entry.solution[i];
+  for (const solution_t &solution : solutions) {
+    for (int i = 0; i < 81; ++i) candidates[i] |= 1u << solution[i];
   }
   return candidates;
+}
+
+// Returns whether all solutions have the same digit at position `pos`.
+bool IsDetermined(std::span<const HashedSolution> solutions, int pos) {
+  assert(!solutions.empty());
+  int digit = solutions[0].solution[pos];
+  for (size_t i = 1; i < solutions.size(); ++i) {
+    if (solutions[i].solution[pos] != digit) return false;
+  }
+  return true;
 }
 
 constexpr bool Determined(unsigned mask) { return (mask & (mask - 1)) == 0; }
@@ -85,6 +96,27 @@ template<typename T> std::vector<T> Remove(std::span<const T> v, int i) {
 // single solution. i.e., it is a position and digit such that only one solution
 // has that digit in that position.
 std::optional<Move> FindImmediatelyWinningMove(
+    std::span<const solution_t> solutions,
+    std::span<const int> choice_positions) {
+  assert(solutions.size() > 1);
+  assert(choice_positions.size() > 0);
+  for (int pos : choice_positions) {
+    int solution_count[10] = {};
+    for (const solution_t &solution : solutions) {
+      ++solution_count[solution[pos]];
+    }
+    for (int digit = 1; digit <= 9; ++digit) {
+      if (solution_count[digit] == 1) {
+        return Move{pos, digit};
+      }
+    }
+  }
+  return {};
+}
+
+// Optimized version of FindImmediatelyWinningMove() above, for use in
+// IsWinning().
+bool HasImmediatelyWinningMove(
     std::span<const HashedSolution> solutions,
     std::span<const int> choice_positions) {
   assert(solutions.size() > 1);
@@ -95,12 +127,10 @@ std::optional<Move> FindImmediatelyWinningMove(
       ++solution_count[entry.solution[pos]];
     }
     for (int digit = 1; digit <= 9; ++digit) {
-      if (solution_count[digit] == 1) {
-        return Move{pos, digit};
-      }
+      if (solution_count[digit] == 1) return true;
     }
   }
-  return {};
+  return false;
 }
 
 // Recursively solves the given state assuming that:
@@ -139,19 +169,18 @@ bool IsWinning(
     stats->total_solutions += solutions.size();
   }
 
-  candidates_t candidates = CalculateCandidates(solutions);
   int choice_positions_data[81];
   size_t choice_positions_size = 0;
-  for (int i : old_choice_positions) {
-    if (Determined(candidates[i])) {
+  for (int pos : old_choice_positions) {
+    if (IsDetermined(solutions, pos)) {
       ++inferred_count;
     } else {
-      choice_positions_data[choice_positions_size++] = i;
+      choice_positions_data[choice_positions_size++] = pos;
     }
   }
   std::span<const int> choice_positions(choice_positions_data, choice_positions_size);
 
-  if (auto result = FindImmediatelyWinningMove(solutions, choice_positions)) {
+  if (HasImmediatelyWinningMove(solutions, choice_positions)) {
     if (stats) ++stats->immediately_won;
     return true;
   }
@@ -298,13 +327,7 @@ std::pair<Move, bool> SelectMoveFromSolutions(
     stats->total_solutions += solutions.size();
   }
 
-  std::vector<HashedSolution> hashed_solutions;
-  hashed_solutions.reserve(solutions.size());
-  for (const auto &solution : solutions) {
-    hashed_solutions.push_back(HashedSolution{Hash(solution), solution});
-  }
-
-  candidates_t candidates = CalculateCandidates(hashed_solutions);
+  candidates_t candidates = CalculateCandidates(solutions);
   std::vector<int> choice_positions;
   std::vector<Move> inferred_moves;
   for (int i = 0; i < 81; ++i) {
@@ -319,9 +342,15 @@ std::pair<Move, bool> SelectMoveFromSolutions(
   }
 
   // If there is an immediately winning move, always take it!
-  if (auto immediately_winning = FindImmediatelyWinningMove(hashed_solutions, choice_positions)) {
+  if (auto immediately_winning = FindImmediatelyWinningMove(solutions, choice_positions)) {
     std::cerr << "That's numberwang! (Immediately winning move found.)\n";
     return {*immediately_winning, true};
+  }
+
+  std::vector<HashedSolution> hashed_solutions;
+  hashed_solutions.reserve(solutions.size());
+  for (const auto &solution : solutions) {
+    hashed_solutions.push_back(HashedSolution{Hash(solution), solution});
   }
 
   // Otherwise, recursively search for a winning move.
