@@ -19,8 +19,7 @@ namespace {
 
 const std::string player_name = "Numberwang!";
 
-constexpr int max_work1 =   1000;
-constexpr int max_work2 = 100000;
+constexpr int max_work  = 100000;
 constexpr int max_count =   2000;
 
 struct Timer {
@@ -59,37 +58,6 @@ std::string FormatMove(const Move &m) {
   s[2] = '0' + m.digit;
   return s;
 }
-
-// TODO: remove this
-#if 0
-// Looks ahead only one move, picking a unique solution if possible.
-std::optional<std::pair<Move, bool>> SelectMove(State &state) {
-  std::vector<Move> moves[3];
-  for (int i = 0; i < 81; ++i) if (state.IsFree(i)) {
-    unsigned used = state.CellUsed(i);
-    for (int d = 1; d <= 9; ++d) if ((used & (1u << d)) == 0) {
-      Move move = {i, d};
-      assert(state.CanPlay(move));
-      state.Play(move);
-      CountResult cr = state.CountSolutions(2, max_work1);
-      state.Undo(move);
-      if (cr.WorkLimitReached()) {
-        std::cerr << ("Work limit exceeded! " + state.DebugString() + "\n");
-      } else if (cr.count == 1) {
-        // Actual winning move detected! Prioritize this over everything else.
-        return {{move, true}};
-      }
-      moves[cr.count].push_back(move);
-    }
-  }
-  // Pick a random move that keeps the most options open (accounting for the
-  // fact that the move count may only be a lower bound if we ran out of time).
-  int n = 2;
-  while (n >= 0 && moves[n].empty()) --n;
-  if (n < 0) return {};
-  return {{RandomSample(moves[n]), false}};
-}
-#endif
 
 std::string ReadInputLine() {
   std::string s;
@@ -180,7 +148,7 @@ bool PlayGame() {
 
       Timer timer;
       if (!analysis_complete) {
-        EnumerateResult er = state.EnumerateSolutions(solutions, max_count, max_work2, &Rng());
+        EnumerateResult er = state.EnumerateSolutions(solutions, max_count, max_work, &Rng());
         if (er.Accurate()) {
           analysis_complete = true;
           assert(!solutions.empty());
