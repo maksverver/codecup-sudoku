@@ -4,6 +4,8 @@
 #include "state.h"
 
 #include <algorithm>
+#include <bit>
+#include <bitset> // delete this
 #include <cstdint>
 #include <optional>
 #include <random>
@@ -13,6 +15,41 @@
 namespace {
 
 using position_t = int_fast8_t;
+
+struct BitSet {
+  uint64_t word[2] = {0, 0};
+
+  constexpr static unsigned end = 128;
+
+  unsigned NextIndex(unsigned i) const {
+    if (i < 64) {
+      uint64_t r = word[0] >> i;
+      if (r) return i + std::countr_zero(r);
+      i = 64;
+    }
+    if (i < 128) {
+      uint64_t r = word[1] >> (i - 64);
+      if (r) return i + std::countr_zero(r);
+    }
+    return end;
+  }
+
+  bool Get(unsigned i) const {
+    return (word[i / 64] >> (i % 64)) & 1;
+  }
+
+  void Set(unsigned i) {
+    word[i / 64] |= uint64_t{1} << (i % 64);
+  }
+
+  void Clear(unsigned i) {
+    word[i / 64] &= ~(uint64_t{1} << (i % 64));
+  }
+
+  void Toggle(unsigned i) {
+    word[i / 64] ^= uint64_t{1} << (i % 64);
+  }
+};
 
 memo_t memo;
 
@@ -115,7 +152,7 @@ std::optional<Move> FindImmediatelyWinningMove(
 // its results are memoized in IsWinning().
 bool IsWinning2(
     std::span<HashedSolution> solutions,
-    std::span<position_t> choice_positions,
+    BitSet &choice_positions,
     int inferred_count,
     AnalysisStats *stats);
 
@@ -130,11 +167,11 @@ bool IsWinning2(
 // of inferred digits.
 bool IsWinning(
     std::span<HashedSolution> solutions,
-    std::span<const position_t> old_choice_positions,
+    const BitSet &old_choice_positions,
     int inferred_count,
     AnalysisStats *stats) {
   assert(solutions.size() > 1);
-  assert(!old_choice_positions.empty());
+  assert(old_choice_positions.word[0] || old_choice_positions.word[1]);
 
   if (stats) {
     stats->max_depth = std::max(stats->max_depth, stats->depth);
@@ -151,9 +188,8 @@ bool IsWinning(
   //  2. Check if there is a digit that occurs in exactly 1 solution. If so,
   //     then this is an immediately winning move.
   //
-  position_t choice_positions_data[81];
-  size_t choice_positions_size = 0;
-  for (position_t pos : old_choice_positions) {
+  BitSet choice_positions;
+  for (int pos = old_choice_positions.NextIndex(0); pos != BitSet::end; pos = old_choice_positions.NextIndex(pos + 1)) {
     int solution_count[9] = {};
     bool inferred = false;
     for (const auto &entry : solutions) {
@@ -165,7 +201,7 @@ bool IsWinning(
     }
     if (!inferred) {
       for (int c : solution_count) if (c == 1) return true;  // Immediately winning!
-      choice_positions_data[choice_positions_size++] = pos;
+      choice_positions.Set(pos);
     }
   }
 
@@ -180,7 +216,6 @@ bool IsWinning(
     winning = mem.GetWinning();
   } else {
     // Solve recursively.
-    std::span<position_t> choice_positions(choice_positions_data, choice_positions_size);
     winning = IsWinning2(solutions, choice_positions, inferred_count, stats);
     mem.SetWinning(winning);
   }
@@ -190,7 +225,7 @@ bool IsWinning(
 
 bool IsWinning2(
     std::span<HashedSolution> solutions,
-    std::span<position_t> choice_positions,
+    BitSet &choice_positions,
     int inferred_count,
     AnalysisStats *stats) {
 
@@ -201,11 +236,8 @@ bool IsWinning2(
     if (!winning) return true;
   }
 
-  for (size_t k = 0; k < choice_positions.size(); ++k) {
-    position_t pos = choice_positions[k];
-
-    // Temporarily replace selected position.
-    choice_positions[k] = choice_positions[choice_positions.size() - 1];
+  for (int pos = choice_positions.NextIndex(0); pos != BitSet::end; pos = choice_positions.NextIndex(pos + 1)) {
+    choice_positions.Toggle(pos);
 
     // TODO: maybe replace by a counting sort if this is a performance bottleneck
     std::ranges::sort(solutions, [pos](const HashedSolution &a, const HashedSolution &b) {
@@ -222,15 +254,14 @@ bool IsWinning2(
       if (stats) ++stats->depth;
       bool winning = IsWinning(
           solutions.subspan(i, j - i),
-          choice_positions.subspan(0, choice_positions.size() - 1),
+          choice_positions,
            inferred_count, stats);
       if (stats) --stats->depth;
       if (!winning) return true;
       i = j;
     }
 
-    // Restore temporarily replaced position.
-    choice_positions[k] = pos;
+    choice_positions.Toggle(pos);
   }
 
   return false;
@@ -251,11 +282,14 @@ Move SelectMoveFromSolutions2(
     AnalysisStats *stats) {
   assert(solutions.size() > 1);
 
+  BitSet choice_positions_bitset;
+  for (auto p : choice_positions) choice_positions_bitset.Set(p);
+
   // Recursively search for a winning move.
   std::vector<Move> losing_moves = inferred_moves;
   int max_solutions_remaining = inferred_moves.empty() ? 0 : solutions.size();
   if (ReduceInferredCount(inferred_moves.size()) > 0) {
-    if (!IsWinning(solutions, choice_positions, inferred_moves.size() - 1, stats)) {
+    if (!IsWinning(solutions, choice_positions_bitset, inferred_moves.size() - 1, stats)) {
       std::cerr << "Winning move found! (using an odd inferred move)\n";
       return RandomSample(inferred_moves);
     }
@@ -263,6 +297,8 @@ Move SelectMoveFromSolutions2(
   for (position_t pos : choice_positions) {
     std::vector<position_t> new_choice_positions =
         Remove<position_t>(choice_positions, pos);
+    BitSet new_choice_positions_bitset;
+    for (auto p : new_choice_positions) new_choice_positions_bitset.Set(p);
 
     std::ranges::sort(solutions, [pos](const HashedSolution &a, const HashedSolution &b) {
       return a.solution[pos] < b.solution[pos];
@@ -277,7 +313,7 @@ Move SelectMoveFromSolutions2(
       // We should have found immediately-winning moves already before.
       assert(n > 1 && n < solutions.size());
       Move move = {.pos = pos, .digit = digit};
-      if (IsWinning(solutions.subspan(i, n), new_choice_positions, inferred_moves.size(), stats)) {
+      if (IsWinning(solutions.subspan(i, n), new_choice_positions_bitset, inferred_moves.size(), stats)) {
         // Winning for the next player => losing for the previous player.
         if ((int) n > max_solutions_remaining) {
           max_solutions_remaining = n;
