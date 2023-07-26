@@ -113,7 +113,7 @@ std::optional<Move> FindImmediatelyWinningMove(
 // its results are memoized in IsWinning().
 bool IsWinning2(
     std::span<HashedSolution> solutions,
-    std::span<const int> choice_positions,
+    std::span<int> choice_positions,
     int inferred_count,
     AnalysisStats *stats);
 
@@ -166,7 +166,6 @@ bool IsWinning(
       choice_positions_data[choice_positions_size++] = pos;
     }
   }
-  std::span<const int> choice_positions(choice_positions_data, choice_positions_size);
 
   bool winning;
 
@@ -179,6 +178,7 @@ bool IsWinning(
     winning = mem.GetWinning();
   } else {
     // Solve recursively.
+    std::span<int> choice_positions(choice_positions_data, choice_positions_size);
     winning = IsWinning2(solutions, choice_positions, inferred_count, stats);
     mem.SetWinning(winning);
   }
@@ -188,7 +188,7 @@ bool IsWinning(
 
 bool IsWinning2(
     std::span<HashedSolution> solutions,
-    std::span<const int> choice_positions,
+    std::span<int> choice_positions,
     int inferred_count,
     AnalysisStats *stats) {
 
@@ -199,8 +199,11 @@ bool IsWinning2(
     if (!winning) return true;
   }
 
-  for (int pos : choice_positions) {
-    std::vector<int> new_choice_positions = Remove(choice_positions, pos);
+  for (size_t k = 0; k < choice_positions.size(); ++k) {
+    int pos = choice_positions[k];
+
+    // Temporarily replace selected position.
+    choice_positions[k] = choice_positions[choice_positions.size() - 1];
 
     // TODO: maybe replace by a counting sort if this is a performance bottleneck
     std::ranges::sort(solutions, [pos](const HashedSolution &a, const HashedSolution &b) {
@@ -215,11 +218,17 @@ bool IsWinning2(
       // We should have found immediately-winning moves already before.
       assert(j - i > 1 && j - i < solutions.size());
       if (stats) ++stats->depth;
-      bool winning = IsWinning(solutions.subspan(i, j - i), new_choice_positions, inferred_count, stats);
+      bool winning = IsWinning(
+          solutions.subspan(i, j - i),
+          choice_positions.subspan(0, choice_positions.size() - 1),
+           inferred_count, stats);
       if (stats) --stats->depth;
       if (!winning) return true;
       i = j;
     }
+
+    // Restore temporarily replaced position.
+    choice_positions[k] = pos;
   }
 
   return false;
