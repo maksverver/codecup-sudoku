@@ -10,6 +10,7 @@
 #include <vector>
 
 namespace {
+
 memo_t memo;
 
 struct HashedSolution {
@@ -49,7 +50,27 @@ candidates_t CalculateCandidates(std::span<const HashedSolution> solutions) {
   return candidates;
 }
 
-bool Determined(unsigned mask) { return (mask & (mask - 1)) == 0; }
+constexpr bool Determined(unsigned mask) { return (mask & (mask - 1)) == 0; }
+
+// Returns how many times it would make sense to place an inferred digit.
+//
+// Currently I believe it only makes sense to try placing an inferred digit when
+// the count is odd, since otherwise, each inferred digit filled in could be
+// countered by the opponent by filling in another inferred digit, which doesn't
+// change the value of the position.
+//
+// The reason that this is a separate function is that it allows testing the
+// hypothesis that only the parity of `inferred_count` matters, by changing the
+// implementation into `return inferred_count;` In that case, analysis would run
+// slower, but should give the same results.
+constexpr int ReduceInferredCount(int inferred_count) {
+  return inferred_count & 1;
+}
+
+constexpr memo_key_t HashInferredCount(int inferred_count) {
+  const memo_key_t key = 0x2ac473eb0dac37ae;  // randomly generated
+  return key * ReduceInferredCount(inferred_count);
+}
 
 template<typename T> std::vector<T> Remove(std::span<const T> v, int i) {
   std::vector<T> res;
@@ -92,6 +113,7 @@ std::optional<Move> FindImmediatelyWinningMove(
 bool IsWinning2(
     std::span<HashedSolution> solutions,
     std::span<const int> choice_positions,
+    int inferred_count,
     AnalysisStats *stats);
 
 // This function determines if the given state is winning for the next player.
@@ -106,6 +128,7 @@ bool IsWinning2(
 bool IsWinning(
     std::span<HashedSolution> solutions,
     std::span<const int> old_choice_positions,
+    int inferred_count,
     AnalysisStats *stats) {
   assert(solutions.size() > 1);
   assert(!old_choice_positions.empty());
@@ -119,10 +142,9 @@ bool IsWinning(
   candidates_t candidates = CalculateCandidates(solutions);
   int choice_positions_data[81];
   size_t choice_positions_size = 0;
-  bool inferred_odd = false;
   for (int i : old_choice_positions) {
     if (Determined(candidates[i])) {
-      inferred_odd = !inferred_odd;
+      ++inferred_count;
     } else {
       choice_positions_data[choice_positions_size++] = i;
     }
@@ -137,25 +159,33 @@ bool IsWinning(
   bool winning;
 
   // Memoization happens here.
-  const memo_key_t key = HashSolutionSet(solutions);
   if (stats) ++stats->memo_accessed;
+  memo_key_t key = HashSolutionSet(solutions) ^ HashInferredCount(inferred_count);
   auto mem = memo.Lookup(key);
   if (mem.HasValue()) {
     if (stats) ++stats->memo_returned;
     winning = mem.GetWinning();
   } else {
     // Solve recursively.
-    winning = IsWinning2(solutions, choice_positions, stats);
+    winning = IsWinning2(solutions, choice_positions, inferred_count, stats);
     mem.SetWinning(winning);
   }
 
-  return winning != inferred_odd;
+  return winning;
 }
 
 bool IsWinning2(
     std::span<HashedSolution> solutions,
     std::span<const int> choice_positions,
+    int inferred_count,
     AnalysisStats *stats) {
+
+  if (ReduceInferredCount(inferred_count) > 0) {
+    if (stats) ++stats->depth;
+    bool winning = IsWinning(solutions, choice_positions, inferred_count - 1, stats);
+    if (stats) --stats->depth;
+    if (!winning) return true;
+  }
 
   for (int pos : choice_positions) {
     std::vector<int> new_choice_positions = Remove(choice_positions, pos);
@@ -173,7 +203,7 @@ bool IsWinning2(
       // We should have found immediately-winning moves already before.
       assert(j - i > 1 && j - i < solutions.size());
       if (stats) ++stats->depth;
-      bool winning = IsWinning(solutions.subspan(i, j - i), new_choice_positions, stats);
+      bool winning = IsWinning(solutions.subspan(i, j - i), new_choice_positions, inferred_count, stats);
       if (stats) --stats->depth;
       if (!winning) return true;
       i = j;
@@ -186,8 +216,8 @@ bool IsWinning2(
 // Recursively solves the given state assuming that:
 //
 //  - there are at least two solutions left,
-//  - no immediately winning moves exist, and
-//  - the number of inferred_moves is even.
+//  - no immediately winning moves exist,
+//  - inferred_moves have been removed from choice_positions.
 //
 // This is very similar to IsWinning2() except this also returns an optimal
 // move to play.
@@ -197,11 +227,16 @@ Move SelectMoveFromSolutions2(
     std::span<HashedSolution> solutions,
     AnalysisStats *stats) {
   assert(solutions.size() > 1);
-  assert(inferred_moves.size() % 2 == 0);
 
   // Recursively search for a winning move.
   std::vector<Move> losing_moves = inferred_moves;
   int max_solutions_remaining = inferred_moves.empty() ? 0 : solutions.size();
+  if (ReduceInferredCount(inferred_moves.size()) > 0) {
+    if (!IsWinning(solutions, choice_positions, inferred_moves.size() - 1, stats)) {
+      std::cerr << "Winning move found! (using an odd inferred move)\n";
+      return RandomSample(inferred_moves);
+    }
+  }
   for (int pos : choice_positions) {
     std::vector<int> new_choice_positions = Remove<int>(choice_positions, pos);
 
@@ -218,7 +253,7 @@ Move SelectMoveFromSolutions2(
       // We should have found immediately-winning moves already before.
       assert(n > 1 && n < solutions.size());
       Move move = {.pos = pos, .digit = digit};
-      if (IsWinning(solutions.subspan(i, n), new_choice_positions, stats)) {
+      if (IsWinning(solutions.subspan(i, n), new_choice_positions, inferred_moves.size(), stats)) {
         // Winning for the next player => losing for the previous player.
         if ((int) n > max_solutions_remaining) {
           max_solutions_remaining = n;
@@ -287,12 +322,6 @@ std::pair<Move, bool> SelectMoveFromSolutions(
   if (auto immediately_winning = FindImmediatelyWinningMove(hashed_solutions, choice_positions)) {
     std::cerr << "That's numberwang! (Immediately winning move found.)\n";
     return {*immediately_winning, true};
-  }
-
-  // Otherwise, if number of inferred moves is odd, pick one at random.
-  if (inferred_moves.size() % 2 == 1) {
-    std::cerr << "Inferred moves is odd.\n";
-    return {RandomSample(inferred_moves), false};
   }
 
   // Otherwise, recursively search for a winning move.

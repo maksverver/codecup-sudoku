@@ -56,57 +56,34 @@ losing moves in T, or make a move in F which my opponent can counter.
 This means that whenever |F| is even we can solve the problem recursively, and
 pick an arbitrary move that leads to a state that is losing for the opponent.
 
-When |F| is odd the situation is interesting. If I have an immediately-winnning
-move (i.e., a single move that creates a unique solution) I can still win.
-Otherwise, moves in F are always optimal! Why? Let T1 be the state where all
-cells in F have been filled in except 1, and T0 the state where all cells in F
-have been filled in, as before.
+When |F| is odd the situation is more interesting. My initial thought was that
+filling in one digit would invert the grid value. But that's not the case! (See
+tools/check-parity-assumption.py for some tests and a few more details.)
 
-Then if I have a winning strategy in T0 that takes more than 1 move, that means
-there is a move in T0 that leads to a state that is losing for my opponent. But
-in T1, the opponent can respond by filling in the remaining cell in F,
-effectively skipping a turn in T0. That means T1 is actually losing for me and
-I may make any move.
+It does turn out that only the parity of |F| matters.
 
-Note that it's important that immediately-winning moves are exempt from this
-logic, because as soon as one player creates a unique solution they win, and
-the opponent can no longer flip the state!
+The general player algorithm works as follows:
 
-Conversely, if T0 is losing (that means all moves lead to states that are
-winning for the opponent) then I can win by filling in the remaining cell in F,
-turning T1 into T0.
-
-So in both cases turning T1 into T0 is the correct move. And for the difference
-between S and T1 the same move-mirroring argument applies as before.
-
-This leads to an interesting algorithm:
-
-  1. Calculate all solutions.
+  1. Calculate all solutions (if this is not possible, abort and move randomly).
   2. Identify inferred cells (F) and choice cells (C).
-  3. Search for a move in C that leads to a unique solution. If there is one,
-     it is immediately winning, so return it.
-  4. Otherwise, if |F| is odd, fill in any cell in |F|.
-  5. Otherwise, fix all cells in |F|, try each option in C, and if a successor
-     state is losing for the opponent, pick the corresponding move as winning.
-  6. Otherwise, all moves are losing. Pick an arbitrary move (or maybe pick a
-     move in F to avoid narrowing down the solution space).
+  3. Search for immediately winning solutions; if there is one, return it.
+  4. If not, recursively solve C:
+      - If |F| is odd, try filling in an inferred digit and solving the
+        resulting grid. If the resulting grid is losing, report a win.
+      - Otherwise, try filling in one of the choice cells C, and for each
+        chosen cell and digit, go to step 2. If the grid is losing, report
+        a win.
 
-The hard parts of the algorithms are 1 and 5.
+The hard parts of the algorithms are 1 (EnumerateSolutions() in state.cc) and
+4 (DetermineWinningMove() in analysis.cc).
 
 
-OBSERVATIONS
+OPEN QUESTIONS
 
-The game is technically an impartial game.
+Can we meaningfully decompose the game?
 
-Moreover, if there is not an immediately winning move, then we can fill in all
-inferred digits, and the remaining game can be decomposed and analyzed using
-the Sprague Grundy theorem! (Then the final game value must be negated if the
-number of inferred digits was odd.)
-
-To decompose the grid into independent components, we need to consider that
-cells are dependent if they are in the same row/column/box and share at least
-1 candidate. Unfortunately, it doesn't seem to happen naturally that there are
-multiple components until very close to the end of the game.
+At first glance, it seems like we can identify independent parts of the grid
+and solve them independently.
 
 For example, if we have only the top-left box with the following candidates:
 
@@ -115,8 +92,12 @@ For example, if we have only the top-left box with the following candidates:
     [78]  [78]    9     1  2  3   4  5  6
 
 Then the puzzle can be decomposed into 3 parts (the rows of the box) which
-are solved independently. The Grundy numbers are 0, 0 and 1, and 0 ^ 0 ^ 1 == 1,
-so the overall Grundy number is 1 too, meaning the next player can win.
+are solved independently.
 
-Unfortunately it looks like states that allow decomposition don't occur often
-in pratice.
+There are two problems:
+
+  1. This doesn't account for the existence of inferred digits, which ruin the
+     Sprague-Grundy theorem.
+  2. It doesn't seem to happen very often in practice that parts of the grid
+     are independent (at least not early in the game, when a solver would
+     benefit the most from this kind of deomposition).
