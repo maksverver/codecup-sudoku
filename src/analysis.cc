@@ -37,7 +37,7 @@ memo_key_t Hash(const solution_t &solution) {
 // is supposed to model a set of solutions, not an ordered sequence.
 memo_key_t HashSolutionSet(std::span<const HashedSolution> solutions) {
   memo_key_t hash = 0;
-  for (const auto &entry : solutions) hash ^= Hash(entry.solution);
+  for (const auto &entry : solutions) hash ^= entry.hash;
   return hash;
 }
 
