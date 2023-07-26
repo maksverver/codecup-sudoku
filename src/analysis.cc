@@ -51,16 +51,6 @@ candidates_t CalculateCandidates(std::span<const solution_t> solutions) {
   return candidates;
 }
 
-// Returns whether all solutions have the same digit at position `pos`.
-bool IsDetermined(std::span<const HashedSolution> solutions, int pos) {
-  assert(!solutions.empty());
-  int digit = solutions[0].solution[pos];
-  for (size_t i = 1; i < solutions.size(); ++i) {
-    if (solutions[i].solution[pos] != digit) return false;
-  }
-  return true;
-}
-
 constexpr bool Determined(unsigned mask) { return (mask & (mask - 1)) == 0; }
 
 // Returns how many times it would make sense to place an inferred digit.
@@ -114,25 +104,6 @@ std::optional<Move> FindImmediatelyWinningMove(
   return {};
 }
 
-// Optimized version of FindImmediatelyWinningMove() above, for use in
-// IsWinning().
-bool HasImmediatelyWinningMove(
-    std::span<const HashedSolution> solutions,
-    std::span<const int> choice_positions) {
-  assert(solutions.size() > 1);
-  assert(choice_positions.size() > 0);
-  for (int pos : choice_positions) {
-    int solution_count[10] = {};
-    for (const auto &entry : solutions) {
-      ++solution_count[entry.solution[pos]];
-    }
-    for (int digit = 1; digit <= 9; ++digit) {
-      if (solution_count[digit] == 1) return true;
-    }
-  }
-  return false;
-}
-
 // Recursively solves the given state assuming that:
 //  - there are at least two solutions left,
 //  - no immediately winning moves exist, and
@@ -169,21 +140,33 @@ bool IsWinning(
     stats->total_solutions += solutions.size();
   }
 
+  // Calculate new choice positions and detect immediately winning moves.
+  //
+  // For each choice position:
+  //
+  //  1. Check if is has only 1 possible digit across all solutions. If so, this
+  //     is an inferred digit and we omit it from the new choice positions.
+  //  2. Check if there is a digit that occurs in exactly 1 solution. If so,
+  //     then this is an immediately winning move.
+  //
   int choice_positions_data[81];
   size_t choice_positions_size = 0;
   for (int pos : old_choice_positions) {
-    if (IsDetermined(solutions, pos)) {
-      ++inferred_count;
-    } else {
+    int solution_count[9] = {};
+    bool inferred = false;
+    for (const auto &entry : solutions) {
+      if (++solution_count[entry.solution[pos] - 1] == (int) solutions.size()) {
+        ++inferred_count;
+        inferred = true;
+        break;
+      }
+    }
+    if (!inferred) {
+      for (int c : solution_count) if (c == 1) return true;  // Immediately winning!
       choice_positions_data[choice_positions_size++] = pos;
     }
   }
   std::span<const int> choice_positions(choice_positions_data, choice_positions_size);
-
-  if (HasImmediatelyWinningMove(solutions, choice_positions)) {
-    if (stats) ++stats->immediately_won;
-    return true;
-  }
 
   bool winning;
 
