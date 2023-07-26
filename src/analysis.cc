@@ -170,7 +170,11 @@ bool IsWinning(
       }
     }
     if (!inferred) {
-      for (int c : solution_count) if (c == 1) return true;  // Immediately winning!
+      for (int c : solution_count) if (c == 1) {
+        // Immediately winning!
+        if (stats) ++stats->immediately_won;
+        return true;
+      }
       choice_positions_data[choice_positions_size++] = pos;
     }
   }
