@@ -43,7 +43,7 @@ void CountSolutions(State &state) {
   CountResult cr = state.CountSolutions(max_count);
   assert(!cr.WorkLimitReached());
   if (cr.CountLimitReached()) std::cout << "At least ";
-  std::cout << cr.count << " solutions" << std::endl;
+  std::cout << cr.count << " solutions (work required: " << cr.work << ")" << std::endl;
 #else
   // Slightly slower implementation using EnumerateSolutions() instead.
   int count = 0;
