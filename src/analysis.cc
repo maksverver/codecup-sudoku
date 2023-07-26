@@ -82,6 +82,12 @@ template<typename T> std::vector<T> Remove(std::span<const T> v, T i) {
   return res;
 }
 
+void SortByPosition(std::span<HashedSolution> solutions, position_t pos) {
+  std::ranges::sort(solutions, [pos](const HashedSolution &a, const HashedSolution &b) {
+    return a.solution[pos] < b.solution[pos];
+  });
+}
+
 // Let solutions be the subset {all_solutions[i] for all i in possibilites}.
 //
 // An immediately-winning move is a move that reduces the set of solutions to a
@@ -207,10 +213,7 @@ bool IsWinning2(
     // Temporarily replace selected position.
     choice_positions[k] = choice_positions[choice_positions.size() - 1];
 
-    // TODO: maybe replace by a counting sort if this is a performance bottleneck
-    std::ranges::sort(solutions, [pos](const HashedSolution &a, const HashedSolution &b) {
-      return a.solution[pos] < b.solution[pos];
-    });
+    SortByPosition(solutions, pos);
 
     size_t i = 0;
     while (i < solutions.size()) {
@@ -264,9 +267,7 @@ Move SelectMoveFromSolutions2(
     std::vector<position_t> new_choice_positions =
         Remove<position_t>(choice_positions, pos);
 
-    std::ranges::sort(solutions, [pos](const HashedSolution &a, const HashedSolution &b) {
-      return a.solution[pos] < b.solution[pos];
-    });
+    SortByPosition(solutions, pos);
 
     size_t i = 0;
     while (i < solutions.size()) {
