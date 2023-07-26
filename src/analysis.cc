@@ -12,6 +12,8 @@
 
 namespace {
 
+using position_t = int_fast8_t;
+
 memo_t memo;
 
 struct HashedSolution {
@@ -73,7 +75,7 @@ constexpr memo_key_t HashInferredCount(int inferred_count) {
   return key * ReduceInferredCount(inferred_count);
 }
 
-template<typename T> std::vector<T> Remove(std::span<const T> v, int i) {
+template<typename T> std::vector<T> Remove(std::span<const T> v, T i) {
   std::vector<T> res;
   res.reserve(v.size() - 1);
   for (const auto &j : v) if (j != i) res.push_back(j);
@@ -87,10 +89,10 @@ template<typename T> std::vector<T> Remove(std::span<const T> v, int i) {
 // has that digit in that position.
 std::optional<Move> FindImmediatelyWinningMove(
     std::span<const solution_t> solutions,
-    std::span<const int> choice_positions) {
+    std::span<const position_t> choice_positions) {
   assert(solutions.size() > 1);
   assert(choice_positions.size() > 0);
-  for (int pos : choice_positions) {
+  for (position_t pos : choice_positions) {
     int solution_count[10] = {};
     for (const solution_t &solution : solutions) {
       ++solution_count[solution[pos]];
@@ -113,7 +115,7 @@ std::optional<Move> FindImmediatelyWinningMove(
 // its results are memoized in IsWinning().
 bool IsWinning2(
     std::span<HashedSolution> solutions,
-    std::span<int> choice_positions,
+    std::span<position_t> choice_positions,
     int inferred_count,
     AnalysisStats *stats);
 
@@ -128,7 +130,7 @@ bool IsWinning2(
 // of inferred digits.
 bool IsWinning(
     std::span<HashedSolution> solutions,
-    std::span<const int> old_choice_positions,
+    std::span<const position_t> old_choice_positions,
     int inferred_count,
     AnalysisStats *stats) {
   assert(solutions.size() > 1);
@@ -149,9 +151,9 @@ bool IsWinning(
   //  2. Check if there is a digit that occurs in exactly 1 solution. If so,
   //     then this is an immediately winning move.
   //
-  int choice_positions_data[81];
+  position_t choice_positions_data[81];
   size_t choice_positions_size = 0;
-  for (int pos : old_choice_positions) {
+  for (position_t pos : old_choice_positions) {
     int solution_count[9] = {};
     bool inferred = false;
     for (const auto &entry : solutions) {
@@ -178,7 +180,7 @@ bool IsWinning(
     winning = mem.GetWinning();
   } else {
     // Solve recursively.
-    std::span<int> choice_positions(choice_positions_data, choice_positions_size);
+    std::span<position_t> choice_positions(choice_positions_data, choice_positions_size);
     winning = IsWinning2(solutions, choice_positions, inferred_count, stats);
     mem.SetWinning(winning);
   }
@@ -188,7 +190,7 @@ bool IsWinning(
 
 bool IsWinning2(
     std::span<HashedSolution> solutions,
-    std::span<int> choice_positions,
+    std::span<position_t> choice_positions,
     int inferred_count,
     AnalysisStats *stats) {
 
@@ -200,7 +202,7 @@ bool IsWinning2(
   }
 
   for (size_t k = 0; k < choice_positions.size(); ++k) {
-    int pos = choice_positions[k];
+    position_t pos = choice_positions[k];
 
     // Temporarily replace selected position.
     choice_positions[k] = choice_positions[choice_positions.size() - 1];
@@ -243,7 +245,7 @@ bool IsWinning2(
 // This is very similar to IsWinning2() except this also returns an optimal
 // move to play.
 Move SelectMoveFromSolutions2(
-    const std::vector<int> &choice_positions,
+    const std::vector<position_t> &choice_positions,
     const std::vector<Move> &inferred_moves,
     std::span<HashedSolution> solutions,
     AnalysisStats *stats) {
@@ -258,8 +260,9 @@ Move SelectMoveFromSolutions2(
       return RandomSample(inferred_moves);
     }
   }
-  for (int pos : choice_positions) {
-    std::vector<int> new_choice_positions = Remove<int>(choice_positions, pos);
+  for (position_t pos : choice_positions) {
+    std::vector<position_t> new_choice_positions =
+        Remove<position_t>(choice_positions, pos);
 
     std::ranges::sort(solutions, [pos](const HashedSolution &a, const HashedSolution &b) {
       return a.solution[pos] < b.solution[pos];
@@ -320,7 +323,7 @@ std::pair<Move, bool> SelectMoveFromSolutions(
   }
 
   candidates_t candidates = CalculateCandidates(solutions);
-  std::vector<int> choice_positions;
+  std::vector<position_t> choice_positions;
   std::vector<Move> inferred_moves;
   for (int i = 0; i < 81; ++i) {
     if (givens[i] == 0) {
