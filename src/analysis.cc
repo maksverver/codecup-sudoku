@@ -4,6 +4,7 @@
 #include "state.h"
 
 #include <algorithm>
+#include <cassert>
 #include <cstdint>
 #include <optional>
 #include <random>
@@ -82,10 +83,45 @@ template<typename T> std::vector<T> Remove(std::span<const T> v, T i) {
   return res;
 }
 
-void SortByPosition(std::span<HashedSolution> solutions, position_t pos) {
-  std::ranges::sort(solutions, [pos](const HashedSolution &a, const HashedSolution &b) {
-    return a.solution[pos] < b.solution[pos];
-  });
+// Rearranges the span of solutions into three parts:
+//
+//  Part 1: solution[pos] < A
+//  Part 2: A <= solution[pos] < B
+//  Part 3: solution[pos] >= B
+//
+// Returns two iterators: the beginning and end of part 2.
+template <int A, int B>
+std::pair<std::span<HashedSolution>::iterator, std::span<HashedSolution>::iterator>
+DutchNationalFlagSort(std::span<HashedSolution> solutions, position_t pos) {
+  auto mid_begin = solutions.begin();
+  auto mid_end = solutions.end();
+  for (auto it = mid_begin; it != mid_end; ) {
+    if (it->solution[pos] < A) {
+      if (it != mid_begin) std::swap(*it, *mid_begin);
+      ++mid_begin;
+      ++it;
+    } else if (it->solution[pos] < B) {
+      ++it;
+    } else {
+      --mid_end;
+      if (it != mid_end) std::swap(*it, *mid_end);
+    }
+  }
+  return {mid_begin, mid_end};
+}
+
+void SortByDigitAtPosition(std::span<HashedSolution> solutions, position_t pos) {
+  auto [mid_begin, mid_end] = DutchNationalFlagSort<4, 7>(solutions, pos);
+  DutchNationalFlagSort<2, 3>({solutions.begin(), mid_begin}, pos);
+  DutchNationalFlagSort<5, 6>({mid_begin, mid_end}, pos);
+  DutchNationalFlagSort<8, 9>({mid_end, solutions.end()}, pos);
+
+#if 0
+  assert(std::ranges::is_sorted(solutions,
+      [pos](const HashedSolution &a, const HashedSolution &b) {
+        return a.solution[pos] < b.solution[pos];
+      }));
+#endif
 }
 
 // Let solutions be the subset {all_solutions[i] for all i in possibilites}.
@@ -217,7 +253,7 @@ bool IsWinning2(
     // Temporarily replace selected position.
     choice_positions[k] = choice_positions[choice_positions.size() - 1];
 
-    SortByPosition(solutions, pos);
+    SortByDigitAtPosition(solutions, pos);
 
     size_t i = 0;
     while (i < solutions.size()) {
@@ -271,7 +307,7 @@ Move SelectMoveFromSolutions2(
     std::vector<position_t> new_choice_positions =
         Remove<position_t>(choice_positions, pos);
 
-    SortByPosition(solutions, pos);
+    SortByDigitAtPosition(solutions, pos);
 
     size_t i = 0;
     while (i < solutions.size()) {

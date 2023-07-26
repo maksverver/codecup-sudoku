@@ -78,6 +78,25 @@ The hard parts of the algorithms are 1 (EnumerateSolutions() in state.cc) and
 4 (DetermineWinningMove() in analysis.cc).
 
 
+STATISTICS
+
+I did some profiling of analysis.cc and found the following stats on the number
+of solutions (solutions.size()) that are passed to SortByDigitAtPosition()
+called from IsWinning2() in analysis.cc, on this state:
+......3.....3...........6..6...39..5.9.264.8.43.8.57..8....2......1..89..4..5..1.
+
+ - Minimum:         4
+ - Median (50%):   25
+ - Average:        34
+ - 99%:           154
+ - Maximum:      1583
+
+This shows solution sets are skewed towards relatively small sizes, and the
+sorting algorithm should be optimized for those cases. Note however that sorting
+time is also proportional to size: i.e. the 1% largest sets probably take more
+than 1% of the time!
+
+
 OPEN QUESTIONS
 
 Can we meaningfully decompose the game?
