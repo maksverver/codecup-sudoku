@@ -30,7 +30,7 @@ $(BIN)player: $(PLAYER_OBJS)
 $(BIN)solver: $(SOLVER_OBJS)
 	$(CXX) $(CXXFLAGS) $(SOLVER_OBJS) -o $@ $(LDFLAGS) $(LDLIBS)
 
-$(OUT)combined-player.cc: $(COMBINED_SRCS)
+$(OUT)combined-player.cc: $(COMBINED_SRCS) combine-sources.sh
 	./combine-sources.sh $(COMBINED_SRCS) > $@
 
 $(BIN)combined-player: $(OUT)combined-player.cc
@@ -43,4 +43,5 @@ combined: $(BIN)combined-player
 clean:
 	rm -f $(BINARIES) $(OBJ)*.o $(OUT)combined-player.cc $(BIN)combined-player
 
+.DELETE_ON_ERROR:
 .PHONY: all clean player solver combined

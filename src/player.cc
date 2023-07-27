@@ -238,7 +238,14 @@ int main() {
   std::cerr << player_name
       << " (" << std::numeric_limits<size_t>::digits << " bit)"
 #ifdef __VERSION__
-      << " (compiler version " __VERSION__ << ")"
+      << " (compiler v" __VERSION__ << ")"
+#endif
+#ifdef GIT_COMMIT
+      << " (commit " GIT_COMMIT
+  #if GIT_DIRTY
+      << "; uncommitted changes"
+  #endif
+      << ")"
 #endif
       << "\n";
 
