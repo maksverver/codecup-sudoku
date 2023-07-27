@@ -49,7 +49,14 @@ private:
   std::unordered_map<memo_key_t, uint8_t> data;
 };
 
-// Real memo implementation.
+// Real memo implementation based on std::unordered_map<>.
+//
+// Note: the simple implementation of Value::SetWinning() relies on the fact
+// that entries in std::unordered_map<> are NOT invalidated by modifications,
+// which is important because typically the memo is modified between the calls
+// to HasValue() and SetWinning().
+//
+// This assumption doesn't hold for most flat hash table implementations!
 class RealMemo {
 public:
   struct Value {
@@ -66,46 +73,58 @@ private:
   std::unordered_map<memo_key_t, uint8_t> data;
 };
 
+// A memo based on a lossy hash table.
+//
+// The data is stored in an array of 64-bit integers. Each entry stores:
+//
+//  - The top 56 bits of the memo key. (Note that the lower bits are redundant
+//    when size is a power of 2, since they are implied by the index in the
+//    array, so we could get away with storing even less.)
+//
+//  - An 8 bit value describing the status of the position:
+//    0 for uninitialized, 1 for losing, 2 for winning.
+//
+// If two hash keys map to the same array entry, whichever one called
+// SetWinning() last wins.
 class LossyMemo {
 public:
-  // 64 × 2^20 = about 67 million entries. Each entry takes 16 bytes, so total memory used is 1 GB.
+  // 64 × 2^20 = about 67 million entries. Each entry takes 8 bytes, so total memory used is 512 MB.
   static const size_t size = 64 << 20;
 
-  struct Entry {
-    uint64_t key;
-    uint8_t data;
-  };
+  static_assert(size > 0 && (size & (size - 1)) == 0, "size must be a power of 2");
 
-  static_assert(sizeof(Entry) == 16);
+  static constexpr uint64_t value_mask = 0xff;
+  static constexpr uint64_t key_mask = ~value_mask;
 
   struct Value {
-    uint64_t key;
-    Entry *entry;
+    uint64_t masked_key;
+    uint64_t *entry;
 
     bool HasValue() const {
-      return key == entry->key && entry->data != 0;
+      return (*entry & key_mask) == masked_key && (*entry & value_mask) != 0;
     }
 
     bool GetWinning() const {
-      return entry->data - 1;
+      return (*entry & value_mask) - 1;
     }
 
     void SetWinning(bool b) {
       // TODO: stats on collisions?
-      // if (entry->key != 0 && key != entry->key) ReportCollision();
+      // if ((*entry & key_mask) != 0 && (*entry & key_mask) != masked_key) [[unlikely]] {
+      //   ReportCollision();
+      // }
 
       // Unconditionally overwrite previous value!
-      entry->key = key;
-      entry->data = b + 1;
+      *entry = masked_key | (b + 1);
     }
   };
 
   Value Lookup(memo_key_t key) {
-    return Value{key, &data[(size_t) key % size]};
+    return Value{key & key_mask, &data[(size_t) key % size]};
   }
 
 private:
-  std::array<Entry, size> data;
+  std::array<uint64_t, size> data;
 };
 
 // Change the type of memo here to enable/disable memoization.
