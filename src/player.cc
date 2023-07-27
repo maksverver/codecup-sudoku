@@ -19,8 +19,9 @@ namespace {
 
 const std::string player_name = "Numberwang!";
 
-constexpr int max_work  = 100000;
-constexpr int max_count =   2000;
+constexpr int max_work               = 10'000'000;
+constexpr int max_count              = 100'000;
+constexpr int max_count_for_analysis = 2000;
 
 struct Timer {
   std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
@@ -165,7 +166,7 @@ bool PlayGame() {
       if (solutions.empty()) {
         // I don't know anything about solutions. Just pick randomly.
         selected_move = PickRandomMove(state);
-      } else if (!analysis_complete) {
+      } else if (!analysis_complete || solutions.size() > max_count_for_analysis) {
         // I have some solutions but it's not the complete set.
         selected_move = PickMoveIncomplete(state, solutions);
       } else if (solutions.size() == 1) {
