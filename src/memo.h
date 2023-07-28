@@ -9,6 +9,8 @@
 #ifndef MEMO_H_INCLUDED
 #define MEMO_H_INCLUDED
 
+#include "counters.h"
+
 #include <array>
 #include <cassert>
 #include <cstdint>
@@ -109,10 +111,9 @@ public:
     }
 
     void SetWinning(bool b) {
-      // TODO: stats on collisions?
-      // if ((*entry & key_mask) != 0 && (*entry & key_mask) != masked_key) [[unlikely]] {
-      //   ReportCollision();
-      // }
+      if ((*entry & key_mask) != 0 && (*entry & key_mask) != masked_key) [[unlikely]] {
+        counters.memo_collisions.Inc();
+      }
 
       // Unconditionally overwrite previous value!
       *entry = masked_key | (b + 1);

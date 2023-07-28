@@ -47,7 +47,7 @@ struct Counters {
   counter_t<int64_t> immediately_won  = counter_t<int64_t>("immediately_won");
   counter_t<int64_t> memo_accessed    = counter_t<int64_t>("memo_accessed");
   counter_t<int64_t> memo_returned    = counter_t<int64_t>("memo_returned");
-  counter_t<int64_t> memo_collisions  = counter_t<int64_t>("memo_collisions");  // TODO!
+  counter_t<int64_t> memo_collisions  = counter_t<int64_t>("memo_collisions");
 };
 
 std::ostream &operator<<(std::ostream &os, const struct Counters &counters);
