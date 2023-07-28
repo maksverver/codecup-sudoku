@@ -1,4 +1,5 @@
 #include "analysis.h"
+#include "counters.h"
 #include "state.h"
 
 #include <array>
@@ -193,12 +194,11 @@ void EnumerateSolutions(State &state) {
   } else if (solutions.size() == 1) {
     std::cout << "Solution is unique!\n";
   } else {
-    AnalysisStats stats;
-    auto [move, won] = SelectMoveFromSolutions(givens, solutions, &stats);
+    auto [move, won] = SelectMoveFromSolutions(givens, solutions);
     std::cout << "Optimal move: pos=" << move.pos << " digit=" << move.digit
         << " (" << (char)('A' + move.pos/9) << (char)('a' + move.pos%9) << move.digit << (won ? "!" : "") << ")\n";
 
-    std::cout << stats << '\n';
+    std::cout << counters << '\n';
   }
 }
 

@@ -178,7 +178,7 @@ bool PlayGame() {
         // The hard case: select optimal move given the complete set of solutions.
         grid_t givens;
         for (int i = 0; i < 81; ++i) givens[i] = state.Digit(i);
-        auto [move, winning] = SelectMoveFromSolutions(givens, solutions, nullptr);
+        auto [move, winning] = SelectMoveFromSolutions(givens, solutions);
         selected_move = move;
         claim_winning = winning;
         std::cerr << "Selected move in " << timer.ElapsedMillis(true) << " ms\n";
