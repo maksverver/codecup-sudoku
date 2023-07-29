@@ -240,11 +240,6 @@ bool IsWinning2(
     int inferred_count,
     int depth) {
 
-  if (ReduceInferredCount(inferred_count) > 0) {
-    bool winning = IsWinning(solutions, choice_positions, inferred_count - 1, depth + 1);
-    if (!winning) return true;
-  }
-
   for (size_t k = 0; k < choice_positions.size(); ++k) {
     position_t pos = choice_positions[k];
 
@@ -274,6 +269,11 @@ bool IsWinning2(
     choice_positions[k] = pos;
   }
 
+  if (ReduceInferredCount(inferred_count) > 0) {
+    bool winning = IsWinning(solutions, choice_positions, inferred_count - 1, depth + 1);
+    if (!winning) return true;
+  }
+
   return false;
 }
 
@@ -294,12 +294,6 @@ Move SelectMoveFromSolutions2(
   // Recursively search for a winning move.
   std::vector<Move> losing_moves = inferred_moves;
   int max_solutions_remaining = inferred_moves.empty() ? 0 : solutions.size();
-  if (ReduceInferredCount(inferred_moves.size()) > 0) {
-    if (!IsWinning(solutions, choice_positions, inferred_moves.size() - 1, 1)) {
-      std::cerr << "Winning move found! (using an odd inferred move)\n";
-      return RandomSample(inferred_moves);
-    }
-  }
   for (position_t pos : choice_positions) {
     std::vector<position_t> new_choice_positions =
         Remove<position_t>(choice_positions, pos);
@@ -330,6 +324,13 @@ Move SelectMoveFromSolutions2(
         return move;
       }
       i = j;
+    }
+  }
+
+  if (ReduceInferredCount(inferred_moves.size()) > 0) {
+    if (!IsWinning(solutions, choice_positions, inferred_moves.size() - 1, 1)) {
+      std::cerr << "Winning move found! (using an odd inferred move)\n";
+      return RandomSample(inferred_moves);
     }
   }
 
