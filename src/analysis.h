@@ -1,5 +1,5 @@
-#ifndef ANALYSIS_H
-#define ANALYSIS_H
+#ifndef ANALYSIS_H_INCLUDED
+#define ANALYSIS_H_INCLUDED
 
 #include "state.h"
 
@@ -45,4 +45,4 @@ std::ostream &operator<<(std::ostream &os, const AnalyzeResult &result);
 // Preconditions: solutions.size() > 1
 AnalyzeResult Analyze(const grid_t &givens, std::span<const solution_t> solutions);
 
-#endif  // ndef ANALYSIS_H
+#endif  // ndef ANALYSIS_H_INCLUDED
