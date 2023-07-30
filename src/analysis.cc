@@ -285,7 +285,7 @@ bool IsWinning2(
 //
 // This is very similar to IsWinning2() except this also returns an optimal
 // move to play.
-Move SelectMoveFromSolutions2(
+AnalyzeResult SelectMoveFromSolutions2(
     const std::vector<position_t> &choice_positions,
     const std::vector<Move> &inferred_moves,
     std::span<HashedSolution> solutions) {
@@ -320,8 +320,7 @@ Move SelectMoveFromSolutions2(
         }
       } else {
         // Losing for the next player => winning for the previous player.
-        std::cerr << "Winning move found!\n";
-        return move;
+        return {Outcome::WIN2, move};
       }
       i = j;
     }
@@ -329,19 +328,32 @@ Move SelectMoveFromSolutions2(
 
   if (ReduceInferredCount(inferred_moves.size()) > 0) {
     if (!IsWinning(solutions, choice_positions, inferred_moves.size() - 1, 1)) {
-      std::cerr << "Winning move found! (using an odd inferred move)\n";
-      return RandomSample(inferred_moves);
+      return {Outcome::WIN3, RandomSample(inferred_moves)};
     }
   }
 
-  std::cerr << "No winning move found :-(\n";
-  return RandomSample(losing_moves);
+  return {Outcome::LOSS, RandomSample(losing_moves)};
 }
 
 }  // namespace
 
-std::pair<Move, bool> SelectMoveFromSolutions(
-    const grid_t &givens, std::span<const solution_t> solutions) {
+std::ostream &operator<<(std::ostream &os, const Outcome &outcome) {
+  switch (outcome) {
+  case Outcome::LOSS: return os << "LOSS";
+  case Outcome::WIN1: return os << "WIN1";
+  case Outcome::WIN2: return os << "WIN2";
+  case Outcome::WIN3: return os << "WIN3";
+  default:
+    assert(false);
+    return os;
+  }
+}
+
+std::ostream &operator<<(std::ostream &os, const AnalyzeResult &result) {
+  return os << "AnalyzeResult{outcome=" << result.outcome << ", move=" << result.move << "}";
+}
+
+AnalyzeResult Analyze(const grid_t &givens, std::span<const solution_t> solutions) {
   assert(solutions.size() > 1);
 
   counters.recusive_calls.Inc();
@@ -363,8 +375,7 @@ std::pair<Move, bool> SelectMoveFromSolutions(
 
   // If there is an immediately winning move, always take it!
   if (auto immediately_winning = FindImmediatelyWinningMove(solutions, choice_positions)) {
-    std::cerr << "That's numberwang! (Immediately winning move found.)\n";
-    return {*immediately_winning, true};
+    return {Outcome::WIN1, *immediately_winning};
   }
 
   std::vector<HashedSolution> hashed_solutions;
@@ -374,11 +385,10 @@ std::pair<Move, bool> SelectMoveFromSolutions(
   }
 
   // Otherwise, recursively search for a winning move.
-  Move move = SelectMoveFromSolutions2(choice_positions, inferred_moves, hashed_solutions);
+  return SelectMoveFromSolutions2(choice_positions, inferred_moves, hashed_solutions);
 
-  // Note: we could clear the memo here to save memory, but keeping it populated
-  // will help with future searches especially in the common case where both
-  // players fill in an inferred digit, which doesn't change the analysis at all.
-
-  return {move, false};
+  // Note: we could clear the memo before returning to save memory, but keeping
+  // it populated will help with future searches especially in the common case
+  // where both players fill in an inferred digit, which doesn't change the
+  // analysis.
 }

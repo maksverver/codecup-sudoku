@@ -194,11 +194,12 @@ void EnumerateSolutions(State &state) {
   } else if (solutions.size() == 1) {
     std::cout << "Solution is unique!\n";
   } else {
-    auto [move, won] = SelectMoveFromSolutions(givens, solutions);
-    std::cout << "Optimal move: pos=" << move.pos << " digit=" << move.digit
-        << " (" << (char)('A' + move.pos/9) << (char)('a' + move.pos%9) << move.digit << (won ? "!" : "") << ")\n";
-
-    std::cout << counters << '\n';
+    AnalyzeResult result = Analyze(givens, solutions);
+    std::cout
+        << "Result: " << result.outcome << " " << result.move
+        << " (" << (char)('A' + result.move.pos/9) << (char)('a' + result.move.pos%9)
+        << result.move.digit << (result.outcome == Outcome::WIN1 ? "!" : "") << ")\n\n"
+        << counters << '\n';
   }
 }
 

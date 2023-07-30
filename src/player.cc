@@ -156,10 +156,11 @@ bool PlayGame() {
         } else if (solutions.empty()) {
           std::cerr << "WARNING: no solutions found! (this doesn't mean there aren't any)\n";
         }
+        std::cerr << solutions.size() << (analysis_complete ? "" : "+") <<
+            " solutions in " << timer.ElapsedMillis(true) << " ms\n";
+      } else {
+        std::cerr << solutions.size() << " solutions remain\n";
       }
-
-      std::cerr << solutions.size() << (analysis_complete ? "" : "+") <<
-          " solutions in " << timer.ElapsedMillis(true) << " ms\n";
 
       bool claim_winning = false;
 
@@ -176,15 +177,14 @@ bool PlayGame() {
         return true;
       } else {
         // The hard case: select optimal move given the complete set of solutions.
-        grid_t givens;
+        grid_t givens = {};
         for (int i = 0; i < 81; ++i) givens[i] = state.Digit(i);
-        auto [move, winning] = SelectMoveFromSolutions(givens, solutions);
-        selected_move = move;
-        claim_winning = winning;
-        std::cerr << "Selected move in " << timer.ElapsedMillis(true) << " ms\n";
-
-        // TODO: to save time, I should reuse the analysis information if both
-        // players pick from the set of inferred digits!
+        AnalyzeResult result = Analyze(givens, solutions);
+        std::cerr << "Analysis took " << timer.ElapsedMillis(true) << " ms.\n";
+        selected_move = result.move;
+        claim_winning = result.outcome == Outcome::WIN1;
+        std::cerr << "Outcome: " << result.outcome << '\n';
+        if (result.outcome == Outcome::WIN1) std::cerr << "That's Numberwang!\n";
       }
 
       // Output

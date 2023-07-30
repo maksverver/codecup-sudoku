@@ -19,12 +19,26 @@ using solution_t = grid_t;
 // A set of candidates is a bitmask of possible digits per field (note bit 0 is not used!)
 using candidates_t = std::array<unsigned, 81>;
 
+enum class Outcome {
+  LOSS,
+  WIN1,  // Immediately winning move detected
+  WIN2,  // Winning, but not immediately.
+  WIN3,  // Winning, by filling in an inferred digit
+};
+
+std::ostream &operator<<(std::ostream &os, const Outcome &outcome);
+
+struct AnalyzeResult {
+  Outcome outcome;
+  Move move;
+};
+
+std::ostream &operator<<(std::ostream &os, const AnalyzeResult &result);
+
 // Given the set of given digits, and a *complete* set of solutions, determines
-// the optimal move (first element of the result) and whether it is a winning
-// immediately (second element of the result).
+// the optimal move (first element of the result) and whether it is a winning.
 //
 // Preconditions: solutions.size() > 1
-std::pair<Move, bool> SelectMoveFromSolutions(
-    const grid_t &givens, std::span<const solution_t> solutions);
+AnalyzeResult Analyze(const grid_t &givens, std::span<const solution_t> solutions);
 
 #endif  // ndef ANALYSIS_H
