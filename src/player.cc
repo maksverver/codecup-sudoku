@@ -18,7 +18,7 @@
 
 namespace {
 
-const std::string player_name = "Numberwang!";
+const std::string player_name = "Numberwang";
 
 constexpr int max_work               = 10'000'000;
 constexpr int max_count              = 100'000;
