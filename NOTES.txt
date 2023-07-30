@@ -120,3 +120,27 @@ There are two problems:
   2. It doesn't seem to happen very often in practice that parts of the grid
      are independent (at least not early in the game, when a solver would
      benefit the most from this kind of deomposition).
+
+
+CODECUP SERVER NOTES
+
+  - 64 bit
+  - GCC 11.3.0 (release date: April 21, 2022)
+  - referee does NOT send Quit after I send my winning move. So I cannot
+    write statistics to stderr before exiting; I have to do it before my last
+    move.
+  - Speed: initial analysis suggests the Codecup CPU
+    (Intel(R) Xeon(R) CPU E5-2620 0 @ 2.00GHz) is half the speed of my laptop
+    (Intel(R) Core(TM) i7-7560U CPU @ 2.40GHz), which kind of makes sense since
+    my laptop CPU supports bursts up to 3.80 GHz.
+
+
+RELEASE INSTRUCTIONS
+
+  1. `git status` # Make sure all changes are commited!
+  2. `make clean`, `make all -j4`, `make combined`
+  3. Use arbiter.py to run a competition with the new and previous players
+  4. Check player logs for unexpected warnings/errors.
+  5. Submit to CodeCup.
+  6. `git tag submission-#-id-#`
+  7. Make a backup: `cp -r output/ backups/$(git rev-parse --short HEAD)`
