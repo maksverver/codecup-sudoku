@@ -20,10 +20,14 @@
 #include "analysis.h"
 #include "state.h"
 
+#include <chrono>
 #include <cstdint>
 #include <limits>
 #include <iostream>
 #include <string_view>
+
+// Granularity of time used in log files.
+using log_duration_t = std::chrono::milliseconds;
 
 // Line-buffered log entry.
 //
@@ -35,6 +39,12 @@ public:
   }
 
   ~LogStream() { os << std::endl; }
+
+  LogStream &operator<<(const log_duration_t &value) {
+    // I could add an `ms` suffix, but logs are shorter and easier to parse without it.
+    os << value.count();
+    return *this;
+  }
 
   template<class T>
   LogStream &operator<<(const T &value) {
@@ -77,8 +87,8 @@ inline void LogId(std::string_view player_name) {
 
 // Log the state at the beginning of a turn, and how much time the player thinks
 // it has used so far.
-inline void LogTurn(int turn, const State &state, int64_t time_used_ms) {
-  LogStream("TURN") << turn << ' ' << state.DebugString() << ' ' << time_used_ms;
+inline void LogTurn(int turn, const State &state, log_duration_t time_used) {
+  LogStream("TURN") << turn << ' ' << state.DebugString() << ' ' << time_used;
 }
 
 // Log the number of solutions that remain.
@@ -102,11 +112,9 @@ inline void LogOutcome(Outcome o) {
 }
 
 // Log the time taken this turn.
-// ms_total >= ms_enumerate + ms_analyze
-inline void LogTime(int64_t ms_total, int64_t ms_enumerate, int64_t ms_analyze) {
-  LogStream("TIME") << ms_total
-      << " ENUMERATE " << ms_enumerate
-      << " ANALYZE " << ms_analyze;
+// total >= enumerate + analyze
+inline void LogTime(log_duration_t total, log_duration_t enumerate, log_duration_t analyze) {
+  LogStream("TIME") << total << " ENUMERATE " << enumerate << " ANALYZE " << analyze;
 }
 
 #endif  // ndef LOGGING_H_INCLUDED

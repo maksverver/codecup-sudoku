@@ -27,11 +27,11 @@ constexpr int max_count_for_analysis = 2000;
 struct Timer {
   std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
 
-  int64_t ElapsedMillis(bool reset = false) {
+  log_duration_t Elapsed(bool reset = false) {
     std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
-    int64_t result = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    auto elapsed = end - start;
     if (reset) start = end;
-    return result;
+    return std::chrono::duration_cast<log_duration_t>(elapsed);
   }
 
   void Reset() {
@@ -134,8 +134,9 @@ bool PlayGame() {
   std::string input = ReadInputLine();
   const int my_player = (input == "Start" ? 0 : 1);
 
-  int64_t total_time_ms = 0;
-  Timer turn_timer;
+  log_duration_t total_time(0);
+  Timer total_timer;
+
   State state = {};
   std::vector<solution_t> solutions = {};
   bool solutions_complete = false;
@@ -147,16 +148,17 @@ bool PlayGame() {
       // Print current state for debugging. Ideally I would print this every
       // turn for debugging, but the log output is getting close to the 10,000
       // character CodeCup limit.
-      LogTurn(turn, state, total_time_ms);
+      total_time += total_timer.Elapsed(true);
+      LogTurn(turn, state, total_time);
 
       // My turn!
-      int64_t enumerate_time_ms = 0;
-      int64_t analyze_time_ms = 0;
+      log_duration_t enumerate_time(0);
+      log_duration_t analyze_time(0);
       if (!solutions_complete) {
         // Try to enumerate all solutions.
         Timer timer;
         EnumerateResult er = state.EnumerateSolutions(solutions, max_count, max_work, &Rng());
-        enumerate_time_ms += timer.ElapsedMillis();
+        enumerate_time += timer.Elapsed();
         if (er.Accurate()) {
           solutions_complete = true;
           if (solutions.empty()) {
@@ -187,7 +189,7 @@ bool PlayGame() {
         grid_t givens = {};
         for (int i = 0; i < 81; ++i) givens[i] = state.Digit(i);
         AnalyzeResult result = Analyze(givens, solutions);
-        analyze_time_ms += timer.ElapsedMillis();
+        analyze_time += timer.Elapsed();
         selected_move = result.move;
         claim_winning = result.outcome == Outcome::WIN1;
         LogOutcome(result.outcome);
@@ -200,15 +202,15 @@ bool PlayGame() {
         }
         winning = new_winning;
       }
-      int64_t turn_time_ms = turn_timer.ElapsedMillis();
-      LogTime(turn_time_ms, enumerate_time_ms, analyze_time_ms);
-      total_time_ms += turn_time_ms;
+      LogTime(total_timer.Elapsed(), enumerate_time, analyze_time);
       WriteOutputLine(FormatMove(*selected_move) + (claim_winning ? "!" :""));
     } else {
       // Opponent's turn.
-      if (turn > 0) input = ReadInputLine();
-      turn_timer.Reset();
-
+      if (turn > 0) {
+        total_time += total_timer.Elapsed();
+        input = ReadInputLine();
+        total_timer.Reset();
+      }
       if (auto m = ParseMove(input); !m) {
         LogError() << "Could not parse move!";
         return false;
