@@ -136,9 +136,8 @@ bool PlayGame() {
   State state = {};
   std::vector<solution_t> solutions = {};
   bool solutions_complete = false;
-
+  bool winning = false;
   for (int turn = 0;; ++turn) {
-
     // Print current state for debugging.
     std::cerr << turn << ' ' << state.DebugString() << '\n';
 
@@ -182,6 +181,13 @@ bool PlayGame() {
         claim_winning = result.outcome == Outcome::WIN1;
         std::cerr << "Outcome: " << result.outcome << '\n';
         if (result.outcome == Outcome::WIN1) std::cerr << "That's Numberwang!\n";
+        // Detect bugs in analysis:
+        bool new_winning = IsWinning(result.outcome);
+        if (winning && !new_winning) {
+          std::cerr << "WARNING: state went from winning to losing! "
+              << "(this means there is a bug in analysis)\n";
+        }
+        winning = new_winning;
       }
       WriteOutputLine(FormatMove(*selected_move) + (claim_winning ? "!" :""));
     } else {

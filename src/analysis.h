@@ -26,6 +26,10 @@ enum class Outcome {
   WIN3,  // Winning, by filling in an inferred digit
 };
 
+inline bool IsWinning(Outcome o) {
+  return o == Outcome::WIN1 || o == Outcome::WIN2 || o == Outcome::WIN3;
+}
+
 std::ostream &operator<<(std::ostream &os, const Outcome &outcome);
 
 struct AnalyzeResult {
