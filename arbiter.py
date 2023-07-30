@@ -3,6 +3,7 @@
 # Arbiter for the 2024 CodeCup game Sudoku.
 
 import argparse
+from contextlib import nullcontext
 import concurrent.futures
 from collections import Counter, defaultdict
 from datetime import datetime
@@ -151,6 +152,26 @@ def MakeLogfilenames(logdir, name1, name2, game_index, game_count):
       for role in ('first', 'second'))
 
 
+class Tee:
+  '''Writes output to a file, and also to stdout.'''
+
+  def __init__(self, file):
+    self.file = file
+
+  def __enter__(self):
+    return self
+
+  def __exit__(self, exception_type, exception_value, traceback):
+    self.file.close()
+
+  def close(self, s):
+    self.file.close()
+
+  def write(self, s):
+    sys.stdout.write(s)
+    return self.file.write(s)
+
+
 def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
   P = len(commands)
 
@@ -178,65 +199,71 @@ def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
 
   futures = []
 
-  print('Game Player 1           Player 2           Outcome 1  Outcome 2  Time 1 Time 2')
-  print('---- ------------------ ------------------ ---------- ---------- ------ ------')
-  def PrintRowStart(game_index, name1, name2):
-      print('%4d %-18s %-18s ' % (game_index + 1, name1, name2), end='')
-  def PrintRowFinish(outcomes, times):
-      print('%-10s %-10s %6.2f %6.2f' % (outcomes[0].name, outcomes[1].name, times[0], times[1]))
+  with (Tee(open(os.path.join(logdir, 'results.txt'), 'wt'))
+        if len(pairings) > 0 else contextlib.nullcontext()) as f:
 
-  for game_index in range(len(pairings)):
-    i, j = pairings[game_index]
-    command1, command2 = commands[i], commands[j]
-    name1, name2 = names[i], names[j]
-    logfilename1, logfilename2 = MakeLogfilenames(logdir, name1, name2, game_index, len(pairings))
+    print('Game Player 1           Player 2           Outcome 1  Outcome 2  Time 1 Time 2', file=f)
+    print('---- ------------------ ------------------ ---------- ---------- ------ ------', file=f)
 
-    run = functools.partial(RunGame, command1, command2, logfilename1, logfilename2, fast)
+    def PrintRowStart(game_index, name1, name2):
+      print('%4d %-18s %-18s ' % (game_index + 1, name1, name2), end='', file=f)
+    def PrintRowFinish(outcomes, times):
+      print('%-10s %-10s %6.2f %6.2f' % (outcomes[0].name, outcomes[1].name, times[0], times[1]), file=f)
 
-    if executor is None:
-      # Run game on the main thread.
-      # Print start of row first and flush, so the user can see which players
-      # are competing while the game is in progress.
-      PrintRowStart(game_index, name1, name2)
-      sys.stdout.flush()
-      outcomes, times = run()
-      PrintRowFinish(outcomes, times)
+    for game_index in range(len(pairings)):
+      i, j = pairings[game_index]
+      command1, command2 = commands[i], commands[j]
+      name1, name2 = names[i], names[j]
+      logfilename1, logfilename2 = MakeLogfilenames(logdir, name1, name2, game_index, len(pairings))
+
+      run = functools.partial(RunGame, command1, command2, logfilename1, logfilename2, fast)
+
+      if executor is None:
+        # Run game on the main thread.
+        # Print start of row first and flush, so the user can see which players
+        # are competing while the game is in progress.
+        PrintRowStart(game_index, name1, name2)
+        sys.stdout.flush()
+        outcomes, times = run()
+        PrintRowFinish(outcomes, times)
+        AddStatistics(i, j, outcomes, times)
+      else:
+        # Start the game on a background thread.
+        future = executor.submit(run)
+        futures.append(future)
+
+    # Print results from asynchronous tasks in the order they were started.
+    #
+    # This means that earlier tasks can block printing of results for later tasks
+    # have have already finished, but this is better than printing the results out
+    # of order.
+    for game_index, future in enumerate(futures):
+      i, j = pairings[game_index]
+      outcomes, times = future.result()
       AddStatistics(i, j, outcomes, times)
-    else:
-      # Start the game on a background thread.
-      future = executor.submit(run)
-      futures.append(future)
+      PrintRowStart(game_index, names[i], names[j])
+      PrintRowFinish(outcomes, times)
 
-  # Print results from asynchronous tasks in the order they were started.
-  #
-  # This means that earlier tasks can block printing of results for later tasks
-  # have have already finished, but this is better than printing the results out
-  # of order.
-  for game_index, future in enumerate(futures):
-    i, j = pairings[game_index]
-    outcomes, times = future.result()
-    AddStatistics(i, j, outcomes, times)
-    PrintRowStart(game_index, names[i], names[j])
-    PrintRowFinish(outcomes, times)
-
-  print('---- ------------------ ------------------ ---------- ---------- ------ ------')
+    print('---- ------------------ ------------------ ---------- ---------- ------ ------', file=f)
 
   # Print summary of players.
   if len(pairings) > 1:
     print()
-    print('Player             Avg.Tm Max.Tm Wins Loss Unsl Fail Tot.')
-    print('------------------ ------ ------ ---- ---- ---- ---- ----')
-    for p in sorted(range(P), key=lambda p: player_outcomes[p][Outcome.WIN], reverse=True):
-      print('%-18s %6.2f %6.2f %4d %4d %4d %4d %4d' %
-        (names[p],
-         player_time_total[p] / games_per_player,
-         player_time_max[p],
-         player_outcomes[p][Outcome.WIN],
-         player_outcomes[p][Outcome.LOSS],
-         player_outcomes[p][Outcome.UNSOLVABLE],
-         player_outcomes[p][Outcome.FAIL],
-         games_per_player))
-    print('------------------ ------ ------ ---- ---- ---- ---- -----')
+    with Tee(open(os.path.join(logdir, 'summary.txt'), 'wt')) as f:
+      print('Player             Avg.Tm Max.Tm Wins Loss Unsl Fail Tot.', file=f)
+      print('------------------ ------ ------ ---- ---- ---- ---- ----', file=f)
+      for p in sorted(range(P), key=lambda p: player_outcomes[p][Outcome.WIN], reverse=True):
+        print('%-18s %6.2f %6.2f %4d %4d %4d %4d %4d' %
+          ( names[p],
+            player_time_total[p] / games_per_player,
+            player_time_max[p],
+            player_outcomes[p][Outcome.WIN],
+            player_outcomes[p][Outcome.LOSS],
+            player_outcomes[p][Outcome.UNSOLVABLE],
+            player_outcomes[p][Outcome.FAIL],
+            games_per_player,
+          ), file=f)
+      print('------------------ ------ ------ ---- ---- ---- ---- -----', file=f)
 
 
 def DeduplicateNames(names):
@@ -289,16 +316,9 @@ def Main():
 
   names = DeduplicateNames([os.path.basename(shlex.split(command)[0]) for command in commands])
 
-  def CallRunGames(executor):
-    return RunGames(commands, names,
-        rounds=args.rounds, logdir=logdir, fast=args.fast, executor=executor)
-
-  if args.threads > 0:
-    with concurrent.futures.ThreadPoolExecutor(max_workers=args.threads) as executor:
-      CallRunGames(executor)
-  else:
-    CallRunGames(None)
-
+  with (concurrent.futures.ThreadPoolExecutor(max_workers=args.threads)
+        if args.threads > 0 else contextlib.nullcontext()) as executor:
+    RunGames(commands, names, rounds=args.rounds, logdir=logdir, fast=args.fast, executor=executor)
 
 if __name__ == '__main__':
   Main()
