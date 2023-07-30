@@ -135,7 +135,7 @@ bool PlayGame() {
 
   State state = {};
   std::vector<solution_t> solutions = {};
-  bool analysis_complete = false;
+  bool solutions_complete = false;
 
   for (int turn = 0;; ++turn) {
 
@@ -148,15 +148,15 @@ bool PlayGame() {
       // My turn!
 
       Timer timer;
-      if (!analysis_complete) {
+      if (!solutions_complete) {
         EnumerateResult er = state.EnumerateSolutions(solutions, max_count, max_work, &Rng());
         if (er.Accurate()) {
-          analysis_complete = true;
+          solutions_complete = true;
           assert(!solutions.empty());
         } else if (solutions.empty()) {
           std::cerr << "WARNING: no solutions found! (this doesn't mean there aren't any)\n";
         }
-        std::cerr << solutions.size() << (analysis_complete ? "" : "+") <<
+        std::cerr << solutions.size() << (solutions_complete ? "" : "+") <<
             " solutions in " << timer.ElapsedMillis(true) << " ms\n";
       } else {
         std::cerr << solutions.size() << " solutions remain\n";
@@ -167,7 +167,7 @@ bool PlayGame() {
       if (solutions.empty()) {
         // I don't know anything about solutions. Just pick randomly.
         selected_move = PickRandomMove(state);
-      } else if (!analysis_complete || solutions.size() > max_count_for_analysis) {
+      } else if (!solutions_complete || solutions.size() > max_count_for_analysis) {
         // I have some solutions but it's not the complete set.
         selected_move = PickMoveIncomplete(state, solutions);
       } else if (solutions.size() == 1) {
@@ -211,7 +211,7 @@ bool PlayGame() {
     state.Play(*selected_move);
 
     if (!solutions.empty()) {
-      if (!analysis_complete) {
+      if (!solutions_complete) {
         // Just clear solutions. We'll regenerate them next turn.
         solutions.clear();
       } else {
@@ -223,7 +223,7 @@ bool PlayGame() {
           }
         }
         solutions.swap(next_solutions);
-        assert(!analysis_complete || !solutions.empty());
+        assert(!solutions_complete || !solutions.empty());
       }
     }
   }
