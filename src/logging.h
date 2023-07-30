@@ -93,7 +93,7 @@ inline void LogTurn(int turn, const State &state, log_duration_t time_used) {
 
 // Log the number of solutions that remain.
 inline void LogSolutions(int64_t count, bool complete) {
-  LogStream("SOLUTIONS") << count << (complete ? "+" : "");
+  LogStream("SOLUTIONS") << count << (complete ? "" : "+");
 }
 
 // Log the move string that the player is about to send.
