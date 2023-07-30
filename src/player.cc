@@ -86,7 +86,7 @@ void WriteOutputLine(const std::string &s) {
   std::cout << s << std::endl;
 }
 
-Move PickRandomMove(const State &state) {
+Move PickRandomMove(const State &state, rng_t &rng) {
   std::vector<Move> moves;
   for (int pos = 0; pos < 81; ++pos) {
     if (state.Digit(pos) == 0) {
@@ -96,12 +96,12 @@ Move PickRandomMove(const State &state) {
       }
     }
   }
-  return RandomSample(moves);
+  return RandomSample(moves, rng);
 }
 
 // Pick a move from an incomplete list of solutions.
 // It returns a random move that maximizes the number of solutions remaining.
-Move PickMoveIncomplete(const State &state, std::span<const solution_t> solutions) {
+Move PickMoveIncomplete(const State &state, std::span<const solution_t> solutions, rng_t &rng) {
   assert(!solutions.empty());
   int count[81][10] = {};
   for (const auto &solution : solutions) {
@@ -127,10 +127,10 @@ Move PickMoveIncomplete(const State &state, std::span<const solution_t> solution
     }
   }
   assert(max_count > 0 && !best_moves.empty());
-  return RandomSample(best_moves);
+  return RandomSample(best_moves, rng);
 }
 
-bool PlayGame() {
+bool PlayGame(rng_t &rng) {
   std::string input = ReadInputLine();
   const int my_player = (input == "Start" ? 0 : 1);
 
@@ -157,7 +157,7 @@ bool PlayGame() {
       if (!solutions_complete) {
         // Try to enumerate all solutions.
         Timer timer;
-        EnumerateResult er = state.EnumerateSolutions(solutions, max_count, max_work, &Rng());
+        EnumerateResult er = state.EnumerateSolutions(solutions, max_count, max_work, &rng);
         enumerate_time += timer.Elapsed();
         if (er.Accurate()) {
           solutions_complete = true;
@@ -174,10 +174,10 @@ bool PlayGame() {
       bool claim_winning = false;
       if (solutions.empty()) {
         // I don't know anything about solutions. Just pick randomly.
-        selected_move = PickRandomMove(state);
+        selected_move = PickRandomMove(state, rng);
       } else if (!solutions_complete || solutions.size() > max_count_for_analysis) {
         // I have some solutions but it's not the complete set.
-        selected_move = PickMoveIncomplete(state, solutions);
+        selected_move = PickMoveIncomplete(state, solutions, rng);
       } else if (solutions.size() == 1) {
         // Only one solution left. I have already won! (This should be rare.)
         LogInfo() << "Solution is already unique!";
@@ -188,7 +188,7 @@ bool PlayGame() {
         Timer timer;
         grid_t givens = {};
         for (int i = 0; i < 81; ++i) givens[i] = state.Digit(i);
-        AnalyzeResult result = Analyze(givens, solutions);
+        AnalyzeResult result = Analyze(givens, solutions, &rng);
         analyze_time += timer.Elapsed();
         selected_move = result.move;
         claim_winning = result.outcome == Outcome::WIN1;
@@ -254,5 +254,10 @@ bool PlayGame() {
 int main() {
   LogId(player_name);
 
-  return PlayGame() ? EXIT_SUCCESS : EXIT_FAILURE;
+  // Initialize RNG.
+  rng_seed_t seed = GenerateSeed(4);
+  LogSeed(seed);
+  rng_t rng = CreateRng(seed);
+
+  return PlayGame(rng) ? EXIT_SUCCESS : EXIT_FAILURE;
 }

@@ -7,8 +7,8 @@ BINARIES=$(BIN)player $(BIN)solver
 COMMON_HDRS=$(SRC)analysis.h $(SRC)check.h $(SRC)counters.h $(SRC)logging.h $(SRC)random.h $(SRC)state.h
 COMMON_SRCS=$(SRC)analysis.cc $(SRC)check.cc $(SRC)counters.cc $(SRC)random.cc $(SRC)state.cc
 COMMON_OBJS=$(OBJ)analysis.o $(OBJ)check.o $(OBJ)counters.o $(OBJ)random.o $(OBJ)state.o
-PLAYER_OBJS=$(COMMON_OBJS) $(OBJ)player.o
-SOLVER_OBJS=$(COMMON_OBJS) $(OBJ)solver.o
+PLAYER_OBJS=$(OBJ)player.o $(COMMON_OBJS)
+SOLVER_OBJS=$(OBJ)solver.o $(COMMON_OBJS)
 
 # Note that headers must be included in dependency order.
 COMBINED_SRCS=$(SRC)check.h $(SRC)check.cc $(SRC)counters.h $(SRC)counters.cc \
@@ -19,13 +19,24 @@ all: $(BINARIES)
 
 $(OBJ)analysis.o: $(SRC)analysis.cc $(SRC)analysis.h $(SRC)counters.h $(SRC)memo.h $(SRC)random.h $(SRC)state.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
-$(OBJ)check.o:    $(SRC)check.cc     $(SRC)check.h;     $(CXX) $(CXXFLAGS) -c $< -o $@
-$(OBJ)counters.o: $(SRC)counters.cc  $(SRC)counters.h;  $(CXX) $(CXXFLAGS) -c $< -o $@
-$(OBJ)random.o:   $(SRC)random.cc    $(SRC)random.h;    $(CXX) $(CXXFLAGS) -c $< -o $@
-$(OBJ)state.o:    $(SRC)state.cc     $(SRC)state.h;     $(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(OBJ)player.o: $(SRC)player.cc $(COMMON_HDRS);    $(CXX) $(CXXFLAGS) -c $< -o $@
-$(OBJ)solver.o: $(SRC)solver.cc $(COMMON_HDRS);    $(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJ)check.o: $(SRC)check.cc $(SRC)check.h
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(OBJ)counters.o: $(SRC)counters.cc $(SRC)counters.h
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(OBJ)random.o: $(SRC)random.cc $(SRC)random.h
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(OBJ)state.o: $(SRC)state.cc $(SRC)state.h $(SRC)random.h
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(OBJ)player.o: $(SRC)player.cc $(COMMON_HDRS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(OBJ)solver.o: $(SRC)solver.cc $(COMMON_HDRS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(BIN)player: $(PLAYER_OBJS)
 	$(CXX) $(CXXFLAGS) $(PLAYER_OBJS) -o $@ $(LDFLAGS) $(LDLIBS)
@@ -40,11 +51,14 @@ $(BIN)combined-player: $(OUT)combined-player.cc
 	$(CXX) $(CXXFLAGS) -o $@ $<  $(LDFLAGS) $(LDLIBS)
 
 player: $(BIN)player
+
 solver: $(BIN)solver
+
 combined: $(BIN)combined-player
 
 clean:
 	rm -f $(BINARIES) $(OBJ)*.o $(OUT)combined-player.cc $(BIN)combined-player
 
 .DELETE_ON_ERROR:
+
 .PHONY: all clean player solver combined

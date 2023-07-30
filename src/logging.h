@@ -18,6 +18,7 @@
 #define LOGGING_H_INCLUDED
 
 #include "analysis.h"
+#include "random.h"
 #include "state.h"
 
 #include <chrono>
@@ -83,6 +84,10 @@ inline void LogId(std::string_view player_name) {
       << ")"
 #endif
   ;
+}
+
+inline void LogSeed(const rng_seed_t &seed) {
+  LogStream("SEED") << FormatSeed(seed);
 }
 
 // Log the state at the beginning of a turn, and how much time the player thinks

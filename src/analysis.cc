@@ -57,6 +57,10 @@ candidates_t CalculateCandidates(std::span<const solution_t> solutions) {
 
 constexpr bool Determined(unsigned mask) { return (mask & (mask - 1)) == 0; }
 
+template<class T> const T &Sample(const std::vector<T> &v, rng_t *rng) {
+  return rng == nullptr ? v.at(0) : RandomSample(v, *rng);
+}
+
 // Returns how many times it would make sense to place an inferred digit.
 //
 // Currently I believe it only makes sense to try placing an inferred digit when
@@ -288,7 +292,8 @@ bool IsWinning2(
 AnalyzeResult SelectMoveFromSolutions2(
     const std::vector<position_t> &choice_positions,
     const std::vector<Move> &inferred_moves,
-    std::span<HashedSolution> solutions) {
+    std::span<HashedSolution> solutions,
+    rng_t *rng) {
   assert(solutions.size() > 1);
 
   // Recursively search for a winning move.
@@ -328,11 +333,11 @@ AnalyzeResult SelectMoveFromSolutions2(
 
   if (ReduceInferredCount(inferred_moves.size()) > 0) {
     if (!IsWinning(solutions, choice_positions, inferred_moves.size() - 1, 1)) {
-      return {Outcome::WIN3, RandomSample(inferred_moves)};
+      return {Outcome::WIN3, Sample(inferred_moves, rng)};
     }
   }
 
-  return {Outcome::LOSS, RandomSample(losing_moves)};
+  return {Outcome::LOSS, Sample(losing_moves, rng)};
 }
 
 }  // namespace
@@ -353,7 +358,7 @@ std::ostream &operator<<(std::ostream &os, const AnalyzeResult &result) {
   return os << "AnalyzeResult{outcome=" << result.outcome << ", move=" << result.move << "}";
 }
 
-AnalyzeResult Analyze(const grid_t &givens, std::span<const solution_t> solutions) {
+AnalyzeResult Analyze(const grid_t &givens, std::span<const solution_t> solutions, rng_t *rng) {
   assert(solutions.size() > 1);
 
   counters.recusive_calls.Inc();
@@ -385,7 +390,7 @@ AnalyzeResult Analyze(const grid_t &givens, std::span<const solution_t> solution
   }
 
   // Otherwise, recursively search for a winning move.
-  return SelectMoveFromSolutions2(choice_positions, inferred_moves, hashed_solutions);
+  return SelectMoveFromSolutions2(choice_positions, inferred_moves, hashed_solutions, rng);
 
   // Note: we could clear the memo before returning to save memory, but keeping
   // it populated will help with future searches especially in the common case

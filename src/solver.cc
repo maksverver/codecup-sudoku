@@ -194,7 +194,7 @@ void EnumerateSolutions(State &state) {
   } else if (solutions.size() == 1) {
     std::cout << "Solution is unique!\n";
   } else {
-    AnalyzeResult result = Analyze(givens, solutions);
+    AnalyzeResult result = Analyze(givens, solutions, nullptr);
     std::cout
         << "Result: " << result.outcome << " " << result.move
         << " (" << (char)('A' + result.move.pos/9) << (char)('a' + result.move.pos%9)
@@ -219,6 +219,7 @@ int main(int argc, char *argv[]) {
         "\tsolver -        (solve states read from standard input)\n";
     return 1;
   }
+
   if (strcmp(argv[1], "-") != 0) {
     // Process the state description passed as a command line argument.
     auto state = ParseDesc(argv[1]);
