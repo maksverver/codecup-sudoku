@@ -143,10 +143,8 @@ bool PlayGame() {
     std::cerr << turn << ' ' << state.DebugString() << '\n';
 
     std::optional<Move> selected_move;
-
     if (turn % 2 == my_player) {
       // My turn!
-
       Timer timer;
       if (!solutions_complete) {
         EnumerateResult er = state.EnumerateSolutions(solutions, max_count, max_work, &Rng());
@@ -163,7 +161,6 @@ bool PlayGame() {
       }
 
       bool claim_winning = false;
-
       if (solutions.empty()) {
         // I don't know anything about solutions. Just pick randomly.
         selected_move = PickRandomMove(state);
@@ -186,10 +183,7 @@ bool PlayGame() {
         std::cerr << "Outcome: " << result.outcome << '\n';
         if (result.outcome == Outcome::WIN1) std::cerr << "That's Numberwang!\n";
       }
-
-      // Output
       WriteOutputLine(FormatMove(*selected_move) + (claim_winning ? "!" :""));
-
     } else {
       // Opponent's turn.
       if (turn > 0) input = ReadInputLine();
@@ -207,7 +201,6 @@ bool PlayGame() {
       std::cerr << "Invalid move!\n";
       return false;
     }
-
     state.Play(*selected_move);
 
     if (!solutions.empty()) {
