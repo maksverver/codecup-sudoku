@@ -6,19 +6,19 @@ DEPENDENCIES
 
 BUILDING
 
-To build everything, simply run make:
+To build all binaries, simply run make:
 
 % make -j4
 
 Output files are in output/
 
+To create the combined player source file at output/player-combined.cc:
+
+% make combined
+
 To only build e.g. a release build of the solver:
 
 % make -f Makefile.release solver
-
-To build a combined sourcefile in output/player-combined.cc, run e.g.:
-
-%  make -f Makefile.release combined
 
 
 STRATEGY
