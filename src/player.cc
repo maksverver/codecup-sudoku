@@ -1,5 +1,6 @@
 #include "analysis.h"
 #include "check.h"
+#include "logging.h"
 #include "random.h"
 #include "state.h"
 
@@ -69,19 +70,19 @@ std::string ReadInputLine() {
   // but the CodeCup judging system sometimes writes empty lines before the
   // actual input! See: https://forum.codecup.nl/read.php?31,2221
   if (!(std::cin >> s)) {
-    std::cerr << "Unexpected end of input!\n";
+    LogError() << "Unexpected end of input!";
     exit(1);
   }
+  LogReceived(s);
   if (s == "Quit") {
-    std::cerr << "Quit received. Exiting.\n";
+    LogInfo() << "Exiting.";
     exit(0);
   }
-  std::cerr << ("Received: [" + s + "]\n");
   return s;
 }
 
 void WriteOutputLine(const std::string &s) {
-  std::cerr << ("Sending: [" + s + "]\n");
+  LogSending(s);
   std::cout << s << std::endl;
 }
 
@@ -133,31 +134,40 @@ bool PlayGame() {
   std::string input = ReadInputLine();
   const int my_player = (input == "Start" ? 0 : 1);
 
+  int64_t total_time_ms = 0;
+  Timer turn_timer;
   State state = {};
   std::vector<solution_t> solutions = {};
   bool solutions_complete = false;
   bool winning = false;
   for (int turn = 0;; ++turn) {
-    // Print current state for debugging.
-    std::cerr << turn << ' ' << state.DebugString() << '\n';
-
     std::optional<Move> selected_move;
     if (turn % 2 == my_player) {
+
+      // Print current state for debugging. Ideally I would print this every
+      // turn for debugging, but the log output is getting close to the 10,000
+      // character CodeCup limit.
+      LogTurn(turn, state, total_time_ms);
+
       // My turn!
-      Timer timer;
+      int64_t enumerate_time_ms = 0;
+      int64_t analyze_time_ms = 0;
       if (!solutions_complete) {
+        // Try to enumerate all solutions.
+        Timer timer;
         EnumerateResult er = state.EnumerateSolutions(solutions, max_count, max_work, &Rng());
+        enumerate_time_ms += timer.ElapsedMillis();
         if (er.Accurate()) {
           solutions_complete = true;
-          assert(!solutions.empty());
+          if (solutions.empty()) {
+            LogError() << "No solutions remain!";
+            return false;
+          }
         } else if (solutions.empty()) {
-          std::cerr << "WARNING: no solutions found! (this doesn't mean there aren't any)\n";
+          LogWarning() << "No solutions found! (this doesn't mean there aren't any)";
         }
-        std::cerr << solutions.size() << (solutions_complete ? "" : "+") <<
-            " solutions in " << timer.ElapsedMillis(true) << " ms\n";
-      } else {
-        std::cerr << solutions.size() << " solutions remain\n";
       }
+      LogSolutions(solutions.size(), solutions_complete);
 
       bool claim_winning = false;
       if (solutions.empty()) {
@@ -168,34 +178,39 @@ bool PlayGame() {
         selected_move = PickMoveIncomplete(state, solutions);
       } else if (solutions.size() == 1) {
         // Only one solution left. I have already won! (This should be rare.)
-        std::cerr << "Solution is already unique!\n";
+        LogInfo() << "Solution is already unique!";
         WriteOutputLine("!");
         return true;
       } else {
         // The hard case: select optimal move given the complete set of solutions.
+        Timer timer;
         grid_t givens = {};
         for (int i = 0; i < 81; ++i) givens[i] = state.Digit(i);
         AnalyzeResult result = Analyze(givens, solutions);
-        std::cerr << "Analysis took " << timer.ElapsedMillis(true) << " ms.\n";
+        analyze_time_ms += timer.ElapsedMillis();
         selected_move = result.move;
         claim_winning = result.outcome == Outcome::WIN1;
-        std::cerr << "Outcome: " << result.outcome << '\n';
-        if (result.outcome == Outcome::WIN1) std::cerr << "That's Numberwang!\n";
+        LogOutcome(result.outcome);
+        if (result.outcome == Outcome::WIN1) LogInfo() << "That's Numberwang!";
         // Detect bugs in analysis:
         bool new_winning = IsWinning(result.outcome);
         if (winning && !new_winning) {
-          std::cerr << "WARNING: state went from winning to losing! "
-              << "(this means there is a bug in analysis)\n";
+          LogWarning() << "State went from winning to losing! "
+              << "(this means there is a bug in analysis)";
         }
         winning = new_winning;
       }
+      int64_t turn_time_ms = turn_timer.ElapsedMillis();
+      LogTime(turn_time_ms, enumerate_time_ms, analyze_time_ms);
+      total_time_ms += turn_time_ms;
       WriteOutputLine(FormatMove(*selected_move) + (claim_winning ? "!" :""));
     } else {
       // Opponent's turn.
       if (turn > 0) input = ReadInputLine();
+      turn_timer.Reset();
 
       if (auto m = ParseMove(input); !m) {
-        std::cerr << "Could not parse move!\n";
+        LogError() << "Could not parse move!";
         return false;
       } else {
         selected_move = *m;
@@ -204,7 +219,7 @@ bool PlayGame() {
 
     assert(selected_move);
     if (!state.CanPlay(*selected_move)) {
-      std::cerr << "Invalid move!\n";
+      LogError() << "Invalid move!";
       return false;
     }
     state.Play(*selected_move);
@@ -227,26 +242,15 @@ bool PlayGame() {
     }
   }
 
-  std::cerr << "Exiting normally.\n" << std::flush;
+  // This is probably unreachable?
+  LogInfo() << "Game over.";
   return true;
 }
 
 } // namespace
 
 int main() {
-  std::cerr << player_name
-      << " (" << std::numeric_limits<size_t>::digits << " bit)"
-#ifdef __VERSION__
-      << " (compiler v" __VERSION__ << ")"
-#endif
-#ifdef GIT_COMMIT
-      << " (commit " GIT_COMMIT
-  #if GIT_DIRTY
-      << "; uncommitted changes"
-  #endif
-      << ")"
-#endif
-      << "\n";
+  LogId(player_name);
 
   return PlayGame() ? EXIT_SUCCESS : EXIT_FAILURE;
 }
