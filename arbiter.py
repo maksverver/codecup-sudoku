@@ -286,7 +286,7 @@ def MakeLogdir(logdir, rounds):
   assert os.path.isdir(logdir)
   if rounds > 0:
     # Create a subdirectory based on current date & time
-    dirname = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
+    dirname = datetime.now().strftime('%Y%m%dT%H%M%S')
     logdir = os.path.join(logdir, dirname)
     os.mkdir(logdir)  # fails if path already exists
   return logdir
