@@ -5,6 +5,7 @@
 import argparse
 import concurrent.futures
 from collections import Counter, defaultdict
+from datetime import datetime
 from enum import Enum
 import functools
 import os.path
@@ -140,6 +141,16 @@ def RunGame(command1, command2, logfile1, logfile2, fast):
   return outcomes, times
 
 
+def MakeLogfilenames(logdir, name1, name2, game_index, game_count):
+  if not logdir:
+    return (None, None)
+  prefix = '%s-vs-%s' % (name1, name2)
+  if game_count > 1:
+    prefix = 'game-%s-of-%s-%s' % (game_index + 1, game_count, prefix)
+  return (os.path.join(logdir, '%s-%s.txt' % (prefix, role))
+      for role in ('first', 'second'))
+
+
 def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
   P = len(commands)
 
@@ -178,12 +189,7 @@ def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
     i, j = pairings[game_index]
     command1, command2 = commands[i], commands[j]
     name1, name2 = names[i], names[j]
-    if not logdir:
-      logfilename1 = logfilename2 = None
-    else:
-      logfilename1, logfilename2 = (
-        os.path.join(logdir, 'game-%d-of-%d-%s-vs-%s-%s.txt' % (game_index + 1, len(pairings), name1, name2, role))
-        for role in ('fst', 'snd'))
+    logfilename1, logfilename2 = MakeLogfilenames(logdir, name1, name2, game_index, len(pairings))
 
     run = functools.partial(RunGame, command1, command2, logfilename1, logfilename2, fast)
 
@@ -246,6 +252,19 @@ def DeduplicateNames(names):
   return unique_names
 
 
+def MakeLogdir(logdir, rounds):
+  if logdir is None:
+    return None
+
+  assert os.path.isdir(logdir)
+  if rounds > 0:
+    # Create a subdirectory based on current date & time
+    dirname = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
+    logdir = os.path.join(logdir, dirname)
+    os.mkdir(logdir)  # fails if path already exists
+  return logdir
+
+
 def Main():
   parser = argparse.ArgumentParser(prog='arbiter.py')
   parser.add_argument('command1', type=str,
@@ -264,14 +283,15 @@ def Main():
       help='parallelize execution using threads (no more than physical cores!)')
 
   args = parser.parse_args()
-  assert args.logdir is None or os.path.isdir(args.logdir)
+  logdir = MakeLogdir(args.logdir, args.rounds)
 
   commands = [args.command1, args.command2] + args.commandN
 
   names = DeduplicateNames([os.path.basename(shlex.split(command)[0]) for command in commands])
 
   def CallRunGames(executor):
-    return RunGames(commands, names, rounds=args.rounds, logdir=args.logdir, fast=args.fast, executor=executor)
+    return RunGames(commands, names,
+        rounds=args.rounds, logdir=logdir, fast=args.fast, executor=executor)
 
   if args.threads > 0:
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.threads) as executor:
