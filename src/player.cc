@@ -14,6 +14,7 @@
 #include <optional>
 #include <random>
 #include <string>
+#include <string_view>
 #include <vector>
 
 namespace {
@@ -249,13 +250,56 @@ bool PlayGame(rng_t &rng) {
   return true;
 }
 
+bool RemovePrefix(std::string_view &s, std::string_view prefix) {
+  if (!s.starts_with(prefix)) return false;
+  s.remove_prefix(prefix.size());
+  return true;
+}
+
+struct CommandLineArguments {
+  // --seed=<hex string> (length must be a multiple of 8)
+  std::string seed;
+
+  bool Parse(int argc, char *argv[]) {
+    for (int i = 1; i < argc; ++i) {
+      std::string_view s(argv[i]);
+      if (RemovePrefix(s, "--seed=")) {
+        seed = s;
+      } else {
+        LogError() << "Invalid argument: [" << s << "]";
+        return false;
+      }
+    }
+    return true;
+  }
+};
+
+bool InitializeSeed(rng_seed_t &seed, std::string_view hex_string) {
+  if (hex_string.empty()) {
+    // Generate a new random 128-bit seed
+    seed = GenerateSeed(4);
+    return true;
+  }
+  if (auto s = ParseSeed(hex_string)) {
+    seed = *s;
+    return true;
+  } else {
+    LogError() << "Could not parse RNG seed: [" << hex_string << "]";
+    return false;
+  }
+}
+
 } // namespace
 
-int main() {
+int main(int argc, char *argv[]) {
   LogId(player_name);
 
+  CommandLineArguments args;
+  if (!args.Parse(argc, argv)) return EXIT_FAILURE;
+
   // Initialize RNG.
-  rng_seed_t seed = GenerateSeed(4);
+  rng_seed_t seed;
+  if (!InitializeSeed(seed, args.seed)) return EXIT_FAILURE;
   LogSeed(seed);
   rng_t rng = CreateRng(seed);
 
