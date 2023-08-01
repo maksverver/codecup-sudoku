@@ -7,6 +7,7 @@
 #include <string>
 #include <string_view>
 #include <sstream>
+#include <vector>
 
 // Registers a flag (typically, this is called only indirectly via DECLARE_FLAG()).
 void RegisterFlag(std::string_view id, std::function<bool(std::string_view)> parse);
@@ -18,6 +19,9 @@ void RegisterFlag(std::string_view id, std::function<bool(std::string_view)> par
 //
 // argv[0] is not parsed (it usually contains the program name)
 bool ParseFlags(int argc, char *argv[]);
+
+// Same as above, but allows non-flag arguments that are stored in plain_args.
+bool ParseFlags(int argc, char *argv[], std::vector<char *> &plain_args);
 
 // Declare a variable with the given type and default value, and register a
 // command line flag with the given identifier. For example:

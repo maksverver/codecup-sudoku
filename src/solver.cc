@@ -1,10 +1,12 @@
 #include "analysis.h"
 #include "counters.h"
+#include "flags.h"
 #include "state.h"
 
 #include <array>
 #include <bit>
 #include <cassert>
+#include <cstdlib>
 #include <cstring>
 #include <iostream>
 #include <optional>
@@ -14,7 +16,8 @@
 
 namespace {
 
-constexpr int max_count = 1000000;
+DECLARE_FLAG(int, max_enumerate, 1e6, "max_enumerate");
+DECLARE_FLAG(int, max_print,     100, "max_print");
 
 char Char(int d, char zero='.') {
   assert(d >= 0 && d < 10);
@@ -41,7 +44,7 @@ std::optional<State> ParseDesc(const char *desc) {
 
 void CountSolutions(State &state) {
 #if 1
-  CountResult cr = state.CountSolutions(max_count);
+  CountResult cr = state.CountSolutions(max_enumerate);
   assert(!cr.WorkLimitReached());
   if (cr.CountLimitReached()) std::cout << "At least ";
   std::cout << cr.count << " solutions" << std::endl;
@@ -54,7 +57,7 @@ void CountSolutions(State &state) {
   // Slightly slower implementation using EnumerateSolutions() instead.
   int count = 0;
   EnumerateResult er = state.EnumerateSolutions([&count](const std::array<uint8_t, 81>&){
-    return ++count < max_count;
+    return ++count < max_solutions_to_enumerate;
   });
   if (!er.Accurate()) std::cout << "At least ";
   std::cout << count << " solutions" << std::endl;
@@ -83,11 +86,12 @@ void EnumerateSolutions(State &state) {
   for (int i = 0; i < 81; ++i) givens[i] = state.Digit(i);
 
   std::vector<solution_t> solutions;
-  EnumerateResult er = state.EnumerateSolutions(solutions, max_count);
+  EnumerateResult er = state.EnumerateSolutions(solutions, max_enumerate);
 
-  // Print solutions (TODO: make this optional?)
-  for (auto solution : solutions) {
-    for (auto d : solution) std::cout << Char(d);
+  // Print solutions
+  size_t print_count = std::min(solutions.size(), (size_t) max_print);
+  for (size_t i = 0; i < print_count; ++i) {
+    for (auto d : solutions[i]) std::cout << Char(d);
     std::cout << '\n';
   }
 
@@ -95,6 +99,9 @@ void EnumerateSolutions(State &state) {
   if (!er.success) {
     std::cout << "(further solutions omitted)\n";
     return;  // doesn't make sense to analyze options with incomplete data
+  }
+  if (print_count < solutions.size()) {
+    std::cout << "(" << solutions.size() - print_count << " more solutions not printed)\n";
   }
 
   int given_count = 0;
@@ -213,19 +220,26 @@ void Process(State &state) {
 }  // namespace
 
 int main(int argc, char *argv[]) {
-  if (argc != 2) {
+  std::vector<char *> plain_args;
+  if (!ParseFlags(argc, argv, plain_args)) return EXIT_FAILURE;
+
+  if (plain_args.size() != 1) {
     std::cerr << "Usage:\n"
-        "\tsolver <state>  (solves a single state)\n"
-        "\tsolver -        (solve states read from standard input)\n";
+        "\tsolver [<options>] <state>  (solves a single state)\n"
+        "\tsolver [<options>] -        (solve states read from standard input)\n\n"
+        "Options:\n"
+        "\t--max_enumerate=1000000     (max. number of solutions to enumerate)\n"
+        "\t--max_print=100             (max. number of solutions to print)\n";
     return 1;
   }
 
-  if (strcmp(argv[1], "-") != 0) {
+  const char *arg = plain_args[0];
+  if (strcmp(arg, "-") != 0) {
     // Process the state description passed as a command line argument.
-    auto state = ParseDesc(argv[1]);
+    auto state = ParseDesc(arg);
     if (!state) {
-      std::cerr << "Could parse command line argument: [" << argv[1] << "]\n";
-      return 1;
+      std::cerr << "Could parse command line argument: [" << arg << "]\n";
+      return EXIT_FAILURE;
     }
     Process(*state);
   } else {

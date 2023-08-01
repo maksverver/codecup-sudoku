@@ -51,9 +51,33 @@ void RegisterFlag(std::string_view id, std::function<bool(std::string_view)> par
 }
 
 bool ParseFlags(int argc, char *argv[]) {
+  std::vector<char*> plain_args;
+  if (!ParseFlags(argc, argv, plain_args)) return false;
+  if (!plain_args.empty()) {
+    std::cerr << "Unexpected arguments:";
+    for (char *s : plain_args) std::cerr << ' ' << s;
+    std::cerr << std::endl;
+    return false;
+  }
+  return true;
+}
+
+bool ParseFlags(int argc, char *argv[], std::vector<char*> &plain_args) {
   const flag_map_t &flags_by_id = FlagsById();
   for (int i = 1; i < argc; ++i) {
-    if (!ParseFlag(argv[i], flags_by_id)) return false;
+    char *s = argv[i];
+    if (s[0] == '-' && s[1] == '-' && s[2] == '\0') {
+      // End-of-arguments marker ("--")
+      while (i + 1 < argc) plain_args.push_back(argv[++i]);
+      break;
+    } else if (s[0] == '-' && s[1] != '\0') {
+      // This should be a flag. Try to parse it.
+      if (!ParseFlag(s, flags_by_id)) return false;
+    } else {
+      // Plain argument. Either it doesn't start with '-', OR it is the
+      // single-character string "-" which often denoted stdin.
+      plain_args.push_back(s);
+    }
   }
   return true;
 }
