@@ -18,7 +18,7 @@ COMBINED_SRCS=$(SRC)check.h $(SRC)check.cc $(SRC)flags.h $(SRC)flags.cc \
 
 all: $(BINARIES)
 
-$(OBJ)analysis.o: $(SRC)analysis.cc $(SRC)analysis.h $(SRC)counters.h $(SRC)memo.h $(SRC)random.h $(SRC)state.h
+$(OBJ)analysis.o: $(SRC)analysis.cc $(SRC)analysis.h $(SRC)counters.h $(SRC)memo.h $(SRC)state.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(OBJ)check.o: $(SRC)check.cc $(SRC)check.h

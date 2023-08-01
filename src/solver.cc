@@ -16,8 +16,9 @@
 
 namespace {
 
-DECLARE_FLAG(int, max_enumerate, 1e6, "max_enumerate");
-DECLARE_FLAG(int, max_print,     100, "max_print");
+DECLARE_FLAG(int, max_enumerate,      1e6, "max_enumerate");
+DECLARE_FLAG(int, max_print,          100, "max_print");
+DECLARE_FLAG(int, max_winning_moves,    1, "max_winning_moves");
 
 char Char(int d, char zero='.') {
   assert(d >= 0 && d < 10);
@@ -201,12 +202,14 @@ void EnumerateSolutions(State &state) {
   } else if (solutions.size() == 1) {
     std::cout << "Solution is unique!\n";
   } else {
-    AnalyzeResult result = Analyze(givens, solutions, nullptr);
-    std::cout
-        << "Result: " << result.outcome << " " << result.move
-        << " (" << (char)('A' + result.move.pos/9) << (char)('a' + result.move.pos%9)
-        << result.move.digit << (result.outcome == Outcome::WIN1 ? "!" : "") << ")\n\n"
-        << counters << '\n';
+    AnalyzeResult result = Analyze(givens, solutions, max_winning_moves);
+    std::cout << "Outcome: " << result.outcome << '\n';
+    std::cout << result.optimal_moves.size() << " optimal moves:";
+    for (const Move &move : result.optimal_moves) {
+      std::cout << ' ' << (char)('A' + move.pos/9) << (char)('a' + move.pos%9)
+          << move.digit << (result.outcome == Outcome::WIN1 ? "!" : "");
+    }
+    std::cout << '\n' << counters << '\n';
   }
 }
 
@@ -229,7 +232,8 @@ int main(int argc, char *argv[]) {
         "\tsolver [<options>] -        (solve states read from standard input)\n\n"
         "Options:\n"
         "\t--max_enumerate=1000000     (max. number of solutions to enumerate)\n"
-        "\t--max_print=100             (max. number of solutions to print)\n";
+        "\t--max_print=100             (max. number of solutions to print)\n"
+        "\t--max_winning_moves=1       (max. number of winning moves to list)\n";
     return 1;
   }
 

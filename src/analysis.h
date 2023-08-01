@@ -1,7 +1,6 @@
 #ifndef ANALYSIS_H_INCLUDED
 #define ANALYSIS_H_INCLUDED
 
-#include "random.h"
 #include "state.h"
 
 #include <array>
@@ -35,7 +34,7 @@ std::ostream &operator<<(std::ostream &os, const Outcome &outcome);
 
 struct AnalyzeResult {
   Outcome outcome;
-  Move move;
+  std::vector<Move> optimal_moves;
 };
 
 std::ostream &operator<<(std::ostream &os, const AnalyzeResult &result);
@@ -44,6 +43,7 @@ std::ostream &operator<<(std::ostream &os, const AnalyzeResult &result);
 // the optimal move (first element of the result) and whether it is a winning.
 //
 // Preconditions: solutions.size() > 1
-AnalyzeResult Analyze(const grid_t &givens, std::span<const solution_t> solutions, rng_t *rng);
+AnalyzeResult Analyze(
+    const grid_t &givens, std::span<const solution_t> solutions, int max_winning_moves);
 
 #endif  // ndef ANALYSIS_H_INCLUDED

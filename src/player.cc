@@ -192,9 +192,9 @@ bool PlayGame(rng_t &rng) {
         Timer timer;
         grid_t givens = {};
         for (int i = 0; i < 81; ++i) givens[i] = state.Digit(i);
-        AnalyzeResult result = Analyze(givens, solutions, &rng);
+        AnalyzeResult result = Analyze(givens, solutions, 1);
         analyze_time += timer.Elapsed();
-        selected_move = result.move;
+        selected_move = RandomSample(result.optimal_moves, rng);
         claim_winning = result.outcome == Outcome::WIN1;
         LogOutcome(result.outcome);
         if (result.outcome == Outcome::WIN1) LogInfo() << "That's Numberwang!";

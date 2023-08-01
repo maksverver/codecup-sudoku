@@ -1,7 +1,6 @@
 #include "analysis.h"
 #include "counters.h"
 #include "memo.h"
-#include "random.h"
 #include "state.h"
 
 #include <algorithm>
@@ -56,10 +55,6 @@ candidates_t CalculateCandidates(std::span<const solution_t> solutions) {
 }
 
 constexpr bool Determined(unsigned mask) { return (mask & (mask - 1)) == 0; }
-
-template<class T> const T &Sample(const std::vector<T> &v, rng_t *rng) {
-  return rng == nullptr ? v.at(0) : RandomSample(v, *rng);
-}
 
 // Returns how many times it would make sense to place an inferred digit.
 //
@@ -134,11 +129,12 @@ void SortByDigitAtPosition(std::span<HashedSolution> solutions, position_t pos) 
 // An immediately-winning move is a move that reduces the set of solutions to a
 // single solution. i.e., it is a position and digit such that only one solution
 // has that digit in that position.
-std::optional<Move> FindImmediatelyWinningMove(
+std::vector<Move> FindImmediatelyWinningMoves(
     std::span<const solution_t> solutions,
     std::span<const position_t> choice_positions) {
   assert(solutions.size() > 1);
   assert(choice_positions.size() > 0);
+  std::vector<Move> result;
   for (position_t pos : choice_positions) {
     int solution_count[10] = {};
     for (const solution_t &solution : solutions) {
@@ -146,11 +142,11 @@ std::optional<Move> FindImmediatelyWinningMove(
     }
     for (int digit = 1; digit <= 9; ++digit) {
       if (solution_count[digit] == 1) {
-        return Move{pos, digit};
+        result.push_back(Move{pos, digit});
       }
     }
   }
-  return {};
+  return result;
 }
 
 // Recursively solves the given state assuming that:
@@ -293,11 +289,12 @@ AnalyzeResult SelectMoveFromSolutions2(
     const std::vector<position_t> &choice_positions,
     const std::vector<Move> &inferred_moves,
     std::span<HashedSolution> solutions,
-    rng_t *rng) {
+    int max_winning_moves) {
   assert(solutions.size() > 1);
 
   // Recursively search for a winning move.
   std::vector<Move> losing_moves = inferred_moves;
+  std::vector<Move> winning_moves;
   int max_solutions_remaining = inferred_moves.empty() ? 0 : solutions.size();
   for (position_t pos : choice_positions) {
     std::vector<position_t> new_choice_positions =
@@ -325,19 +322,28 @@ AnalyzeResult SelectMoveFromSolutions2(
         }
       } else {
         // Losing for the next player => winning for the previous player.
-        return {Outcome::WIN2, move};
+        winning_moves.push_back(move);
+        if (winning_moves.size() >= (size_t) max_winning_moves) goto max_winning_moves_found;
       }
       i = j;
     }
   }
 
+  if (!winning_moves.empty()) {
+    // Technicaly it's possible that playing an inferred move is also winning,
+    // but since I can only return one outcome, I will drop those moves if there
+    // is a winning move that reduces the number of solutions.
+max_winning_moves_found:
+    return {Outcome::WIN2, winning_moves};
+  }
+
   if (ReduceInferredCount(inferred_moves.size()) > 0) {
     if (!IsWinning(solutions, choice_positions, inferred_moves.size() - 1, 1)) {
-      return {Outcome::WIN3, Sample(inferred_moves, rng)};
+      return {Outcome::WIN3, inferred_moves};
     }
   }
 
-  return {Outcome::LOSS, Sample(losing_moves, rng)};
+  return {Outcome::LOSS, losing_moves};
 }
 
 }  // namespace
@@ -355,11 +361,20 @@ std::ostream &operator<<(std::ostream &os, const Outcome &outcome) {
 }
 
 std::ostream &operator<<(std::ostream &os, const AnalyzeResult &result) {
-  return os << "AnalyzeResult{outcome=" << result.outcome << ", move=" << result.move << "}";
+  os << "AnalyzeResult{outcome=" << result.outcome << ", optimal_moves={";
+  bool first = true;
+  for (const Move &move : result.optimal_moves) {
+    if (first) first = false; else os << ", ";
+    os << move;
+  }
+  os << '}';
+  return os;
 }
 
-AnalyzeResult Analyze(const grid_t &givens, std::span<const solution_t> solutions, rng_t *rng) {
+AnalyzeResult Analyze(
+    const grid_t &givens, std::span<const solution_t> solutions, int max_winning_moves) {
   assert(solutions.size() > 1);
+  assert(max_winning_moves > 0);
 
   counters.recusive_calls.Inc();
   counters.total_solutions.Add(solutions.size());
@@ -379,8 +394,9 @@ AnalyzeResult Analyze(const grid_t &givens, std::span<const solution_t> solution
   }
 
   // If there is an immediately winning move, always take it!
-  if (auto immediately_winning = FindImmediatelyWinningMove(solutions, choice_positions)) {
-    return {Outcome::WIN1, *immediately_winning};
+  if (auto immediately_winning = FindImmediatelyWinningMoves(solutions, choice_positions);
+      !immediately_winning.empty()) {
+    return {Outcome::WIN1, immediately_winning};
   }
 
   std::vector<HashedSolution> hashed_solutions;
@@ -390,7 +406,8 @@ AnalyzeResult Analyze(const grid_t &givens, std::span<const solution_t> solution
   }
 
   // Otherwise, recursively search for a winning move.
-  return SelectMoveFromSolutions2(choice_positions, inferred_moves, hashed_solutions, rng);
+  return SelectMoveFromSolutions2(
+      choice_positions, inferred_moves, hashed_solutions, max_winning_moves);
 
   // Note: we could clear the memo before returning to save memory, but keeping
   // it populated will help with future searches especially in the common case

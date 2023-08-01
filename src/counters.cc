@@ -11,5 +11,5 @@ std::ostream &operator<<(std::ostream &os, const struct Counters &counters) {
     << "\t" << counters.memo_accessed << ",\n"
     << "\t" << counters.memo_returned << ",\n"
     << "\t" << counters.memo_collisions << ",\n"
-    << "}\n";
+    << "}";
 }
