@@ -20,13 +20,13 @@ using rng_t = std::mt19937;
 //
 // This is currently disabled to keep things simple, since player performance
 // isn't very dependent on the RNG speed.
-namespace internal {
+namespace random::internal {
 
 template<int> struct RngSelector {};
 template<> struct RngSelector<32> { using rng_t = std::mt19937; };
 template<> struct RngSelector<64> { using rng_t = std::mt19937_64; };
 
-}  // namespace internal
+}  // namespace random::internal
 
 using rng_t = internal::RngSelector<std::numeric_limits<size_t>::digits>::rng_t;
 

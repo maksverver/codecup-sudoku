@@ -1,5 +1,6 @@
 #include "analysis.h"
 #include "check.h"
+#include "flags.h"
 #include "logging.h"
 #include "random.h"
 #include "state.h"
@@ -13,6 +14,7 @@
 #include <limits>
 #include <optional>
 #include <random>
+#include <sstream>
 #include <string>
 #include <string_view>
 #include <vector>
@@ -21,9 +23,10 @@ namespace {
 
 const std::string player_name = "Numberwang";
 
-constexpr int max_work               = 10'000'000;
-constexpr int max_count              = 100'000;
-constexpr int max_count_for_analysis = 2000;
+DECLARE_FLAG(std::string, arg_seed,             "",         "seed");
+DECLARE_FLAG(int64_t,     arg_max_work,         10'000'000, "max_work");
+DECLARE_FLAG(int,         arg_max_enumerate,       100'000, "max_enumerate");
+DECLARE_FLAG(int,         arg_max_analyze,           2'000, "max_analyze");
 
 struct Timer {
   std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
@@ -158,7 +161,7 @@ bool PlayGame(rng_t &rng) {
       if (!solutions_complete) {
         // Try to enumerate all solutions.
         Timer timer;
-        EnumerateResult er = state.EnumerateSolutions(solutions, max_count, max_work, &rng);
+        EnumerateResult er = state.EnumerateSolutions(solutions, arg_max_enumerate, arg_max_work, &rng);
         enumerate_time += timer.Elapsed();
         if (er.Accurate()) {
           solutions_complete = true;
@@ -176,7 +179,7 @@ bool PlayGame(rng_t &rng) {
       if (solutions.empty()) {
         // I don't know anything about solutions. Just pick randomly.
         selected_move = PickRandomMove(state, rng);
-      } else if (!solutions_complete || solutions.size() > max_count_for_analysis) {
+      } else if (!solutions_complete || solutions.size() > (size_t) arg_max_analyze) {
         // I have some solutions but it's not the complete set.
         selected_move = PickMoveIncomplete(state, solutions, rng);
       } else if (solutions.size() == 1) {
@@ -250,30 +253,6 @@ bool PlayGame(rng_t &rng) {
   return true;
 }
 
-bool RemovePrefix(std::string_view &s, std::string_view prefix) {
-  if (!s.starts_with(prefix)) return false;
-  s.remove_prefix(prefix.size());
-  return true;
-}
-
-struct CommandLineArguments {
-  // --seed=<hex string> (length must be a multiple of 8)
-  std::string seed;
-
-  bool Parse(int argc, char *argv[]) {
-    for (int i = 1; i < argc; ++i) {
-      std::string_view s(argv[i]);
-      if (RemovePrefix(s, "--seed=")) {
-        seed = s;
-      } else {
-        LogError() << "Invalid argument: [" << s << "]";
-        return false;
-      }
-    }
-    return true;
-  }
-};
-
 bool InitializeSeed(rng_seed_t &seed, std::string_view hex_string) {
   if (hex_string.empty()) {
     // Generate a new random 128-bit seed
@@ -294,12 +273,11 @@ bool InitializeSeed(rng_seed_t &seed, std::string_view hex_string) {
 int main(int argc, char *argv[]) {
   LogId(player_name);
 
-  CommandLineArguments args;
-  if (!args.Parse(argc, argv)) return EXIT_FAILURE;
+  if (!ParseFlags(argc, argv)) return EXIT_FAILURE;
 
   // Initialize RNG.
   rng_seed_t seed;
-  if (!InitializeSeed(seed, args.seed)) return EXIT_FAILURE;
+  if (!InitializeSeed(seed, arg_seed)) return EXIT_FAILURE;
   LogSeed(seed);
   rng_t rng = CreateRng(seed);
 

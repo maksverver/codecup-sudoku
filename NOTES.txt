@@ -12,6 +12,10 @@ To build all binaries, simply run make:
 
 Output files are in output/
 
+To build just debug/release binaries:
+
+% make debug  # or release
+
 To create the combined player source file at output/player-combined.cc:
 
 % make combined
