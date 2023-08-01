@@ -200,7 +200,7 @@ def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
   futures = []
 
   with (Tee(open(os.path.join(logdir, 'results.txt'), 'wt'))
-        if len(pairings) > 0 else contextlib.nullcontext()) as f:
+        if logdir is not None and len(pairings) > 0 else nullcontext()) as f:
 
     print('Game Player 1           Player 2           Outcome 1  Outcome 2  Time 1 Time 2', file=f)
     print('---- ------------------ ------------------ ---------- ---------- ------ ------', file=f)
@@ -249,7 +249,8 @@ def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
   # Print summary of players.
   if len(pairings) > 1:
     print()
-    with Tee(open(os.path.join(logdir, 'summary.txt'), 'wt')) as f:
+    with (Tee(open(os.path.join(logdir, 'summary.txt'), 'wt')) if logdir is not None
+          else nullcontext()) as f:
       print('Player             Avg.Tm Max.Tm Wins Loss Unsl Fail Tot.', file=f)
       print('------------------ ------ ------ ---- ---- ---- ---- ----', file=f)
       for p in sorted(range(P), key=lambda p: player_outcomes[p][Outcome.WIN], reverse=True):
@@ -317,7 +318,7 @@ def Main():
   names = DeduplicateNames([os.path.basename(shlex.split(command)[0]) for command in commands])
 
   with (concurrent.futures.ThreadPoolExecutor(max_workers=args.threads)
-        if args.threads > 0 else contextlib.nullcontext()) as executor:
+        if args.threads > 0 else nullcontext()) as executor:
     RunGames(commands, names, rounds=args.rounds, logdir=logdir, fast=args.fast, executor=executor)
 
 if __name__ == '__main__':
