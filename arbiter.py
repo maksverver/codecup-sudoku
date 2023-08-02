@@ -200,7 +200,7 @@ def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
   futures = []
 
   with (Tee(open(os.path.join(logdir, 'results.txt'), 'wt'))
-        if logdir is not None and len(pairings) > 0 else nullcontext()) as f:
+        if logdir is not None and len(pairings) > 1 else nullcontext()) as f:
 
     print('Game Player 1           Player 2           Outcome 1  Outcome 2  Time 1 Time 2', file=f)
     print('---- ------------------ ------------------ ---------- ---------- ------ ------', file=f)
