@@ -94,8 +94,8 @@ Move PickRandomMove(const State &state, rng_t &rng) {
   std::vector<Move> moves;
   for (int pos = 0; pos < 81; ++pos) {
     if (state.Digit(pos) == 0) {
-      int used = state.CellUsed(pos);
-      for (int digit = 1; digit <= 9; ++digit) if ((used & (1u << digit)) == 0) {
+      unsigned unused = state.CellUnused(pos);
+      for (int digit = 1; digit <= 9; ++digit) if (unused & (1u << digit)) {
         moves.push_back(Move{.pos = pos, .digit = digit});
       }
     }

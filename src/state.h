@@ -58,17 +58,15 @@ class State {
 
 public:
 
-  static constexpr unsigned ALL_DIGITS = 0b1111111110;
-
   bool IsFree(int i) const { return digit[i] == 0; }
 
-  unsigned CellUsed(int i) const {
-    return used_row[Row(i)] | used_col[Col(i)] | used_box[Box(i)];
+  unsigned CellUnused(int i) const {
+    return unused_row[Row(i)] & unused_col[Col(i)] & unused_box[Box(i)];
   }
 
   bool CanPlay(const Move &m) const {
     m.AssertValid();
-    return digit[m.pos] == 0 && (CellUsed(m.pos) & (1u << m.digit)) == 0;
+    return digit[m.pos] == 0 && (CellUnused(m.pos) & (1u << m.digit)) != 0;
   }
 
   int Digit(int pos) const {
@@ -77,20 +75,21 @@ public:
   }
 
   void Play(const Move &m) {
+    assert(digit[m.pos] == 0);
     digit[m.pos] = m.digit;
     unsigned mask = 1u << m.digit;
-    used_row[Row(m.pos)] |= mask;
-    used_col[Col(m.pos)] |= mask;
-    used_box[Box(m.pos)] |= mask;
+    unused_row[Row(m.pos)] ^= mask;
+    unused_col[Col(m.pos)] ^= mask;
+    unused_box[Box(m.pos)] ^= mask;
   }
 
   void Undo(const Move &m) {
     assert(digit[m.pos] == m.digit);
     digit[m.pos] = 0;
     unsigned mask = ~(1u << m.digit);
-    used_row[Row(m.pos)] &= mask;
-    used_col[Col(m.pos)] &= mask;
-    used_box[Box(m.pos)] &= mask;
+    unused_row[Row(m.pos)] ^= mask;
+    unused_col[Col(m.pos)] ^= mask;
+    unused_box[Box(m.pos)] ^= mask;
   }
 
   struct Position { uint8_t i, r, c, b; };
@@ -169,27 +168,27 @@ private:
     }
 
     // Find most constrained cell to fill in.
-    int max_used_count = -1;
-    int max_used_index = -1;
-    unsigned max_used_mask = 0;
+    int min_unused_count = 10;
+    int min_unused_index = -1;
+    unsigned min_unused_mask = 0;
     for (int j = 0; j < (int) todo.size(); ++j) {
       auto [i, r, c, b] = todo[j];
-      unsigned used = used_row[r] | used_col[c] | used_box[b];
-      if (used == ALL_DIGITS) return true;  // unsolvable
-      int used_count = std::popcount(used);
-      if (used_count > max_used_count) {
-        max_used_index = j;
-        max_used_count = used_count;
-        max_used_mask = used;
+      unsigned unused = unused_row[r] & unused_col[c] & unused_box[b];
+      if (unused == 0) return true;  // unsolvable
+      int unused_count = std::popcount(unused);
+      if (unused_count < min_unused_count) {
+        min_unused_index = j;
+        min_unused_count = unused_count;
+        min_unused_mask = unused;
       }
     }
+    std::swap(todo[min_unused_index], todo.back());
 
-    std::swap(todo[max_used_index], todo.back());
     auto [i, r, c, b] = todo.back();
     std::span<Position> remaining(todo.begin(), todo.end() - 1);
 
     // Try all possible digits.
-    unsigned unused = max_used_mask ^ ALL_DIGITS;
+    unsigned unused = min_unused_mask;
     while (unused && work_left) {
       --work_left;
 
@@ -199,15 +198,15 @@ private:
       unsigned mask = 1 << d;
       unused ^= mask;
 
-      used_row[r] ^= mask;
-      used_col[c] ^= mask;
-      used_box[b] ^= mask;
+      unused_row[r] ^= mask;
+      unused_col[c] ^= mask;
+      unused_box[b] ^= mask;
 
       bool result = EnumerateSolutionsImpl<C>(callback, remaining, work_left);
 
-      used_row[r] ^= mask;
-      used_col[c] ^= mask;
-      used_box[b] ^= mask;
+      unused_row[r] ^= mask;
+      unused_col[c] ^= mask;
+      unused_box[b] ^= mask;
 
       digit[i] = 0;
 
@@ -225,9 +224,10 @@ private:
   void CountSolutions(std::span<Position> todo, CountState &cs);
 
   std::array<uint8_t, 81> digit = {};
-  unsigned used_row[9] = {};
-  unsigned used_col[9] = {};
-  unsigned used_box[9] = {};
+  static constexpr unsigned A = 0b1111111110;  // all-digit bitmask
+  unsigned unused_row[9] = {A, A, A, A, A, A, A, A, A};
+  unsigned unused_col[9] = {A, A, A, A, A, A, A, A, A};
+  unsigned unused_box[9] = {A, A, A, A, A, A, A, A, A};
 };
 
 #endif // ndef STATE_H_INCLUDED

@@ -41,27 +41,27 @@ void State::CountSolutions(std::span<Position> todo, CountState &cs) {
   }
 
   // Find most constrained cell to fill in.
-  int max_used_count = -1;
-  int max_used_index = -1;
-  unsigned max_used_mask = 0;
+  int min_unused_count = 10;
+  int min_unused_index = -1;
+  unsigned min_unused_mask = 0;
   for (int j = 0; j < (int) todo.size(); ++j) {
     auto [i, r, c, b] = todo[j];
-    unsigned used = used_row[r] | used_col[c] | used_box[b];
-    if (used == ALL_DIGITS) return;  // unsolvable
-    int used_count = std::popcount(used);
-    if (used_count > max_used_count) {
-      max_used_index = j;
-      max_used_count = used_count;
-      max_used_mask = used;
+    unsigned unused = unused_row[r] & unused_col[c] & unused_box[b];
+    if (unused == 0) return;  // unsolvable
+    int unused_count = std::popcount(unused);
+    if (unused_count < min_unused_count) {
+      min_unused_index = j;
+      min_unused_count = unused_count;
+      min_unused_mask = unused;
     }
   }
-  std::swap(todo[max_used_index], todo.back());
+  std::swap(todo[min_unused_index], todo.back());
 
   auto [i, r, c, b] = todo.back();
   std::span<Position> remaining(todo.begin(), todo.end() - 1);
 
   // Try all possible digits.
-  unsigned unused = max_used_mask ^ ALL_DIGITS;
+  unsigned unused = min_unused_mask;
   while (unused && cs.count_left && cs.work_left) {
     --cs.work_left;
 
@@ -69,15 +69,15 @@ void State::CountSolutions(std::span<Position> todo, CountState &cs) {
     unused &= unused - 1;
     mask ^= unused;
 
-    used_row[r] ^= mask;
-    used_col[c] ^= mask;
-    used_box[b] ^= mask;
+    unused_row[r] ^= mask;
+    unused_col[c] ^= mask;
+    unused_box[b] ^= mask;
 
     CountSolutions(remaining, cs);
 
-    used_row[r] ^= mask;
-    used_col[c] ^= mask;
-    used_box[b] ^= mask;
+    unused_row[r] ^= mask;
+    unused_col[c] ^= mask;
+    unused_box[b] ^= mask;
   }
 }
 
@@ -104,7 +104,7 @@ int State::FixDetermined() {
     int val[81];
     int n = 0;
     for (int i = 0; i < 81; ++i) if (digit[i] == 0) {
-      unsigned unused = CellUsed(i) ^ ALL_DIGITS;
+      unsigned unused = CellUnused(i);
       assert(unused != 0);
       if ((unused & (unused - 1)) == 0) {
         pos[n] = i;
