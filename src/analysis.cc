@@ -181,7 +181,7 @@ bool IsWinning(
 
   // Update counters.
   counters.max_depth.SetMax(depth);
-  counters.recusive_calls.Inc();
+  counters.recursive_calls.Inc();
   counters.total_solutions.Add(solutions.size());
 
   // Calculate new choice positions and detect immediately winning moves.
@@ -376,7 +376,7 @@ AnalyzeResult Analyze(
   assert(solutions.size() > 1);
   assert(max_winning_moves > 0);
 
-  counters.recusive_calls.Inc();
+  counters.recursive_calls.Inc();
   counters.total_solutions.Add(solutions.size());
 
   candidates_t candidates = CalculateCandidates(solutions);

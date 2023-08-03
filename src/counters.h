@@ -42,7 +42,7 @@ template <typename T> using counter_t = RealCounter<T>;
 
 struct Counters {
   counter_t<int>     max_depth        = counter_t<int>("max_depth");
-  counter_t<int64_t> recusive_calls   = counter_t<int64_t>("recursive_calls");
+  counter_t<int64_t> recursive_calls  = counter_t<int64_t>("recursive_calls");
   counter_t<int64_t> total_solutions  = counter_t<int64_t>("total_solutions");
   counter_t<int64_t> immediately_won  = counter_t<int64_t>("immediately_won");
   counter_t<int64_t> memo_accessed    = counter_t<int64_t>("memo_accessed");
