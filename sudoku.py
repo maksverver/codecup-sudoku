@@ -73,7 +73,7 @@ def EnumerateSolutions(grid):
     yield solution_grid
 
 
-def CountSolutions(grid, max_count=None):
+def CountSolutions(grid, max_count):
   count = 0
   for _ in EnumerateSolutions(grid):
     count += 1
