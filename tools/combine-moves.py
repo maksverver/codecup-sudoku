@@ -8,9 +8,11 @@
 # by a sequence of updates, where each update is of the form +Ab2 to add a digit
 # to the grid or -Aa1 to remove an existing digit from the grid.
 #
+# A space instead of a '+' is also allowed.
+#
 # Example 1:
 #
-# % tools/combine-moves.py Fb2+Ha3+Bb8+Fd6+Ig7
+# % tools/combine-moves.py 'Fb2 Ha3 Bb8 Fd6 Ig7'
 # ..........8...................................2.6..............3..............7..
 #
 #    a b c   d e f   g h i
@@ -50,8 +52,8 @@
 import re
 import sys
 
-DESCRIPTION_PATTERN = re.compile(r'([.0-9]{81}|[A-I][a-i][1-9])((?:[+-][A-I][a-i][1-9])*)')
-UPDATE_PATTERN = re.compile(r'[+-][A-I][a-i][1-9]')
+DESCRIPTION_PATTERN = re.compile(r'^([.0-9]{81}|[A-I][a-i][1-9])((?:[ +-][A-I][a-i][1-9])*)?$')
+UPDATE_PATTERN = re.compile(r'[ +-][A-I][a-i][1-9]')
 
 PRETTY_GRID_TEMPLATE = '''
   a b c   d e f   g h i
@@ -108,7 +110,7 @@ def Process(description):
   # Apply updates (add/remove digits)
   for update in UPDATE_PATTERN.findall(rest):
     r, c, d = ParseMove(update[1:])
-    if update[0] == '+':
+    if update[0] in ('+', ' '):
       # Add digit to grid
       if grid[9*r + c] != 0:
         print('Invalid update:', update)
