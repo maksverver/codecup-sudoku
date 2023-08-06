@@ -126,6 +126,17 @@ There are two problems:
      benefit the most from this kind of deomposition).
 
 
+CAIA NOTES
+
+  - Server sometimes sends empty lines (has this been fixed?)
+    https://forum.codecup.nl/read.php?31,2221
+  - Best guess as to what the sample players do:
+      - player1 plays a random valid move, but never claims a win.
+      - player2 plays a random valid move, and also claims a win if the solution
+        is unique at the start of its turn ("!") or after its move ("Xx0!")
+      - player3 plays a winning move if there is one, otherwise plays randomly.
+
+
 CODECUP SERVER NOTES
 
   - 64 bit
