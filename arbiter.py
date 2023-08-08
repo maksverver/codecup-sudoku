@@ -35,9 +35,17 @@ def ParseMove(s):
   return None
 
 
-def FormatMove(move):
+def FormatDigit(digit, zero_char='.'):
+  return zero_char if digit == 0 else chr(ord('0') + digit)
+
+
+def FormatMove(move, claim_win=False):
   r, c, d = move
-  return chr(ord('A') + r) + chr(ord('a') + c) + chr(ord('0') + d)
+  return chr(ord('A') + r) + chr(ord('a') + c) + FormatDigit(d) + '!'*claim_win
+
+
+def FormatGrid(grid):
+  return ''.join(map(FormatDigit, grid))
 
 
 class Outcome(Enum):
@@ -55,7 +63,7 @@ def Launch(command, logfile):
   return subprocess.Popen(command, shell=True, text=True, stdin=PIPE, stdout=PIPE, stderr=stderr)
 
 
-def RunGame(command1, command2, logfile1, logfile2, fast):
+def RunGame(command1, command2, transcript, logfile1, logfile2, fast):
   roles = ['First', 'Second']
   commands = [command1, command2]
   procs = [Launch(command1, logfile1), Launch(command2, logfile2)]
@@ -66,63 +74,75 @@ def RunGame(command1, command2, logfile1, logfile2, fast):
   outcomes = [Outcome.LOSS, Outcome.LOSS]
   times = [0.0, 0.0]
 
-  def Play(move):
-    # Add digit to grid
-    r, c, d = move
-    i = 9*r + c
-    assert grid[i] == 0
-    grid[i] = d
+  with (open(transcript, 'wt') if transcript is not None else nullcontext()) as transcript:
 
-    if not fast:
-      # Recalculate solution count
-      nonlocal solution_count
-      solution_count = sudoku.CountSolutions(grid, 2)
+    def Play(move):
+      # Add digit to grid
+      r, c, d = move
+      i = 9*r + c
+      assert grid[i] == 0
+      grid[i] = d
 
-  def Fail(outcome):
-    outcomes[turn % 2] = outcome
-    outcomes[1 - turn % 2] = Outcome.WIN
-
-  for turn in range(81):
-    proc = procs[turn % 2]
-
-    # Send last move (or Start) to player
-    if turn == 0:
-      proc.stdin.write('Start\n')
-    else:
-      proc.stdin.write(FormatMove(move) + '\n')
-    proc.stdin.flush()
-
-    # Read player's move
-    start_time = time.monotonic()
-    line = proc.stdout.readline().strip()
-    times[turn % 2] += time.monotonic() - start_time
-
-    # Parse move
-    parsed = ParseMove(line)
-    if not parsed:
-      Fail(Outcome.FAIL)
-      break
-    move, claim_win = parsed
-
-    # Execute move
-    if move is not None:
-      Play(move)
-
-      if solution_count == 0:
-        # Player made
-        Fail(Outcome.UNSOLVABLE)
-        break
-
-    # Player claimed the win.
-    if claim_win:
-      if fast:
-        # Calculate solution count (since we haven't before in fast mode)
+      if not fast:
+        # Recalculate solution count
+        nonlocal solution_count
         solution_count = sudoku.CountSolutions(grid, 2)
-      if solution_count == 1:
-        outcomes[turn % 2] = Outcome.WIN
+
+    def Fail(outcome):
+      outcomes[turn % 2] = outcome
+      outcomes[1 - turn % 2] = Outcome.WIN
+
+    for turn in range(81):
+      proc = procs[turn % 2]
+
+      # Send last move (or Start) to player
+      if turn == 0:
+        proc.stdin.write('Start\n')
       else:
+        proc.stdin.write(FormatMove(move) + '\n')
+      proc.stdin.flush()
+
+      # Read player's move
+      start_time = time.monotonic()
+      line = proc.stdout.readline().strip()
+      times[turn % 2] += time.monotonic() - start_time
+
+      # Parse move
+      parsed = ParseMove(line)
+      if not parsed:
         Fail(Outcome.FAIL)
-      break
+        if transcript:
+          # Copy to transcript (for debugging)
+          print('# ' + line, file=transcript)
+        break
+      move, claim_win = parsed
+
+      # Execute move
+      if move is not None:
+        Play(move)
+
+        if solution_count == 0:
+          # Player made
+          Fail(Outcome.UNSOLVABLE)
+          break
+
+        if transcript:
+          # Print move and grid:
+          #print(FormatMove(move, claim_win), FormatGrid(grid), file=transcript)
+          # Print move only:
+          print(FormatMove(move, claim_win), file=transcript)
+
+
+      # Player claimed the win.
+      if claim_win:
+        if fast:
+          # Calculate solution count (since we haven't before in fast mode)
+          solution_count = sudoku.CountSolutions(grid, 2)
+        if solution_count == 1:
+          outcomes[turn % 2] = Outcome.WIN
+        else:
+          Fail(Outcome.FAIL)
+        break
 
   # Gracefully quit.
   for p in procs:
@@ -144,12 +164,12 @@ def RunGame(command1, command2, logfile1, logfile2, fast):
 
 def MakeLogfilenames(logdir, name1, name2, game_index, game_count):
   if not logdir:
-    return (None, None)
+    return (None, None, None)
   prefix = '%s-vs-%s' % (name1, name2)
   if game_count > 1:
     prefix = 'game-%s-of-%s-%s' % (game_index + 1, game_count, prefix)
   return (os.path.join(logdir, '%s-%s.txt' % (prefix, role))
-      for role in ('first', 'second'))
+      for role in ('transcript', 'first', 'second'))
 
 
 class Tee:
@@ -200,7 +220,7 @@ def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
   futures = []
 
   with (Tee(open(os.path.join(logdir, 'results.txt'), 'wt'))
-        if logdir is not None and len(pairings) > 1 else nullcontext()) as f:
+        if logdir and len(pairings) > 1 else nullcontext()) as f:
 
     print('Game Player 1           Player 2           Outcome 1  Outcome 2  Time 1 Time 2', file=f)
     print('---- ------------------ ------------------ ---------- ---------- ------ ------', file=f)
@@ -214,9 +234,9 @@ def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
       i, j = pairings[game_index]
       command1, command2 = commands[i], commands[j]
       name1, name2 = names[i], names[j]
-      logfilename1, logfilename2 = MakeLogfilenames(logdir, name1, name2, game_index, len(pairings))
+      transcript, logfilename1, logfilename2 = MakeLogfilenames(logdir, name1, name2, game_index, len(pairings))
 
-      run = functools.partial(RunGame, command1, command2, logfilename1, logfilename2, fast)
+      run = functools.partial(RunGame, command1, command2, transcript, logfilename1, logfilename2, fast)
 
       if executor is None:
         # Run game on the main thread.
@@ -249,8 +269,7 @@ def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
   # Print summary of players.
   if len(pairings) > 1:
     print()
-    with (Tee(open(os.path.join(logdir, 'summary.txt'), 'wt')) if logdir is not None
-          else nullcontext()) as f:
+    with (Tee(open(os.path.join(logdir, 'summary.txt'), 'wt')) if logdir else nullcontext()) as f:
       print('Player             Avg.Tm Max.Tm Wins Loss Unsl Fail Tot.', file=f)
       print('------------------ ------ ------ ---- ---- ---- ---- ----', file=f)
       for p in sorted(range(P), key=lambda p: player_outcomes[p][Outcome.WIN], reverse=True):
@@ -265,6 +284,10 @@ def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
             games_per_player,
           ), file=f)
       print('------------------ ------ ------ ---- ---- ---- ---- -----', file=f)
+
+      if logdir:
+        print()
+        print('Logs written to directory', logdir)
 
 
 def DeduplicateNames(names):
