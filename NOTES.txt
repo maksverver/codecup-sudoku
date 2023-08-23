@@ -82,6 +82,38 @@ The hard parts of the algorithms are 1 (EnumerateSolutions() in state.cc) and
 4 (DetermineWinningMove() in analysis.cc).
 
 
+TRANSPOSITION TABLE
+
+The game tree is not a tree, but a directed acyclic graph (DAG), which means a
+naive search algorithm would evaluate the same position many times. To avoid
+duplicate work, I have implemented a transposition table to cache intermediate
+results (see src/memo.h).
+
+The result of a state is determined by the set of solutions and the parity of
+the number of inferred digits. The memo is indexed with a 64-bit key that is
+calculated by hashing the solution set, and then XOR'ing in a fixed random
+number if the number of inferred digits is odd (see HashInferredCount()).
+
+The solutions hash is calculated by assigned a hash code to each solution
+(a 64-bit FNV-1a hash of the digits 1-9), and calculating the hash of a solution
+set as the XOR of the solution hashes. This has the advantage that the hash is
+not dependend on the order of the solutions. Hashes are precomputed and stored
+along the solutions to avoid having to re-hash the same solution multiple times.
+
+As an alternative, it's also possible to maintain a Zobrist hash of the current
+position, by hashing all fixed and inferred digits, which determines the
+solution set! Note that including inferred digits in the hash is required
+because there are many different sets of digits that could lead to the same set
+of possible solutions, but the union of fixed and inferred digits is unique for
+each solution set (pretty much by definition).
+
+In practice this is slower, however, probably because in deep nodes of the
+search tree the number of solutions is fairly low, but the number of inferred
+digits is high, so hashing all those digits is more expensive than combining the
+solution hashes. For an implementation of the Zobrist hashing idea, see:
+backups/hash_determined_digits_instead_of_solutions.diff
+
+
 STATISTICS
 
 I did some profiling of analysis.cc and found the following stats on the number
