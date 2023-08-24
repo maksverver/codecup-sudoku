@@ -29,17 +29,33 @@ DECLARE_FLAG(int,         arg_max_enumerate,       100'000, "max_enumerate");
 DECLARE_FLAG(int,         arg_max_analyze,           2'000, "max_analyze");
 
 struct Timer {
-  std::chrono::steady_clock::time_point start = std::chrono::steady_clock::now();
+  using clock_t = std::chrono::steady_clock;
 
-  log_duration_t Elapsed(bool reset = false) {
-    std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
-    auto elapsed = end - start;
-    if (reset) start = end;
+  clock_t::time_point start = clock_t::now();
+  clock_t::duration elapsed{0};
+
+  bool Paused() const {
+    return start == clock_t::time_point::min();
+  }
+
+  log_duration_t Elapsed() {
+    if (!Paused()) {
+      auto end = clock_t::now();
+      elapsed += end - start;
+      start = end;
+    }
     return std::chrono::duration_cast<log_duration_t>(elapsed);
   }
 
-  void Reset() {
-    start = std::chrono::steady_clock::now();
+  void Pause() {
+    assert(!Paused());
+    elapsed += clock_t::now() - start;
+    start = clock_t::time_point::min();
+  }
+
+  void Resume() {
+    assert(Paused());
+    start = clock_t::now();
   }
 };
 
@@ -138,24 +154,45 @@ bool PlayGame(rng_t &rng) {
   std::string input = ReadInputLine();
   const int my_player = (input == "Start" ? 0 : 1);
 
-  log_duration_t total_time(0);
   Timer total_timer;
 
   State state = {};
   std::vector<solution_t> solutions = {};
   bool solutions_complete = false;
   bool winning = false;
+
+  // Updates the game state and refines the solutions set after playing the given move.
+  auto PlayMove = [&state, &solutions, &solutions_complete](const Move &move) {
+    state.Play(move);
+
+    if (!solutions.empty()) {
+      if (!solutions_complete) {
+        // Just clear solutions. We'll regenerate them next turn.
+        solutions.clear();
+      } else {
+        // Narrow down set of solutions.
+        std::vector<solution_t> next_solutions;
+        for (const auto &solution : solutions) {
+          if (solution[move.pos] == move.digit) {
+            next_solutions.push_back(solution);
+          }
+        }
+        solutions.swap(next_solutions);
+        assert(!solutions.empty());
+      }
+    }
+  };
+
   for (int turn = 0;; ++turn) {
-    std::optional<Move> selected_move;
     if (turn % 2 == my_player) {
+      // My turn!
 
       // Print current state for debugging. Ideally I would print this every
-      // turn for debugging, but the log output is getting close to the 10,000
-      // character CodeCup limit.
-      total_time += total_timer.Elapsed(true);
-      LogTurn(turn, state, total_time);
+      // turn, but the log output is getting close to CodeCup's 10,000 character
+      // limit, so I only do it on my own player's turn.
+      LogTurn(turn, state, total_timer.Elapsed());
 
-      // My turn!
+      Timer turn_timer;
       log_duration_t enumerate_time(0);
       log_duration_t analyze_time(0);
       if (!solutions_complete) {
@@ -175,6 +212,7 @@ bool PlayGame(rng_t &rng) {
       }
       LogSolutions(solutions.size(), solutions_complete);
 
+      std::optional<Move> selected_move;
       bool claim_winning = false;
       if (solutions.empty()) {
         // I don't know anything about solutions. Just pick randomly.
@@ -206,44 +244,34 @@ bool PlayGame(rng_t &rng) {
         }
         winning = new_winning;
       }
-      LogTime(total_timer.Elapsed(), enumerate_time, analyze_time);
+
+      // Execute my selected move.
+      assert(selected_move);
+      if (!state.CanPlay(*selected_move)) {
+        LogError() << "Invalid move selected!\n";
+        return false;
+      }
+      PlayMove(*selected_move);
+      LogTime(turn_timer.Elapsed(), enumerate_time, analyze_time);
+
+      // Note: we should pause the timer just before writing the output line,
+      // since the referee may suspend our process immediately after.
+      total_timer.Pause();
       WriteOutputLine(FormatMove(*selected_move) + (claim_winning ? "!" :""));
     } else {
       // Opponent's turn.
       if (turn > 0) {
-        total_time += total_timer.Elapsed();
         input = ReadInputLine();
-        total_timer.Reset();
+        total_timer.Resume();
       }
       if (auto m = ParseMove(input); !m) {
         LogError() << "Could not parse move!";
         return false;
+      } else if (!state.CanPlay(*m)) {
+        LogError() << "Invalid move received!";
+        return false;
       } else {
-        selected_move = *m;
-      }
-    }
-
-    assert(selected_move);
-    if (!state.CanPlay(*selected_move)) {
-      LogError() << "Invalid move!";
-      return false;
-    }
-    state.Play(*selected_move);
-
-    if (!solutions.empty()) {
-      if (!solutions_complete) {
-        // Just clear solutions. We'll regenerate them next turn.
-        solutions.clear();
-      } else {
-        // Narrow down set of solutions.
-        std::vector<solution_t> next_solutions;
-        for (const auto &solution : solutions) {
-          if (solution[selected_move->pos] == selected_move->digit) {
-            next_solutions.push_back(solution);
-          }
-        }
-        solutions.swap(next_solutions);
-        assert(!solutions_complete || !solutions.empty());
+        PlayMove(*m);
       }
     }
   }
