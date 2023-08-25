@@ -46,7 +46,7 @@ struct CountResult {
 struct EnumerateResult {
   // `true` iff. the callback never returned false (including if it was never
   // called because there weren't any solutions.
-  bool success;
+  bool success = false;
   int64_t work = 0;
   int64_t max_work = 0;
 

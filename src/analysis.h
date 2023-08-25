@@ -33,7 +33,11 @@ inline bool IsWinning(Outcome o) {
 std::ostream &operator<<(std::ostream &os, const Outcome &outcome);
 
 struct AnalyzeResult {
-  Outcome outcome;
+  // Outcome of the game (if analysis completed), or an empty optional if
+  // analysis was aborted because max_work was exceeded.
+  std::optional<Outcome> outcome;
+
+  // List of optimal moves (up to max_winning_moves). Empty if search was aborted.
   std::vector<Move> optimal_moves;
 };
 
@@ -44,6 +48,7 @@ std::ostream &operator<<(std::ostream &os, const AnalyzeResult &result);
 //
 // Preconditions: solutions.size() > 1
 AnalyzeResult Analyze(
-    const grid_t &givens, std::span<const solution_t> solutions, int max_winning_moves);
+    const grid_t &givens, std::span<const solution_t> solutions,
+    int max_winning_moves, int64_t max_work=1e18);
 
 #endif  // ndef ANALYSIS_H_INCLUDED

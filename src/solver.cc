@@ -201,9 +201,10 @@ void EnumerateSolutions(State &state) {
     std::cout << "No solution possible!\n";
   } else if (solutions.size() == 1) {
     std::cout << "Solution is unique!\n";
+  } else if (auto result = Analyze(givens, solutions, max_winning_moves); !result.outcome) {
+    std::cout << "Analysis incomplete!\n";
   } else {
-    AnalyzeResult result = Analyze(givens, solutions, max_winning_moves);
-    std::cout << "Outcome: " << result.outcome << '\n';
+    std::cout << "Outcome: " << *result.outcome << '\n';
     std::cout << result.optimal_moves.size() << " optimal moves:";
     for (const Move &move : result.optimal_moves) {
       std::cout << ' ' << (char)('A' + move.pos/9) << (char)('a' + move.pos%9)

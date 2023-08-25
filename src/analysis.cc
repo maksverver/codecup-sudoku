@@ -160,7 +160,8 @@ bool IsWinning2(
     std::span<HashedSolution> solutions,
     std::span<position_t> choice_positions,
     int inferred_count,
-    int depth);
+    int depth,
+    int64_t &work_left);
 
 // This function determines if the given state is winning for the next player.
 //
@@ -175,7 +176,8 @@ bool IsWinning(
     std::span<HashedSolution> solutions,
     std::span<const position_t> old_choice_positions,
     int inferred_count,
-    int depth) {
+    int depth,
+    int64_t &work_left) {
   assert(solutions.size() > 1);
   assert(!old_choice_positions.empty());
 
@@ -183,6 +185,9 @@ bool IsWinning(
   counters.max_depth.SetMax(depth);
   counters.recursive_calls.Inc();
   counters.total_solutions.Add(solutions.size());
+
+  work_left -= solutions.size();
+  if (work_left < 0) return false;  // Search aborted.
 
   // Calculate new choice positions and detect immediately winning moves.
   //
@@ -227,7 +232,8 @@ bool IsWinning(
   } else {
     // Solve recursively.
     std::span<position_t> choice_positions(choice_positions_data, choice_positions_size);
-    winning = IsWinning2(solutions, choice_positions, inferred_count, depth);
+    winning = IsWinning2(solutions, choice_positions, inferred_count, depth, work_left);
+    if (work_left < 0) return false;  // Search aborted.
     mem.SetWinning(winning);
   }
 
@@ -238,7 +244,8 @@ bool IsWinning2(
     std::span<HashedSolution> solutions,
     std::span<position_t> choice_positions,
     int inferred_count,
-    int depth) {
+    int depth,
+    int64_t &work_left) {
 
   for (size_t k = 0; k < choice_positions.size(); ++k) {
     position_t pos = choice_positions[k];
@@ -255,13 +262,12 @@ bool IsWinning2(
       while (j < solutions.size() && solutions[j].solution[pos] == digit) ++j;
       // We should have found immediately-winning moves already before.
       assert(j - i > 1 && j - i < solutions.size());
-      if (!IsWinning(
-              solutions.subspan(i, j - i),
-              choice_positions.subspan(0, choice_positions.size() - 1),
-              inferred_count, depth + 1)) {
-        // Winning move found!
-        return true;
-      }
+      bool winning = IsWinning(
+          solutions.subspan(i, j - i),
+          choice_positions.subspan(0, choice_positions.size() - 1),
+          inferred_count, depth + 1, work_left);
+      if (work_left < 0) return false;  // Search aborted.
+      if (!winning) return true;  // Winning move found!
       i = j;
     }
 
@@ -270,7 +276,8 @@ bool IsWinning2(
   }
 
   if (ReduceInferredCount(inferred_count) > 0) {
-    bool winning = IsWinning(solutions, choice_positions, inferred_count - 1, depth + 1);
+    bool winning = IsWinning(solutions, choice_positions, inferred_count - 1, depth + 1, work_left);
+    if (work_left < 0) return false;  // Search aborted.
     if (!winning) return true;
   }
 
@@ -289,7 +296,8 @@ AnalyzeResult SelectMoveFromSolutions2(
     const std::vector<position_t> &choice_positions,
     const std::vector<Move> &inferred_moves,
     std::span<HashedSolution> solutions,
-    int max_winning_moves) {
+    int max_winning_moves,
+    int64_t work_left) {
   assert(solutions.size() > 1);
 
   // Recursively search for a winning move.
@@ -311,7 +319,10 @@ AnalyzeResult SelectMoveFromSolutions2(
       // We should have found immediately-winning moves already before.
       assert(n > 1 && n < solutions.size());
       Move move = {.pos = pos, .digit = digit};
-      if (IsWinning(solutions.subspan(i, n), new_choice_positions, inferred_moves.size(), 1)) {
+      bool winning = IsWinning(solutions.subspan(i, n), new_choice_positions,
+              inferred_moves.size(), 1, work_left);
+      if (work_left < 0) return {};  // Search aborted.
+      if (winning) {
         // Winning for the next player => losing for the previous player.
         if ((int) n > max_solutions_remaining) {
           max_solutions_remaining = n;
@@ -338,7 +349,9 @@ max_winning_moves_found:
   }
 
   if (ReduceInferredCount(inferred_moves.size()) > 0) {
-    if (!IsWinning(solutions, choice_positions, inferred_moves.size() - 1, 1)) {
+    bool winning = IsWinning(solutions, choice_positions, inferred_moves.size() - 1, 1, work_left);
+    if (work_left < 0) return {};  // Search aborted.
+    if (!winning) {
       return {Outcome::WIN3, inferred_moves};
     }
   }
@@ -361,18 +374,25 @@ std::ostream &operator<<(std::ostream &os, const Outcome &outcome) {
 }
 
 std::ostream &operator<<(std::ostream &os, const AnalyzeResult &result) {
-  os << "AnalyzeResult{outcome=" << result.outcome << ", optimal_moves={";
+  os << "AnalyzeResult{outcome=";
+  if (result.outcome) {
+    os << *result.outcome;
+  } else {
+    os << "<unknown>";
+  }
+  os << ", optimal_moves={";
   bool first = true;
   for (const Move &move : result.optimal_moves) {
     if (first) first = false; else os << ", ";
     os << move;
   }
-  os << '}';
+  os << "}}";
   return os;
 }
 
 AnalyzeResult Analyze(
-    const grid_t &givens, std::span<const solution_t> solutions, int max_winning_moves) {
+    const grid_t &givens, std::span<const solution_t> solutions,
+    int max_winning_moves, int64_t max_work) {
   assert(solutions.size() > 1);
   assert(max_winning_moves > 0);
 
@@ -407,7 +427,7 @@ AnalyzeResult Analyze(
 
   // Otherwise, recursively search for a winning move.
   return SelectMoveFromSolutions2(
-      choice_positions, inferred_moves, hashed_solutions, max_winning_moves);
+      choice_positions, inferred_moves, hashed_solutions, max_winning_moves, max_work);
 
   // Note: we could clear the memo before returning to save memory, but keeping
   // it populated will help with future searches especially in the common case

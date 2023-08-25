@@ -23,10 +23,11 @@ namespace {
 
 const std::string player_name = "Numberwang";
 
-DECLARE_FLAG(std::string, arg_seed,             "",         "seed");
-DECLARE_FLAG(int64_t,     arg_max_work,         10'000'000, "max_work");
-DECLARE_FLAG(int,         arg_max_enumerate,       100'000, "max_enumerate");
-DECLARE_FLAG(int,         arg_max_analyze,           2'000, "max_analyze");
+DECLARE_FLAG(std::string, arg_seed, "", "seed");
+DECLARE_FLAG(int,         arg_enumerate_max_count,     100'000, "enumerate_max_count");
+DECLARE_FLAG(int64_t,     arg_enumerate_max_work,   10'000'000, "enumerate_max_work");
+DECLARE_FLAG(int,         arg_analyze_max_count,        10'000, "analyze_max_count");
+DECLARE_FLAG(int64_t,     arg_analyze_max_work,    120'000'000, "analyze_max_work");
 
 struct Timer {
   using clock_t = std::chrono::steady_clock;
@@ -160,6 +161,7 @@ bool PlayGame(rng_t &rng) {
   std::vector<solution_t> solutions = {};
   bool solutions_complete = false;
   bool winning = false;
+  size_t analyze_max_count = arg_analyze_max_count;
 
   // Updates the game state and refines the solutions set after playing the given move.
   auto PlayMove = [&state, &solutions, &solutions_complete](const Move &move) {
@@ -198,7 +200,8 @@ bool PlayGame(rng_t &rng) {
       if (!solutions_complete) {
         // Try to enumerate all solutions.
         Timer timer;
-        EnumerateResult er = state.EnumerateSolutions(solutions, arg_max_enumerate, arg_max_work, &rng);
+        EnumerateResult er = state.EnumerateSolutions(
+            solutions, arg_enumerate_max_count, arg_enumerate_max_work, &rng);
         enumerate_time += timer.Elapsed();
         if (er.Accurate()) {
           solutions_complete = true;
@@ -217,7 +220,7 @@ bool PlayGame(rng_t &rng) {
       if (solutions.empty()) {
         // I don't know anything about solutions. Just pick randomly.
         selected_move = PickRandomMove(state, rng);
-      } else if (!solutions_complete || solutions.size() > (size_t) arg_max_analyze) {
+      } else if (!solutions_complete || solutions.size() > analyze_max_count) {
         // I have some solutions but it's not the complete set.
         selected_move = PickMoveIncomplete(state, solutions, rng);
       } else if (solutions.size() == 1) {
@@ -230,19 +233,28 @@ bool PlayGame(rng_t &rng) {
         Timer timer;
         grid_t givens = {};
         for (int i = 0; i < 81; ++i) givens[i] = state.Digit(i);
-        AnalyzeResult result = Analyze(givens, solutions, 1);
+        AnalyzeResult result = Analyze(givens, solutions, 1, arg_analyze_max_work);
         analyze_time += timer.Elapsed();
-        selected_move = RandomSample(result.optimal_moves, rng);
-        claim_winning = result.outcome == Outcome::WIN1;
-        LogOutcome(result.outcome);
-        if (result.outcome == Outcome::WIN1) LogInfo() << "That's Numberwang!";
-        // Detect bugs in analysis:
-        bool new_winning = IsWinning(result.outcome);
-        if (winning && !new_winning) {
-          LogWarning() << "State went from winning to losing! "
-              << "(this means there is a bug in analysis)";
+        if (!result.outcome) {
+          LogWarning() << "Analysis aborted!";
+          // Fall back to pseudo-random selection.
+          selected_move = PickMoveIncomplete(state, solutions, rng);
+          // Reduce max_analyze so that we don't try to re-analyze until the
+          // solution set is smaller.
+          analyze_max_count = solutions.size() - 1;
+        } else {
+          selected_move = RandomSample(result.optimal_moves, rng);
+          claim_winning = *result.outcome == Outcome::WIN1;
+          LogOutcome(*result.outcome);
+          if (result.outcome == Outcome::WIN1) LogInfo() << "That's Numberwang!";
+          // Detect bugs in analysis:
+          bool new_winning = IsWinning(*result.outcome);
+          if (winning && !new_winning) {
+            LogWarning() << "State went from winning to losing! "
+                << "(this means there is a bug in analysis)";
+          }
+          winning = new_winning;
         }
-        winning = new_winning;
       }
 
       // Execute my selected move.

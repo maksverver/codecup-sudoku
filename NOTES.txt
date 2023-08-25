@@ -133,6 +133,16 @@ time is also proportional to size: i.e. the 1% largest sets probably take more
 than 1% of the time!
 
 
+ANALYSIS TIMING
+
+I collected some timing statistics. If I use the total_solutions counter as
+a proxy for amount of work performed, then I can analyze between 12e6 and 30e6
+solutions per second on my laptop.
+
+So assuming CodeCup servers are twice as slow and I don't want to spend more
+than 20s on analysis, I should set the analysis work limit to 120e6.
+
+
 OPEN QUESTIONS
 
 Can we meaningfully decompose the game?
