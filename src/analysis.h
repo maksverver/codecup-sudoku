@@ -37,14 +37,18 @@ struct AnalyzeResult {
   // analysis was aborted because max_work was exceeded.
   std::optional<Outcome> outcome;
 
-  // List of optimal moves (up to max_winning_moves). Empty if search was aborted.
+  // List of optimal moves (up to max_winning_moves if the position is
+  // winning). Empty if search was aborted.
   std::vector<Move> optimal_moves;
 };
 
 std::ostream &operator<<(std::ostream &os, const AnalyzeResult &result);
 
 // Given the set of given digits, and a *complete* set of solutions, determines
-// the optimal move (first element of the result) and whether it is a winning.
+// the game status and optimal moves.
+//
+// `max_winning_moves` determines the maximum number of winning moves to find.
+// It should be set to 1 in the player to optimize for speed.
 //
 // Preconditions: solutions.size() > 1
 AnalyzeResult Analyze(
