@@ -1,0 +1,64 @@
+ID Numberwang (64 bit) (compiler v11.3.0) (commit f827699)
+IO RCVD [Be7]
+TURN 1 .............7................................................................... 0
+SOLUTIONS 100000
+TIME 133 ENUMERATE 118 ANALYZE 0
+IO SEND [Da6]
+IO RCVD [If1]
+TURN 3 .............7.............6.................................................1... 157
+SOLUTIONS 100000
+TIME 109 ENUMERATE 95 ANALYZE 0
+IO SEND [Gf7]
+IO RCVD [Ab5]
+TURN 5 .5...........7.............6...............................7.................1... 2596
+SOLUTIONS 100000
+TIME 83 ENUMERATE 71 ANALYZE 0
+IO SEND [Gi6]
+IO RCVD [Bh9]
+TURN 7 .5...........7..9..........6...............................7..6..............1... 4943
+SOLUTIONS 100000
+TIME 92 ENUMERATE 79 ANALYZE 0
+IO SEND [Bb4]
+IO RCVD [Hg8]
+TURN 9 .5........4..7..9..........6...............................7..6......8.......1... 7481
+SOLUTIONS 100000
+TIME 85 ENUMERATE 73 ANALYZE 0
+IO SEND [Ch8]
+IO RCVD [Aa9]
+TURN 11 95........4..7..9........8.6...............................7..6......8.......1... 9807
+SOLUTIONS 100000
+TIME 79 ENUMERATE 67 ANALYZE 0
+IO SEND [Ag7]
+IO RCVD [Dd3]
+TURN 13 95....7...4..7..9........8.6..3............................7..6......8.......1... 12239
+SOLUTIONS 100000
+TIME 89 ENUMERATE 77 ANALYZE 0
+IO SEND [Ci4]
+IO RCVD [Hf5]
+TURN 15 95....7...4..7..9........846..3............................7..6.....58.......1... 14621
+SOLUTIONS 100000
+TIME 114 ENUMERATE 100 ANALYZE 0
+IO SEND [Ac2]
+IO RCVD [Fd8]
+TURN 17 952...7...4..7..9........846..3.................8..........7..6.....58.......1... 17427
+SOLUTIONS 100000
+TIME 94 ENUMERATE 81 ANALYZE 0
+IO SEND [Cd1]
+IO RCVD [Eh5]
+TURN 19 952...7...4..7..9....1...846..3............5....8..........7..6.....58.......1... 19896
+SOLUTIONS 73012+
+TIME 98 ENUMERATE 89 ANALYZE 0
+IO SEND [Ef6]
+IO RCVD [Ga3]
+TURN 21 952...7...4..7..9....1...846..3..........6.5....8.....3....7..6.....58.......1... 21934
+SOLUTIONS 3838+
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Ed7]
+IO RCVD [Ei1]
+TURN 23 952...7...4..7..9....1...846..3........7.6.51...8.....3....7..6.....58.......1... 22014
+SOLUTIONS 170+
+OUTCOME WIN1
+INFO That's Numberwang!
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Dc4!]
+# Total time used: 1.018 seconds
