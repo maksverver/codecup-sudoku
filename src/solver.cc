@@ -16,9 +16,10 @@
 
 namespace {
 
-DECLARE_FLAG(int, max_enumerate,      1e6, "max_enumerate");
-DECLARE_FLAG(int, max_print,          100, "max_print");
-DECLARE_FLAG(int, max_winning_moves,    1, "max_winning_moves");
+DECLARE_FLAG(int64_t, analyze_max_work,        1e18, "analyze_max_work");
+DECLARE_FLAG(int,     enumerate_max_count,      1e6, "enumerate_max_count");
+DECLARE_FLAG(int,     max_print,                100, "max_print");
+DECLARE_FLAG(int,     max_winning_moves,          1, "max_winning_moves");
 
 char Char(int d, char zero='.') {
   assert(d >= 0 && d < 10);
@@ -45,7 +46,7 @@ std::optional<State> ParseDesc(const char *desc) {
 
 void CountSolutions(State &state) {
 #if 1
-  CountResult cr = state.CountSolutions(max_enumerate);
+  CountResult cr = state.CountSolutions(enumerate_max_count);
   assert(!cr.WorkLimitReached());
   if (cr.CountLimitReached()) std::cout << "At least ";
   std::cout << cr.count << " solutions" << std::endl;
@@ -58,7 +59,7 @@ void CountSolutions(State &state) {
   // Slightly slower implementation using EnumerateSolutions() instead.
   int count = 0;
   EnumerateResult er = state.EnumerateSolutions([&count](const std::array<uint8_t, 81>&){
-    return ++count < max_solutions_to_enumerate;
+    return ++count < enumerate_max_count;
   });
   if (!er.Accurate()) std::cout << "At least ";
   std::cout << count << " solutions" << std::endl;
@@ -87,7 +88,7 @@ void EnumerateSolutions(State &state) {
   for (int i = 0; i < 81; ++i) givens[i] = state.Digit(i);
 
   std::vector<solution_t> solutions;
-  EnumerateResult er = state.EnumerateSolutions(solutions, max_enumerate);
+  EnumerateResult er = state.EnumerateSolutions(solutions, enumerate_max_count);
 
   // Print solutions
   size_t print_count = std::min(solutions.size(), (size_t) max_print);
@@ -201,7 +202,7 @@ void EnumerateSolutions(State &state) {
     std::cout << "No solution possible!\n";
   } else if (solutions.size() == 1) {
     std::cout << "Solution is unique!\n";
-  } else if (auto result = Analyze(givens, solutions, max_winning_moves); !result.outcome) {
+  } else if (auto result = Analyze(givens, solutions, max_winning_moves, analyze_max_work); !result.outcome) {
     std::cout << "Analysis incomplete!\n";
   } else {
     std::cout << "Outcome: " << *result.outcome << '\n';
@@ -232,9 +233,10 @@ int main(int argc, char *argv[]) {
         "\tsolver [<options>] <state>  (solves a single state)\n"
         "\tsolver [<options>] -        (solve states read from standard input)\n\n"
         "Options:\n"
-        "\t--max_enumerate=1000000     (max. number of solutions to enumerate)\n"
-        "\t--max_print=100             (max. number of solutions to print)\n"
-        "\t--max_winning_moves=1       (max. number of winning moves to list)\n";
+        "\t--analyze_max_work=1000000000 (work limit for analysis)\n"
+        "\t--enumerate_max_count=1000000 (max. number of solutions to enumerate)\n"
+        "\t--max_print=100               (max. number of solutions to print)\n"
+        "\t--max_winning_moves=1         (max. number of winning moves to list)\n";
     return 1;
   }
 
