@@ -427,7 +427,8 @@ AnalyzeResult Analyze(
 
   // Otherwise, recursively search for a winning move.
   return SelectMoveFromSolutions2(
-      choice_positions, inferred_moves, hashed_solutions, max_winning_moves, max_work);
+      choice_positions, inferred_moves, hashed_solutions, max_winning_moves,
+      max_work - solutions.size());
 
   // Note: we could clear the memo before returning to save memory, but keeping
   // it populated will help with future searches especially in the common case
