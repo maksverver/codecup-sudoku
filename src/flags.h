@@ -3,7 +3,9 @@
 #ifndef FLAGS_H_INCLUDED
 #define FLAGS_H_INCLUDED
 
+#include <cmath>
 #include <functional>
+#include <limits>
 #include <string>
 #include <string_view>
 #include <sstream>
@@ -35,14 +37,42 @@ bool ParseFlags(int argc, char *argv[], std::vector<char *> &plain_args);
 
 namespace flags::internal {
 
-template<class T> bool ParseValue(std::string_view s, T &value) {
+template<class T> bool ParseGenericValue(std::string_view s, T &value) {
   std::istringstream iss((std::string(s)));
   return (iss >> value) && iss.peek() == std::istringstream::traits_type::eof();
 }
 
+template<class T> bool ParseIntegralValue(std::string_view s, T &value) {
+  static_assert(std::is_integral_v<T>);
+  // First try parsing as an integer.
+  if (ParseGenericValue(s, value)) {
+    return true;
+  }
+  // If that fails, try parsing as a double in exponentatial notation (1.23e45)
+  // but only if the result is finite, integral and fits in the destintion type.
+  long double ld = 0.0;
+  if (ParseGenericValue(s, ld) && std::isfinite(ld) && std::trunc(ld) == ld &&
+      ld >= std::numeric_limits<T>::min() && ld <= std::numeric_limits<T>::max()) {
+    value = ld;
+    return true;
+  }
+  return false;
+}
+
+// No implementation. Only parsing specific types is supported (see specializations below).
+template<class T> bool ParseValue(std::string_view s, T &value);
+
 template<> inline bool ParseValue<std::string>(std::string_view s, std::string &value) {
   value = s;
   return true;
+}
+
+template<> inline bool ParseValue<int>(std::string_view s, int &value) {
+  return ParseIntegralValue(s, value);
+}
+
+template<> inline bool ParseValue<int64_t>(std::string_view s, int64_t &value) {
+  return ParseIntegralValue(s, value);
 }
 
 template<typename T> class Parser {
