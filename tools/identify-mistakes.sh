@@ -25,13 +25,21 @@ if [ $# != 1 ]; then
   echo "Usage: $0 <transcript>"
 fi
 
-if ! echo "$moves" | grep -E -q '^([A-I][a-i][1-9][^[:alnum:]])*[A-I][a-i][1-9][!]$'; then
-  echo "Invalid transcript!"
+if ! echo "$moves" | grep -E -q '^([A-I][a-i][1-9][^[:alnum:]])*([A-I][a-i][1-9])?[!]$'; then
+  echo "Invalid transcript!" >&2
   exit 1
 fi
 
+if [ $(( ${#moves} % 4 )) -eq 1 ]; then
+  # Transcript ends with "!" to claim solution is already unique
+  moves=${moves::-1}
+  turn=$((${#moves} / 4))  # 0-based!
+  echo "$turn"
+  echo "Player $(( (turn - 1) % 2 + 1)) blundered on move $((turn))" >&2
+fi
+
 if ! $SOLVER "$moves" | grep -qF 'Solution is unique!'; then
-  echo "Transcript does not end with unique solution!"
+  echo "Transcript does not end with unique solution!" >&2
   exit 1
 fi
 
