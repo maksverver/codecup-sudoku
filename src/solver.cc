@@ -8,6 +8,7 @@
 #include <cassert>
 #include <cstdlib>
 #include <cstring>
+#include <cctype>
 #include <iostream>
 #include <optional>
 #include <span>
@@ -26,7 +27,8 @@ char Char(int d, char zero='.') {
   return d == 0 ? zero : (char) ('0' + d);
 }
 
-std::optional<State> ParseDesc(const char *desc) {
+// Parses a grid matching the regular expression: [0-9.]{81}
+std::optional<State> ParseGridDesc(const char *desc) {
   State state;
   for (int i = 0; i < 81; ++i) {
     if (desc[i] >= '1' && desc[i] <= '9') {
@@ -37,11 +39,43 @@ std::optional<State> ParseDesc(const char *desc) {
       }
       state.Play(move);
     } else if (desc[i] != '.' && desc[i] != '0') {
-      std::cerr << "Invalid character at index " << i << ": " << desc[i] <<std::endl;
+      std::cerr << "Invalid character at index " << i << ": " << desc[i] << std::endl;
       return {};
     }
   }
   return state;
+}
+
+// Parses a sequence of moves, optionally separated by non-alphanumeric characters.
+std::optional<State> ParseMovesDesc(const char *desc) {
+  State state;
+  size_t i = 0, n = strlen(desc);
+  while (i < n) {
+    if (n - i < 3) {
+      std::cerr << "Unexpected end of input at position " << i << std::endl;
+      return {};
+    }
+    int r = desc[i++] - 'A';
+    int c = desc[i++] - 'a';
+    int d = desc[i++] - '0';
+    if (!(r >= 0 && r < 9 && c >= 0 && c < 9 && d >= 1 && d <= 9)) {
+      std::cerr << "Unparsable move at index " << i - 3 << std::endl;
+      return {};
+    }
+    Move move = {.pos = 9*r + c, .digit = d};
+    if (!state.CanPlay(move)) {
+      std::cerr << "Invalid move at index " << i - 3 << ": " << move << std::endl;
+      return {};
+    }
+    state.Play(move);
+    if (i < n && !std::isalnum(desc[i])) ++i; // skip optional separator
+  }
+  return state;
+}
+
+std::optional<State> ParseDesc(const char *desc) {
+  if (desc[0] >= 'A' && desc[0] <= 'I') return ParseMovesDesc(desc);
+  return ParseGridDesc(desc);
 }
 
 void CountSolutions(State &state) {
