@@ -1,0 +1,41 @@
+Number of games with a provable mistake (excluding games that ended irregularly):
+
+      0 Louis Verhaard
+      0 Maks Verver
+      0 Mark ter Brugge
+      2 Jan Nunnink
+      6 Michiel Smits
+      7 Willem van der Vegt
+     11 Isaac van Asselt
+     11 Matthijs Tijink
+     11 Pieter Marsman
+     14 SAAD YOUSFI
+     15 Antonio Morillas
+     15 Marc Oldenhof
+     16 Rust Kokkie
+     17 Anthony Bresler
+     18 Niklas Een
+     20 Andor Michels
+     20 Nathan Fenner
+     22 Jasper van Merle
+     29 Jens Heuseveldt
+     30 Jelmer Firet
+     30 Jelmer Hinssen
+     30 Sebastiaan Roodenburg
+     32 Ludo Pulles
+     33 Anne Lu
+     34 Fabio Murer
+     35 Zino Onomiwo
+     36 Boris de Wilde
+     36 Marcel Vlastuin
+     37 Frank Meert
+     37 Mees Broer
+     45 Jeroen van Oorschot
+     48 Lukas Pestalozzi
+     52 Jorik Mandemaker
+
+Players who only participated in the Swiss competition:
+
+      0 Frank Corporaal
+      1 ZhengYi Chen
+      3 Test Player A
