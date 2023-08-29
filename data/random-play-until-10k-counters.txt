@@ -1,0 +1,9000 @@
+Counters{
+	max_depth=0,
+	recursive_calls=1,
+	total_solutions=1030,
+	immediately_won=0,
+	memo_accessed=0,
+	memo_returned=0,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=4853599,
+	total_solutions=52430063,
+	immediately_won=3067020,
+	memo_accessed=1786578,
+	memo_returned=1563465,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=1392167,
+	total_solutions=14772827,
+	immediately_won=932680,
+	memo_accessed=459486,
+	memo_returned=393901,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=6390141,
+	total_solutions=71199113,
+	immediately_won=4928908,
+	memo_accessed=1461232,
+	memo_returned=1207905,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2629136,
+	total_solutions=28346239,
+	immediately_won=1349113,
+	memo_accessed=1280022,
+	memo_returned=1116440,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=190228,
+	total_solutions=1714745,
+	immediately_won=148460,
+	memo_accessed=41767,
+	memo_returned=32731,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=316194,
+	total_solutions=2440767,
+	immediately_won=234356,
+	memo_accessed=81837,
+	memo_returned=66104,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=13539633,
+	total_solutions=149134569,
+	immediately_won=9170449,
+	memo_accessed=4369183,
+	memo_returned=3724491,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4606178,
+	total_solutions=47018366,
+	immediately_won=2508873,
+	memo_accessed=2097304,
+	memo_returned=1822881,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=6112238,
+	total_solutions=67989131,
+	immediately_won=4329347,
+	memo_accessed=1782890,
+	memo_returned=1514867,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=10,
+	recursive_calls=4729,
+	total_solutions=25062,
+	immediately_won=3421,
+	memo_accessed=1307,
+	memo_returned=978,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=528672,
+	total_solutions=4730597,
+	immediately_won=321006,
+	memo_accessed=207665,
+	memo_returned=178803,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3176094,
+	total_solutions=34108985,
+	immediately_won=2229346,
+	memo_accessed=946747,
+	memo_returned=804341,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=32337873,
+	total_solutions=414628379,
+	immediately_won=20877157,
+	memo_accessed=11460715,
+	memo_returned=10028098,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=18679771,
+	total_solutions=248473798,
+	immediately_won=10188734,
+	memo_accessed=8491036,
+	memo_returned=7590480,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=304402,
+	total_solutions=2385230,
+	immediately_won=175179,
+	memo_accessed=129222,
+	memo_returned=109835,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=527858,
+	total_solutions=4899915,
+	immediately_won=368094,
+	memo_accessed=159763,
+	memo_returned=136449,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=3822132,
+	total_solutions=51294311,
+	immediately_won=2563597,
+	memo_accessed=1258534,
+	memo_returned=1110006,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1733187,
+	total_solutions=18292910,
+	immediately_won=1251071,
+	memo_accessed=482115,
+	memo_returned=414283,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=246531,
+	total_solutions=1918175,
+	immediately_won=179078,
+	memo_accessed=67452,
+	memo_returned=54493,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=14647585,
+	total_solutions=181332312,
+	immediately_won=9837684,
+	memo_accessed=4809900,
+	memo_returned=4117416,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4233944,
+	total_solutions=55973616,
+	immediately_won=2546604,
+	memo_accessed=1687339,
+	memo_returned=1447883,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=1375358,
+	total_solutions=10439255,
+	immediately_won=843503,
+	memo_accessed=531854,
+	memo_returned=451841,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=23532386,
+	total_solutions=300840694,
+	immediately_won=14942536,
+	memo_accessed=8589849,
+	memo_returned=7454761,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2132499,
+	total_solutions=25069216,
+	immediately_won=1176349,
+	memo_accessed=956149,
+	memo_returned=843800,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=12986482,
+	total_solutions=150754601,
+	immediately_won=6281238,
+	memo_accessed=6705243,
+	memo_returned=6006190,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1607868,
+	total_solutions=17757448,
+	immediately_won=1262845,
+	memo_accessed=345022,
+	memo_returned=282550,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=21853055,
+	total_solutions=365625403,
+	immediately_won=15155620,
+	memo_accessed=6697434,
+	memo_returned=5893550,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=164129,
+	total_solutions=1464648,
+	immediately_won=86721,
+	memo_accessed=77407,
+	memo_returned=66778,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=15819895,
+	total_solutions=195582784,
+	immediately_won=11014904,
+	memo_accessed=4804990,
+	memo_returned=4092299,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=14314671,
+	total_solutions=163737576,
+	immediately_won=9599120,
+	memo_accessed=4715550,
+	memo_returned=3992744,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=5358719,
+	total_solutions=57613370,
+	immediately_won=3024392,
+	memo_accessed=2334326,
+	memo_returned=2053750,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=11623482,
+	total_solutions=157164663,
+	immediately_won=6861704,
+	memo_accessed=4761777,
+	memo_returned=4219315,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=12282360,
+	total_solutions=168046153,
+	immediately_won=7391202,
+	memo_accessed=4891157,
+	memo_returned=4341704,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=71498841,
+	total_solutions=1120088571,
+	immediately_won=48598281,
+	memo_accessed=22900559,
+	memo_returned=20121296,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=66234713,
+	total_solutions=1012909971,
+	immediately_won=42828006,
+	memo_accessed=23406706,
+	memo_returned=20732303,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=3947337,
+	total_solutions=44352561,
+	immediately_won=2663950,
+	memo_accessed=1283386,
+	memo_returned=1096856,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=33299851,
+	total_solutions=516063142,
+	immediately_won=22283276,
+	memo_accessed=11016574,
+	memo_returned=9738297,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2748027,
+	total_solutions=30376493,
+	immediately_won=1935747,
+	memo_accessed=812279,
+	memo_returned=689379,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1245936,
+	total_solutions=13484394,
+	immediately_won=827449,
+	memo_accessed=418486,
+	memo_returned=359413,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=101659224,
+	total_solutions=1551899694,
+	immediately_won=69934751,
+	memo_accessed=31724472,
+	memo_returned=27607955,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=511368,
+	total_solutions=4667720,
+	immediately_won=373738,
+	memo_accessed=137629,
+	memo_returned=113325,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=7893681,
+	total_solutions=91805895,
+	immediately_won=4931277,
+	memo_accessed=2962403,
+	memo_returned=2579641,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=3246394,
+	total_solutions=33150580,
+	immediately_won=1824478,
+	memo_accessed=1421915,
+	memo_returned=1226015,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=5178743,
+	total_solutions=57413180,
+	immediately_won=3398837,
+	memo_accessed=1779905,
+	memo_returned=1515560,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=5665626,
+	total_solutions=67133534,
+	immediately_won=4145489,
+	memo_accessed=1520136,
+	memo_returned=1289391,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=13669571,
+	total_solutions=170269112,
+	immediately_won=9516422,
+	memo_accessed=4153148,
+	memo_returned=3559367,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=8458981,
+	total_solutions=94159494,
+	immediately_won=5520068,
+	memo_accessed=2938912,
+	memo_returned=2566168,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=11995266,
+	total_solutions=148793207,
+	immediately_won=8995088,
+	memo_accessed=3000177,
+	memo_returned=2543780,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=3148153,
+	total_solutions=35081933,
+	immediately_won=1679498,
+	memo_accessed=1468654,
+	memo_returned=1281296,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=92103,
+	total_solutions=712359,
+	immediately_won=54997,
+	memo_accessed=37105,
+	memo_returned=32349,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=24377553,
+	total_solutions=324098703,
+	immediately_won=13620199,
+	memo_accessed=10757353,
+	memo_returned=9598876,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=206025,
+	total_solutions=1490318,
+	immediately_won=160321,
+	memo_accessed=45703,
+	memo_returned=35378,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1524333,
+	total_solutions=15978222,
+	immediately_won=817855,
+	memo_accessed=706477,
+	memo_returned=625143,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=661588,
+	total_solutions=5615747,
+	immediately_won=425141,
+	memo_accessed=236446,
+	memo_returned=201357,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=0,
+	recursive_calls=1,
+	total_solutions=1629,
+	immediately_won=0,
+	memo_accessed=0,
+	memo_returned=0,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=551732,
+	total_solutions=4663338,
+	immediately_won=410050,
+	memo_accessed=141681,
+	memo_returned=114011,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=8883641,
+	total_solutions=96379947,
+	immediately_won=5545512,
+	memo_accessed=3338128,
+	memo_returned=2871907,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=9550207,
+	total_solutions=125297576,
+	immediately_won=6752418,
+	memo_accessed=2797788,
+	memo_returned=2421870,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4833249,
+	total_solutions=57056629,
+	immediately_won=3102636,
+	memo_accessed=1730612,
+	memo_returned=1497079,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1191471,
+	total_solutions=10929021,
+	immediately_won=915502,
+	memo_accessed=275968,
+	memo_returned=223116,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=8989109,
+	total_solutions=112220432,
+	immediately_won=6427057,
+	memo_accessed=2562051,
+	memo_returned=2205683,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=4663327,
+	total_solutions=55918823,
+	immediately_won=3082910,
+	memo_accessed=1580416,
+	memo_returned=1373997,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1825136,
+	total_solutions=19320728,
+	immediately_won=964253,
+	memo_accessed=860882,
+	memo_returned=747951,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=20236439,
+	total_solutions=318136870,
+	immediately_won=10641609,
+	memo_accessed=9594829,
+	memo_returned=8495980,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=6794100,
+	total_solutions=96894548,
+	immediately_won=5246166,
+	memo_accessed=1547933,
+	memo_returned=1316690,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2639363,
+	total_solutions=25833815,
+	immediately_won=1311535,
+	memo_accessed=1327827,
+	memo_returned=1174979,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=7122705,
+	total_solutions=90201887,
+	immediately_won=4935661,
+	memo_accessed=2187043,
+	memo_returned=1892050,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=5125881,
+	total_solutions=54039546,
+	immediately_won=3947767,
+	memo_accessed=1178113,
+	memo_returned=961338,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=6799056,
+	total_solutions=81569236,
+	immediately_won=4132533,
+	memo_accessed=2666522,
+	memo_returned=2347438,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=22070202,
+	total_solutions=318236134,
+	immediately_won=12249166,
+	memo_accessed=9821035,
+	memo_returned=8715862,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2426034,
+	total_solutions=26681853,
+	immediately_won=1699364,
+	memo_accessed=726669,
+	memo_returned=609145,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=5062062,
+	total_solutions=54290167,
+	immediately_won=2856292,
+	memo_accessed=2205769,
+	memo_returned=1940067,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=21073133,
+	total_solutions=242187602,
+	immediately_won=14172912,
+	memo_accessed=6900220,
+	memo_returned=6005911,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=147877,
+	total_solutions=1238896,
+	immediately_won=105202,
+	memo_accessed=42674,
+	memo_returned=35256,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=27023003,
+	total_solutions=314621741,
+	immediately_won=16949673,
+	memo_accessed=10073329,
+	memo_returned=8830940,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=27286903,
+	total_solutions=354805914,
+	immediately_won=18891385,
+	memo_accessed=8395517,
+	memo_returned=7283590,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1699535,
+	total_solutions=18167974,
+	immediately_won=1249805,
+	memo_accessed=449729,
+	memo_returned=378294,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=5260169,
+	total_solutions=64527477,
+	immediately_won=3050728,
+	memo_accessed=2209440,
+	memo_returned=1907153,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=267988,
+	total_solutions=2332961,
+	immediately_won=179185,
+	memo_accessed=88802,
+	memo_returned=74853,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=44289481,
+	total_solutions=690808366,
+	immediately_won=30696024,
+	memo_accessed=13593456,
+	memo_returned=11709481,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=7029689,
+	total_solutions=67843461,
+	immediately_won=4286148,
+	memo_accessed=2743540,
+	memo_returned=2380120,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=12,
+	recursive_calls=13234,
+	total_solutions=82338,
+	immediately_won=10235,
+	memo_accessed=2998,
+	memo_returned=2365,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1105516,
+	total_solutions=10796273,
+	immediately_won=641993,
+	memo_accessed=463522,
+	memo_returned=399979,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=15867886,
+	total_solutions=188933463,
+	immediately_won=9952487,
+	memo_accessed=5915398,
+	memo_returned=5137103,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=5896657,
+	total_solutions=59074542,
+	immediately_won=3355034,
+	memo_accessed=2541622,
+	memo_returned=2210431,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1603943,
+	total_solutions=16406360,
+	immediately_won=1196019,
+	memo_accessed=407923,
+	memo_returned=337119,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=4237559,
+	total_solutions=51304762,
+	immediately_won=2467015,
+	memo_accessed=1770543,
+	memo_returned=1564113,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3230658,
+	total_solutions=32302523,
+	immediately_won=2264044,
+	memo_accessed=966613,
+	memo_returned=820193,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=25060317,
+	total_solutions=323436540,
+	immediately_won=15534086,
+	memo_accessed=9526230,
+	memo_returned=8368296,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=4417634,
+	total_solutions=53255533,
+	immediately_won=2692214,
+	memo_accessed=1725419,
+	memo_returned=1501177,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=2083847,
+	total_solutions=18227269,
+	immediately_won=967080,
+	memo_accessed=1116766,
+	memo_returned=995271,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=400485,
+	total_solutions=3890530,
+	immediately_won=207878,
+	memo_accessed=192606,
+	memo_returned=168681,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=727681,
+	total_solutions=6524878,
+	immediately_won=527829,
+	memo_accessed=199851,
+	memo_returned=167061,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=3736490,
+	total_solutions=43861223,
+	immediately_won=2518239,
+	memo_accessed=1218250,
+	memo_returned=1048500,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=4497660,
+	total_solutions=54770684,
+	immediately_won=2433485,
+	memo_accessed=2064174,
+	memo_returned=1831973,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=4271500,
+	total_solutions=51129553,
+	immediately_won=3104078,
+	memo_accessed=1167421,
+	memo_returned=993589,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=48177358,
+	total_solutions=624531732,
+	immediately_won=30799436,
+	memo_accessed=17377921,
+	memo_returned=15190612,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1953729,
+	total_solutions=19232432,
+	immediately_won=1376048,
+	memo_accessed=577680,
+	memo_returned=477424,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1819569,
+	total_solutions=21404588,
+	immediately_won=1257397,
+	memo_accessed=562171,
+	memo_returned=483411,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=197621,
+	total_solutions=1381097,
+	immediately_won=147237,
+	memo_accessed=50383,
+	memo_returned=41457,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=16979273,
+	total_solutions=236668514,
+	immediately_won=10768392,
+	memo_accessed=6210880,
+	memo_returned=5487376,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=600821,
+	total_solutions=5193162,
+	immediately_won=387085,
+	memo_accessed=213735,
+	memo_returned=182124,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=8656588,
+	total_solutions=86161877,
+	immediately_won=6096897,
+	memo_accessed=2559690,
+	memo_returned=2144580,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=25,
+	recursive_calls=42165833,
+	total_solutions=646496177,
+	immediately_won=25883731,
+	memo_accessed=16282101,
+	memo_returned=14431953,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=823234,
+	total_solutions=7463220,
+	immediately_won=644533,
+	memo_accessed=178700,
+	memo_returned=145572,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=11860925,
+	total_solutions=137942046,
+	immediately_won=8615759,
+	memo_accessed=3245165,
+	memo_returned=2751335,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=21352523,
+	total_solutions=254457135,
+	immediately_won=14877410,
+	memo_accessed=6475112,
+	memo_returned=5607103,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=15143525,
+	total_solutions=221712544,
+	immediately_won=11326904,
+	memo_accessed=3816620,
+	memo_returned=3264303,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=70498,
+	total_solutions=476086,
+	immediately_won=52729,
+	memo_accessed=17768,
+	memo_returned=13948,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3796197,
+	total_solutions=40242141,
+	immediately_won=2683784,
+	memo_accessed=1112412,
+	memo_returned=927899,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1839740,
+	total_solutions=18934560,
+	immediately_won=1205540,
+	memo_accessed=634199,
+	memo_returned=547545,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=12,
+	recursive_calls=148762,
+	total_solutions=1045489,
+	immediately_won=106895,
+	memo_accessed=41866,
+	memo_returned=34219,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=157508,
+	total_solutions=1238407,
+	immediately_won=122352,
+	memo_accessed=35155,
+	memo_returned=28536,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=22752400,
+	total_solutions=317979231,
+	immediately_won=14822845,
+	memo_accessed=7929554,
+	memo_returned=7008719,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=877892,
+	total_solutions=10790639,
+	immediately_won=655377,
+	memo_accessed=222514,
+	memo_returned=185515,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=84581,
+	total_solutions=604026,
+	immediately_won=53599,
+	memo_accessed=30981,
+	memo_returned=26340,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=44618182,
+	total_solutions=759102565,
+	immediately_won=23889247,
+	memo_accessed=20728934,
+	memo_returned=18552251,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=548801,
+	total_solutions=4191868,
+	immediately_won=394260,
+	memo_accessed=154540,
+	memo_returned=127227,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=796515,
+	total_solutions=10250843,
+	immediately_won=490111,
+	memo_accessed=306403,
+	memo_returned=263761,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=2725987,
+	total_solutions=28808330,
+	immediately_won=1901891,
+	memo_accessed=824095,
+	memo_returned=714918,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=8552015,
+	total_solutions=91360345,
+	immediately_won=4888490,
+	memo_accessed=3663524,
+	memo_returned=3219229,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=10358505,
+	total_solutions=130403650,
+	immediately_won=6242905,
+	memo_accessed=4115599,
+	memo_returned=3617516,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=2146655,
+	total_solutions=20893168,
+	immediately_won=1332106,
+	memo_accessed=814548,
+	memo_returned=700685,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1156525,
+	total_solutions=12058360,
+	immediately_won=829527,
+	memo_accessed=326997,
+	memo_returned=275452,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2871310,
+	total_solutions=30686871,
+	immediately_won=1859821,
+	memo_accessed=1011488,
+	memo_returned=865689,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=44119357,
+	total_solutions=676022444,
+	immediately_won=28095207,
+	memo_accessed=16024149,
+	memo_returned=14199609,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=856852,
+	total_solutions=8193675,
+	immediately_won=523216,
+	memo_accessed=333635,
+	memo_returned=287980,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=186169,
+	total_solutions=1599926,
+	immediately_won=138670,
+	memo_accessed=47498,
+	memo_returned=38376,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3375302,
+	total_solutions=35857098,
+	immediately_won=2318254,
+	memo_accessed=1057047,
+	memo_returned=890866,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=0,
+	recursive_calls=1,
+	total_solutions=673,
+	immediately_won=0,
+	memo_accessed=0,
+	memo_returned=0,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=57136377,
+	total_solutions=1084310066,
+	immediately_won=39677744,
+	memo_accessed=17458632,
+	memo_returned=15455938,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=11,
+	recursive_calls=26144,
+	total_solutions=127610,
+	immediately_won=21549,
+	memo_accessed=4594,
+	memo_returned=3538,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3617678,
+	total_solutions=34890306,
+	immediately_won=2535790,
+	memo_accessed=1081887,
+	memo_returned=901396,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1757135,
+	total_solutions=16371052,
+	immediately_won=1206372,
+	memo_accessed=550762,
+	memo_returned=469296,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=1178948,
+	total_solutions=12318042,
+	immediately_won=797810,
+	memo_accessed=381137,
+	memo_returned=324860,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2952955,
+	total_solutions=31696258,
+	immediately_won=1996884,
+	memo_accessed=956070,
+	memo_returned=815568,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=2516955,
+	total_solutions=28452036,
+	immediately_won=1993149,
+	memo_accessed=523805,
+	memo_returned=424088,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=5387898,
+	total_solutions=63149289,
+	immediately_won=3695014,
+	memo_accessed=1692883,
+	memo_returned=1446127,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1650803,
+	total_solutions=14080975,
+	immediately_won=1102207,
+	memo_accessed=548595,
+	memo_returned=467149,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=51518828,
+	total_solutions=866546708,
+	immediately_won=33713508,
+	memo_accessed=17805319,
+	memo_returned=15682368,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=886040,
+	total_solutions=7538111,
+	immediately_won=476395,
+	memo_accessed=409644,
+	memo_returned=359438,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5749309,
+	total_solutions=78350596,
+	immediately_won=4790135,
+	memo_accessed=959173,
+	memo_returned=779418,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1444484,
+	total_solutions=16511771,
+	immediately_won=1101736,
+	memo_accessed=342747,
+	memo_returned=285550,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=24174052,
+	total_solutions=370642312,
+	immediately_won=15767109,
+	memo_accessed=8406942,
+	memo_returned=7408135,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=80200,
+	total_solutions=526346,
+	immediately_won=60398,
+	memo_accessed=19801,
+	memo_returned=16144,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=2779945,
+	total_solutions=29129923,
+	immediately_won=1718328,
+	memo_accessed=1061616,
+	memo_returned=924387,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=573781,
+	total_solutions=5173546,
+	immediately_won=443086,
+	memo_accessed=130694,
+	memo_returned=103946,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=387841,
+	total_solutions=3115729,
+	immediately_won=256737,
+	memo_accessed=131103,
+	memo_returned=111558,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=34227157,
+	total_solutions=508462452,
+	immediately_won=22957591,
+	memo_accessed=11269565,
+	memo_returned=9816292,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=4405996,
+	total_solutions=47460669,
+	immediately_won=3030720,
+	memo_accessed=1375275,
+	memo_returned=1193893,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1528037,
+	total_solutions=13812571,
+	immediately_won=979781,
+	memo_accessed=548255,
+	memo_returned=468405,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=7467089,
+	total_solutions=71801170,
+	immediately_won=4523109,
+	memo_accessed=2943979,
+	memo_returned=2538588,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=6255665,
+	total_solutions=68144427,
+	immediately_won=4256276,
+	memo_accessed=1999388,
+	memo_returned=1732983,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=1842683,
+	total_solutions=21317974,
+	immediately_won=1301032,
+	memo_accessed=541650,
+	memo_returned=459653,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=69573,
+	total_solutions=590248,
+	immediately_won=55630,
+	memo_accessed=13942,
+	memo_returned=10830,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=4186444,
+	total_solutions=48092318,
+	immediately_won=2158120,
+	memo_accessed=2028323,
+	memo_returned=1792825,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=27926641,
+	total_solutions=365944950,
+	immediately_won=16611880,
+	memo_accessed=11314760,
+	memo_returned=10048972,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=20253589,
+	total_solutions=268387783,
+	immediately_won=13313242,
+	memo_accessed=6940346,
+	memo_returned=6061260,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=4829958,
+	total_solutions=59893748,
+	immediately_won=3778506,
+	memo_accessed=1051451,
+	memo_returned=868391,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=85199,
+	total_solutions=689829,
+	immediately_won=62233,
+	memo_accessed=22965,
+	memo_returned=19217,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=17544459,
+	total_solutions=231774685,
+	immediately_won=10749524,
+	memo_accessed=6794934,
+	memo_returned=5958209,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=128929,
+	total_solutions=963522,
+	immediately_won=96852,
+	memo_accessed=32076,
+	memo_returned=25969,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=17912020,
+	total_solutions=203230327,
+	immediately_won=11115370,
+	memo_accessed=6796649,
+	memo_returned=6003305,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=960978,
+	total_solutions=14634381,
+	immediately_won=636460,
+	memo_accessed=324517,
+	memo_returned=283104,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=13,
+	recursive_calls=455252,
+	total_solutions=2959819,
+	immediately_won=317568,
+	memo_accessed=137683,
+	memo_returned=111010,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=42833660,
+	total_solutions=655683729,
+	immediately_won=23381310,
+	memo_accessed=19452349,
+	memo_returned=17394698,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=4409900,
+	total_solutions=40120035,
+	immediately_won=2794102,
+	memo_accessed=1615797,
+	memo_returned=1387781,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=579329,
+	total_solutions=5510172,
+	immediately_won=398887,
+	memo_accessed=180441,
+	memo_returned=151922,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=127559,
+	total_solutions=1381312,
+	immediately_won=102713,
+	memo_accessed=24845,
+	memo_returned=19968,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=7,
+	recursive_calls=5668,
+	total_solutions=24816,
+	immediately_won=4421,
+	memo_accessed=1246,
+	memo_returned=960,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1957969,
+	total_solutions=26605097,
+	immediately_won=1221707,
+	memo_accessed=736261,
+	memo_returned=650427,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=6097568,
+	total_solutions=69389964,
+	immediately_won=3985781,
+	memo_accessed=2111786,
+	memo_returned=1841021,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=549886,
+	total_solutions=4345091,
+	immediately_won=362601,
+	memo_accessed=187284,
+	memo_returned=156777,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=382729,
+	total_solutions=3287263,
+	immediately_won=247740,
+	memo_accessed=134988,
+	memo_returned=114423,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1573334,
+	total_solutions=17098189,
+	immediately_won=980234,
+	memo_accessed=593099,
+	memo_returned=513592,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=18143040,
+	total_solutions=214379728,
+	immediately_won=10746794,
+	memo_accessed=7396245,
+	memo_returned=6462719,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=53491234,
+	total_solutions=774368273,
+	immediately_won=33605592,
+	memo_accessed=19885641,
+	memo_returned=17604084,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=24,
+	recursive_calls=36594493,
+	total_solutions=514949134,
+	immediately_won=14491390,
+	memo_accessed=22103102,
+	memo_returned=20131614,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1996595,
+	total_solutions=19824487,
+	immediately_won=1455624,
+	memo_accessed=540970,
+	memo_returned=450623,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=622468,
+	total_solutions=6237817,
+	immediately_won=478323,
+	memo_accessed=144144,
+	memo_returned=116905,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=24799958,
+	total_solutions=329581362,
+	immediately_won=15368590,
+	memo_accessed=9431367,
+	memo_returned=8325534,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=48742,
+	total_solutions=362164,
+	immediately_won=36339,
+	memo_accessed=12402,
+	memo_returned=10202,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=16649633,
+	total_solutions=208959067,
+	immediately_won=11446466,
+	memo_accessed=5203166,
+	memo_returned=4500713,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=6404940,
+	total_solutions=72572422,
+	immediately_won=3895260,
+	memo_accessed=2509679,
+	memo_returned=2204946,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2034027,
+	total_solutions=20900094,
+	immediately_won=1314043,
+	memo_accessed=719983,
+	memo_returned=613750,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=7021588,
+	total_solutions=86808285,
+	immediately_won=4175051,
+	memo_accessed=2846536,
+	memo_returned=2482505,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=15050566,
+	total_solutions=189573938,
+	immediately_won=8875492,
+	memo_accessed=6175073,
+	memo_returned=5505006,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=598435,
+	total_solutions=4932348,
+	immediately_won=435756,
+	memo_accessed=162678,
+	memo_returned=133777,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=2357221,
+	total_solutions=24298266,
+	immediately_won=1311479,
+	memo_accessed=1045741,
+	memo_returned=925349,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5873171,
+	total_solutions=74352441,
+	immediately_won=3767084,
+	memo_accessed=2106086,
+	memo_returned=1832875,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=4857758,
+	total_solutions=58502196,
+	immediately_won=3465126,
+	memo_accessed=1392631,
+	memo_returned=1180857,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4974099,
+	total_solutions=64632596,
+	immediately_won=3445513,
+	memo_accessed=1528585,
+	memo_returned=1299582,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=18866475,
+	total_solutions=276687851,
+	immediately_won=12734434,
+	memo_accessed=6132040,
+	memo_returned=5341476,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=11395897,
+	total_solutions=110850433,
+	immediately_won=6264394,
+	memo_accessed=5131502,
+	memo_returned=4425292,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=10636074,
+	total_solutions=141670903,
+	immediately_won=6843759,
+	memo_accessed=3792314,
+	memo_returned=3319974,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=18853696,
+	total_solutions=243784946,
+	immediately_won=11882865,
+	memo_accessed=6970830,
+	memo_returned=6144840,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=31808752,
+	total_solutions=484700782,
+	immediately_won=21067759,
+	memo_accessed=10740992,
+	memo_returned=9383346,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=24132086,
+	total_solutions=334846489,
+	immediately_won=17111073,
+	memo_accessed=7021012,
+	memo_returned=6076477,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=595544,
+	total_solutions=5385202,
+	immediately_won=360892,
+	memo_accessed=234651,
+	memo_returned=206462,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=1320949,
+	total_solutions=13976023,
+	immediately_won=793745,
+	memo_accessed=527203,
+	memo_returned=460194,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=2540028,
+	total_solutions=31198067,
+	immediately_won=1768569,
+	memo_accessed=771458,
+	memo_returned=662663,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5705467,
+	total_solutions=57454272,
+	immediately_won=4081928,
+	memo_accessed=1623538,
+	memo_returned=1348539,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=506931,
+	total_solutions=5394581,
+	immediately_won=343428,
+	memo_accessed=163502,
+	memo_returned=137275,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=6620716,
+	total_solutions=81280922,
+	immediately_won=4184100,
+	memo_accessed=2436615,
+	memo_returned=2165903,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=524393,
+	total_solutions=4214324,
+	immediately_won=406575,
+	memo_accessed=117817,
+	memo_returned=94797,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=7106786,
+	total_solutions=86138083,
+	immediately_won=4048099,
+	memo_accessed=3058686,
+	memo_returned=2679794,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=43419309,
+	total_solutions=574029476,
+	immediately_won=27883202,
+	memo_accessed=15536106,
+	memo_returned=13799298,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=486850,
+	total_solutions=4662667,
+	immediately_won=268383,
+	memo_accessed=218466,
+	memo_returned=189206,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1001554,
+	total_solutions=11792763,
+	immediately_won=705574,
+	memo_accessed=295979,
+	memo_returned=254659,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=162192,
+	total_solutions=1347472,
+	immediately_won=87696,
+	memo_accessed=74495,
+	memo_returned=65227,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=841579,
+	total_solutions=10475995,
+	immediately_won=625433,
+	memo_accessed=216145,
+	memo_returned=182549,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=194402,
+	total_solutions=2138549,
+	immediately_won=158749,
+	memo_accessed=35652,
+	memo_returned=28363,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=11942260,
+	total_solutions=150359338,
+	immediately_won=8781571,
+	memo_accessed=3160688,
+	memo_returned=2683705,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=29653488,
+	total_solutions=409578559,
+	immediately_won=22098838,
+	memo_accessed=7554649,
+	memo_returned=6447823,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=7499957,
+	total_solutions=99006876,
+	immediately_won=5103503,
+	memo_accessed=2396453,
+	memo_returned=2076951,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4037972,
+	total_solutions=39424436,
+	immediately_won=2505037,
+	memo_accessed=1532934,
+	memo_returned=1320850,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=6810073,
+	total_solutions=82022333,
+	immediately_won=4763974,
+	memo_accessed=2046098,
+	memo_returned=1743737,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=8673779,
+	total_solutions=98833301,
+	immediately_won=5890821,
+	memo_accessed=2782957,
+	memo_returned=2376084,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=13,
+	recursive_calls=19516,
+	total_solutions=135035,
+	immediately_won=13130,
+	memo_accessed=6385,
+	memo_returned=5096,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=11056012,
+	total_solutions=167820239,
+	immediately_won=7721780,
+	memo_accessed=3334231,
+	memo_returned=2938636,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=580731,
+	total_solutions=5584316,
+	immediately_won=373197,
+	memo_accessed=207533,
+	memo_returned=177227,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=13276351,
+	total_solutions=177103618,
+	immediately_won=8387950,
+	memo_accessed=4888400,
+	memo_returned=4256511,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=11739272,
+	total_solutions=144160212,
+	immediately_won=7056687,
+	memo_accessed=4682584,
+	memo_returned=4086766,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=607639,
+	total_solutions=5105499,
+	immediately_won=471925,
+	memo_accessed=135713,
+	memo_returned=107676,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1339416,
+	total_solutions=10733489,
+	immediately_won=829217,
+	memo_accessed=510198,
+	memo_returned=434592,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3743772,
+	total_solutions=44573466,
+	immediately_won=2752741,
+	memo_accessed=991030,
+	memo_returned=849428,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=7654407,
+	total_solutions=96993154,
+	immediately_won=4999588,
+	memo_accessed=2654818,
+	memo_returned=2308776,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=999193,
+	total_solutions=10981818,
+	immediately_won=596297,
+	memo_accessed=402895,
+	memo_returned=353690,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=3857043,
+	total_solutions=54533381,
+	immediately_won=2849236,
+	memo_accessed=1007806,
+	memo_returned=865258,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2683353,
+	total_solutions=24128786,
+	immediately_won=1861317,
+	memo_accessed=822035,
+	memo_returned=690582,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1639427,
+	total_solutions=14320991,
+	immediately_won=1090630,
+	memo_accessed=548796,
+	memo_returned=467515,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=900927,
+	total_solutions=8337457,
+	immediately_won=578571,
+	memo_accessed=322355,
+	memo_returned=275611,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=5246716,
+	total_solutions=59520333,
+	immediately_won=3621754,
+	memo_accessed=1624961,
+	memo_returned=1394329,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=4119838,
+	total_solutions=46680189,
+	immediately_won=2815571,
+	memo_accessed=1304266,
+	memo_returned=1128412,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1258171,
+	total_solutions=14666432,
+	immediately_won=912715,
+	memo_accessed=345455,
+	memo_returned=294174,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=3477416,
+	total_solutions=40971042,
+	immediately_won=1658858,
+	memo_accessed=1818557,
+	memo_returned=1639137,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1138988,
+	total_solutions=11139608,
+	immediately_won=724144,
+	memo_accessed=414843,
+	memo_returned=356553,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2696243,
+	total_solutions=24385240,
+	immediately_won=1898598,
+	memo_accessed=797644,
+	memo_returned=667369,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=804729,
+	total_solutions=8172240,
+	immediately_won=566883,
+	memo_accessed=237845,
+	memo_returned=202698,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=960656,
+	total_solutions=8896681,
+	immediately_won=655189,
+	memo_accessed=305466,
+	memo_returned=263122,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=5942606,
+	total_solutions=62177350,
+	immediately_won=4072258,
+	memo_accessed=1870347,
+	memo_returned=1599165,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=18535451,
+	total_solutions=246911844,
+	immediately_won=11008979,
+	memo_accessed=7526471,
+	memo_returned=6592477,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=466461,
+	total_solutions=4100475,
+	immediately_won=301595,
+	memo_accessed=164865,
+	memo_returned=140321,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=17651755,
+	total_solutions=216953192,
+	immediately_won=12022528,
+	memo_accessed=5629226,
+	memo_returned=4817503,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=8550825,
+	total_solutions=94534299,
+	immediately_won=5145436,
+	memo_accessed=3405388,
+	memo_returned=2975917,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=60516973,
+	total_solutions=974277747,
+	immediately_won=44677210,
+	memo_accessed=15839762,
+	memo_returned=13773868,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=4531905,
+	total_solutions=42037248,
+	immediately_won=2826201,
+	memo_accessed=1705703,
+	memo_returned=1466876,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=58659513,
+	total_solutions=1135246277,
+	immediately_won=29672096,
+	memo_accessed=28987416,
+	memo_returned=26389543,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=439863,
+	total_solutions=3787749,
+	immediately_won=290266,
+	memo_accessed=149596,
+	memo_returned=127937,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=6441892,
+	total_solutions=83032515,
+	immediately_won=4022836,
+	memo_accessed=2419055,
+	memo_returned=2114626,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=15353275,
+	total_solutions=181851965,
+	immediately_won=10494968,
+	memo_accessed=4858306,
+	memo_returned=4203176,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4154180,
+	total_solutions=52472031,
+	immediately_won=2765049,
+	memo_accessed=1389130,
+	memo_returned=1206708,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=14508113,
+	total_solutions=170323150,
+	immediately_won=7207141,
+	memo_accessed=7300971,
+	memo_returned=6509295,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2363386,
+	total_solutions=22761817,
+	immediately_won=1299223,
+	memo_accessed=1064162,
+	memo_returned=949951,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=18889608,
+	total_solutions=276275624,
+	immediately_won=13291006,
+	memo_accessed=5598601,
+	memo_returned=4798911,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2617922,
+	total_solutions=22126332,
+	immediately_won=1831299,
+	memo_accessed=786622,
+	memo_returned=650063,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=15214760,
+	total_solutions=205043202,
+	immediately_won=9729322,
+	memo_accessed=5485437,
+	memo_returned=4814028,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1883455,
+	total_solutions=20065994,
+	immediately_won=1332644,
+	memo_accessed=550810,
+	memo_returned=468770,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=61459,
+	total_solutions=338066,
+	immediately_won=45973,
+	memo_accessed=15485,
+	memo_returned=12060,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=46286017,
+	total_solutions=660899136,
+	immediately_won=30276964,
+	memo_accessed=16009052,
+	memo_returned=14044185,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=6002206,
+	total_solutions=67170571,
+	immediately_won=3572264,
+	memo_accessed=2429941,
+	memo_returned=2114996,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4261374,
+	total_solutions=48435780,
+	immediately_won=2625019,
+	memo_accessed=1636354,
+	memo_returned=1408034,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=14448720,
+	total_solutions=215105066,
+	immediately_won=9319333,
+	memo_accessed=5129386,
+	memo_returned=4457520,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=66041,
+	total_solutions=435225,
+	immediately_won=51316,
+	memo_accessed=14724,
+	memo_returned=11371,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=9963335,
+	total_solutions=135049854,
+	immediately_won=4136274,
+	memo_accessed=5827060,
+	memo_returned=5263789,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=42939799,
+	total_solutions=621206180,
+	immediately_won=28146908,
+	memo_accessed=14792890,
+	memo_returned=13021351,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=40610508,
+	total_solutions=570704643,
+	immediately_won=26565385,
+	memo_accessed=14045122,
+	memo_returned=12306141,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=163774,
+	total_solutions=1380862,
+	immediately_won=86457,
+	memo_accessed=77316,
+	memo_returned=67539,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=20800653,
+	total_solutions=256436289,
+	immediately_won=14743865,
+	memo_accessed=6056787,
+	memo_returned=5115915,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=13,
+	recursive_calls=88415,
+	total_solutions=634840,
+	immediately_won=60742,
+	memo_accessed=27672,
+	memo_returned=22992,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=363545,
+	total_solutions=3311425,
+	immediately_won=263293,
+	memo_accessed=100251,
+	memo_returned=82972,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=36450,
+	total_solutions=300988,
+	immediately_won=30075,
+	memo_accessed=6374,
+	memo_returned=4835,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2295827,
+	total_solutions=23975283,
+	immediately_won=1544692,
+	memo_accessed=751134,
+	memo_returned=633499,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=15652281,
+	total_solutions=205212136,
+	immediately_won=9252181,
+	memo_accessed=6400099,
+	memo_returned=5683974,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=1901383,
+	total_solutions=18766789,
+	immediately_won=1257672,
+	memo_accessed=643710,
+	memo_returned=553682,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=6639499,
+	total_solutions=87569366,
+	immediately_won=4227256,
+	memo_accessed=2412242,
+	memo_returned=2110368,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=2362945,
+	total_solutions=23723179,
+	immediately_won=1642711,
+	memo_accessed=720233,
+	memo_returned=613763,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=5381431,
+	total_solutions=50264907,
+	immediately_won=3873171,
+	memo_accessed=1508259,
+	memo_returned=1247419,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=40022241,
+	total_solutions=623174953,
+	immediately_won=26404467,
+	memo_accessed=13617773,
+	memo_returned=11920658,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=11,
+	recursive_calls=16895,
+	total_solutions=91323,
+	immediately_won=12724,
+	memo_accessed=4170,
+	memo_returned=3104,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2562782,
+	total_solutions=27203154,
+	immediately_won=1834337,
+	memo_accessed=728444,
+	memo_returned=619339,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=609792,
+	total_solutions=5633122,
+	immediately_won=496248,
+	memo_accessed=113543,
+	memo_returned=91267,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=7117888,
+	total_solutions=82672502,
+	immediately_won=4198749,
+	memo_accessed=2919138,
+	memo_returned=2560511,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=339164,
+	total_solutions=3469598,
+	immediately_won=249359,
+	memo_accessed=89804,
+	memo_returned=75578,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=701349,
+	total_solutions=5672039,
+	immediately_won=429454,
+	memo_accessed=271894,
+	memo_returned=230937,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=15939463,
+	total_solutions=180619641,
+	immediately_won=10246507,
+	memo_accessed=5692955,
+	memo_returned=4960063,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=31126002,
+	total_solutions=443121163,
+	immediately_won=22372824,
+	memo_accessed=8753177,
+	memo_returned=7474489,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=2078385,
+	total_solutions=17573273,
+	immediately_won=1571523,
+	memo_accessed=506861,
+	memo_returned=413919,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2603586,
+	total_solutions=26686857,
+	immediately_won=1676197,
+	memo_accessed=927388,
+	memo_returned=796139,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=27042641,
+	total_solutions=364495442,
+	immediately_won=17594988,
+	memo_accessed=9447652,
+	memo_returned=8304816,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=9119203,
+	total_solutions=153002864,
+	immediately_won=5698515,
+	memo_accessed=3420687,
+	memo_returned=3051502,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=54672311,
+	total_solutions=813666354,
+	immediately_won=35205758,
+	memo_accessed=19466552,
+	memo_returned=17072456,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1560894,
+	total_solutions=14356372,
+	immediately_won=1081101,
+	memo_accessed=479792,
+	memo_returned=406319,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=642360,
+	total_solutions=6118271,
+	immediately_won=465272,
+	memo_accessed=177087,
+	memo_returned=147420,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=13988753,
+	total_solutions=176954127,
+	immediately_won=8883220,
+	memo_accessed=5105532,
+	memo_returned=4406841,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2304459,
+	total_solutions=25047431,
+	immediately_won=1246478,
+	memo_accessed=1057980,
+	memo_returned=938223,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=5367365,
+	total_solutions=57722696,
+	immediately_won=3577243,
+	memo_accessed=1790121,
+	memo_returned=1517407,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=799074,
+	total_solutions=6993498,
+	immediately_won=524759,
+	memo_accessed=274314,
+	memo_returned=235581,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=12139990,
+	total_solutions=145530939,
+	immediately_won=7942326,
+	memo_accessed=4197663,
+	memo_returned=3637083,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=9515264,
+	total_solutions=106413920,
+	immediately_won=6666375,
+	memo_accessed=2848888,
+	memo_returned=2390584,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=1088291,
+	total_solutions=15091886,
+	immediately_won=798743,
+	memo_accessed=289547,
+	memo_returned=249339,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=1033328,
+	total_solutions=9726677,
+	immediately_won=747486,
+	memo_accessed=285841,
+	memo_returned=237832,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=32140327,
+	total_solutions=438631333,
+	immediately_won=22129780,
+	memo_accessed=10010546,
+	memo_returned=8753927,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=9472995,
+	total_solutions=131128873,
+	immediately_won=6878550,
+	memo_accessed=2594444,
+	memo_returned=2213217,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=43482797,
+	total_solutions=650499363,
+	immediately_won=26029328,
+	memo_accessed=17453468,
+	memo_returned=15505326,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=3597798,
+	total_solutions=46016695,
+	immediately_won=2578510,
+	memo_accessed=1019287,
+	memo_returned=878419,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=0,
+	recursive_calls=1,
+	total_solutions=367,
+	immediately_won=0,
+	memo_accessed=0,
+	memo_returned=0,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=1295732,
+	total_solutions=12265734,
+	immediately_won=812561,
+	memo_accessed=483170,
+	memo_returned=413906,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=36368997,
+	total_solutions=440676713,
+	immediately_won=22885908,
+	memo_accessed=13483088,
+	memo_returned=11795242,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=11264922,
+	total_solutions=149809170,
+	immediately_won=7449037,
+	memo_accessed=3815884,
+	memo_returned=3330480,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1933810,
+	total_solutions=20555292,
+	immediately_won=1538387,
+	memo_accessed=395422,
+	memo_returned=316877,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=376046,
+	total_solutions=2853564,
+	immediately_won=267044,
+	memo_accessed=109001,
+	memo_returned=89987,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=5552320,
+	total_solutions=57391153,
+	immediately_won=3228916,
+	memo_accessed=2323403,
+	memo_returned=2015144,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=13,
+	recursive_calls=18194,
+	total_solutions=114226,
+	immediately_won=14533,
+	memo_accessed=3660,
+	memo_returned=2700,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3310813,
+	total_solutions=30221554,
+	immediately_won=2085517,
+	memo_accessed=1225295,
+	memo_returned=1072627,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=849311,
+	total_solutions=8894840,
+	immediately_won=610852,
+	memo_accessed=238458,
+	memo_returned=202474,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=3214096,
+	total_solutions=40814298,
+	immediately_won=2154603,
+	memo_accessed=1059492,
+	memo_returned=913629,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=890728,
+	total_solutions=9614218,
+	immediately_won=683000,
+	memo_accessed=207727,
+	memo_returned=170175,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=18301216,
+	total_solutions=243393672,
+	immediately_won=12338054,
+	memo_accessed=5963161,
+	memo_returned=5169805,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=31194552,
+	total_solutions=453395876,
+	immediately_won=19360021,
+	memo_accessed=11834530,
+	memo_returned=10392448,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=481730,
+	total_solutions=4890190,
+	immediately_won=344904,
+	memo_accessed=136825,
+	memo_returned=115938,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=11629932,
+	total_solutions=162545725,
+	immediately_won=7729140,
+	memo_accessed=3900791,
+	memo_returned=3431506,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=25608068,
+	total_solutions=327462853,
+	immediately_won=14362383,
+	memo_accessed=11245684,
+	memo_returned=9934398,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=27838018,
+	total_solutions=331955750,
+	immediately_won=19573451,
+	memo_accessed=8264566,
+	memo_returned=7062978,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=1797258,
+	total_solutions=14818476,
+	immediately_won=1244058,
+	memo_accessed=553199,
+	memo_returned=461629,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=12273267,
+	total_solutions=153942241,
+	immediately_won=6243740,
+	memo_accessed=6029526,
+	memo_returned=5361916,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=30441288,
+	total_solutions=422373896,
+	immediately_won=20007564,
+	memo_accessed=10433723,
+	memo_returned=9129222,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=5171244,
+	total_solutions=57311203,
+	immediately_won=3685260,
+	memo_accessed=1485983,
+	memo_returned=1251062,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=7191244,
+	total_solutions=98441887,
+	immediately_won=5372954,
+	memo_accessed=1818289,
+	memo_returned=1537778,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=3694873,
+	total_solutions=35516040,
+	immediately_won=2495006,
+	memo_accessed=1199866,
+	memo_returned=1046740,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1570572,
+	total_solutions=17911465,
+	immediately_won=788742,
+	memo_accessed=781829,
+	memo_returned=690592,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=155341,
+	total_solutions=1250029,
+	immediately_won=95459,
+	memo_accessed=59881,
+	memo_returned=50988,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=26212941,
+	total_solutions=366256820,
+	immediately_won=13933684,
+	memo_accessed=12279256,
+	memo_returned=10993052,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=8791230,
+	total_solutions=105175489,
+	immediately_won=5783271,
+	memo_accessed=3007958,
+	memo_returned=2583768,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2228132,
+	total_solutions=24209662,
+	immediately_won=1636629,
+	memo_accessed=591502,
+	memo_returned=500464,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=55010457,
+	total_solutions=797474442,
+	immediately_won=34153106,
+	memo_accessed=20857350,
+	memo_returned=18357439,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=14623528,
+	total_solutions=200199222,
+	immediately_won=8382295,
+	memo_accessed=6241232,
+	memo_returned=5604773,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=20494438,
+	total_solutions=266600637,
+	immediately_won=13568244,
+	memo_accessed=6926193,
+	memo_returned=6077210,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1382505,
+	total_solutions=14615621,
+	immediately_won=939988,
+	memo_accessed=442516,
+	memo_returned=379807,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=435272,
+	total_solutions=3926951,
+	immediately_won=305475,
+	memo_accessed=129796,
+	memo_returned=109707,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=4523756,
+	total_solutions=52192811,
+	immediately_won=2802725,
+	memo_accessed=1721030,
+	memo_returned=1487075,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5862699,
+	total_solutions=77225450,
+	immediately_won=4309444,
+	memo_accessed=1553254,
+	memo_returned=1319618,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=37809282,
+	total_solutions=559335688,
+	immediately_won=26995555,
+	memo_accessed=10813726,
+	memo_returned=9352529,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5417803,
+	total_solutions=68377293,
+	immediately_won=3778818,
+	memo_accessed=1638984,
+	memo_returned=1430854,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=4398210,
+	total_solutions=52440378,
+	immediately_won=3027640,
+	memo_accessed=1370569,
+	memo_returned=1175811,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=10745097,
+	total_solutions=129273356,
+	immediately_won=7157007,
+	memo_accessed=3588089,
+	memo_returned=3089535,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1490076,
+	total_solutions=16069954,
+	immediately_won=950520,
+	memo_accessed=539555,
+	memo_returned=464310,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=13089229,
+	total_solutions=164916255,
+	immediately_won=8037315,
+	memo_accessed=5051913,
+	memo_returned=4473904,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=1996821,
+	total_solutions=15920963,
+	immediately_won=1351394,
+	memo_accessed=645426,
+	memo_returned=538683,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=13,
+	recursive_calls=16006,
+	total_solutions=99426,
+	immediately_won=11163,
+	memo_accessed=4842,
+	memo_returned=3869,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=12116645,
+	total_solutions=162902383,
+	immediately_won=6971691,
+	memo_accessed=5144953,
+	memo_returned=4585818,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=8499036,
+	total_solutions=127634105,
+	immediately_won=6159356,
+	memo_accessed=2339679,
+	memo_returned=2012255,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=29253406,
+	total_solutions=439040840,
+	immediately_won=21259610,
+	memo_accessed=7993795,
+	memo_returned=6878807,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=7185761,
+	total_solutions=68634987,
+	immediately_won=5293402,
+	memo_accessed=1892358,
+	memo_returned=1548683,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2919115,
+	total_solutions=27760006,
+	immediately_won=2016207,
+	memo_accessed=902907,
+	memo_returned=753225,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=567801,
+	total_solutions=5851874,
+	immediately_won=407466,
+	memo_accessed=160334,
+	memo_returned=136693,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=34972764,
+	total_solutions=416407922,
+	immediately_won=23253707,
+	memo_accessed=11719056,
+	memo_returned=10133909,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=9841185,
+	total_solutions=112426983,
+	immediately_won=6786334,
+	memo_accessed=3054850,
+	memo_returned=2571268,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=17253729,
+	total_solutions=217060947,
+	immediately_won=13331253,
+	memo_accessed=3922475,
+	memo_returned=3256043,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=194579,
+	total_solutions=1773136,
+	immediately_won=132843,
+	memo_accessed=61735,
+	memo_returned=52380,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=12,
+	recursive_calls=6807,
+	total_solutions=43754,
+	immediately_won=5822,
+	memo_accessed=984,
+	memo_returned=638,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=12427012,
+	total_solutions=177628777,
+	immediately_won=6756522,
+	memo_accessed=5670489,
+	memo_returned=5052431,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=1130058,
+	total_solutions=14617158,
+	immediately_won=643543,
+	memo_accessed=486514,
+	memo_returned=427346,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=41088218,
+	total_solutions=599960915,
+	immediately_won=27983337,
+	memo_accessed=13104880,
+	memo_returned=11554246,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=45282,
+	total_solutions=307067,
+	immediately_won=33407,
+	memo_accessed=11874,
+	memo_returned=9847,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=11,
+	recursive_calls=12716,
+	total_solutions=64574,
+	immediately_won=8988,
+	memo_accessed=3727,
+	memo_returned=3054,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=4490310,
+	total_solutions=54015111,
+	immediately_won=2851857,
+	memo_accessed=1638452,
+	memo_returned=1416089,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=1410844,
+	total_solutions=10564061,
+	immediately_won=995813,
+	memo_accessed=415030,
+	memo_returned=335188,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=503960,
+	total_solutions=4795608,
+	immediately_won=372275,
+	memo_accessed=131684,
+	memo_returned=108815,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5958899,
+	total_solutions=55200799,
+	immediately_won=3899365,
+	memo_accessed=2059533,
+	memo_returned=1758839,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=33833503,
+	total_solutions=450621657,
+	immediately_won=23169075,
+	memo_accessed=10664427,
+	memo_returned=9283087,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=12804618,
+	total_solutions=171442746,
+	immediately_won=9927206,
+	memo_accessed=2877411,
+	memo_returned=2434293,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=8848605,
+	total_solutions=111122599,
+	immediately_won=6605773,
+	memo_accessed=2242831,
+	memo_returned=1884100,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=505867,
+	total_solutions=3788921,
+	immediately_won=330397,
+	memo_accessed=175469,
+	memo_returned=148117,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5394291,
+	total_solutions=59706281,
+	immediately_won=3485344,
+	memo_accessed=1908946,
+	memo_returned=1641459,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=41968395,
+	total_solutions=755611198,
+	immediately_won=23985376,
+	memo_accessed=17983018,
+	memo_returned=15980899,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=9264016,
+	total_solutions=115298833,
+	immediately_won=6457866,
+	memo_accessed=2806149,
+	memo_returned=2363493,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=11556933,
+	total_solutions=171728006,
+	immediately_won=8233597,
+	memo_accessed=3323335,
+	memo_returned=2903013,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=25702,
+	total_solutions=155982,
+	immediately_won=17523,
+	memo_accessed=8178,
+	memo_returned=6687,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=17725533,
+	total_solutions=216598142,
+	immediately_won=9888249,
+	memo_accessed=7837283,
+	memo_returned=6977613,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=3678021,
+	total_solutions=49803446,
+	immediately_won=2139758,
+	memo_accessed=1538262,
+	memo_returned=1358137,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=3047717,
+	total_solutions=44357688,
+	immediately_won=2030966,
+	memo_accessed=1016750,
+	memo_returned=884491,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=12,
+	recursive_calls=17762,
+	total_solutions=149966,
+	immediately_won=14066,
+	memo_accessed=3695,
+	memo_returned=2891,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=4799125,
+	total_solutions=48569740,
+	immediately_won=3085998,
+	memo_accessed=1713126,
+	memo_returned=1499646,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=229058,
+	total_solutions=1936452,
+	immediately_won=136301,
+	memo_accessed=92756,
+	memo_returned=80538,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=52371261,
+	total_solutions=820984950,
+	immediately_won=30534239,
+	memo_accessed=21837021,
+	memo_returned=19666257,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=4075883,
+	total_solutions=42404467,
+	immediately_won=2709138,
+	memo_accessed=1366744,
+	memo_returned=1177088,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=9240146,
+	total_solutions=112187071,
+	immediately_won=6245669,
+	memo_accessed=2994476,
+	memo_returned=2570466,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1331701,
+	total_solutions=13031229,
+	immediately_won=884482,
+	memo_accessed=447218,
+	memo_returned=387949,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1415654,
+	total_solutions=16770117,
+	immediately_won=917887,
+	memo_accessed=497766,
+	memo_returned=431858,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=7718241,
+	total_solutions=103153753,
+	immediately_won=5445070,
+	memo_accessed=2273170,
+	memo_returned=1955768,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=3459080,
+	total_solutions=49489613,
+	immediately_won=2810655,
+	memo_accessed=648424,
+	memo_returned=529991,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=328804,
+	total_solutions=2708353,
+	immediately_won=230081,
+	memo_accessed=98722,
+	memo_returned=81678,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=6585878,
+	total_solutions=65110283,
+	immediately_won=4656442,
+	memo_accessed=1929435,
+	memo_returned=1611266,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=20945959,
+	total_solutions=286889074,
+	immediately_won=10829112,
+	memo_accessed=10116846,
+	memo_returned=9070075,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=6483009,
+	total_solutions=79939147,
+	immediately_won=4151387,
+	memo_accessed=2331621,
+	memo_returned=2017441,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=5820610,
+	total_solutions=59455411,
+	immediately_won=3348040,
+	memo_accessed=2472569,
+	memo_returned=2152741,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3371472,
+	total_solutions=30830750,
+	immediately_won=2177525,
+	memo_accessed=1193946,
+	memo_returned=1023912,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=336368,
+	total_solutions=2744910,
+	immediately_won=190843,
+	memo_accessed=145524,
+	memo_returned=125949,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=415663,
+	total_solutions=4918593,
+	immediately_won=278456,
+	memo_accessed=137206,
+	memo_returned=116188,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=18158154,
+	total_solutions=240645763,
+	immediately_won=13956056,
+	memo_accessed=4202097,
+	memo_returned=3500949,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=710586,
+	total_solutions=6375798,
+	immediately_won=468671,
+	memo_accessed=241914,
+	memo_returned=205831,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2513200,
+	total_solutions=20020346,
+	immediately_won=1377451,
+	memo_accessed=1135748,
+	memo_returned=995586,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=25,
+	recursive_calls=460192160,
+	total_solutions=11243287077,
+	immediately_won=247374463,
+	memo_accessed=212817696,
+	memo_returned=194891413,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1789550,
+	total_solutions=18201539,
+	immediately_won=1386914,
+	memo_accessed=402635,
+	memo_returned=325320,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=207889,
+	total_solutions=1508014,
+	immediately_won=135808,
+	memo_accessed=72080,
+	memo_returned=60896,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=135940,
+	total_solutions=1163727,
+	immediately_won=96798,
+	memo_accessed=39141,
+	memo_returned=32766,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=11641541,
+	total_solutions=121633074,
+	immediately_won=8292418,
+	memo_accessed=3349122,
+	memo_returned=2806105,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=51896647,
+	total_solutions=671212602,
+	immediately_won=33526109,
+	memo_accessed=18370537,
+	memo_returned=16085104,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=15254205,
+	total_solutions=195097992,
+	immediately_won=8626893,
+	memo_accessed=6627311,
+	memo_returned=5803539,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=11,
+	recursive_calls=12390,
+	total_solutions=66893,
+	immediately_won=9776,
+	memo_accessed=2613,
+	memo_returned=2036,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=14015246,
+	total_solutions=190927247,
+	immediately_won=5680670,
+	memo_accessed=8334575,
+	memo_returned=7615407,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=9055111,
+	total_solutions=118468769,
+	immediately_won=5515216,
+	memo_accessed=3539894,
+	memo_returned=3140872,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=145235,
+	total_solutions=995817,
+	immediately_won=113860,
+	memo_accessed=31374,
+	memo_returned=24563,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1505066,
+	total_solutions=11615362,
+	immediately_won=917917,
+	memo_accessed=587148,
+	memo_returned=495945,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=7992380,
+	total_solutions=107526369,
+	immediately_won=3805757,
+	memo_accessed=4186622,
+	memo_returned=3823681,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1388205,
+	total_solutions=13643409,
+	immediately_won=1015541,
+	memo_accessed=372663,
+	memo_returned=309319,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=16979903,
+	total_solutions=230634691,
+	immediately_won=10770284,
+	memo_accessed=6209618,
+	memo_returned=5430858,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=318082,
+	total_solutions=2436953,
+	immediately_won=209925,
+	memo_accessed=108156,
+	memo_returned=91431,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=675730,
+	total_solutions=6635932,
+	immediately_won=426596,
+	memo_accessed=249133,
+	memo_returned=216285,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4199011,
+	total_solutions=39929068,
+	immediately_won=2797132,
+	memo_accessed=1401878,
+	memo_returned=1185636,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=251057,
+	total_solutions=2538894,
+	immediately_won=142202,
+	memo_accessed=108854,
+	memo_returned=94136,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1656120,
+	total_solutions=14194252,
+	immediately_won=1197756,
+	memo_accessed=458363,
+	memo_returned=379573,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=0,
+	recursive_calls=1,
+	total_solutions=178,
+	immediately_won=0,
+	memo_accessed=0,
+	memo_returned=0,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=6682560,
+	total_solutions=66619916,
+	immediately_won=3951285,
+	memo_accessed=2731274,
+	memo_returned=2417933,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5403094,
+	total_solutions=67536671,
+	immediately_won=3236670,
+	memo_accessed=2166423,
+	memo_returned=1919752,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=358539,
+	total_solutions=2841099,
+	immediately_won=249404,
+	memo_accessed=109134,
+	memo_returned=91485,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=3024965,
+	total_solutions=31215989,
+	immediately_won=2107141,
+	memo_accessed=917823,
+	memo_returned=782276,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=6298469,
+	total_solutions=86560889,
+	immediately_won=4459398,
+	memo_accessed=1839070,
+	memo_returned=1584657,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=38371862,
+	total_solutions=579862173,
+	immediately_won=24112913,
+	memo_accessed=14258948,
+	memo_returned=12636677,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=0,
+	recursive_calls=1,
+	total_solutions=30,
+	immediately_won=0,
+	memo_accessed=0,
+	memo_returned=0,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=15404722,
+	total_solutions=216984640,
+	immediately_won=9204831,
+	memo_accessed=6199890,
+	memo_returned=5494902,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=64496942,
+	total_solutions=961522597,
+	immediately_won=47058765,
+	memo_accessed=17438176,
+	memo_returned=14921029,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1828526,
+	total_solutions=14933360,
+	immediately_won=1312426,
+	memo_accessed=516099,
+	memo_returned=427418,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=92509,
+	total_solutions=856807,
+	immediately_won=72098,
+	memo_accessed=20410,
+	memo_returned=16455,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1101217,
+	total_solutions=10598024,
+	immediately_won=792812,
+	memo_accessed=308404,
+	memo_returned=257544,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=3330509,
+	total_solutions=47153653,
+	immediately_won=2119686,
+	memo_accessed=1210822,
+	memo_returned=1076766,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=13172626,
+	total_solutions=140057461,
+	immediately_won=8383975,
+	memo_accessed=4788650,
+	memo_returned=4114217,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=2449842,
+	total_solutions=29405139,
+	immediately_won=1807034,
+	memo_accessed=642807,
+	memo_returned=541042,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=8375169,
+	total_solutions=95973945,
+	immediately_won=5800149,
+	memo_accessed=2575019,
+	memo_returned=2199266,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=25420261,
+	total_solutions=329480490,
+	immediately_won=18388694,
+	memo_accessed=7031566,
+	memo_returned=6067522,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3737150,
+	total_solutions=50869178,
+	immediately_won=2097887,
+	memo_accessed=1639262,
+	memo_returned=1460383,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=175391,
+	total_solutions=1219709,
+	immediately_won=121809,
+	memo_accessed=53581,
+	memo_returned=43549,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=26718300,
+	total_solutions=351641162,
+	immediately_won=18051822,
+	memo_accessed=8666477,
+	memo_returned=7492888,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=5790414,
+	total_solutions=76929066,
+	immediately_won=2027098,
+	memo_accessed=3763315,
+	memo_returned=3388748,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=575883,
+	total_solutions=5008315,
+	immediately_won=335987,
+	memo_accessed=239895,
+	memo_returned=208801,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=3067161,
+	total_solutions=28925281,
+	immediately_won=1848898,
+	memo_accessed=1218262,
+	memo_returned=1058097,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=17933856,
+	total_solutions=244945601,
+	immediately_won=12305020,
+	memo_accessed=5628835,
+	memo_returned=4910549,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=369635,
+	total_solutions=3377824,
+	immediately_won=229045,
+	memo_accessed=140589,
+	memo_returned=119640,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=21326351,
+	total_solutions=270635827,
+	immediately_won=13918629,
+	memo_accessed=7407721,
+	memo_returned=6441776,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=9603375,
+	total_solutions=95779914,
+	immediately_won=6557359,
+	memo_accessed=3046015,
+	memo_returned=2561344,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=252961,
+	total_solutions=2199648,
+	immediately_won=134253,
+	memo_accessed=118707,
+	memo_returned=104268,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=10356547,
+	total_solutions=118116159,
+	immediately_won=7524585,
+	memo_accessed=2831961,
+	memo_returned=2376411,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=3204829,
+	total_solutions=36369662,
+	immediately_won=1656068,
+	memo_accessed=1548760,
+	memo_returned=1365866,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=55687167,
+	total_solutions=686582156,
+	immediately_won=36689869,
+	memo_accessed=18997297,
+	memo_returned=16470527,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3910393,
+	total_solutions=41318247,
+	immediately_won=2660776,
+	memo_accessed=1249616,
+	memo_returned=1088072,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=11040491,
+	total_solutions=148611653,
+	immediately_won=6901740,
+	memo_accessed=4138750,
+	memo_returned=3656863,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=526168,
+	total_solutions=7108934,
+	immediately_won=360482,
+	memo_accessed=165685,
+	memo_returned=144789,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=0,
+	recursive_calls=1,
+	total_solutions=1389,
+	immediately_won=0,
+	memo_accessed=0,
+	memo_returned=0,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=786507,
+	total_solutions=7932683,
+	immediately_won=570101,
+	memo_accessed=216405,
+	memo_returned=181663,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1255610,
+	total_solutions=13877679,
+	immediately_won=756367,
+	memo_accessed=499242,
+	memo_returned=441216,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4803962,
+	total_solutions=48323922,
+	immediately_won=3265999,
+	memo_accessed=1537962,
+	memo_returned=1307621,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4698976,
+	total_solutions=53672685,
+	immediately_won=2961273,
+	memo_accessed=1737702,
+	memo_returned=1533742,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=10356012,
+	total_solutions=101147274,
+	immediately_won=7005347,
+	memo_accessed=3350664,
+	memo_returned=2818491,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=5202523,
+	total_solutions=67314242,
+	immediately_won=3344532,
+	memo_accessed=1857990,
+	memo_returned=1597809,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=3958234,
+	total_solutions=45789781,
+	immediately_won=2787422,
+	memo_accessed=1170811,
+	memo_returned=984944,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=9293498,
+	total_solutions=113983776,
+	immediately_won=6069584,
+	memo_accessed=3223913,
+	memo_returned=2791559,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=81156,
+	total_solutions=724640,
+	immediately_won=68535,
+	memo_accessed=12620,
+	memo_returned=9654,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=16621406,
+	total_solutions=250995884,
+	immediately_won=11700702,
+	memo_accessed=4920703,
+	memo_returned=4261295,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=24,
+	recursive_calls=6779711,
+	total_solutions=86603323,
+	immediately_won=4863860,
+	memo_accessed=1915850,
+	memo_returned=1644176,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=16730161,
+	total_solutions=229739428,
+	immediately_won=9457246,
+	memo_accessed=7272914,
+	memo_returned=6457025,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=8800781,
+	total_solutions=117060497,
+	immediately_won=6569053,
+	memo_accessed=2231727,
+	memo_returned=1885138,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=21506702,
+	total_solutions=249944182,
+	immediately_won=13810867,
+	memo_accessed=7695834,
+	memo_returned=6604111,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=306011,
+	total_solutions=2672488,
+	immediately_won=185791,
+	memo_accessed=120219,
+	memo_returned=102958,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=20973072,
+	total_solutions=234126290,
+	immediately_won=10912378,
+	memo_accessed=10060693,
+	memo_returned=9007179,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=707449,
+	total_solutions=7027547,
+	immediately_won=337922,
+	memo_accessed=369526,
+	memo_returned=323454,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=3313956,
+	total_solutions=30051446,
+	immediately_won=2154826,
+	memo_accessed=1159129,
+	memo_returned=982102,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=30821049,
+	total_solutions=397999824,
+	immediately_won=20645275,
+	memo_accessed=10175773,
+	memo_returned=8776147,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2126108,
+	total_solutions=19987368,
+	immediately_won=1311522,
+	memo_accessed=814585,
+	memo_returned=691465,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1661782,
+	total_solutions=15560996,
+	immediately_won=954302,
+	memo_accessed=707479,
+	memo_returned=620750,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=8198146,
+	total_solutions=110721571,
+	immediately_won=6001572,
+	memo_accessed=2196573,
+	memo_returned=1900822,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3891293,
+	total_solutions=43643150,
+	immediately_won=2509686,
+	memo_accessed=1381606,
+	memo_returned=1197970,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=6750088,
+	total_solutions=85408671,
+	immediately_won=5252590,
+	memo_accessed=1497497,
+	memo_returned=1260734,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=568759,
+	total_solutions=5712361,
+	immediately_won=394151,
+	memo_accessed=174607,
+	memo_returned=146419,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=19819544,
+	total_solutions=336957805,
+	immediately_won=13766907,
+	memo_accessed=6052636,
+	memo_returned=5348746,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5609868,
+	total_solutions=64582871,
+	immediately_won=4013281,
+	memo_accessed=1596586,
+	memo_returned=1356294,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=39487051,
+	total_solutions=552365230,
+	immediately_won=27142146,
+	memo_accessed=12344904,
+	memo_returned=10648557,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=6817827,
+	total_solutions=79119352,
+	immediately_won=4212198,
+	memo_accessed=2605628,
+	memo_returned=2270455,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1689461,
+	total_solutions=17129533,
+	immediately_won=1069527,
+	memo_accessed=619933,
+	memo_returned=524748,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=625527,
+	total_solutions=6463675,
+	immediately_won=361094,
+	memo_accessed=264432,
+	memo_returned=229183,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=630427,
+	total_solutions=5811283,
+	immediately_won=409778,
+	memo_accessed=220648,
+	memo_returned=186366,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=7603944,
+	total_solutions=81217169,
+	immediately_won=4709770,
+	memo_accessed=2894173,
+	memo_returned=2529270,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=99284,
+	total_solutions=915915,
+	immediately_won=63418,
+	memo_accessed=35865,
+	memo_returned=31029,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=9096618,
+	total_solutions=109406136,
+	immediately_won=5776122,
+	memo_accessed=3320495,
+	memo_returned=2852973,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=24503094,
+	total_solutions=342362804,
+	immediately_won=15811139,
+	memo_accessed=8691954,
+	memo_returned=7610920,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1644744,
+	total_solutions=18118079,
+	immediately_won=1101070,
+	memo_accessed=543673,
+	memo_returned=466918,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=884433,
+	total_solutions=8900753,
+	immediately_won=665667,
+	memo_accessed=218765,
+	memo_returned=179560,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=726562,
+	total_solutions=8056841,
+	immediately_won=434653,
+	memo_accessed=291908,
+	memo_returned=249863,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=1133473,
+	total_solutions=7606948,
+	immediately_won=740799,
+	memo_accessed=392673,
+	memo_returned=335254,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=19259379,
+	total_solutions=229247659,
+	immediately_won=12306024,
+	memo_accessed=6953354,
+	memo_returned=6076162,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=1831746,
+	total_solutions=22444375,
+	immediately_won=1471512,
+	memo_accessed=360233,
+	memo_returned=298112,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=281175,
+	total_solutions=2343226,
+	immediately_won=164012,
+	memo_accessed=117162,
+	memo_returned=100555,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=138785,
+	total_solutions=1064693,
+	immediately_won=104159,
+	memo_accessed=34625,
+	memo_returned=27892,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2569939,
+	total_solutions=25193192,
+	immediately_won=1276039,
+	memo_accessed=1293899,
+	memo_returned=1154330,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=2191612,
+	total_solutions=21740166,
+	immediately_won=1159078,
+	memo_accessed=1032533,
+	memo_returned=905811,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=3226583,
+	total_solutions=43271627,
+	immediately_won=1655983,
+	memo_accessed=1570599,
+	memo_returned=1404067,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2554948,
+	total_solutions=25577202,
+	immediately_won=1665263,
+	memo_accessed=889684,
+	memo_returned=761905,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=10,
+	recursive_calls=4888,
+	total_solutions=23605,
+	immediately_won=3293,
+	memo_accessed=1594,
+	memo_returned=1243,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=746953,
+	total_solutions=8047215,
+	immediately_won=462882,
+	memo_accessed=284070,
+	memo_returned=244058,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=3804365,
+	total_solutions=34537000,
+	immediately_won=2510552,
+	memo_accessed=1293812,
+	memo_returned=1114661,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=6894552,
+	total_solutions=78961404,
+	immediately_won=4577849,
+	memo_accessed=2316702,
+	memo_returned=2016114,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=49957176,
+	total_solutions=756852369,
+	immediately_won=30437806,
+	memo_accessed=19519369,
+	memo_returned=17273157,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=54371,
+	total_solutions=495428,
+	immediately_won=43264,
+	memo_accessed=11106,
+	memo_returned=8804,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2387545,
+	total_solutions=24854295,
+	immediately_won=1777407,
+	memo_accessed=610137,
+	memo_returned=509351,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=3354201,
+	total_solutions=40361867,
+	immediately_won=1896332,
+	memo_accessed=1457868,
+	memo_returned=1292765,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1870177,
+	total_solutions=18650993,
+	immediately_won=1201952,
+	memo_accessed=668224,
+	memo_returned=584481,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=342581,
+	total_solutions=3392196,
+	immediately_won=225018,
+	memo_accessed=117562,
+	memo_returned=100016,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=812481,
+	total_solutions=8427779,
+	immediately_won=465048,
+	memo_accessed=347432,
+	memo_returned=304938,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=23523449,
+	total_solutions=318559489,
+	immediately_won=13631703,
+	memo_accessed=9891745,
+	memo_returned=8784195,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2031172,
+	total_solutions=20303213,
+	immediately_won=1078475,
+	memo_accessed=952696,
+	memo_returned=825312,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=1519540,
+	total_solutions=19856780,
+	immediately_won=1070616,
+	memo_accessed=448923,
+	memo_returned=389143,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=16798933,
+	total_solutions=195660033,
+	immediately_won=11372250,
+	memo_accessed=5426682,
+	memo_returned=4718638,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=15104845,
+	total_solutions=169870360,
+	immediately_won=8997592,
+	memo_accessed=6107252,
+	memo_returned=5309626,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3568147,
+	total_solutions=42153838,
+	immediately_won=2405854,
+	memo_accessed=1162292,
+	memo_returned=1004523,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=17122267,
+	total_solutions=211336308,
+	immediately_won=10381540,
+	memo_accessed=6740726,
+	memo_returned=5924218,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=17615517,
+	total_solutions=241460345,
+	immediately_won=12203486,
+	memo_accessed=5412030,
+	memo_returned=4611055,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=21458646,
+	total_solutions=287437106,
+	immediately_won=11899486,
+	memo_accessed=9559159,
+	memo_returned=8441174,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=140264,
+	total_solutions=1008229,
+	immediately_won=97115,
+	memo_accessed=43148,
+	memo_returned=35532,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=1673515,
+	total_solutions=19721030,
+	immediately_won=1110258,
+	memo_accessed=563256,
+	memo_returned=489287,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=56831469,
+	total_solutions=860423530,
+	immediately_won=35270574,
+	memo_accessed=21560894,
+	memo_returned=19143955,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=6392691,
+	total_solutions=68563086,
+	immediately_won=4443236,
+	memo_accessed=1949454,
+	memo_returned=1662530,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=241677,
+	total_solutions=1809644,
+	immediately_won=178872,
+	memo_accessed=62804,
+	memo_returned=51049,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=1999944,
+	total_solutions=17728956,
+	immediately_won=1202780,
+	memo_accessed=797163,
+	memo_returned=681189,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=54285004,
+	total_solutions=1055162842,
+	immediately_won=37714124,
+	memo_accessed=16570879,
+	memo_returned=14563331,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=10672993,
+	total_solutions=103758004,
+	immediately_won=6272542,
+	memo_accessed=4400450,
+	memo_returned=3812396,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=413755,
+	total_solutions=3974478,
+	immediately_won=315760,
+	memo_accessed=97994,
+	memo_returned=81076,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=675489,
+	total_solutions=7115875,
+	immediately_won=506613,
+	memo_accessed=168875,
+	memo_returned=137972,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=710297,
+	total_solutions=6533156,
+	immediately_won=584211,
+	memo_accessed=126085,
+	memo_returned=100862,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=1467966,
+	total_solutions=12230722,
+	immediately_won=878425,
+	memo_accessed=589540,
+	memo_returned=512469,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2297525,
+	total_solutions=25420950,
+	immediately_won=1423144,
+	memo_accessed=874380,
+	memo_returned=765308,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=1963588,
+	total_solutions=20731558,
+	immediately_won=1548682,
+	memo_accessed=414905,
+	memo_returned=336706,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=25372261,
+	total_solutions=322504901,
+	immediately_won=15600599,
+	memo_accessed=9771661,
+	memo_returned=8570654,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=286574,
+	total_solutions=2123546,
+	immediately_won=180324,
+	memo_accessed=106249,
+	memo_returned=91650,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=2687505,
+	total_solutions=29785645,
+	immediately_won=1660048,
+	memo_accessed=1027456,
+	memo_returned=892822,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=21790407,
+	total_solutions=278154827,
+	immediately_won=12288742,
+	memo_accessed=9501664,
+	memo_returned=8340142,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4218270,
+	total_solutions=51960020,
+	immediately_won=2960214,
+	memo_accessed=1258055,
+	memo_returned=1083430,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=20674240,
+	total_solutions=214814683,
+	immediately_won=13171247,
+	memo_accessed=7502992,
+	memo_returned=6495219,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2337326,
+	total_solutions=23607128,
+	immediately_won=1493402,
+	memo_accessed=843923,
+	memo_returned=715299,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=32829426,
+	total_solutions=440191768,
+	immediately_won=22729973,
+	memo_accessed=10099452,
+	memo_returned=8722134,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1189850,
+	total_solutions=13310399,
+	immediately_won=785425,
+	memo_accessed=404424,
+	memo_returned=342363,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1950952,
+	total_solutions=17417278,
+	immediately_won=1393846,
+	memo_accessed=557105,
+	memo_returned=462332,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=9691815,
+	total_solutions=110510149,
+	immediately_won=6275696,
+	memo_accessed=3416118,
+	memo_returned=2942961,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=773740,
+	total_solutions=7660650,
+	immediately_won=582817,
+	memo_accessed=190922,
+	memo_returned=157537,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=844080,
+	total_solutions=6660998,
+	immediately_won=566790,
+	memo_accessed=277289,
+	memo_returned=231384,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=15974822,
+	total_solutions=223884788,
+	immediately_won=9799711,
+	memo_accessed=6175110,
+	memo_returned=5400814,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=6683622,
+	total_solutions=80183276,
+	immediately_won=4801404,
+	memo_accessed=1882217,
+	memo_returned=1600054,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=30126753,
+	total_solutions=435405584,
+	immediately_won=16853241,
+	memo_accessed=13273511,
+	memo_returned=11741998,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=9290072,
+	total_solutions=121799189,
+	immediately_won=6880429,
+	memo_accessed=2409642,
+	memo_returned=2059190,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=18816442,
+	total_solutions=248958958,
+	immediately_won=12203029,
+	memo_accessed=6613412,
+	memo_returned=5793925,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=8502285,
+	total_solutions=103040108,
+	immediately_won=4622262,
+	memo_accessed=3880022,
+	memo_returned=3382927,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=1327179,
+	total_solutions=14962997,
+	immediately_won=975583,
+	memo_accessed=351595,
+	memo_returned=294599,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1252255,
+	total_solutions=12509407,
+	immediately_won=919491,
+	memo_accessed=332763,
+	memo_returned=276824,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1712477,
+	total_solutions=18749889,
+	immediately_won=1008287,
+	memo_accessed=704189,
+	memo_returned=620712,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=4352298,
+	total_solutions=50510036,
+	immediately_won=2585650,
+	memo_accessed=1766647,
+	memo_returned=1532225,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=24,
+	recursive_calls=51001600,
+	total_solutions=667623013,
+	immediately_won=29657347,
+	memo_accessed=21344252,
+	memo_returned=19029502,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=699572,
+	total_solutions=6575817,
+	immediately_won=468087,
+	memo_accessed=231484,
+	memo_returned=196112,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=21387174,
+	total_solutions=342030583,
+	immediately_won=14219707,
+	memo_accessed=7167466,
+	memo_returned=6227699,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=0,
+	recursive_calls=1,
+	total_solutions=3737,
+	immediately_won=0,
+	memo_accessed=0,
+	memo_returned=0,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=21068327,
+	total_solutions=299795786,
+	immediately_won=13849102,
+	memo_accessed=7219224,
+	memo_returned=6243993,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=989500,
+	total_solutions=9912728,
+	immediately_won=672920,
+	memo_accessed=316579,
+	memo_returned=268482,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=8569178,
+	total_solutions=90079147,
+	immediately_won=6557229,
+	memo_accessed=2011948,
+	memo_returned=1637990,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=3955229,
+	total_solutions=42607962,
+	immediately_won=2883428,
+	memo_accessed=1071800,
+	memo_returned=890907,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2818093,
+	total_solutions=29437991,
+	immediately_won=2009459,
+	memo_accessed=808633,
+	memo_returned=674772,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=6328087,
+	total_solutions=73541182,
+	immediately_won=4327371,
+	memo_accessed=2000715,
+	memo_returned=1696414,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=3664776,
+	total_solutions=39387081,
+	immediately_won=2852071,
+	memo_accessed=812704,
+	memo_returned=673840,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4316959,
+	total_solutions=38754716,
+	immediately_won=2836225,
+	memo_accessed=1480733,
+	memo_returned=1274939,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=47930131,
+	total_solutions=715157454,
+	immediately_won=32883100,
+	memo_accessed=15047030,
+	memo_returned=13040665,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=675619,
+	total_solutions=8990496,
+	immediately_won=535739,
+	memo_accessed=139879,
+	memo_returned=114877,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=1328178,
+	total_solutions=15199046,
+	immediately_won=910433,
+	memo_accessed=417744,
+	memo_returned=358921,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=20054526,
+	total_solutions=252899597,
+	immediately_won=13412507,
+	memo_accessed=6642018,
+	memo_returned=5710780,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=2503133,
+	total_solutions=28848762,
+	immediately_won=1916217,
+	memo_accessed=586915,
+	memo_returned=487749,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=2873069,
+	total_solutions=35048967,
+	immediately_won=2070950,
+	memo_accessed=802118,
+	memo_returned=685810,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=131161,
+	total_solutions=976039,
+	immediately_won=96243,
+	memo_accessed=34917,
+	memo_returned=28586,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=9410231,
+	total_solutions=121165118,
+	immediately_won=6908403,
+	memo_accessed=2501827,
+	memo_returned=2120967,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=1536515,
+	total_solutions=17647100,
+	immediately_won=973872,
+	memo_accessed=562642,
+	memo_returned=493773,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=20540680,
+	total_solutions=274793074,
+	immediately_won=15390463,
+	memo_accessed=5150216,
+	memo_returned=4349298,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=499474,
+	total_solutions=3881759,
+	immediately_won=310850,
+	memo_accessed=188623,
+	memo_returned=162008,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=15884089,
+	total_solutions=196147510,
+	immediately_won=8773503,
+	memo_accessed=7110585,
+	memo_returned=6313862,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5205076,
+	total_solutions=57043006,
+	immediately_won=3736282,
+	memo_accessed=1468793,
+	memo_returned=1245485,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=1174000,
+	total_solutions=13148013,
+	immediately_won=844778,
+	memo_accessed=329221,
+	memo_returned=277800,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=39773058,
+	total_solutions=557547754,
+	immediately_won=25522666,
+	memo_accessed=14250391,
+	memo_returned=12632712,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=20155001,
+	total_solutions=239492248,
+	immediately_won=12962021,
+	memo_accessed=7192979,
+	memo_returned=6281232,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=33977832,
+	total_solutions=574378599,
+	immediately_won=23377511,
+	memo_accessed=10600320,
+	memo_returned=9301720,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=663266,
+	total_solutions=6778248,
+	immediately_won=419767,
+	memo_accessed=243498,
+	memo_returned=209077,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=258502,
+	total_solutions=2400333,
+	immediately_won=166432,
+	memo_accessed=92069,
+	memo_returned=79058,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=3503900,
+	total_solutions=40479224,
+	immediately_won=2291944,
+	memo_accessed=1211955,
+	memo_returned=1052247,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=1116907,
+	total_solutions=11395197,
+	immediately_won=713815,
+	memo_accessed=403091,
+	memo_returned=347221,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=54736,
+	total_solutions=366924,
+	immediately_won=38051,
+	memo_accessed=16684,
+	memo_returned=13602,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5535718,
+	total_solutions=67750456,
+	immediately_won=3610741,
+	memo_accessed=1924976,
+	memo_returned=1682726,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=75074643,
+	total_solutions=1100215495,
+	immediately_won=47632765,
+	memo_accessed=27441877,
+	memo_returned=24080235,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=9597488,
+	total_solutions=134821859,
+	immediately_won=4894799,
+	memo_accessed=4702688,
+	memo_returned=4206288,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=18005625,
+	total_solutions=211768249,
+	immediately_won=11014530,
+	memo_accessed=6991094,
+	memo_returned=6125203,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=24,
+	recursive_calls=21776005,
+	total_solutions=297130032,
+	immediately_won=15040595,
+	memo_accessed=6735409,
+	memo_returned=5809099,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2521918,
+	total_solutions=27948916,
+	immediately_won=1850062,
+	memo_accessed=671855,
+	memo_returned=562569,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=10,
+	recursive_calls=17189,
+	total_solutions=91612,
+	immediately_won=12884,
+	memo_accessed=4304,
+	memo_returned=3384,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=83634,
+	total_solutions=796467,
+	immediately_won=65458,
+	memo_accessed=18175,
+	memo_returned=14472,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=21800595,
+	total_solutions=301779366,
+	immediately_won=13488789,
+	memo_accessed=8311805,
+	memo_returned=7332713,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=147546,
+	total_solutions=1436659,
+	immediately_won=111269,
+	memo_accessed=36276,
+	memo_returned=29290,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=4660953,
+	total_solutions=52803585,
+	immediately_won=3343267,
+	memo_accessed=1317685,
+	memo_returned=1107424,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=136470414,
+	total_solutions=2232904663,
+	immediately_won=80405274,
+	memo_accessed=56065139,
+	memo_returned=49977912,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=265069,
+	total_solutions=2280845,
+	immediately_won=190462,
+	memo_accessed=74606,
+	memo_returned=60534,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=2927749,
+	total_solutions=33145179,
+	immediately_won=2155431,
+	memo_accessed=772317,
+	memo_returned=650189,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2115416,
+	total_solutions=18525607,
+	immediately_won=1366370,
+	memo_accessed=749045,
+	memo_returned=633653,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=650946,
+	total_solutions=6591409,
+	immediately_won=421313,
+	memo_accessed=229632,
+	memo_returned=198863,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=3151193,
+	total_solutions=31070971,
+	immediately_won=2177737,
+	memo_accessed=973455,
+	memo_returned=824283,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=40868139,
+	total_solutions=620501821,
+	immediately_won=26620668,
+	memo_accessed=14247470,
+	memo_returned=12417704,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=36876,
+	total_solutions=272975,
+	immediately_won=29941,
+	memo_accessed=6934,
+	memo_returned=5198,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=611788,
+	total_solutions=5762295,
+	immediately_won=391113,
+	memo_accessed=220674,
+	memo_returned=187285,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=536801,
+	total_solutions=4225561,
+	immediately_won=373824,
+	memo_accessed=162976,
+	memo_returned=137248,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=3551039,
+	total_solutions=39110366,
+	immediately_won=2399427,
+	memo_accessed=1151611,
+	memo_returned=990389,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=14309495,
+	total_solutions=193923501,
+	immediately_won=8289442,
+	memo_accessed=6020052,
+	memo_returned=5324290,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=8399502,
+	total_solutions=92458952,
+	immediately_won=5737832,
+	memo_accessed=2661669,
+	memo_returned=2291979,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=702329,
+	total_solutions=5773034,
+	immediately_won=540780,
+	memo_accessed=161548,
+	memo_returned=129634,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=49483,
+	total_solutions=316788,
+	immediately_won=35404,
+	memo_accessed=14078,
+	memo_returned=11408,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=12185519,
+	total_solutions=170092737,
+	immediately_won=8594423,
+	memo_accessed=3591095,
+	memo_returned=3126543,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=12,
+	recursive_calls=16363,
+	total_solutions=124642,
+	immediately_won=13840,
+	memo_accessed=2522,
+	memo_returned=1878,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1531672,
+	total_solutions=16852702,
+	immediately_won=1098750,
+	memo_accessed=432921,
+	memo_returned=364634,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=12,
+	recursive_calls=71307,
+	total_solutions=626981,
+	immediately_won=59103,
+	memo_accessed=12203,
+	memo_returned=9395,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1034447,
+	total_solutions=10976505,
+	immediately_won=745060,
+	memo_accessed=289386,
+	memo_returned=241851,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=9174291,
+	total_solutions=117699165,
+	immediately_won=5933766,
+	memo_accessed=3240524,
+	memo_returned=2835455,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=609980,
+	total_solutions=5977722,
+	immediately_won=407408,
+	memo_accessed=202571,
+	memo_returned=172699,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1018906,
+	total_solutions=8471763,
+	immediately_won=738527,
+	memo_accessed=280378,
+	memo_returned=230476,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=37187210,
+	total_solutions=535621762,
+	immediately_won=24833948,
+	memo_accessed=12353261,
+	memo_returned=10765168,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=34909026,
+	total_solutions=494666245,
+	immediately_won=26108995,
+	memo_accessed=8800030,
+	memo_returned=7422331,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=317445,
+	total_solutions=2657242,
+	immediately_won=242714,
+	memo_accessed=74730,
+	memo_returned=60736,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=11013229,
+	total_solutions=168050786,
+	immediately_won=7198115,
+	memo_accessed=3815113,
+	memo_returned=3358140,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=14714724,
+	total_solutions=172036450,
+	immediately_won=9850488,
+	memo_accessed=4864235,
+	memo_returned=4249925,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=3266382,
+	total_solutions=37201893,
+	immediately_won=2078581,
+	memo_accessed=1187800,
+	memo_returned=1040759,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=568700,
+	total_solutions=4744037,
+	immediately_won=335807,
+	memo_accessed=232892,
+	memo_returned=203041,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=1580328,
+	total_solutions=16655607,
+	immediately_won=894930,
+	memo_accessed=685397,
+	memo_returned=608240,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=349821,
+	total_solutions=3415725,
+	immediately_won=243620,
+	memo_accessed=106200,
+	memo_returned=90414,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=31506551,
+	total_solutions=491727993,
+	immediately_won=18283210,
+	memo_accessed=13223340,
+	memo_returned=11807565,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=11710146,
+	total_solutions=146101127,
+	immediately_won=7414564,
+	memo_accessed=4295581,
+	memo_returned=3737779,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=6836068,
+	total_solutions=82321211,
+	immediately_won=3976734,
+	memo_accessed=2859333,
+	memo_returned=2532026,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2209830,
+	total_solutions=20559419,
+	immediately_won=1386806,
+	memo_accessed=823023,
+	memo_returned=703614,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=269260,
+	total_solutions=2742870,
+	immediately_won=178910,
+	memo_accessed=90349,
+	memo_returned=76034,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=1175105,
+	total_solutions=11773330,
+	immediately_won=751214,
+	memo_accessed=423890,
+	memo_returned=360045,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=9282936,
+	total_solutions=123263060,
+	immediately_won=6875222,
+	memo_accessed=2407713,
+	memo_returned=2053597,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=26666948,
+	total_solutions=364136706,
+	immediately_won=17427119,
+	memo_accessed=9239828,
+	memo_returned=8053914,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=5928184,
+	total_solutions=78479859,
+	immediately_won=2838069,
+	memo_accessed=3090114,
+	memo_returned=2730916,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=472090,
+	total_solutions=4956996,
+	immediately_won=374092,
+	memo_accessed=97997,
+	memo_returned=79011,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=10518,
+	total_solutions=70751,
+	immediately_won=6948,
+	memo_accessed=3569,
+	memo_returned=2921,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=3080777,
+	total_solutions=32673349,
+	immediately_won=1662060,
+	memo_accessed=1418716,
+	memo_returned=1264803,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=5022053,
+	total_solutions=55473522,
+	immediately_won=3042620,
+	memo_accessed=1979432,
+	memo_returned=1746124,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=7004041,
+	total_solutions=75625630,
+	immediately_won=5069824,
+	memo_accessed=1934216,
+	memo_returned=1636106,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=6846871,
+	total_solutions=70148536,
+	immediately_won=4432080,
+	memo_accessed=2414790,
+	memo_returned=2094421,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1592034,
+	total_solutions=16609458,
+	immediately_won=1046073,
+	memo_accessed=545960,
+	memo_returned=469066,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=2254796,
+	total_solutions=24624518,
+	immediately_won=1591718,
+	memo_accessed=663077,
+	memo_returned=561088,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=1943802,
+	total_solutions=22500148,
+	immediately_won=1363083,
+	memo_accessed=580718,
+	memo_returned=490217,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3446769,
+	total_solutions=36230070,
+	immediately_won=2214359,
+	memo_accessed=1232409,
+	memo_returned=1052415,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=23793352,
+	total_solutions=296269885,
+	immediately_won=14472061,
+	memo_accessed=9321290,
+	memo_returned=8260343,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=455169,
+	total_solutions=5127829,
+	immediately_won=345377,
+	memo_accessed=109791,
+	memo_returned=92181,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=176450,
+	total_solutions=1470658,
+	immediately_won=141862,
+	memo_accessed=34587,
+	memo_returned=27370,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=336814,
+	total_solutions=2990848,
+	immediately_won=206358,
+	memo_accessed=130455,
+	memo_returned=112517,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=143352,
+	total_solutions=1145040,
+	immediately_won=97835,
+	memo_accessed=45516,
+	memo_returned=39128,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=5798655,
+	total_solutions=64784254,
+	immediately_won=3821198,
+	memo_accessed=1977456,
+	memo_returned=1703046,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=6734864,
+	total_solutions=87649360,
+	immediately_won=5266998,
+	memo_accessed=1467865,
+	memo_returned=1202667,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=35664841,
+	total_solutions=488408555,
+	immediately_won=20765030,
+	memo_accessed=14899810,
+	memo_returned=13200213,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=406924,
+	total_solutions=2986866,
+	immediately_won=245113,
+	memo_accessed=161810,
+	memo_returned=140236,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1175872,
+	total_solutions=12067733,
+	immediately_won=855293,
+	memo_accessed=320578,
+	memo_returned=273987,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=4766076,
+	total_solutions=52051945,
+	immediately_won=2751332,
+	memo_accessed=2014743,
+	memo_returned=1774807,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=91714,
+	total_solutions=673054,
+	immediately_won=69341,
+	memo_accessed=22372,
+	memo_returned=17904,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=10516220,
+	total_solutions=128916304,
+	immediately_won=7722001,
+	memo_accessed=2794218,
+	memo_returned=2385226,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=36285268,
+	total_solutions=463032983,
+	immediately_won=24073442,
+	memo_accessed=12211825,
+	memo_returned=10600772,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=31149034,
+	total_solutions=405749433,
+	immediately_won=18967631,
+	memo_accessed=12181402,
+	memo_returned=10767358,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1008409,
+	total_solutions=8515915,
+	immediately_won=652218,
+	memo_accessed=356190,
+	memo_returned=306983,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=12711913,
+	total_solutions=158637146,
+	immediately_won=7084037,
+	memo_accessed=5627875,
+	memo_returned=4974987,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=308393,
+	total_solutions=3887457,
+	immediately_won=247021,
+	memo_accessed=61371,
+	memo_returned=50967,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=478551,
+	total_solutions=4258920,
+	immediately_won=365569,
+	memo_accessed=112981,
+	memo_returned=93489,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=12800034,
+	total_solutions=161467932,
+	immediately_won=8450663,
+	memo_accessed=4349370,
+	memo_returned=3784254,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=32477652,
+	total_solutions=439648606,
+	immediately_won=23503250,
+	memo_accessed=8974401,
+	memo_returned=7842405,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=8735810,
+	total_solutions=87450663,
+	immediately_won=6118826,
+	memo_accessed=2616983,
+	memo_returned=2246329,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=17899511,
+	total_solutions=205450452,
+	immediately_won=11182141,
+	memo_accessed=6717369,
+	memo_returned=5824060,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=282550,
+	total_solutions=2665491,
+	immediately_won=227760,
+	memo_accessed=54789,
+	memo_returned=43281,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=21283,
+	total_solutions=150471,
+	immediately_won=15872,
+	memo_accessed=5410,
+	memo_returned=4342,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=63713077,
+	total_solutions=1124954621,
+	immediately_won=44792301,
+	memo_accessed=18920775,
+	memo_returned=16426646,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=2384435,
+	total_solutions=29638872,
+	immediately_won=1413990,
+	memo_accessed=970444,
+	memo_returned=858765,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=2915727,
+	total_solutions=31539874,
+	immediately_won=2054157,
+	memo_accessed=861569,
+	memo_returned=729315,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=53320104,
+	total_solutions=819736718,
+	immediately_won=34008255,
+	memo_accessed=19311848,
+	memo_returned=17099585,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=13,
+	recursive_calls=77936,
+	total_solutions=502709,
+	immediately_won=50492,
+	memo_accessed=27443,
+	memo_returned=23146,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=837116,
+	total_solutions=7182784,
+	immediately_won=582228,
+	memo_accessed=254887,
+	memo_returned=212152,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=11,
+	recursive_calls=5462,
+	total_solutions=47519,
+	immediately_won=4849,
+	memo_accessed=612,
+	memo_returned=408,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=3658106,
+	total_solutions=40614743,
+	immediately_won=2029733,
+	memo_accessed=1628372,
+	memo_returned=1451418,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=2228340,
+	total_solutions=24912467,
+	immediately_won=1557366,
+	memo_accessed=670973,
+	memo_returned=564825,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=11356397,
+	total_solutions=152464001,
+	immediately_won=6362554,
+	memo_accessed=4993842,
+	memo_returned=4462827,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=79369709,
+	total_solutions=1320756081,
+	immediately_won=49476852,
+	memo_accessed=29892856,
+	memo_returned=26432203,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=50092,
+	total_solutions=443471,
+	immediately_won=41456,
+	memo_accessed=8635,
+	memo_returned=6707,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1797876,
+	total_solutions=16098760,
+	immediately_won=1274786,
+	memo_accessed=523089,
+	memo_returned=443724,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2064038,
+	total_solutions=19662781,
+	immediately_won=1349096,
+	memo_accessed=714941,
+	memo_returned=606778,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=265777,
+	total_solutions=2063596,
+	immediately_won=179342,
+	memo_accessed=86434,
+	memo_returned=71947,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=6349969,
+	total_solutions=80697044,
+	immediately_won=4203449,
+	memo_accessed=2146519,
+	memo_returned=1861906,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=651201,
+	total_solutions=5653645,
+	immediately_won=442875,
+	memo_accessed=208325,
+	memo_returned=173608,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1320932,
+	total_solutions=13914390,
+	immediately_won=890646,
+	memo_accessed=430285,
+	memo_returned=364591,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=12616742,
+	total_solutions=151198016,
+	immediately_won=7424092,
+	memo_accessed=5192649,
+	memo_returned=4551393,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=20892619,
+	total_solutions=290354936,
+	immediately_won=14841618,
+	memo_accessed=6051000,
+	memo_returned=5196799,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=7655150,
+	total_solutions=103522094,
+	immediately_won=5376083,
+	memo_accessed=2279066,
+	memo_returned=1972843,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=5751859,
+	total_solutions=57847384,
+	immediately_won=3873129,
+	memo_accessed=1878729,
+	memo_returned=1595578,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=23364888,
+	total_solutions=346543695,
+	immediately_won=14135546,
+	memo_accessed=9229341,
+	memo_returned=8233925,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=27542947,
+	total_solutions=324755787,
+	immediately_won=18904551,
+	memo_accessed=8638395,
+	memo_returned=7400066,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1722036,
+	total_solutions=17140150,
+	immediately_won=1111895,
+	memo_accessed=610140,
+	memo_returned=526186,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=33389276,
+	total_solutions=448109538,
+	immediately_won=23501703,
+	memo_accessed=9887572,
+	memo_returned=8525825,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=16173783,
+	total_solutions=237662422,
+	immediately_won=9137236,
+	memo_accessed=7036546,
+	memo_returned=6283684,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=7525168,
+	total_solutions=89039375,
+	immediately_won=5225904,
+	memo_accessed=2299263,
+	memo_returned=1939587,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=997591,
+	total_solutions=10023007,
+	immediately_won=663756,
+	memo_accessed=333834,
+	memo_returned=281913,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=250000,
+	total_solutions=1612258,
+	immediately_won=183835,
+	memo_accessed=66164,
+	memo_returned=52808,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=38112844,
+	total_solutions=627511935,
+	immediately_won=22322379,
+	memo_accessed=15790464,
+	memo_returned=14078656,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=169195,
+	total_solutions=1692764,
+	immediately_won=141580,
+	memo_accessed=27614,
+	memo_returned=21294,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=15094437,
+	total_solutions=200456885,
+	immediately_won=8866179,
+	memo_accessed=6228257,
+	memo_returned=5482506,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=15663831,
+	total_solutions=213530877,
+	immediately_won=8955487,
+	memo_accessed=6708343,
+	memo_returned=5984517,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=454374,
+	total_solutions=4079744,
+	immediately_won=278786,
+	memo_accessed=175587,
+	memo_returned=151712,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=3875470,
+	total_solutions=45331945,
+	immediately_won=2309993,
+	memo_accessed=1565476,
+	memo_returned=1365504,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=1592519,
+	total_solutions=15389498,
+	immediately_won=974395,
+	memo_accessed=618123,
+	memo_returned=538438,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=30571750,
+	total_solutions=497470473,
+	immediately_won=19961044,
+	memo_accessed=10610705,
+	memo_returned=9317731,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=2177890,
+	total_solutions=25414667,
+	immediately_won=1370436,
+	memo_accessed=807453,
+	memo_returned=703483,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=40273918,
+	total_solutions=622639521,
+	immediately_won=23870835,
+	memo_accessed=16403082,
+	memo_returned=14456351,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=14641139,
+	total_solutions=164396411,
+	immediately_won=9357716,
+	memo_accessed=5283422,
+	memo_returned=4621696,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=2975838,
+	total_solutions=35418452,
+	immediately_won=1982211,
+	memo_accessed=993626,
+	memo_returned=845444,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=484701,
+	total_solutions=5123055,
+	immediately_won=358249,
+	memo_accessed=126451,
+	memo_returned=107074,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=5788739,
+	total_solutions=71231133,
+	immediately_won=3919705,
+	memo_accessed=1869033,
+	memo_returned=1630800,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=37280190,
+	total_solutions=534939046,
+	immediately_won=25262141,
+	memo_accessed=12018048,
+	memo_returned=10517475,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=107025,
+	total_solutions=875267,
+	immediately_won=78450,
+	memo_accessed=28574,
+	memo_returned=23628,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=7515035,
+	total_solutions=89339703,
+	immediately_won=5072479,
+	memo_accessed=2442555,
+	memo_returned=2106031,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2531954,
+	total_solutions=26009359,
+	immediately_won=1806414,
+	memo_accessed=725539,
+	memo_returned=610309,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2674702,
+	total_solutions=29896429,
+	immediately_won=1726785,
+	memo_accessed=947916,
+	memo_returned=812722,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=12,
+	recursive_calls=14050,
+	total_solutions=69210,
+	immediately_won=11175,
+	memo_accessed=2874,
+	memo_returned=2169,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=9049002,
+	total_solutions=113030096,
+	immediately_won=6410791,
+	memo_accessed=2638210,
+	memo_returned=2278543,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2584143,
+	total_solutions=25185730,
+	immediately_won=1682235,
+	memo_accessed=901907,
+	memo_returned=766265,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=1642917,
+	total_solutions=16068100,
+	immediately_won=1213033,
+	memo_accessed=429883,
+	memo_returned=359041,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=15616662,
+	total_solutions=230050335,
+	immediately_won=10739671,
+	memo_accessed=4876990,
+	memo_returned=4239521,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=413544,
+	total_solutions=2808077,
+	immediately_won=294245,
+	memo_accessed=119298,
+	memo_returned=97035,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=96971,
+	total_solutions=617712,
+	immediately_won=65243,
+	memo_accessed=31727,
+	memo_returned=26792,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=737444,
+	total_solutions=7496755,
+	immediately_won=571605,
+	memo_accessed=165838,
+	memo_returned=137617,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=704186,
+	total_solutions=7506678,
+	immediately_won=549531,
+	memo_accessed=154654,
+	memo_returned=126411,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=4492401,
+	total_solutions=54488999,
+	immediately_won=3326643,
+	memo_accessed=1165757,
+	memo_returned=969201,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=184036,
+	total_solutions=1874625,
+	immediately_won=111103,
+	memo_accessed=72932,
+	memo_returned=63253,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=832618,
+	total_solutions=10657236,
+	immediately_won=443142,
+	memo_accessed=389475,
+	memo_returned=345039,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=8137981,
+	total_solutions=101540445,
+	immediately_won=4528850,
+	memo_accessed=3609130,
+	memo_returned=3157439,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1305563,
+	total_solutions=14061907,
+	immediately_won=994432,
+	memo_accessed=311130,
+	memo_returned=253553,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1021633,
+	total_solutions=10681771,
+	immediately_won=549874,
+	memo_accessed=471758,
+	memo_returned=414957,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2859815,
+	total_solutions=29979631,
+	immediately_won=1885893,
+	memo_accessed=973921,
+	memo_returned=834762,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=250970,
+	total_solutions=2103530,
+	immediately_won=170623,
+	memo_accessed=80346,
+	memo_returned=67265,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=3187304,
+	total_solutions=36398331,
+	immediately_won=2276012,
+	memo_accessed=911291,
+	memo_returned=775198,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=10216102,
+	total_solutions=112970797,
+	immediately_won=6194555,
+	memo_accessed=4021546,
+	memo_returned=3464906,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=15879931,
+	total_solutions=196479407,
+	immediately_won=9818404,
+	memo_accessed=6061526,
+	memo_returned=5298039,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=18231508,
+	total_solutions=280711915,
+	immediately_won=8646241,
+	memo_accessed=9585266,
+	memo_returned=8616278,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=372439,
+	total_solutions=3557729,
+	immediately_won=234354,
+	memo_accessed=138084,
+	memo_returned=119553,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=818829,
+	total_solutions=6941566,
+	immediately_won=520369,
+	memo_accessed=298459,
+	memo_returned=254804,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=40285039,
+	total_solutions=589249055,
+	immediately_won=24873787,
+	memo_accessed=15411251,
+	memo_returned=13408240,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4133295,
+	total_solutions=45693123,
+	immediately_won=2763987,
+	memo_accessed=1369307,
+	memo_returned=1178606,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=3716228,
+	total_solutions=44576280,
+	immediately_won=2231446,
+	memo_accessed=1484781,
+	memo_returned=1310947,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=12,
+	recursive_calls=54724,
+	total_solutions=402726,
+	immediately_won=34812,
+	memo_accessed=19911,
+	memo_returned=17076,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1303088,
+	total_solutions=13278177,
+	immediately_won=918052,
+	memo_accessed=385035,
+	memo_returned=328612,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=1176261,
+	total_solutions=13225097,
+	immediately_won=793701,
+	memo_accessed=382559,
+	memo_returned=329171,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=796863,
+	total_solutions=5951779,
+	immediately_won=563539,
+	memo_accessed=233323,
+	memo_returned=194033,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=12,
+	recursive_calls=10921,
+	total_solutions=68049,
+	immediately_won=8255,
+	memo_accessed=2665,
+	memo_returned=2042,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=25473314,
+	total_solutions=299745793,
+	immediately_won=16149640,
+	memo_accessed=9323673,
+	memo_returned=8074275,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=765484,
+	total_solutions=7357391,
+	immediately_won=514826,
+	memo_accessed=250657,
+	memo_returned=210916,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=12,
+	recursive_calls=13665,
+	total_solutions=79355,
+	immediately_won=10355,
+	memo_accessed=3309,
+	memo_returned=2609,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=9473586,
+	total_solutions=99258581,
+	immediately_won=6051246,
+	memo_accessed=3422339,
+	memo_returned=2952626,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=19017630,
+	total_solutions=215183033,
+	immediately_won=13697745,
+	memo_accessed=5319884,
+	memo_returned=4510646,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2553895,
+	total_solutions=26869239,
+	immediately_won=1978002,
+	memo_accessed=575892,
+	memo_returned=472131,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=12528282,
+	total_solutions=144633476,
+	immediately_won=6943030,
+	memo_accessed=5585251,
+	memo_returned=4921039,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=920498,
+	total_solutions=11559619,
+	immediately_won=733045,
+	memo_accessed=187452,
+	memo_returned=153590,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3162420,
+	total_solutions=38088371,
+	immediately_won=2283289,
+	memo_accessed=879130,
+	memo_returned=749806,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=1468286,
+	total_solutions=13041382,
+	immediately_won=1044417,
+	memo_accessed=423868,
+	memo_returned=352937,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1358756,
+	total_solutions=13635398,
+	immediately_won=896766,
+	memo_accessed=461989,
+	memo_returned=401022,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=842468,
+	total_solutions=6452943,
+	immediately_won=540484,
+	memo_accessed=301983,
+	memo_returned=254683,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=2650979,
+	total_solutions=34887733,
+	immediately_won=1523233,
+	memo_accessed=1127745,
+	memo_returned=1008369,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=608304,
+	total_solutions=5365313,
+	immediately_won=402312,
+	memo_accessed=205991,
+	memo_returned=174953,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2979306,
+	total_solutions=27987974,
+	immediately_won=1993387,
+	memo_accessed=985918,
+	memo_returned=838115,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=1540360,
+	total_solutions=13957569,
+	immediately_won=994453,
+	memo_accessed=545906,
+	memo_returned=466036,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=55193156,
+	total_solutions=706378998,
+	immediately_won=40675850,
+	memo_accessed=14517305,
+	memo_returned=12400143,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=10830195,
+	total_solutions=142140869,
+	immediately_won=7462651,
+	memo_accessed=3367543,
+	memo_returned=2889195,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=1060970,
+	total_solutions=8683027,
+	immediately_won=567417,
+	memo_accessed=493552,
+	memo_returned=432896,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=14717941,
+	total_solutions=167374316,
+	immediately_won=9960888,
+	memo_accessed=4757052,
+	memo_returned=4085113,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=5373263,
+	total_solutions=56842898,
+	immediately_won=3901021,
+	memo_accessed=1472241,
+	memo_returned=1226498,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=2350096,
+	total_solutions=27146949,
+	immediately_won=1748730,
+	memo_accessed=601365,
+	memo_returned=504693,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=531315,
+	total_solutions=4860864,
+	immediately_won=410424,
+	memo_accessed=120890,
+	memo_returned=97778,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=811951,
+	total_solutions=7708918,
+	immediately_won=581083,
+	memo_accessed=230867,
+	memo_returned=195356,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=30673511,
+	total_solutions=379642165,
+	immediately_won=20819241,
+	memo_accessed=9854269,
+	memo_returned=8517736,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=432430,
+	total_solutions=3182338,
+	immediately_won=274583,
+	memo_accessed=157846,
+	memo_returned=133000,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=154707,
+	total_solutions=1053914,
+	immediately_won=111272,
+	memo_accessed=43434,
+	memo_returned=36145,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=5377332,
+	total_solutions=59136615,
+	immediately_won=4020043,
+	memo_accessed=1357288,
+	memo_returned=1127999,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=12,
+	recursive_calls=14810,
+	total_solutions=92654,
+	immediately_won=12107,
+	memo_accessed=2702,
+	memo_returned=1946,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=2374938,
+	total_solutions=30992643,
+	immediately_won=1674382,
+	memo_accessed=700555,
+	memo_returned=610764,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=3885390,
+	total_solutions=40052592,
+	immediately_won=2499642,
+	memo_accessed=1385747,
+	memo_returned=1186888,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=3204726,
+	total_solutions=35419017,
+	immediately_won=2320468,
+	memo_accessed=884257,
+	memo_returned=749655,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=1489524,
+	total_solutions=14708264,
+	immediately_won=1136690,
+	memo_accessed=352833,
+	memo_returned=287557,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=7005955,
+	total_solutions=97837584,
+	immediately_won=3840552,
+	memo_accessed=3165402,
+	memo_returned=2782532,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=394555,
+	total_solutions=4210482,
+	immediately_won=295476,
+	memo_accessed=99078,
+	memo_returned=81837,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=6791794,
+	total_solutions=72795483,
+	immediately_won=4798308,
+	memo_accessed=1993485,
+	memo_returned=1676750,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=4295429,
+	total_solutions=47244551,
+	immediately_won=2377688,
+	memo_accessed=1917740,
+	memo_returned=1704570,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=8939606,
+	total_solutions=98280183,
+	immediately_won=6237720,
+	memo_accessed=2701885,
+	memo_returned=2323975,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=83980,
+	total_solutions=628231,
+	immediately_won=61870,
+	memo_accessed=22109,
+	memo_returned=18076,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=67681,
+	total_solutions=640252,
+	immediately_won=56680,
+	memo_accessed=11000,
+	memo_returned=8395,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=1462678,
+	total_solutions=14077358,
+	immediately_won=667723,
+	memo_accessed=794954,
+	memo_returned=707509,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=23006630,
+	total_solutions=307901739,
+	immediately_won=16945311,
+	memo_accessed=6061318,
+	memo_returned=5156097,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=904119,
+	total_solutions=7601940,
+	immediately_won=591306,
+	memo_accessed=312812,
+	memo_returned=264103,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=524132,
+	total_solutions=4306675,
+	immediately_won=305914,
+	memo_accessed=218217,
+	memo_returned=185666,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5443326,
+	total_solutions=53960973,
+	immediately_won=3017278,
+	memo_accessed=2426047,
+	memo_returned=2113489,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=5149620,
+	total_solutions=54422309,
+	immediately_won=3529073,
+	memo_accessed=1620546,
+	memo_returned=1383272,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=20520589,
+	total_solutions=251728830,
+	immediately_won=13778179,
+	memo_accessed=6742409,
+	memo_returned=5842119,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=62328471,
+	total_solutions=861105045,
+	immediately_won=39120652,
+	memo_accessed=23207818,
+	memo_returned=20432101,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=1431385,
+	total_solutions=18432936,
+	immediately_won=905247,
+	memo_accessed=526137,
+	memo_returned=460686,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=12,
+	recursive_calls=14420,
+	total_solutions=97101,
+	immediately_won=11449,
+	memo_accessed=2970,
+	memo_returned=2238,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=159895,
+	total_solutions=1312966,
+	immediately_won=112509,
+	memo_accessed=47385,
+	memo_returned=40100,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=9419452,
+	total_solutions=124200494,
+	immediately_won=6572825,
+	memo_accessed=2846626,
+	memo_returned=2469827,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=3599782,
+	total_solutions=40858882,
+	immediately_won=2567499,
+	memo_accessed=1032282,
+	memo_returned=869370,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=647340,
+	total_solutions=6992984,
+	immediately_won=441336,
+	memo_accessed=206003,
+	memo_returned=178312,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=2455426,
+	total_solutions=28912506,
+	immediately_won=1479092,
+	memo_accessed=976333,
+	memo_returned=841544,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=756304,
+	total_solutions=6759561,
+	immediately_won=556454,
+	memo_accessed=199849,
+	memo_returned=164653,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=27238036,
+	total_solutions=413591332,
+	immediately_won=17207884,
+	memo_accessed=10030151,
+	memo_returned=8822417,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=4,
+	recursive_calls=106,
+	total_solutions=915,
+	immediately_won=92,
+	memo_accessed=13,
+	memo_returned=7,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=529380,
+	total_solutions=5538971,
+	immediately_won=369156,
+	memo_accessed=160223,
+	memo_returned=133673,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=738408,
+	total_solutions=7487959,
+	immediately_won=559895,
+	memo_accessed=178512,
+	memo_returned=144525,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=11562495,
+	total_solutions=157060997,
+	immediately_won=7629333,
+	memo_accessed=3933161,
+	memo_returned=3437097,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=1199435,
+	total_solutions=10321862,
+	immediately_won=755611,
+	memo_accessed=443823,
+	memo_returned=378043,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2828581,
+	total_solutions=30970777,
+	immediately_won=1919245,
+	memo_accessed=909335,
+	memo_returned=766563,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=14062676,
+	total_solutions=219617073,
+	immediately_won=8331174,
+	memo_accessed=5731501,
+	memo_returned=5118261,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=14060179,
+	total_solutions=152770951,
+	immediately_won=8901020,
+	memo_accessed=5159158,
+	memo_returned=4437197,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=33842330,
+	total_solutions=488759050,
+	immediately_won=20305448,
+	memo_accessed=13536881,
+	memo_returned=12021321,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3699888,
+	total_solutions=36438283,
+	immediately_won=2599614,
+	memo_accessed=1100273,
+	memo_returned=932399,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=6192393,
+	total_solutions=65842836,
+	immediately_won=3903320,
+	memo_accessed=2289072,
+	memo_returned=1984493,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=3975798,
+	total_solutions=50736721,
+	immediately_won=2872918,
+	memo_accessed=1102879,
+	memo_returned=935922,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=18010053,
+	total_solutions=215548030,
+	immediately_won=12111773,
+	memo_accessed=5898279,
+	memo_returned=5042374,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=13,
+	recursive_calls=90053,
+	total_solutions=722707,
+	immediately_won=72459,
+	memo_accessed=17593,
+	memo_returned=14077,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=3747751,
+	total_solutions=38444251,
+	immediately_won=2835447,
+	memo_accessed=912303,
+	memo_returned=747231,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=3032374,
+	total_solutions=33239712,
+	immediately_won=1872624,
+	memo_accessed=1159749,
+	memo_returned=1012569,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=114390,
+	total_solutions=896515,
+	immediately_won=76297,
+	memo_accessed=38092,
+	memo_returned=31686,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=43050106,
+	total_solutions=680191727,
+	immediately_won=30070369,
+	memo_accessed=12979736,
+	memo_returned=11422789,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=296046,
+	total_solutions=2291662,
+	immediately_won=202141,
+	memo_accessed=93904,
+	memo_returned=77606,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=1018533,
+	total_solutions=10226839,
+	immediately_won=722602,
+	memo_accessed=295930,
+	memo_returned=247606,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1044850,
+	total_solutions=12990461,
+	immediately_won=861212,
+	memo_accessed=183637,
+	memo_returned=150476,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=6997018,
+	total_solutions=77598013,
+	immediately_won=4677451,
+	memo_accessed=2319566,
+	memo_returned=2011063,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=367220,
+	total_solutions=3884006,
+	immediately_won=266190,
+	memo_accessed=101029,
+	memo_returned=85269,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=391937,
+	total_solutions=3148654,
+	immediately_won=261557,
+	memo_accessed=130379,
+	memo_returned=110154,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2800460,
+	total_solutions=25789928,
+	immediately_won=1634719,
+	memo_accessed=1165740,
+	memo_returned=1020917,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=94846090,
+	total_solutions=1439857850,
+	immediately_won=67192105,
+	memo_accessed=27653984,
+	memo_returned=24112027,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=919510,
+	total_solutions=8356328,
+	immediately_won=706078,
+	memo_accessed=213431,
+	memo_returned=171823,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=25,
+	recursive_calls=85822715,
+	total_solutions=1623219940,
+	immediately_won=58771225,
+	memo_accessed=27051489,
+	memo_returned=23877750,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=3224558,
+	total_solutions=34484728,
+	immediately_won=2371149,
+	memo_accessed=853408,
+	memo_returned=714726,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=23,
+	recursive_calls=56629813,
+	total_solutions=888320421,
+	immediately_won=41887925,
+	memo_accessed=14741887,
+	memo_returned=12766601,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=28335149,
+	total_solutions=376284224,
+	immediately_won=17047548,
+	memo_accessed=11287600,
+	memo_returned=9852608,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1217581,
+	total_solutions=11149583,
+	immediately_won=810448,
+	memo_accessed=407132,
+	memo_returned=345591,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2877992,
+	total_solutions=30745697,
+	immediately_won=1790979,
+	memo_accessed=1087012,
+	memo_returned=923720,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=40789040,
+	total_solutions=642432322,
+	immediately_won=22388925,
+	memo_accessed=18400114,
+	memo_returned=16483852,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=45227380,
+	total_solutions=777787812,
+	immediately_won=31394028,
+	memo_accessed=13833351,
+	memo_returned=12190707,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1744300,
+	total_solutions=17873476,
+	immediately_won=1105049,
+	memo_accessed=639250,
+	memo_returned=554214,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=26990582,
+	total_solutions=318017507,
+	immediately_won=18089368,
+	memo_accessed=8901213,
+	memo_returned=7617829,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=9886694,
+	total_solutions=125724619,
+	immediately_won=5928785,
+	memo_accessed=3957908,
+	memo_returned=3532285,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=24,
+	recursive_calls=18812271,
+	total_solutions=297542674,
+	immediately_won=10070119,
+	memo_accessed=8742151,
+	memo_returned=7849692,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=6992344,
+	total_solutions=92969480,
+	immediately_won=3115725,
+	memo_accessed=3876618,
+	memo_returned=3506969,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=4372230,
+	total_solutions=54119936,
+	immediately_won=2833939,
+	memo_accessed=1538290,
+	memo_returned=1333670,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=30820946,
+	total_solutions=460229924,
+	immediately_won=18457378,
+	memo_accessed=12363567,
+	memo_returned=10995850,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5955611,
+	total_solutions=64950952,
+	immediately_won=4568518,
+	memo_accessed=1387092,
+	memo_returned=1150162,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=6334054,
+	total_solutions=69025463,
+	immediately_won=3972153,
+	memo_accessed=2361900,
+	memo_returned=2048132,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=222277,
+	total_solutions=1500390,
+	immediately_won=140988,
+	memo_accessed=81288,
+	memo_returned=67300,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=1290241,
+	total_solutions=15228689,
+	immediately_won=922756,
+	memo_accessed=367484,
+	memo_returned=316482,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=1407409,
+	total_solutions=13713043,
+	immediately_won=938207,
+	memo_accessed=469201,
+	memo_returned=406587,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=7766098,
+	total_solutions=104469176,
+	immediately_won=5749395,
+	memo_accessed=2016702,
+	memo_returned=1692034,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=11737269,
+	total_solutions=145441100,
+	immediately_won=7588567,
+	memo_accessed=4148701,
+	memo_returned=3637337,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=84151,
+	total_solutions=658684,
+	immediately_won=56468,
+	memo_accessed=27682,
+	memo_returned=23600,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=8257502,
+	total_solutions=112775428,
+	immediately_won=6027805,
+	memo_accessed=2229696,
+	memo_returned=1919192,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=1873844,
+	total_solutions=16494159,
+	immediately_won=1362231,
+	memo_accessed=511612,
+	memo_returned=422701,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=175699,
+	total_solutions=1153004,
+	immediately_won=103711,
+	memo_accessed=71987,
+	memo_returned=62183,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=32402620,
+	total_solutions=479290530,
+	immediately_won=23583541,
+	memo_accessed=8819078,
+	memo_returned=7519375,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3496566,
+	total_solutions=34980921,
+	immediately_won=2104524,
+	memo_accessed=1392041,
+	memo_returned=1220535,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=14832714,
+	total_solutions=198149657,
+	immediately_won=8954443,
+	memo_accessed=5878270,
+	memo_returned=5211464,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=10,
+	recursive_calls=14628,
+	total_solutions=77771,
+	immediately_won=11535,
+	memo_accessed=3092,
+	memo_returned=2312,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=10032814,
+	total_solutions=126234851,
+	immediately_won=6569929,
+	memo_accessed=3462884,
+	memo_returned=2978751,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=13,
+	recursive_calls=67228,
+	total_solutions=427495,
+	immediately_won=53289,
+	memo_accessed=13938,
+	memo_returned=11153,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=19225567,
+	total_solutions=299601595,
+	immediately_won=12705360,
+	memo_accessed=6520206,
+	memo_returned=5702456,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=12781397,
+	total_solutions=153557145,
+	immediately_won=8718948,
+	memo_accessed=4062448,
+	memo_returned=3524697,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1678356,
+	total_solutions=15827349,
+	immediately_won=1141095,
+	memo_accessed=537260,
+	memo_returned=455821,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=7322255,
+	total_solutions=75810622,
+	immediately_won=5298297,
+	memo_accessed=2023957,
+	memo_returned=1693254,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=33169341,
+	total_solutions=450721185,
+	immediately_won=20088669,
+	memo_accessed=13080671,
+	memo_returned=11504156,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=246926,
+	total_solutions=1693470,
+	immediately_won=164924,
+	memo_accessed=82001,
+	memo_returned=67957,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=406551,
+	total_solutions=4275381,
+	immediately_won=309906,
+	memo_accessed=96644,
+	memo_returned=78414,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1711189,
+	total_solutions=19269288,
+	immediately_won=1172069,
+	memo_accessed=539119,
+	memo_returned=463000,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=7150243,
+	total_solutions=78842432,
+	immediately_won=3947652,
+	memo_accessed=3202590,
+	memo_returned=2840696,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=12117705,
+	total_solutions=162080786,
+	immediately_won=8014967,
+	memo_accessed=4102737,
+	memo_returned=3545438,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=42425123,
+	total_solutions=699649884,
+	immediately_won=22288104,
+	memo_accessed=20137018,
+	memo_returned=18225483,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=6056092,
+	total_solutions=69616173,
+	immediately_won=4061435,
+	memo_accessed=1994656,
+	memo_returned=1716969,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=14,
+	recursive_calls=75921,
+	total_solutions=549355,
+	immediately_won=58279,
+	memo_accessed=17641,
+	memo_returned=14071,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=5718422,
+	total_solutions=56423902,
+	immediately_won=3891399,
+	memo_accessed=1827022,
+	memo_returned=1547319,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2076319,
+	total_solutions=25490479,
+	immediately_won=1484296,
+	memo_accessed=592022,
+	memo_returned=497639,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=3620654,
+	total_solutions=51013771,
+	immediately_won=2564368,
+	memo_accessed=1056285,
+	memo_returned=901617,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=29831128,
+	total_solutions=496646452,
+	immediately_won=20339789,
+	memo_accessed=9491338,
+	memo_returned=8235499,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=0,
+	recursive_calls=1,
+	total_solutions=495,
+	immediately_won=0,
+	memo_accessed=0,
+	memo_returned=0,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=5032384,
+	total_solutions=59511144,
+	immediately_won=3307854,
+	memo_accessed=1724529,
+	memo_returned=1482633,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=22293584,
+	total_solutions=267959709,
+	immediately_won=14711350,
+	memo_accessed=7582233,
+	memo_returned=6577273,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=2328807,
+	total_solutions=27179439,
+	immediately_won=1712493,
+	memo_accessed=616313,
+	memo_returned=524190,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=8000140,
+	total_solutions=87660798,
+	immediately_won=5794147,
+	memo_accessed=2205992,
+	memo_returned=1841113,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1551335,
+	total_solutions=14667739,
+	immediately_won=1046317,
+	memo_accessed=505017,
+	memo_returned=424404,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2545770,
+	total_solutions=27634603,
+	immediately_won=1416304,
+	memo_accessed=1129465,
+	memo_returned=1005775,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1229278,
+	total_solutions=13952150,
+	immediately_won=877345,
+	memo_accessed=351932,
+	memo_returned=296950,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=12405772,
+	total_solutions=184086727,
+	immediately_won=7119760,
+	memo_accessed=5286011,
+	memo_returned=4698262,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=540861,
+	total_solutions=5039845,
+	immediately_won=339120,
+	memo_accessed=201740,
+	memo_returned=171930,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=8870828,
+	total_solutions=112093609,
+	immediately_won=5312887,
+	memo_accessed=3557940,
+	memo_returned=3151053,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=14591609,
+	total_solutions=188217399,
+	immediately_won=9972407,
+	memo_accessed=4619201,
+	memo_returned=4013494,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=78711446,
+	total_solutions=1334209485,
+	immediately_won=47720703,
+	memo_accessed=30990742,
+	memo_returned=27489839,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=165946,
+	total_solutions=1644713,
+	immediately_won=132004,
+	memo_accessed=33941,
+	memo_returned=27352,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=482264,
+	total_solutions=3970583,
+	immediately_won=345291,
+	memo_accessed=136972,
+	memo_returned=113453,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=4252339,
+	total_solutions=54793389,
+	immediately_won=2462979,
+	memo_accessed=1789359,
+	memo_returned=1586712,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=206475,
+	total_solutions=1702120,
+	immediately_won=109922,
+	memo_accessed=96552,
+	memo_returned=83145,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=13,
+	recursive_calls=301005,
+	total_solutions=2490914,
+	immediately_won=243674,
+	memo_accessed=57330,
+	memo_returned=44000,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=205109,
+	total_solutions=1682891,
+	immediately_won=140934,
+	memo_accessed=64174,
+	memo_returned=53568,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5748519,
+	total_solutions=53205251,
+	immediately_won=3221317,
+	memo_accessed=2527201,
+	memo_returned=2212184,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=16365652,
+	total_solutions=194711233,
+	immediately_won=10663789,
+	memo_accessed=5701862,
+	memo_returned=4929452,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=13,
+	recursive_calls=83953,
+	total_solutions=549798,
+	immediately_won=62058,
+	memo_accessed=21894,
+	memo_returned=17051,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=8305884,
+	total_solutions=91677725,
+	immediately_won=6159620,
+	memo_accessed=2146263,
+	memo_returned=1818083,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=2017536,
+	total_solutions=20082594,
+	immediately_won=1418476,
+	memo_accessed=599059,
+	memo_returned=506233,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=299537,
+	total_solutions=2834320,
+	immediately_won=208279,
+	memo_accessed=91257,
+	memo_returned=76185,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4327131,
+	total_solutions=53496799,
+	immediately_won=2917682,
+	memo_accessed=1409448,
+	memo_returned=1215580,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=193594,
+	total_solutions=2055335,
+	immediately_won=140731,
+	memo_accessed=52862,
+	memo_returned=44023,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=31477333,
+	total_solutions=466148611,
+	immediately_won=17777394,
+	memo_accessed=13699938,
+	memo_returned=12288970,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=5548509,
+	total_solutions=59628537,
+	immediately_won=3630679,
+	memo_accessed=1917829,
+	memo_returned=1645409,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=1646906,
+	total_solutions=17104460,
+	immediately_won=1008979,
+	memo_accessed=637926,
+	memo_returned=556211,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=82824,
+	total_solutions=665211,
+	immediately_won=66524,
+	memo_accessed=16299,
+	memo_returned=12707,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=405344,
+	total_solutions=3213522,
+	immediately_won=293720,
+	memo_accessed=111623,
+	memo_returned=91706,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=282757,
+	total_solutions=2709618,
+	immediately_won=171448,
+	memo_accessed=111308,
+	memo_returned=94825,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=20075814,
+	total_solutions=271162325,
+	immediately_won=10665793,
+	memo_accessed=9410020,
+	memo_returned=8358829,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=115316,
+	total_solutions=778293,
+	immediately_won=81740,
+	memo_accessed=33575,
+	memo_returned=27655,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=10841212,
+	total_solutions=140597966,
+	immediately_won=6876587,
+	memo_accessed=3964624,
+	memo_returned=3433255,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=1651325,
+	total_solutions=16414516,
+	immediately_won=1077932,
+	memo_accessed=573392,
+	memo_returned=495575,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=21193956,
+	total_solutions=326712062,
+	immediately_won=12542967,
+	memo_accessed=8650988,
+	memo_returned=7627240,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=12389592,
+	total_solutions=167929022,
+	immediately_won=8706672,
+	memo_accessed=3682919,
+	memo_returned=3199123,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=0,
+	recursive_calls=1,
+	total_solutions=803,
+	immediately_won=0,
+	memo_accessed=0,
+	memo_returned=0,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=22246876,
+	total_solutions=291335312,
+	immediately_won=15146108,
+	memo_accessed=7100767,
+	memo_returned=6170427,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=6397377,
+	total_solutions=71937872,
+	immediately_won=4490827,
+	memo_accessed=1906549,
+	memo_returned=1600691,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=1357327,
+	total_solutions=15899626,
+	immediately_won=1066919,
+	memo_accessed=290407,
+	memo_returned=236221,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=706091,
+	total_solutions=8368427,
+	immediately_won=603943,
+	memo_accessed=102147,
+	memo_returned=78907,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=455441,
+	total_solutions=3847968,
+	immediately_won=330427,
+	memo_accessed=125013,
+	memo_returned=103116,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=672168,
+	total_solutions=7460483,
+	immediately_won=547455,
+	memo_accessed=124712,
+	memo_returned=100185,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=11138182,
+	total_solutions=121444119,
+	immediately_won=6949651,
+	memo_accessed=4188530,
+	memo_returned=3655202,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4656982,
+	total_solutions=43104571,
+	immediately_won=3278464,
+	memo_accessed=1378517,
+	memo_returned=1156793,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=12,
+	recursive_calls=40412,
+	total_solutions=191045,
+	immediately_won=30627,
+	memo_accessed=9784,
+	memo_returned=7801,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=30889092,
+	total_solutions=483314565,
+	immediately_won=12902278,
+	memo_accessed=17986813,
+	memo_returned=16400956,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=21510076,
+	total_solutions=319190267,
+	immediately_won=15610612,
+	memo_accessed=5899463,
+	memo_returned=5097888,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=191751,
+	total_solutions=1710412,
+	immediately_won=152317,
+	memo_accessed=39433,
+	memo_returned=31478,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=5371865,
+	total_solutions=71687202,
+	immediately_won=3456806,
+	memo_accessed=1915058,
+	memo_returned=1677331,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=469937,
+	total_solutions=3995480,
+	immediately_won=322613,
+	memo_accessed=147323,
+	memo_returned=122446,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=8,
+	recursive_calls=1182,
+	total_solutions=11491,
+	immediately_won=1116,
+	memo_accessed=65,
+	memo_returned=35,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=141345,
+	total_solutions=1324389,
+	immediately_won=108556,
+	memo_accessed=32788,
+	memo_returned=26677,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5407294,
+	total_solutions=69924230,
+	immediately_won=4163389,
+	memo_accessed=1243904,
+	memo_returned=1038982,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=15488416,
+	total_solutions=233705540,
+	immediately_won=10114780,
+	memo_accessed=5373635,
+	memo_returned=4772613,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=14778918,
+	total_solutions=142000619,
+	immediately_won=9110919,
+	memo_accessed=5667998,
+	memo_returned=4845500,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5714756,
+	total_solutions=61611884,
+	immediately_won=3112829,
+	memo_accessed=2601926,
+	memo_returned=2279113,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=613303,
+	total_solutions=6143170,
+	immediately_won=481067,
+	memo_accessed=132235,
+	memo_returned=108374,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=10753296,
+	total_solutions=111880109,
+	immediately_won=6341556,
+	memo_accessed=4411739,
+	memo_returned=3825923,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=3430062,
+	total_solutions=40614091,
+	immediately_won=2246313,
+	memo_accessed=1183748,
+	memo_returned=1019041,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=576611,
+	total_solutions=4942426,
+	immediately_won=406534,
+	memo_accessed=170076,
+	memo_returned=139415,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=2631291,
+	total_solutions=33113986,
+	immediately_won=1635442,
+	memo_accessed=995848,
+	memo_returned=877749,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=10777088,
+	total_solutions=125633569,
+	immediately_won=7351907,
+	memo_accessed=3425180,
+	memo_returned=2947099,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=9798711,
+	total_solutions=129784643,
+	immediately_won=6416439,
+	memo_accessed=3382271,
+	memo_returned=2920950,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=9784610,
+	total_solutions=126693815,
+	immediately_won=7236185,
+	memo_accessed=2548424,
+	memo_returned=2133667,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=11336878,
+	total_solutions=131485932,
+	immediately_won=7766279,
+	memo_accessed=3570598,
+	memo_returned=3060780,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=451066,
+	total_solutions=3487930,
+	immediately_won=321618,
+	memo_accessed=129447,
+	memo_returned=106158,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=43774632,
+	total_solutions=617661630,
+	immediately_won=27367090,
+	memo_accessed=16407541,
+	memo_returned=14501315,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=5330495,
+	total_solutions=54812937,
+	immediately_won=3280918,
+	memo_accessed=2049576,
+	memo_returned=1775311,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3144277,
+	total_solutions=31726907,
+	immediately_won=2229651,
+	memo_accessed=914625,
+	memo_returned=773440,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=4992121,
+	total_solutions=54225291,
+	immediately_won=2794743,
+	memo_accessed=2197377,
+	memo_returned=1942877,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=14249050,
+	total_solutions=163788327,
+	immediately_won=10119038,
+	memo_accessed=4130011,
+	memo_returned=3526279,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=9190565,
+	total_solutions=97281289,
+	immediately_won=4750558,
+	memo_accessed=4440006,
+	memo_returned=3963444,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=5279290,
+	total_solutions=58938578,
+	immediately_won=3980867,
+	memo_accessed=1298422,
+	memo_returned=1086184,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=8532575,
+	total_solutions=113795680,
+	immediately_won=5780821,
+	memo_accessed=2751753,
+	memo_returned=2385504,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=3401810,
+	total_solutions=37581629,
+	immediately_won=2331537,
+	memo_accessed=1070272,
+	memo_returned=918360,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=20942316,
+	total_solutions=271984286,
+	immediately_won=13555120,
+	memo_accessed=7387195,
+	memo_returned=6453584,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=8745104,
+	total_solutions=121569092,
+	immediately_won=5067179,
+	memo_accessed=3677924,
+	memo_returned=3264513,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=9,
+	recursive_calls=1862,
+	total_solutions=16237,
+	immediately_won=1688,
+	memo_accessed=173,
+	memo_returned=104,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=25,
+	recursive_calls=112400826,
+	total_solutions=2064491933,
+	immediately_won=63527081,
+	memo_accessed=48873744,
+	memo_returned=44188869,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=21,
+	recursive_calls=41203641,
+	total_solutions=562393738,
+	immediately_won=25882621,
+	memo_accessed=15321019,
+	memo_returned=13556841,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=13,
+	recursive_calls=28972,
+	total_solutions=164967,
+	immediately_won=19763,
+	memo_accessed=9208,
+	memo_returned=7276,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=9627030,
+	total_solutions=122215949,
+	immediately_won=5961568,
+	memo_accessed=3665461,
+	memo_returned=3242342,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2027127,
+	total_solutions=16726494,
+	immediately_won=1620228,
+	memo_accessed=406898,
+	memo_returned=321166,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=41500076,
+	total_solutions=640768921,
+	immediately_won=22092679,
+	memo_accessed=19407396,
+	memo_returned=17356290,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=24,
+	recursive_calls=65858743,
+	total_solutions=1154045159,
+	immediately_won=43669150,
+	memo_accessed=22189592,
+	memo_returned=19535295,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=11183767,
+	total_solutions=134027731,
+	immediately_won=6957980,
+	memo_accessed=4225786,
+	memo_returned=3634336,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=15,
+	recursive_calls=280570,
+	total_solutions=1996149,
+	immediately_won=167569,
+	memo_accessed=113000,
+	memo_returned=97592,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=7192188,
+	total_solutions=81637956,
+	immediately_won=4443348,
+	memo_accessed=2748839,
+	memo_returned=2398005,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=18,
+	recursive_calls=7158013,
+	total_solutions=94172284,
+	immediately_won=4808165,
+	memo_accessed=2349847,
+	memo_returned=2055695,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=20,
+	recursive_calls=13646052,
+	total_solutions=173619881,
+	immediately_won=9237634,
+	memo_accessed=4408417,
+	memo_returned=3843265,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=1441790,
+	total_solutions=13949537,
+	immediately_won=1091966,
+	memo_accessed=349823,
+	memo_returned=293153,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=22,
+	recursive_calls=34060225,
+	total_solutions=445956985,
+	immediately_won=20201325,
+	memo_accessed=13858899,
+	memo_returned=12261638,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=29261848,
+	total_solutions=349147726,
+	immediately_won=17791805,
+	memo_accessed=11470042,
+	memo_returned=9975139,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=17,
+	recursive_calls=2454422,
+	total_solutions=23888548,
+	immediately_won=1741059,
+	memo_accessed=713362,
+	memo_returned=600607,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=16,
+	recursive_calls=386949,
+	total_solutions=3001410,
+	immediately_won=246326,
+	memo_accessed=140622,
+	memo_returned=118091,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=12,
+	recursive_calls=9310,
+	total_solutions=58464,
+	immediately_won=5946,
+	memo_accessed=3363,
+	memo_returned=2809,
+	memo_collisions=0,
+}
+Counters{
+	max_depth=19,
+	recursive_calls=7169288,
+	total_solutions=93019324,
+	immediately_won=5166456,
+	memo_accessed=2002831,
+	memo_returned=1707765,
+	memo_collisions=0,
+}
