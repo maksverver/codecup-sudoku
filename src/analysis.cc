@@ -4,11 +4,13 @@
 #include "state.h"
 
 #include <algorithm>
+#include <bit>
 #include <cassert>
 #include <cstdint>
 #include <optional>
 #include <random>
 #include <span>
+#include <unordered_map>
 #include <vector>
 
 namespace {
@@ -359,6 +361,218 @@ max_winning_moves_found:
   return {Outcome::LOSS, losing_moves};
 }
 
+struct ReducedState {
+  bool immediately_winning;
+  bool inferred_odd;
+  int  choice_positions_size;
+  position_t choice_positions_data[81];
+};
+
+ReducedState ReduceState(std::span<HashedSolution> solutions, std::span<position_t> choice_positions, bool inferred_odd) {
+  ReducedState result;
+  result.immediately_winning = false;
+  result.inferred_odd = inferred_odd;
+  result.choice_positions_size = 0;
+  for (position_t pos : choice_positions) {
+    int solution_count[9] = {};
+    bool inferred = false;
+    for (const auto &entry : solutions) {
+      if (++solution_count[entry.solution[pos] - 1] == (int) solutions.size()) {
+        result.inferred_odd = !result.inferred_odd;
+        inferred = true;
+        break;
+      }
+    }
+    if (!inferred) {
+      for (int c : solution_count) if (c == 1) {
+        // Immediately winning!
+        result.immediately_winning = true;
+        return result;
+      }
+      result.choice_positions_data[result.choice_positions_size++] = pos;
+    }
+  }
+  return result;
+}
+
+class PnsNode;
+
+PnsNode *GetOrCreate(std::span<HashedSolution> solutions, bool inferred_odd);
+
+struct PnsNode {
+  struct Edge {
+    Move move;
+    PnsNode *node;
+  };
+  static constexpr int inf = 999999999;
+
+  static PnsNode WINNING;
+
+  bool expanded = false;
+  int pn = 1;  // proof number: minimum number of expansions needed to prove this node winning
+  int dn = 1;  // disproof number: minimum number of expansions needed to prove this node losing
+  std::vector<Edge> parents;  // multiple parents, since this is a DAG, not a tree
+  std::vector<Edge> children;
+
+  bool Winning() const { return pn == 0; }
+  bool Losing() const { return dn == 0; }
+  bool Determined() const { return Winning() || Losing(); }
+
+  // choice_positions and inferred_count must have been reduced!
+  //
+  // maybe we can get rid of the `prove` parameter?
+
+  int ChildPnSum() const {
+    int res = 0;
+    for (const Edge &e : children) res += e.node ? e.node->pn : 1;
+    return res;
+  }
+
+  // int ChildPnMin() const {
+  //   int res = inf;
+  //   for (const Edge &e : children) res = std::min(res, e.node ? e.node->pn : 1);
+  //   return res;
+  // }
+
+  // int ChildDnSum() const {
+  //   int res = 0;
+  //   for (const Edge &e : children) res += e.node ? e.node->dn : 1;
+  //   return res;
+  // }
+
+  int ChildDnMin() const {
+    int res = inf;
+    for (const Edge &e : children) res = std::min(res, e.node ? e.node->dn : 1);
+    return res;
+  }
+};
+
+void ExpandMostPromising(PnsNode *root, std::span<HashedSolution> solutions, std::span<position_t> choice_positions, bool inferred_odd, bool prove) {
+  PnsNode *node = root;
+  PnsNode *parent = nullptr;
+  while (node->expanded) {
+std::cerr << "enter following\n";
+std::cerr << "prove: " << (int) prove << '\n';
+std::cerr << "pn: " << (int) node->pn << " dn: " << (int) node->dn << '\n';
+    assert(!node->children.empty());
+    int best_value = PnsNode::inf;
+    PnsNode::Edge *best_edge = nullptr;
+    if (prove) {
+      // Follow the edge to the child with the lowest disproof number.
+      for (PnsNode::Edge &edge : node->children) {
+        int value = edge.node == nullptr ? 1 : edge.node->dn;
+        if (value < best_value) {
+          best_value = value;
+          best_edge = &edge;
+          if (best_value <= 1) break;
+        }
+      }
+      assert(best_value > 0);
+    } else {
+      // Follow the edge to any child with a nonzero proof number.
+      for (PnsNode::Edge &edge : node->children) {
+        int value = edge.node == nullptr ? 1 : edge.node->pn;
+        if (value > 0) {
+          best_edge = &edge;
+          best_value = value;
+          break;
+        }
+      }
+      assert(best_value < PnsNode::inf);
+    }
+    assert(best_edge != nullptr);
+std::cerr << "best value: " << best_value << '\n';
+    assert(best_value > 0);
+std::cerr << "best_move: " << best_edge->move << '\n';
+    std::span<HashedSolution> remaining_solutions(
+        solutions.begin(),
+        std::partition(solutions.begin(), solutions.end(),
+            [pos=best_edge->move.pos, digit=best_edge->move.digit](const HashedSolution &s) {
+              return s.solution[pos] == digit;
+            }));
+    assert(remaining_solutions.size() > 1 && remaining_solutions.size() < solutions.size());
+    ReducedState reduced = ReduceState(remaining_solutions, choice_positions, inferred_odd);
+
+    // TODO Optimization: we don't need to create a node if this is immedaitely winning.
+    // More generally, we can delete nodes that have been proven winning/losing, since either
+    // they prove their parent winning/losing, or they can be removed from the tree.
+    if (reduced.immediately_winning) {
+      assert(best_edge->node == nullptr);
+      best_edge->node = &PnsNode::WINNING;
+    } else {
+      std::span<position_t> remaining_choice_positions(reduced.choice_positions_data, reduced.choice_positions_size);
+for (auto p : remaining_choice_positions) std::cerr << ' ' << (int)p;
+std::cerr << '\n';
+      best_edge->node = GetOrCreate(remaining_solutions, reduced.inferred_odd);
+      best_edge->node->ExpandMostPromising(remaining_solutions, remaining_choice_positions, reduced.inferred_odd, !prove);
+
+      // TODO: I can probably optimize this for the common case where the parent proof/disproof numbers don't change
+      pn = ChildDnMin();  // to prove this is winning, I need to prove one child to be losing
+      dn = ChildPnSum();  // to prove this is losing, I need to prove all children are winning
+    }
+
+    // TODO!
+    // TODO!
+    // TODO!
+    // Fill in an inferred digit.
+  }
+
+  if (!node->expanded) {
+std::cerr << "enter expanding\n";
+    assert(node->children.empty());
+    for (position_t pos : choice_positions) {
+      unsigned digits = 0;
+      for (const HashedSolution &s : solutions) digits |= 1u << s.solution[pos];
+      assert(digits != 0 && (digits & (digits - 1)) != 0);
+      while (digits) {
+        int digit = std::countr_zero(digits);
+        digits &= digits - 1;
+        node->children.push_back({.move=Move{.pos=pos, .digit=digit}, .node=nullptr});
+      }
+    }
+    node->pn = 1;  // redundant?
+    node->dn = node->children.size();
+    node->expanded = true;
+  } else {
+
+  }
+std::cerr << "leave\n";
+}
+
+PnsNode PnsNode::WINNING{.expanded=true, .pn = 0, .dn=PnsNode::inf, .children={}};
+
+std::unordered_map<memo_key_t, PnsNode> pns_nodes;
+
+PnsNode *GetOrCreate(std::span<HashedSolution> solutions, bool inferred_odd) {
+  const memo_key_t inferred_odd_key = 0x2ac473eb0dac37ae;  // randomly generated
+  //const memo_key_t depth_odd_key    = 0xc9cbfdcd8b31fff3;  // randomly generated
+  memo_key_t key = HashSolutionSet(solutions) ^ (inferred_odd * inferred_odd_key);
+  return &pns_nodes[key];
+}
+
+bool ProofNumberSearch(
+    std::span<HashedSolution> solutions,
+    std::span<position_t> old_choice_positions,
+    int inferred_count) {
+  assert(!solutions.empty());
+  if (solutions.size() == 1) return false;
+
+  bool inferred_odd = inferred_count & 1;
+  ReducedState reduced = ReduceState(solutions, old_choice_positions, inferred_odd);
+  if (reduced.immediately_winning) return true;
+
+  PnsNode *root = GetOrCreate(solutions, reduced.inferred_odd);
+
+  // TODO (later) it might be easier to disprove than prove?
+
+  while (!root->Determined()) {
+    std::span new_choice_positions(reduced.choice_positions_data, reduced.choice_positions_size);
+    Node *node = ExpandMostPromising(root, solutions, new_choice_positions, reduced.inferred_odd, true);
+    //updateAncestors(node)
+  }
+  return root->Winning();
+}
+
 }  // namespace
 
 std::ostream &operator<<(std::ostream &os, const Outcome &outcome) {
@@ -424,6 +638,9 @@ AnalyzeResult Analyze(
   for (const auto &solution : solutions) {
     hashed_solutions.push_back(HashedSolution{Hash(solution), solution});
   }
+
+  std::cerr << "PNS: " << (ProofNumberSearch(hashed_solutions, choice_positions, inferred_moves.size()) ? "win" : "loss") << '\n';
+
 
   // Otherwise, recursively search for a winning move.
   return SelectMoveFromSolutions2(
