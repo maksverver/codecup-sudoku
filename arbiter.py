@@ -18,30 +18,46 @@ import sys
 import time
 
 
+# Maximum number of moves in the final turn.
+# Set to 2 to allow the player to play two moves while claiming uniqueness.
+MAX_MOVES = 1
+
 def ParseMove(s):
-  if s == '!':
-    return (None, True)
-
-  w = s.endswith('!')
-  if w:
-    s = s[:-1]
-
   if len(s) == 3 and 'A' <= s[0] <= 'I' and 'a' <= s[1] <= 'i' and '1' <= s[2] <= '9':
     r = ord(s[0]) - ord('A')
     c = ord(s[1]) - ord('a')
     d = ord(s[2]) - ord('0')
-    return ((r, c, d), w)
-
+    return (r, c, d)
   return None
+
+
+def ParseTurn(s):
+  claim_unique = False
+  if s.endswith('!'):
+    claim_unique = True
+    if len(s) % 3 != 1:
+      return None
+    if len(s) // 3 > MAX_MOVES:
+      return None
+  else:
+    if len(s) != 3:
+      return None
+  moves = tuple(ParseMove(s[3*i:3*(i+1)]) for i in range(len(s) // 3))
+  return moves, claim_unique
 
 
 def FormatDigit(digit, zero_char='.'):
   return zero_char if digit == 0 else chr(ord('0') + digit)
 
 
-def FormatMove(move, claim_win=False):
+def FormatMove(move):
   r, c, d = move
-  return chr(ord('A') + r) + chr(ord('a') + c) + FormatDigit(d) + '!'*claim_win
+  return chr(ord('A') + r) + chr(ord('a') + c) + FormatDigit(d)
+
+
+def FormatTurn(turn):
+  moves, claim_unique = turn
+  return ''.join(map(FormatMove, moves)) + '!'*claim_unique
 
 
 def FormatGrid(grid):
@@ -68,7 +84,7 @@ def RunGame(command1, command2, transcript, logfile1, logfile2, fast):
   commands = [command1, command2]
   procs = [Launch(command1, logfile1), Launch(command2, logfile2)]
 
-  turn = 0
+  turn_id = 0
   grid = [0]*81
   solution_count = 2
   outcomes = [Outcome.LOSS, Outcome.LOSS]
@@ -89,57 +105,56 @@ def RunGame(command1, command2, transcript, logfile1, logfile2, fast):
         solution_count = sudoku.CountSolutions(grid, 2)
 
     def Fail(outcome):
-      outcomes[turn % 2] = outcome
-      outcomes[1 - turn % 2] = Outcome.WIN
+      outcomes[turn_id % 2] = outcome
+      outcomes[1 - turn_id % 2] = Outcome.WIN
 
-    for turn in range(81):
-      proc = procs[turn % 2]
+    for turn_id in range(81):
+      proc = procs[turn_id % 2]
 
       # Send last move (or Start) to player
-      if turn == 0:
+      if turn_id == 0:
         proc.stdin.write('Start\n')
       else:
-        proc.stdin.write(FormatMove(move) + '\n')
+        proc.stdin.write(FormatTurn(turn) + '\n')
       proc.stdin.flush()
 
       # Read player's move
       start_time = time.monotonic()
       line = proc.stdout.readline().strip()
-      times[turn % 2] += time.monotonic() - start_time
+      times[turn_id % 2] += time.monotonic() - start_time
 
       # Parse move
-      parsed = ParseMove(line)
-      if not parsed:
+      turn = ParseTurn(line)
+      if not turn:
         Fail(Outcome.FAIL)
         if transcript:
           # Copy to transcript (for debugging)
           print('# ' + line, file=transcript)
         break
-      move, claim_win = parsed
+      moves, claim_unique = turn
 
       # Execute move
-      if move is not None:
+      for move in moves:
         Play(move)
 
         if solution_count == 0:
-          # Player made
+          # Player made the game unsolvable!
           Fail(Outcome.UNSOLVABLE)
           break
 
-        if transcript:
-          # Print move and grid:
-          #print(FormatMove(move, claim_win), FormatGrid(grid), file=transcript)
-          # Print move only:
-          print(FormatMove(move, claim_win), file=transcript)
-
+      if transcript:
+        # Print move and grid:
+        #print(FormatTurn(turn), FormatGrid(grid), file=transcript)
+        # Print move only:
+        print(FormatTurn(turn), file=transcript)
 
       # Player claimed the win.
-      if claim_win:
+      if claim_unique:
         if fast:
           # Calculate solution count (since we haven't before in fast mode)
           solution_count = sudoku.CountSolutions(grid, 2)
         if solution_count == 1:
-          outcomes[turn % 2] = Outcome.WIN
+          outcomes[turn_id % 2] = Outcome.WIN
         else:
           Fail(Outcome.FAIL)
         break
