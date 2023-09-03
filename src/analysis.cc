@@ -284,6 +284,13 @@ bool IsWinning2(
   return false;
 }
 
+std::vector<Turn> Turns(std::span<const Move> moves, bool claim_unique=false) {
+  std::vector<Turn> result;
+  result.reserve(moves.size());
+  for (const Move &move : moves) result.push_back(Turn{move, claim_unique});
+  return result;
+}
+
 // Recursively solves the given state assuming that:
 //
 //  - there are at least two solutions left,
@@ -301,8 +308,8 @@ AnalyzeResult SelectMoveFromSolutions2(
   assert(solutions.size() > 1);
 
   // Recursively search for a winning move.
-  std::vector<Move> losing_moves = inferred_moves;
-  std::vector<Move> winning_moves;
+  std::vector<Turn> losing_moves = Turns(inferred_moves, false);
+  std::vector<Turn> winning_moves;
   int max_solutions_remaining = inferred_moves.empty() ? 0 : solutions.size();
   for (position_t pos : choice_positions) {
     std::vector<position_t> new_choice_positions =
@@ -321,7 +328,7 @@ AnalyzeResult SelectMoveFromSolutions2(
       Move move = {.pos = pos, .digit = digit};
       bool winning = IsWinning(solutions.subspan(i, n), new_choice_positions,
               inferred_moves.size(), 1, work_left);
-      if (work_left < 0) return {};  // Search aborted.
+      if (work_left < 0) return AnalyzeResult{};  // Search aborted.
       if (winning) {
         // Winning for the next player => losing for the previous player.
         if ((int) n > max_solutions_remaining) {
@@ -329,12 +336,12 @@ AnalyzeResult SelectMoveFromSolutions2(
           losing_moves.clear();
         }
         if ((int) n == max_solutions_remaining) {
-          losing_moves.push_back(move);
+          losing_moves.push_back(Turn(move));
         }
       } else {
         // Losing for the next player => winning for the previous player.
-        winning_moves.push_back(move);
-        if (winning_moves.size() >= (size_t) max_winning_moves) goto max_winning_moves_found;
+        winning_moves.push_back(Turn(move));
+        if (winning_moves.size() >= (size_t) max_winning_moves) goto max_winning_turns_found;
       }
       i = j;
     }
@@ -344,19 +351,19 @@ AnalyzeResult SelectMoveFromSolutions2(
     // Technicaly it's possible that playing an inferred move is also winning,
     // but since I can only return one outcome, I will drop those moves if there
     // is a winning move that reduces the number of solutions.
-max_winning_moves_found:
-    return {Outcome::WIN2, winning_moves};
+max_winning_turns_found:
+    return AnalyzeResult{Outcome::WIN2, winning_moves};
   }
 
   if (ReduceInferredCount(inferred_moves.size()) > 0) {
     bool winning = IsWinning(solutions, choice_positions, inferred_moves.size() - 1, 1, work_left);
-    if (work_left < 0) return {};  // Search aborted.
+    if (work_left < 0) return AnalyzeResult{};  // Search aborted.
     if (!winning) {
-      return {Outcome::WIN3, inferred_moves};
+      return AnalyzeResult{Outcome::WIN3, Turns(inferred_moves)};
     }
   }
 
-  return {Outcome::LOSS, losing_moves};
+  return AnalyzeResult{Outcome::LOSS, losing_moves};
 }
 
 }  // namespace
@@ -380,11 +387,11 @@ std::ostream &operator<<(std::ostream &os, const AnalyzeResult &result) {
   } else {
     os << "<unknown>";
   }
-  os << ", optimal_moves={";
+  os << ", optimal_turns={";
   bool first = true;
-  for (const Move &move : result.optimal_moves) {
+  for (const Turn &turn : result.optimal_turns) {
     if (first) first = false; else os << ", ";
-    os << move;
+    os << turn;
   }
   os << "}}";
   return os;
@@ -393,8 +400,13 @@ std::ostream &operator<<(std::ostream &os, const AnalyzeResult &result) {
 AnalyzeResult Analyze(
     const grid_t &givens, std::span<const solution_t> solutions,
     int max_winning_moves, int64_t max_work) {
-  assert(solutions.size() > 1);
+  assert(!solutions.empty());
   assert(max_winning_moves > 0);
+
+  if (solutions.size() == 1) {
+    // Solution is already unique.
+    return AnalyzeResult{Outcome::WIN1, {Turn(true)}};
+  }
 
   counters.recursive_calls.Inc();
   counters.total_solutions.Add(solutions.size());
@@ -416,7 +428,7 @@ AnalyzeResult Analyze(
   // If there is an immediately winning move, always take it!
   if (auto immediately_winning = FindImmediatelyWinningMoves(solutions, choice_positions);
       !immediately_winning.empty()) {
-    return {Outcome::WIN1, immediately_winning};
+    return AnalyzeResult{Outcome::WIN1, Turns(immediately_winning, true)};
   }
 
   std::vector<HashedSolution> hashed_solutions;

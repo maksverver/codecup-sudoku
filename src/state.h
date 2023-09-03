@@ -16,6 +16,9 @@
 #include <string>
 #include <vector>
 
+// Set to 2 to allow double-moves in the final turn.
+#define MAX_MOVES 1
+
 struct Move {
   int pos;
   int digit;
@@ -26,7 +29,37 @@ struct Move {
   }
 };
 
+// During a turn, a player can either play a single move, or play 0, 1 or 2
+// moves and claim that the solution is unique, which ends the game.
+struct Turn {
+  bool claim_unique;
+  int move_count;
+  Move moves[MAX_MOVES];
+
+  Turn(const Turn &t) = default;
+  Turn &operator=(const Turn &t) = default;
+
+  // Default state which isn't a valid turn.
+  bool Empty() const { return claim_unique == false && move_count == 0; }
+
+  std::span<const Move> Moves() const { return std::span<const Move>(moves, move_count); }
+
+  explicit Turn(bool claim_unique = false) : claim_unique(claim_unique) {}
+  explicit Turn(const Move &move, bool claim_unique = false) : claim_unique(claim_unique){
+    moves[0] = move;
+    move_count = 1;
+  }
+#if MAX_MOVES > 1
+  Turn(const Move &move1, const Move &move2, bool claim_unique = false) : claim_unique(claim_unique), move_count(1) {
+    moves[0] = move1;
+    moves[1] = move2;
+    move_count = 2;
+  }
+#endif
+};
+
 std::ostream &operator<<(std::ostream &os, const Move &move);
+std::ostream &operator<<(std::ostream &os, const Turn &turn);
 
 inline int Row(int i) { return (unsigned) i / 9; }
 inline int Col(int i) { return (unsigned) i % 9; }

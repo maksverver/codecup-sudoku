@@ -73,13 +73,10 @@ std::optional<Move> ParseMove(const std::string &s) {
     .digit = digit};
 }
 
-std::string FormatMove(const Move &m) {
-  m.AssertValid();
-  std::string s(3, '\0');
-  s[0] = 'A' + ((unsigned) m.pos / 9);
-  s[1] = 'a' + ((unsigned) m.pos % 9);
-  s[2] = '0' + m.digit;
-  return s;
+std::string FormatTurn(const Turn &turn) {
+  std::ostringstream oss;
+  oss << turn;
+  return oss.str();
 }
 
 std::string ReadInputLine() {
@@ -215,19 +212,13 @@ bool PlayGame(rng_t &rng) {
       }
       LogSolutions(solutions.size(), solutions_complete);
 
-      std::optional<Move> selected_move;
-      bool claim_winning = false;
+      Turn turn;
       if (solutions.empty()) {
         // I don't know anything about solutions. Just pick randomly.
-        selected_move = PickRandomMove(state, rng);
+        turn = Turn(PickRandomMove(state, rng));
       } else if (!solutions_complete || solutions.size() > analyze_max_count) {
         // I have some solutions but it's not the complete set.
-        selected_move = PickMoveIncomplete(state, solutions, rng);
-      } else if (solutions.size() == 1) {
-        // Only one solution left. I have already won! (This should be rare.)
-        LogInfo() << "Solution is already unique!";
-        WriteOutputLine("!");
-        return true;
+        turn = Turn(PickMoveIncomplete(state, solutions, rng));
       } else {
         // The hard case: select optimal move given the complete set of solutions.
         Timer timer;
@@ -238,13 +229,12 @@ bool PlayGame(rng_t &rng) {
         if (!result.outcome) {
           LogWarning() << "Analysis aborted!";
           // Fall back to pseudo-random selection.
-          selected_move = PickMoveIncomplete(state, solutions, rng);
+          turn = Turn(PickMoveIncomplete(state, solutions, rng));
           // Reduce max_analyze so that we don't try to re-analyze until the
           // solution set is smaller.
           analyze_max_count = solutions.size() - 1;
         } else {
-          selected_move = RandomSample(result.optimal_moves, rng);
-          claim_winning = *result.outcome == Outcome::WIN1;
+          turn = RandomSample(result.optimal_turns, rng);
           LogOutcome(*result.outcome);
           if (result.outcome == Outcome::WIN1) LogInfo() << "That's Numberwang!";
           // Detect bugs in analysis:
@@ -258,18 +248,19 @@ bool PlayGame(rng_t &rng) {
       }
 
       // Execute my selected move.
-      assert(selected_move);
-      if (!state.CanPlay(*selected_move)) {
-        LogError() << "Invalid move selected!\n";
-        return false;
+      assert(!turn.Empty());
+      for (int i = 0; i < turn.move_count; ++i) {
+        if (!state.CanPlay(turn.moves[i])) {
+          LogError() << "Move " << i + 1 << " of " << turn.move_count << " is invalid!\n";
+          return false;
+        }
+        PlayMove(turn.moves[i]);
       }
-      PlayMove(*selected_move);
       LogTime(turn_timer.Elapsed(), enumerate_time, analyze_time);
-
       // Note: we should pause the timer just before writing the output line,
       // since the referee may suspend our process immediately after.
       total_timer.Pause();
-      WriteOutputLine(FormatMove(*selected_move) + (claim_winning ? "!" :""));
+      WriteOutputLine(FormatTurn(turn));
     } else {
       // Opponent's turn.
       if (turn > 0) {

@@ -240,11 +240,8 @@ void EnumerateSolutions(State &state) {
     std::cout << "Analysis incomplete!\n";
   } else {
     std::cout << "Outcome: " << *result.outcome << '\n';
-    std::cout << result.optimal_moves.size() << " optimal moves:";
-    for (const Move &move : result.optimal_moves) {
-      std::cout << ' ' << (char)('A' + move.pos/9) << (char)('a' + move.pos%9)
-          << move.digit << (result.outcome == Outcome::WIN1 ? "!" : "");
-    }
+    std::cout << result.optimal_turns.size() << " optimal turns:";
+    for (const Turn &turn : result.optimal_turns) std::cout << ' ' << turn;
     std::cout << '\n' << counters << '\n';
   }
 }

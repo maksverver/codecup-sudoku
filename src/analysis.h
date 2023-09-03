@@ -39,7 +39,7 @@ struct AnalyzeResult {
 
   // List of optimal moves (up to max_winning_moves if the position is
   // winning). Empty if search was aborted.
-  std::vector<Move> optimal_moves;
+  std::vector<Turn> optimal_turns;
 };
 
 std::ostream &operator<<(std::ostream &os, const AnalyzeResult &result);
@@ -50,7 +50,7 @@ std::ostream &operator<<(std::ostream &os, const AnalyzeResult &result);
 // `max_winning_moves` determines the maximum number of winning moves to find.
 // It should be set to 1 in the player to optimize for speed.
 //
-// Preconditions: solutions.size() > 1
+// Preconditions: solutions.size() > 0
 AnalyzeResult Analyze(
     const grid_t &givens, std::span<const solution_t> solutions,
     int max_winning_moves, int64_t max_work=1e18);

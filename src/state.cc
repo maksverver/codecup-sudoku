@@ -11,7 +11,18 @@ static char Char(int d, char zero='.') {
 }
 
 std::ostream &operator<<(std::ostream &os, const Move &move) {
-  return os << "Move{pos=" << move.pos << ", digit=" << move.digit << "}";
+  move.AssertValid();
+  return os
+      << static_cast<char>('A' + ((unsigned) move.pos / 9))
+      << static_cast<char>('a' + ((unsigned) move.pos % 9))
+      << static_cast<char>('0' + move.digit);
+}
+
+std::ostream &operator<<(std::ostream &os, const Turn &turn) {
+  if (turn.Empty()) return os << '?';  // Shouldn't normally happen!
+  for (const Move &move : turn.Moves()) os << move;
+  if (turn.claim_unique) os << '!';
+  return os;
 }
 
 std::string State::DebugString() const {
