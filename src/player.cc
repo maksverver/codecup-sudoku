@@ -236,7 +236,7 @@ bool PlayGame(rng_t &rng) {
         } else {
           turn = RandomSample(result.optimal_turns, rng);
           LogOutcome(*result.outcome);
-          if (result.outcome == Outcome::WIN1) LogInfo() << "That's Numberwang!";
+          if (turn.claim_unique) LogInfo() << "That's Numberwang!";
           // Detect bugs in analysis:
           bool new_winning = IsWinning(*result.outcome);
           if (winning && !new_winning) {

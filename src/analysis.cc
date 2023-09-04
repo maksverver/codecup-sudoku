@@ -276,6 +276,7 @@ bool IsWinning2(
   }
 
   if (ReduceInferredCount(inferred_count) > 0) {
+    // TODO: optimize this by skipping reduction of choice_positions (solution set hasn't changed)
     bool winning = IsWinning(solutions, choice_positions, inferred_count - 1, depth + 1, work_left);
     if (work_left < 0) return false;  // Search aborted.
     if (!winning) return true;
@@ -303,16 +304,16 @@ AnalyzeResult SelectMoveFromSolutions2(
     const std::vector<position_t> &choice_positions,
     const std::vector<Move> &inferred_moves,
     std::span<HashedSolution> solutions,
-    int max_winning_moves,
+    int max_winning_turns,
     int64_t work_left) {
   assert(solutions.size() > 1);
 
   // Recursively search for a winning move.
-  std::vector<Turn> losing_moves = Turns(inferred_moves, false);
-  std::vector<Turn> winning_moves;
+  std::vector<Turn> losing_turns = Turns(inferred_moves, false);
+  std::vector<Turn> winning_turns;
   int max_solutions_remaining = inferred_moves.empty() ? 0 : solutions.size();
   for (position_t pos : choice_positions) {
-    std::vector<position_t> new_choice_positions =
+    std::vector<position_t> remaining_choice_positions =
         Remove<position_t>(choice_positions, pos);
 
     SortByDigitAtPosition(solutions, pos);
@@ -326,33 +327,34 @@ AnalyzeResult SelectMoveFromSolutions2(
       // We should have found immediately-winning moves already before.
       assert(n > 1 && n < solutions.size());
       Move move = {.pos = pos, .digit = digit};
-      bool winning = IsWinning(solutions.subspan(i, n), new_choice_positions,
+      std::span<HashedSolution> remaining_solutions = solutions.subspan(i, n);
+      bool winning = IsWinning(remaining_solutions, remaining_choice_positions,
               inferred_moves.size(), 1, work_left);
       if (work_left < 0) return AnalyzeResult{};  // Search aborted.
       if (winning) {
         // Winning for the next player => losing for the previous player.
         if ((int) n > max_solutions_remaining) {
           max_solutions_remaining = n;
-          losing_moves.clear();
+          losing_turns.clear();
         }
         if ((int) n == max_solutions_remaining) {
-          losing_moves.push_back(Turn(move));
+          losing_turns.push_back(Turn(move));
         }
       } else {
         // Losing for the next player => winning for the previous player.
-        winning_moves.push_back(Turn(move));
-        if (winning_moves.size() >= (size_t) max_winning_moves) goto max_winning_turns_found;
+        winning_turns.push_back(Turn(move));
+        if (winning_turns.size() >= (size_t) max_winning_turns) goto max_winning_turns_found;
       }
       i = j;
     }
   }
 
-  if (!winning_moves.empty()) {
+  if (!winning_turns.empty()) {
     // Technicaly it's possible that playing an inferred move is also winning,
     // but since I can only return one outcome, I will drop those moves if there
     // is a winning move that reduces the number of solutions.
 max_winning_turns_found:
-    return AnalyzeResult{Outcome::WIN2, winning_moves};
+    return AnalyzeResult{Outcome::WIN2, winning_turns};
   }
 
   if (ReduceInferredCount(inferred_moves.size()) > 0) {
@@ -363,7 +365,7 @@ max_winning_turns_found:
     }
   }
 
-  return AnalyzeResult{Outcome::LOSS, losing_moves};
+  return AnalyzeResult{Outcome::LOSS, losing_turns};
 }
 
 }  // namespace
@@ -399,9 +401,9 @@ std::ostream &operator<<(std::ostream &os, const AnalyzeResult &result) {
 
 AnalyzeResult Analyze(
     const grid_t &givens, std::span<const solution_t> solutions,
-    int max_winning_moves, int64_t max_work) {
+    int max_winning_turns, int64_t max_work) {
   assert(!solutions.empty());
-  assert(max_winning_moves > 0);
+  assert(max_winning_turns > 0);
 
   if (solutions.size() == 1) {
     // Solution is already unique.
@@ -439,7 +441,7 @@ AnalyzeResult Analyze(
 
   // Otherwise, recursively search for a winning move.
   return SelectMoveFromSolutions2(
-      choice_positions, inferred_moves, hashed_solutions, max_winning_moves,
+      choice_positions, inferred_moves, hashed_solutions, max_winning_turns,
       max_work - solutions.size());
 
   // Note: we could clear the memo before returning to save memory, but keeping
