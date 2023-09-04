@@ -134,12 +134,13 @@ def RunGame(command1, command2, transcript, logfile1, logfile2, fast):
       moves, claim_unique = turn
 
       # Execute move
+      failure = None
       for move in moves:
         Play(move)
 
         if solution_count == 0:
           # Player made the game unsolvable!
-          Fail(Outcome.UNSOLVABLE)
+          failure = Outcome.UNSOLVABLE
           break
 
       if transcript:
@@ -147,6 +148,12 @@ def RunGame(command1, command2, transcript, logfile1, logfile2, fast):
         #print(FormatTurn(turn), FormatGrid(grid), file=transcript)
         # Print move only:
         print(FormatTurn(turn), file=transcript)
+
+      if failure:
+        # Do this here instead of in the for-loop above, so that break
+        # actually breaks out of the outer for-loop too.
+        Fail(failure)
+        break
 
       # Player claimed the win.
       if claim_unique:
