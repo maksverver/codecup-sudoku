@@ -20,7 +20,7 @@ import time
 
 # Maximum number of moves in the final turn.
 # Set to 2 to allow the player to play two moves while claiming uniqueness.
-MAX_MOVES = 1
+MAX_MOVES = 2
 
 def ParseMove(s):
   if len(s) == 3 and 'A' <= s[0] <= 'I' and 'a' <= s[1] <= 'i' and '1' <= s[2] <= '9':

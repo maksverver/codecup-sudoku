@@ -20,6 +20,8 @@ memo_t memo;
 struct HashedSolution {
   memo_key_t hash;
   solution_t solution;
+
+  explicit operator const solution_t &() const { return solution; }
 };
 
 constexpr uint64_t Fnv1a_64(std::span<const uint8_t> bytes) {
@@ -183,16 +185,17 @@ size_t GenerateRankedMoves(
 // An immediately-winning move is a move that reduces the set of solutions to a
 // single solution. i.e., it is a position and digit such that only one solution
 // has that digit in that position.
+template<class T>
 std::vector<Move> FindImmediatelyWinningMoves(
-    std::span<const solution_t> solutions,
+    std::span<T> solutions,
     std::span<const position_t> choice_positions) {
   assert(solutions.size() > 1);
   assert(choice_positions.size() > 0);
   std::vector<Move> result;
   for (position_t pos : choice_positions) {
     int solution_count[10] = {};
-    for (const solution_t &solution : solutions) {
-      ++solution_count[solution[pos]];
+    for (const T &solution : solutions) {
+      ++solution_count[static_cast<const solution_t &>(solution)[pos]];
     }
     for (int digit = 1; digit <= 9; ++digit) {
       if (solution_count[digit] == 1) {
@@ -268,9 +271,14 @@ bool IsWinning(
     }
     if (!inferred) {
       for (int c : solution_count) if (c == 1) {
+#if MAX_MOVES > 1
+        // TODO: increase counter
+        return false;
+#else
         // Immediately winning!
         counters.immediately_won.Inc();
         return true;
+#endif
       }
       choice_positions_data[choice_positions_size++] = pos;
     }
@@ -388,8 +396,21 @@ AnalyzeResult SelectMoveFromSolutions2(
 #endif
     } else {
       // Losing for the next player => winning for the previous player.
+#if MAX_MOVES > 1
+      if (auto second_moves = FindImmediatelyWinningMoves(remaining_solutions, remaining_choice_positions);
+          !second_moves.empty()) {
+        for (const Move &second_move : second_moves) {
+          winning_turns.push_back(Turn(move, second_move, true));
+          if (winning_turns.size() >= (size_t) max_winning_turns) goto max_winning_turns_found;
+        }
+      } else {
+        winning_turns.push_back(Turn(move));
+        if (winning_turns.size() >= (size_t) max_winning_turns) goto max_winning_turns_found;
+      }
+#else
       winning_turns.push_back(Turn(move));
       if (winning_turns.size() >= (size_t) max_winning_turns) goto max_winning_turns_found;
+#endif
     }
   }
 
