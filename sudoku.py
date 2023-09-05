@@ -53,13 +53,33 @@ def GenerateSudokuCnf():
 
 SUDOKU_CNF = tuple(GenerateSudokuCnf())
 
-
-def EnumerateSolutions(grid):
+def MakeCnf(grid):
   cnf = list(SUDOKU_CNF)
-
   for i, v in enumerate(grid):
     if v: cnf.append([9*i + v])
+  return cnf
 
+
+def HasSolution(grid):
+  cnf = MakeCnf(grid)
+  res = pycosat.solve(cnf)
+  if isinstance(res, list):
+    return True
+  assert res == 'UNSAT'
+  return False
+
+
+def CountSolutions(grid, max_count):
+  cnf = MakeCnf(grid)
+  count = 0
+  for solution in pycosat.itersolve(cnf):
+    count += 1
+    if count >= max_count: break
+  return count
+
+
+def EnumerateSolutions(grid):
+  cnf = MakeCnf(grid)
   for solution in pycosat.itersolve(cnf):
     solution_grid = [None]*81
     for v in solution:
@@ -71,14 +91,6 @@ def EnumerateSolutions(grid):
       solution_grid[i] = d
     assert all(cell is not None for cell in solution_grid)
     yield solution_grid
-
-
-def CountSolutions(grid, max_count):
-  count = 0
-  for _ in EnumerateSolutions(grid):
-    count += 1
-    if count >= max_count: break
-  return count
 
 
 def ParseDigit(ch, zero_char='.'):
