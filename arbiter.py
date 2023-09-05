@@ -68,7 +68,8 @@ class Outcome(Enum):
   WIN = 0           # regular win: either claimed win or opponent lost/crashed/etc
   LOSS = 1          # loss or tie
   UNSOLVABLE = 2    # move was valid but made grid unsolvable
-  FAIL = 3          # crash, invalid move, etc.
+  NONREDUCE = 3     # move did not reduce solution set
+  FAIL = 4          # crash, invalid move, etc.
 
 
 def Launch(command, logfile):
@@ -91,6 +92,18 @@ def RunGame(command1, command2, transcript, logfile1, logfile2, fast):
   times = [0.0, 0.0]
 
   with (open(transcript, 'wt') if transcript is not None else nullcontext()) as transcript:
+
+    def IsReducing(move):
+      r, c, d = move
+      i = 9*r + c
+      assert grid[i] == 0
+      for e in range(1, 10):
+        if d == e: continue
+        grid[i] = e
+        solvable = sudoku.HasSolution(grid)
+        grid[i] = 0
+        if solvable: return True
+      return False
 
     def Play(move):
       # Add digit to grid
@@ -140,6 +153,10 @@ def RunGame(command1, command2, transcript, logfile1, logfile2, fast):
       # Execute move
       failure = None
       for move in moves:
+        if not fast and not IsReducing(move):
+          failure = Outcome.NONREDUCE
+          break
+
         Play(move)
 
         if solution_count == 0:
@@ -313,20 +330,21 @@ def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
   if len(pairings) > 1:
     print()
     with (Tee(open(os.path.join(logdir, 'summary.txt'), 'wt')) if logdir else nullcontext()) as f:
-      print('Player             Avg.Tm Max.Tm Wins Loss Unsl Fail Tot.', file=f)
-      print('------------------ ------ ------ ---- ---- ---- ---- ----', file=f)
+      print('Player             Avg.Tm Max.Tm Wins Loss Unsl Nonr Fail Tot.', file=f)
+      print('------------------ ------ ------ ---- ---- ---- ---- ---- ----', file=f)
       for p in sorted(range(P), key=lambda p: player_outcomes[p][Outcome.WIN], reverse=True):
-        print('%-18s %6.2f %6.2f %4d %4d %4d %4d %4d' %
+        print('%-18s %6.2f %6.2f %4d %4d %4d %4d %4d %4d' %
           ( names[p],
             player_time_total[p] / games_per_player,
             player_time_max[p],
             player_outcomes[p][Outcome.WIN],
             player_outcomes[p][Outcome.LOSS],
             player_outcomes[p][Outcome.UNSOLVABLE],
+            player_outcomes[p][Outcome.NONREDUCE],
             player_outcomes[p][Outcome.FAIL],
             games_per_player,
           ), file=f)
-      print('------------------ ------ ------ ---- ---- ---- ---- -----', file=f)
+      print('------------------ ------ ------ ---- ---- ---- ---- ---- -----', file=f)
 
   if logdir:
     print()

@@ -7,7 +7,7 @@ import sudoku
 import sys
 
 # Set to true if each move must reduce the solution count.
-MUST_REDUCE = False
+MUST_REDUCE = True
 
 
 def FormatGrid(grid):
