@@ -121,7 +121,7 @@ Move PickRandomMove(const State &state, rng_t &rng) {
 // It returns a random move that maximizes the number of solutions remaining.
 Move PickMoveIncomplete(const State &state, std::span<const solution_t> solutions, rng_t &rng) {
   assert(!solutions.empty());
-  int count[81][10] = {};
+  size_t count[81][10] = {};
   for (const auto &solution : solutions) {
     for (int i = 0; i < 81; ++i) {
       ++count[i][solution[i]];
@@ -129,11 +129,15 @@ Move PickMoveIncomplete(const State &state, std::span<const solution_t> solution
   }
 
   std::vector<Move> best_moves;
-  int max_count = 0;
+  size_t max_count = 0;
   for (int pos = 0; pos < 81; ++pos) {
     if (state.Digit(pos) == 0) {
       for (int digit = 1; digit <= 9; ++digit) {
-        int c = count[pos][digit];
+        size_t c = count[pos][digit];
+        assert(c <= solutions.size());
+#if MUST_REDUCE
+        if (c == solutions.size()) continue;  // Must reduce solution set size!
+#endif
         if (c > max_count) {
           max_count = c;
           best_moves.clear();

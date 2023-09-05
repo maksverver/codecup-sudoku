@@ -19,6 +19,9 @@
 // Set to 2 to allow double-moves in the final turn.
 #define MAX_MOVES 1
 
+// Set to 1 to require that each move reduces the solution set.
+#define MUST_REDUCE 0
+
 struct Move {
   int pos;
   int digit;

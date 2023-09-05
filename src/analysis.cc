@@ -275,12 +275,14 @@ bool IsWinning2(
     choice_positions[k] = pos;
   }
 
+#if !MUST_REDUCE
   if (ReduceInferredCount(inferred_count) > 0) {
     // TODO: optimize this by skipping reduction of choice_positions (solution set hasn't changed)
     bool winning = IsWinning(solutions, choice_positions, inferred_count - 1, depth + 1, work_left);
     if (work_left < 0) return false;  // Search aborted.
     if (!winning) return true;
   }
+#endif
 
   return false;
 }
@@ -309,9 +311,15 @@ AnalyzeResult SelectMoveFromSolutions2(
   assert(solutions.size() > 1);
 
   // Recursively search for a winning move.
-  std::vector<Turn> losing_turns = Turns(inferred_moves, false);
+  std::vector<Turn> losing_turns;
   std::vector<Turn> winning_turns;
-  int max_solutions_remaining = inferred_moves.empty() ? 0 : solutions.size();
+  int max_solutions_remaining = 0;
+#if !MUST_REDUCE
+  if (!inferred_moves.empty()) {
+    losing_turns = Turns(inferred_moves, false);
+    max_solutions_remaining = solutions.size();
+  }
+#endif
   for (position_t pos : choice_positions) {
     std::vector<position_t> remaining_choice_positions =
         Remove<position_t>(choice_positions, pos);
@@ -357,6 +365,7 @@ max_winning_turns_found:
     return AnalyzeResult{Outcome::WIN2, winning_turns};
   }
 
+#if !MUST_REDUCE
   if (ReduceInferredCount(inferred_moves.size()) > 0) {
     bool winning = IsWinning(solutions, choice_positions, inferred_moves.size() - 1, 1, work_left);
     if (work_left < 0) return AnalyzeResult{};  // Search aborted.
@@ -364,6 +373,7 @@ max_winning_turns_found:
       return AnalyzeResult{Outcome::WIN3, Turns(inferred_moves)};
     }
   }
+#endif
 
   return AnalyzeResult{Outcome::LOSS, losing_turns};
 }
