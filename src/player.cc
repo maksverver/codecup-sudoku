@@ -129,7 +129,9 @@ Move PickMoveIncomplete(const State &state, std::span<const solution_t> solution
   }
 
   std::vector<Move> best_moves;
+#if MAXIMIZE_SOLUTIONS_REMAINING
   size_t max_count = 0;
+#endif
   for (int pos = 0; pos < 81; ++pos) {
     if (state.Digit(pos) == 0) {
       for (int digit = 1; digit <= 9; ++digit) {
@@ -154,7 +156,10 @@ Move PickMoveIncomplete(const State &state, std::span<const solution_t> solution
       }
     }
   }
-  assert(max_count > 0 && !best_moves.empty());
+#if MAXIMIZE_SOLUTIONS_REMAINING
+  assert(max_count > 0);
+#endif
+  assert(!best_moves.empty());
   return RandomSample(best_moves, rng);
 }
 
