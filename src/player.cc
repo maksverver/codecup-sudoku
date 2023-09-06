@@ -138,6 +138,7 @@ Move PickMoveIncomplete(const State &state, std::span<const solution_t> solution
 #if MUST_REDUCE
         if (c == solutions.size()) continue;  // Must reduce solution set size!
 #endif
+#if MAXIMIZE_SOLUTIONS_REMAINING
         if (c > max_count) {
           max_count = c;
           best_moves.clear();
@@ -145,6 +146,11 @@ Move PickMoveIncomplete(const State &state, std::span<const solution_t> solution
         if (max_count > 0 && c == max_count) {
           best_moves.push_back(Move{.pos = pos, .digit = digit});
         }
+#else
+        if (c > 0) {
+          best_moves.push_back(Move{.pos = pos, .digit = digit});
+        }
+#endif
       }
     }
   }

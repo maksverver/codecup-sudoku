@@ -313,7 +313,9 @@ AnalyzeResult SelectMoveFromSolutions2(
   // Recursively search for a winning move.
   std::vector<Turn> losing_turns;
   std::vector<Turn> winning_turns;
+#if MAXIMIZE_SOLUTIONS_REMAINING
   int max_solutions_remaining = 0;
+#endif
 #if !MUST_REDUCE
   if (!inferred_moves.empty()) {
     losing_turns = Turns(inferred_moves, false);
@@ -341,13 +343,17 @@ AnalyzeResult SelectMoveFromSolutions2(
       if (work_left < 0) return AnalyzeResult{};  // Search aborted.
       if (winning) {
         // Winning for the next player => losing for the previous player.
+#if MAXIMIZE_SOLUTIONS_REMAINING
         if ((int) n > max_solutions_remaining) {
-          max_solutions_remaining = n;
-          losing_turns.clear();
-        }
+           max_solutions_remaining = n;
+           losing_turns.clear();
+         }
         if ((int) n == max_solutions_remaining) {
           losing_turns.push_back(Turn(move));
         }
+#else
+        losing_turns.push_back(Turn(move));
+#endif
       } else {
         // Losing for the next player => winning for the previous player.
         winning_turns.push_back(Turn(move));
