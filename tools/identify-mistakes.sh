@@ -34,7 +34,6 @@ if [ $(( ${#moves} % 4 )) -eq 1 ]; then
   # Transcript ends with "!" to claim solution is already unique
   moves=${moves::-1}
   turn=$((${#moves} / 4))  # 0-based!
-  echo "$turn"
   echo "Player $(( (turn - 1) % 2 + 1)) blundered on move $((turn))" >&2
 fi
 
@@ -47,18 +46,19 @@ winning=1
 while true; do
   moves=${moves::-4}
   turn=$((${#moves} / 4))  # 0-based!
-  result=$($SOLVER "$moves" | grep -E 'Outcome|Analysis incomplete')
+  result=$($SOLVER "$moves" | grep -E 'Outcome|Analysis incomplete|Solution is unique')
   if [ "$result" = "Analysis incomplete!" ]; then
     echo "$result" >&2
     exit 0
   else
-    if echo "$result" | grep -Fq 'Outcome: WIN'; then
+    if [ "$result" = "Solution is unique!" ]; then
+      outcome=1
+    elif echo "$result" | grep -Fq 'Outcome: WIN'; then
       outcome=1
     else
       outcome=0
     fi
     if [ $outcome != $winning ]; then
-      echo "$((turn + 1))"
       echo "Player $((turn % 2 + 1)) blundered on move $((turn + 1))" >&2
     fi
     winning=$((1 - $outcome))
