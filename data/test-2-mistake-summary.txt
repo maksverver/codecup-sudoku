@@ -3,7 +3,6 @@ Number of games with a provable mistake (excluding games that ended irregularly)
       0 Louis Verhaard
       0 Maks Verver
       0 Mark ter Brugge
-      2 Jan Nunnink
       6 Michiel Smits
       7 Willem van der Vegt
      11 Isaac van Asselt
@@ -38,4 +37,5 @@ Players who only participated in the Swiss competition:
 
       0 Frank Corporaal
       1 ZhengYi Chen
+      2 Jan Nunnink
       3 Test Player A
