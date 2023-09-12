@@ -14,6 +14,10 @@ def FormatGrid(grid):
   return ''.join('.' if d == 0 else str(d) for d in grid)
 
 
+def FormatMove(r, c, d):
+   return chr(ord('A') + r) + chr(ord('a') + c) + chr(ord('0') + d)
+
+
 def Coords(pos):
   assert 0 <= pos < 81
   r = pos // 9
@@ -153,4 +157,6 @@ if __name__ == '__main__':
 
     assert sum(x != 0 for x in grid) == len(history)
 
-    print(case, len(history), solutions_count, FormatGrid(grid), sep='\t')
+    moves = [FormatMove(pos//9, pos%9, grid[pos]) for pos in history]
+
+    print(case, len(history), solutions_count, FormatGrid(grid), ' '.join(moves), sep='\t')
