@@ -29,35 +29,48 @@ DECLARE_FLAG(int64_t,     arg_enumerate_max_work,   10'000'000, "enumerate_max_w
 DECLARE_FLAG(int,         arg_analyze_max_count,        10'000, "analyze_max_count");
 DECLARE_FLAG(int64_t,     arg_analyze_max_work,    120'000'000, "analyze_max_work");
 
-struct Timer {
+// A simple timer. Can be running or paused. Tracks time both while running and
+// while paused. Use Elapsed() to query, Pause() and Resume() to switch states.
+class Timer {
+public:
+  Timer(bool running = true) : running(running) {}
+
+  bool Running() const { return running; }
+  bool Paused() const { return !running; }
+
+  // Returns how much time passed in the given state, in total.
+  log_duration_t Elapsed(bool while_running = true) {
+    clock_t::duration d = elapsed[while_running];
+    if (running == while_running) d += clock_t::now() - start;
+    return std::chrono::duration_cast<log_duration_t>(d);
+  }
+
+  log_duration_t Pause() {
+    assert(Running());
+    return TogglePause();
+  }
+
+  log_duration_t Resume() {
+    assert(Paused());
+    return TogglePause();
+  }
+
+  // Toggles running state, and returns how much time passed since last toggle.
+  log_duration_t TogglePause() {
+    auto end = clock_t::now();
+    auto delta = end - start;
+    elapsed[running] += delta;
+    start = end;
+    running = !running;
+    return std::chrono::duration_cast<log_duration_t>(delta);
+  }
+
+private:
   using clock_t = std::chrono::steady_clock;
 
+  bool running = false;
   clock_t::time_point start = clock_t::now();
-  clock_t::duration elapsed{0};
-
-  bool Paused() const {
-    return start == clock_t::time_point::min();
-  }
-
-  log_duration_t Elapsed() {
-    if (!Paused()) {
-      auto end = clock_t::now();
-      elapsed += end - start;
-      start = end;
-    }
-    return std::chrono::duration_cast<log_duration_t>(elapsed);
-  }
-
-  void Pause() {
-    assert(!Paused());
-    elapsed += clock_t::now() - start;
-    start = clock_t::time_point::min();
-  }
-
-  void Resume() {
-    assert(Paused());
-    start = clock_t::now();
-  }
+  clock_t::duration elapsed[2] = {clock_t::duration{0}, clock_t::duration{0}};
 };
 
 std::optional<Move> ParseMove(const std::string &s) {
@@ -280,7 +293,8 @@ bool PlayGame(rng_t &rng) {
       // Opponent's turn.
       if (turn > 0) {
         input = ReadInputLine();
-        total_timer.Resume();
+        auto pause_duration = total_timer.Resume();
+        LogPause(pause_duration, total_timer.Elapsed(false));
       }
       if (auto m = ParseMove(input); !m) {
         LogError() << "Could not parse move!";

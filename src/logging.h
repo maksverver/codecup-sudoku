@@ -122,4 +122,10 @@ inline void LogTime(log_duration_t total, log_duration_t enumerate, log_duration
   LogStream("TIME") << total << " ENUMERATE " << enumerate << " ANALYZE " << analyze;
 }
 
+// Log the time spend paused.
+// This is an upper bound on the time spent by the opponent.
+inline void LogPause(log_duration_t interval, log_duration_t total) {
+  LogStream("PAUSE") << interval << " " << total;
+}
+
 #endif  // ndef LOGGING_H_INCLUDED
