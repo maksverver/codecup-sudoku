@@ -241,6 +241,10 @@ def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
 
   futures = []
 
+  if logdir:
+    print('Writing logs to directory', logdir)
+    print()
+
   with (Tee(open(os.path.join(logdir, 'results.txt'), 'wt'))
         if logdir and len(pairings) > 1 else nullcontext()) as f:
 
@@ -307,9 +311,9 @@ def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
           ), file=f)
       print('------------------ ------ ------ ---- ---- ---- ---- -----', file=f)
 
-      if logdir:
-        print()
-        print('Logs written to directory', logdir)
+  if logdir:
+    print()
+    print('Logs written to directory', logdir)
 
 
 def DeduplicateNames(names):
