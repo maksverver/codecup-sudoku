@@ -112,11 +112,15 @@ def RunGame(command1, command2, transcript, logfile1, logfile2, fast):
       proc = procs[turn_id % 2]
 
       # Send last move (or Start) to player
-      if turn_id == 0:
-        proc.stdin.write('Start\n')
-      else:
-        proc.stdin.write(FormatTurn(turn) + '\n')
-      proc.stdin.flush()
+      try:
+        if turn_id == 0:
+          proc.stdin.write('Start\n')
+        else:
+          proc.stdin.write(FormatTurn(turn) + '\n')
+        proc.stdin.flush()
+      except BrokenPipeError:
+        Fail(Outcome.FAIL)
+        break
 
       # Read player's move
       start_time = time.monotonic()
