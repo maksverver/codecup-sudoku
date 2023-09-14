@@ -23,11 +23,38 @@ namespace {
 
 const std::string player_name = "Numberwang";
 
+// Random seed in hexadecimal format. If empty, pick randomly. The chosen seed
+// will be logged to stderr for reproducibility.
 DECLARE_FLAG(std::string, arg_seed, "", "seed");
+
+// Maximum number of solutions to enumerate.
 DECLARE_FLAG(int,         arg_enumerate_max_count,     100'000, "enumerate_max_count");
+
+// Maximum number of recursive calls used to enumerate solutions.
 DECLARE_FLAG(int64_t,     arg_enumerate_max_work,   10'000'000, "enumerate_max_work");
+
+// Maximum number of solutions to enable analysis. That is, endgame analysis
+// does not start until the solution count is less than or equal to this value.
 DECLARE_FLAG(int,         arg_analyze_max_count,        10'000, "analyze_max_count");
-DECLARE_FLAG(int64_t,     arg_analyze_max_work,    120'000'000, "analyze_max_work");
+
+// Maximum amount of work to perform during analysis (number of recursive calls
+// times average number of solutions remaining). This only applies when no time
+// limit is given.
+DECLARE_FLAG(int64_t,     arg_analyze_max_work,   100'000'000, "analyze_max_work");
+
+// Time limit in seconds (or 0 to disable time-based performance).
+//
+// On each turn, the player uses a fraction of time remaining on analysis.
+// Note that this should be slightly lower than the official time limit to
+// account for overhead.
+DECLARE_FLAG(int,         arg_time_limit,                   0, "time_limit");
+
+// Amount of work to do at once when using a time limit. This should be large
+// enough to keep the overhead of restarting analysis low.
+//
+// 10 million should correspond with approximately 1 second on the CodeCup.
+DECLARE_FLAG(int64_t,     arg_analyze_batch_size,  10'000'000, "analyze_batch_size");
+
 
 // A simple timer. Can be running or paused. Tracks time both while running and
 // while paused. Use Elapsed() to query, Pause() and Resume() to switch states.
@@ -252,7 +279,23 @@ bool PlayGame(rng_t &rng) {
         Timer timer;
         grid_t givens = {};
         for (int i = 0; i < 81; ++i) givens[i] = state.Digit(i);
-        AnalyzeResult result = Analyze(givens, solutions, 1, arg_analyze_max_work);
+        AnalyzeResult result;
+        if (arg_time_limit <= 0) {
+          result = Analyze(givens, solutions, 1, arg_analyze_max_work);
+        } else {
+          // Heuristic: each turn, use 1/3 of the remaining time for analysis.
+          // For a 30 second time limit this allocates: 10, 6.67, 4.44, 2.96, etc.
+          // Maybe TODO: make the fraction a flag?
+          log_duration_t
+            time_elapsed = total_timer.Elapsed(),
+            time_remaining = std::chrono::seconds(arg_time_limit) - time_elapsed,
+            time_budget = time_remaining / 3;
+          for (;;) {
+            result = Analyze(givens, solutions, 1, arg_analyze_batch_size);
+            if (result.outcome || timer.Elapsed() > time_budget) break;
+            LogInfo() << "Continuing analysis";
+          }
+        }
         analyze_time += timer.Elapsed();
         if (!result.outcome) {
           LogWarning() << "Analysis aborted!";

@@ -18,6 +18,7 @@
 namespace {
 
 DECLARE_FLAG(int64_t, analyze_max_work,        1e18, "analyze_max_work");
+DECLARE_FLAG(int64_t, analyze_batch_size,       1e7, "analyze_batch_size");
 DECLARE_FLAG(int,     enumerate_max_count,      1e6, "enumerate_max_count");
 DECLARE_FLAG(int,     max_print,                100, "max_print");
 DECLARE_FLAG(int,     max_winning_moves,          1, "max_winning_moves");
@@ -236,13 +237,25 @@ void EnumerateSolutions(State &state) {
     std::cout << "No solution possible!\n";
   } else if (solutions.size() == 1) {
     std::cout << "Solution is unique!\n";
-  } else if (auto result = Analyze(givens, solutions, max_winning_moves, analyze_max_work); !result.outcome) {
-    std::cout << "Analysis incomplete!\n";
   } else {
-    std::cout << "Outcome: " << *result.outcome << '\n';
-    std::cout << result.optimal_turns.size() << " optimal turns:";
-    for (const Turn &turn : result.optimal_turns) std::cout << ' ' << turn;
-    std::cout << '\n' << counters << '\n';
+    AnalyzeResult result;
+    int64_t work_left = analyze_max_work;
+    for (;;) {
+      int64_t max_work = std::min(work_left, analyze_batch_size);
+      result = Analyze(givens, solutions, max_winning_moves, max_work);
+      if (result.outcome) break;
+      work_left -= max_work;
+      if (work_left == 0) break;
+      std::cout << "Analysis continuing..." << std::endl;
+    }
+    if (!result.outcome) {
+      std::cout << "Analysis incomplete!" << std::endl;
+    } else {
+      std::cout << "Outcome: " << *result.outcome << '\n';
+      std::cout << result.optimal_turns.size() << " optimal turns:";
+      for (const Turn &turn : result.optimal_turns) std::cout << ' ' << turn;
+      std::cout << '\n' << counters << '\n';
+    }
   }
 }
 
