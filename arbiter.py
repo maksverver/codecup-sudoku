@@ -245,9 +245,18 @@ def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
 
   futures = []
 
+  symlink_playerlogs = logdir and len(pairings) > 1
+
   if logdir:
     print('Writing logs to directory', logdir)
     print()
+
+  if symlink_playerlogs:
+    playerlog_dirs = []
+    for name in names:
+      dirname = os.path.join(logdir, name + '-logs')
+      os.mkdir(dirname)
+      playerlog_dirs.append(dirname)
 
   with (Tee(open(os.path.join(logdir, 'results.txt'), 'wt'))
         if logdir and len(pairings) > 1 else nullcontext()) as f:
@@ -265,6 +274,10 @@ def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
       command1, command2 = commands[i], commands[j]
       name1, name2 = names[i], names[j]
       transcript, logfilename1, logfilename2 = MakeLogfilenames(logdir, name1, name2, game_index, len(pairings))
+
+      if symlink_playerlogs:
+        os.symlink(os.path.relpath(logfilename1, playerlog_dirs[i]), os.path.join(playerlog_dirs[i], os.path.basename(logfilename1)))
+        os.symlink(os.path.relpath(logfilename2, playerlog_dirs[j]), os.path.join(playerlog_dirs[j], os.path.basename(logfilename2)))
 
       run = functools.partial(RunGame, command1, command2, transcript, logfilename1, logfilename2, fast)
 
