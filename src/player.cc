@@ -32,14 +32,14 @@ const std::string player_name = "Numberwang";
 DECLARE_FLAG(std::string, arg_seed, "", "seed");
 
 // Maximum number of solutions to enumerate.
-DECLARE_FLAG(int, arg_enumerate_max_count, 100'000, "enumerate_max_count");
+DECLARE_FLAG(int, arg_enumerate_max_count, 200'000, "enumerate_max_count");
 
 // Maximum number of recursive calls used to enumerate solutions.
-DECLARE_FLAG(int64_t, arg_enumerate_max_work, 10'000'000, "enumerate_max_work");
+DECLARE_FLAG(int64_t, arg_enumerate_max_work, 20'000'000, "enumerate_max_work");
 
 // Maximum number of solutions to enable analysis. That is, endgame analysis
 // does not start until the solution count is less than or equal to this value.
-DECLARE_FLAG(int, arg_analyze_max_count, 10'000, "analyze_max_count");
+DECLARE_FLAG(int, arg_analyze_max_count, 100'000, "analyze_max_count");
 
 // Maximum amount of work to perform during analysis (number of recursive calls
 // times average number of solutions remaining). This only applies when no time
