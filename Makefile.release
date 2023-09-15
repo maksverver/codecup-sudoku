@@ -1,6 +1,6 @@
 include vars.make
 
-CXXFLAGS=-std=c++20 -Wall -Wextra -pipe -flto -O2 -march=native
+CXXFLAGS+=-flto -O2 -march=native
 
 OBJ=build/release/
 BIN=output/release/

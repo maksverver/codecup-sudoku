@@ -3,7 +3,7 @@
 # Don't invoke this file directly. It is meant to be included in other files.
 
 # Compiler flags
-CXXFLAGS?=-std=c++20 -O -Wall -Wextra
+CXXFLAGS?=-std=c++20 -Wall -Wextra -pipe -DLOCAL_BUILD
 
 # Linker flags
 LDFLAGS?=

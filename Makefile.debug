@@ -1,6 +1,6 @@
 include vars.make
 
-CXXFLAGS=-std=c++20 -Wall -Wextra -pipe -Og -g -D_GLIBCXX_DEBUG
+CXXFLAGS+=-Og -g -D_GLIBCXX_DEBUG
 
 OBJ=build/debug/
 BIN=output/debug/

@@ -83,6 +83,10 @@ inline void LogId(std::string_view player_name) {
   #endif
       << ")"
 #endif
+
+#if LOCAL_BUILD
+    << " (local)"
+#endif
   ;
 }
 

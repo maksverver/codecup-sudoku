@@ -52,7 +52,7 @@ $(OUT)combined-player.cc: $(COMBINED_SRCS) combine-sources.sh
 	./combine-sources.sh $(COMBINED_SRCS) > $@
 
 $(BIN)combined-player: $(OUT)combined-player.cc
-	$(CXX) $(CXXFLAGS) -o $@ $<  $(LDFLAGS) $(LDLIBS)
+	$(CXX) $(CXXFLAGS) -ULOCAL_BUILD -o $@ $<  $(LDFLAGS) $(LDLIBS)
 
 player: $(BIN)player
 
