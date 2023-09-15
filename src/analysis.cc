@@ -124,6 +124,60 @@ void SortByDigitAtPosition(std::span<HashedSolution> solutions, position_t pos) 
 #endif
 }
 
+std::span<HashedSolution> FilterSolutions(std::span<HashedSolution> solutions, Move move) {
+  return std::span<HashedSolution>(
+    solutions.begin(),
+    std::partition(solutions.begin(), solutions.end(),
+        [move](const auto &s) { return s.solution[move.pos] == move.digit; }));
+}
+
+std::span<position_t> FilterPositions(std::span<position_t> positions, position_t pos) {
+  for (position_t &p : positions) {
+    if (p == pos) {
+      std::swap(p, positions.back());
+      return positions.subspan(0, positions.size() - 1);
+    }
+  }
+  assert(false);
+  return positions;
+}
+
+constexpr int max_moves = 9 * 9 * 9;
+
+struct RankedMove {
+  Move move;
+  int solution_count;
+
+  bool operator<(const RankedMove &o) const { return solution_count < o.solution_count; }
+};
+
+size_t GenerateRankedMoves(
+    std::span<HashedSolution> solutions,
+    std::span<const position_t> choice_positions,
+    RankedMove (&moves)[max_moves]) {
+  // TODO: optimize this. Instead of sorting repeatedly, I can just count similar
+  // to the logic at the top of IsWinning().
+  size_t nmove = 0;
+  for (position_t pos : choice_positions) {
+    SortByDigitAtPosition(solutions, pos);
+    size_t i = 0;
+    while (i < solutions.size()) {
+      int digit = solutions[i].solution[pos];
+      size_t j = i + 1;
+      while (j < solutions.size() && solutions[j].solution[pos] == digit) ++j;
+      size_t n = j - i;
+      assert(n > 1);
+      moves[nmove++] = RankedMove{
+        .move = Move{.pos = pos, .digit = digit},
+        .solution_count = static_cast<int>(n),
+      };
+      i = j;
+    }
+  }
+  std::sort(&moves[0], &moves[nmove]);
+  return nmove;
+}
+
 // Let solutions be the subset {all_solutions[i] for all i in possibilites}.
 //
 // An immediately-winning move is a move that reduces the set of solutions to a
@@ -198,6 +252,8 @@ bool IsWinning(
   //  2. Check if there is a digit that occurs in exactly 1 solution. If so,
   //     then this is an immediately winning move.
   //
+  // maybe TODO: it might be effective to also calculated RankedMoves here, so
+  // we don't have to call GetRankedMoves() later.
   position_t choice_positions_data[81];
   size_t choice_positions_size = 0;
   for (position_t pos : old_choice_positions) {
@@ -247,32 +303,16 @@ bool IsWinning2(
     int depth,
     int64_t &work_left) {
 
-  for (size_t k = 0; k < choice_positions.size(); ++k) {
-    position_t pos = choice_positions[k];
+  RankedMove moves_buf[max_moves];
+  std::span moves(moves_buf, GenerateRankedMoves(solutions, choice_positions, moves_buf));
 
-    // Temporarily replace selected position.
-    choice_positions[k] = choice_positions[choice_positions.size() - 1];
-
-    SortByDigitAtPosition(solutions, pos);
-
-    size_t i = 0;
-    while (i < solutions.size()) {
-      int digit = solutions[i].solution[pos];
-      size_t j = i + 1;
-      while (j < solutions.size() && solutions[j].solution[pos] == digit) ++j;
-      // We should have found immediately-winning moves already before.
-      assert(j - i > 1 && j - i < solutions.size());
-      bool winning = IsWinning(
-          solutions.subspan(i, j - i),
-          choice_positions.subspan(0, choice_positions.size() - 1),
-          inferred_count, depth + 1, work_left);
-      if (work_left < 0) return false;  // Search aborted.
-      if (!winning) return true;  // Winning move found!
-      i = j;
-    }
-
-    // Restore temporarily replaced position.
-    choice_positions[k] = pos;
+  for (const auto &[move, rank] : moves) {
+    bool winning = IsWinning(
+        FilterSolutions(solutions, move),
+        FilterPositions(choice_positions, move.pos),
+        inferred_count, depth + 1, work_left);
+    if (work_left < 0) return false;  // Search aborted.
+    if (!winning) return true;  // Winning move found!
   }
 
 #if !MUST_REDUCE
@@ -303,7 +343,7 @@ std::vector<Turn> Turns(std::span<const Move> moves, bool claim_unique=false) {
 // This is very similar to IsWinning2() except this also returns an optimal
 // move to play.
 AnalyzeResult SelectMoveFromSolutions2(
-    const std::vector<position_t> &choice_positions,
+    std::vector<position_t> &choice_positions,
     const std::vector<Move> &inferred_moves,
     std::span<HashedSolution> solutions,
     int max_winning_turns,
@@ -314,7 +354,7 @@ AnalyzeResult SelectMoveFromSolutions2(
   std::vector<Turn> losing_turns;
   std::vector<Turn> winning_turns;
 #if MAXIMIZE_SOLUTIONS_REMAINING
-  int max_solutions_remaining = 0;
+  size_t max_solutions_remaining = 0;
 #endif
 #if !MUST_REDUCE
   if (!inferred_moves.empty()) {
@@ -322,44 +362,34 @@ AnalyzeResult SelectMoveFromSolutions2(
     max_solutions_remaining = solutions.size();
   }
 #endif
-  for (position_t pos : choice_positions) {
-    std::vector<position_t> remaining_choice_positions =
-        Remove<position_t>(choice_positions, pos);
 
-    SortByDigitAtPosition(solutions, pos);
-
-    size_t i = 0;
-    while (i < solutions.size()) {
-      int digit = solutions[i].solution[pos];
-      size_t j = i + 1;
-      while (j < solutions.size() && solutions[j].solution[pos] == digit) ++j;
-      size_t n = j - i;
-      // We should have found immediately-winning moves already before.
-      assert(n > 1 && n < solutions.size());
-      Move move = {.pos = pos, .digit = digit};
-      std::span<HashedSolution> remaining_solutions = solutions.subspan(i, n);
-      bool winning = IsWinning(remaining_solutions, remaining_choice_positions,
-              inferred_moves.size(), 1, work_left);
-      if (work_left < 0) return AnalyzeResult{};  // Search aborted.
-      if (winning) {
-        // Winning for the next player => losing for the previous player.
+  RankedMove moves_buf[max_moves];
+  std::span moves(moves_buf, GenerateRankedMoves(solutions, choice_positions, moves_buf));
+  for (const auto &[move, rank] : moves) {
+    auto remaining_solutions = FilterSolutions(solutions, move);
+    auto remaining_choice_positions = FilterPositions(choice_positions, move.pos);
+    // We should have found immediately-winning moves already before.
+    assert(remaining_solutions.size() > 1 && remaining_solutions.size() < solutions.size());
+    bool winning = IsWinning(remaining_solutions, remaining_choice_positions,
+            inferred_moves.size(), 1, work_left);
+    if (work_left < 0) return AnalyzeResult{};  // Search aborted.
+    if (winning) {
+      // Winning for the next player => losing for the previous player.
 #if MAXIMIZE_SOLUTIONS_REMAINING
-        if ((int) n > max_solutions_remaining) {
-           max_solutions_remaining = n;
-           losing_turns.clear();
-         }
-        if ((int) n == max_solutions_remaining) {
-          losing_turns.push_back(Turn(move));
+      if (remaining_solutions.size() > max_solutions_remaining) {
+          max_solutions_remaining = remaining_solutions.size();
+          losing_turns.clear();
         }
-#else
+      if (remaining_solutions.size() == max_solutions_remaining) {
         losing_turns.push_back(Turn(move));
-#endif
-      } else {
-        // Losing for the next player => winning for the previous player.
-        winning_turns.push_back(Turn(move));
-        if (winning_turns.size() >= (size_t) max_winning_turns) goto max_winning_turns_found;
       }
-      i = j;
+#else
+      losing_turns.push_back(Turn(move));
+#endif
+    } else {
+      // Losing for the next player => winning for the previous player.
+      winning_turns.push_back(Turn(move));
+      if (winning_turns.size() >= (size_t) max_winning_turns) goto max_winning_turns_found;
     }
   }
 
