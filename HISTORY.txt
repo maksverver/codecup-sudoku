@@ -1,0 +1,44 @@
+3c27ea351fb0280a1c1db0e1958a7a4c314d7af9 refs/tags/submission-1-id-24136
+2f481e45a08f12229721e6a1d952ad5789fbf9fe refs/tags/submission-2-id-24137
+6bd7b0c7a65a6d51320f4c39733537df2b79fda6 refs/tags/submission-3-id-24138
+e73b518700add7fd98518929e3bdf21bd3ed95b8 refs/tags/submission-4-id-24157
+
+Some early tests.
+
+
+f827699d5405f6a8a547608d52820eac969c1be9 refs/tags/submission-5-id-24240
+
+Test competition submission.
+
+ - max_work      = 10'000'000
+ - max_enumerate =    100'000
+ - max_analyze   =      2'000
+
+No work limits for Analyze(). No time limits. Typically finishes games in
+about 2 seconds.
+
+Small logging bug: inverts the meaning of the '+' sign when printing solutions:
+100+ solutions is printed as "100", exactly 42 solutions is printed as "42+".
+
+
+7ca27ac7b8cff132f83b97e159f76a24777cfa7f submission-6-id-24411
+
+Fixed logging bug. Increased max_analyze to 10'000.
+
+
+6b24623aa2c6d1df05991ca9b55bcbef3d09756e submission-7-id-24637
+
+Important changes:
+
+  693c03c Set --time_limit=27 seconds on the CodeCup servers (while using --analyze_max_work locally instead).
+  331998f Implement move ordering based on number of solutions remaining.
+  e1fc38d Revamp Timer and log how much time the player is paused for I/O.
+
+Player flags:
+
+  - enumerate_max_count      200'000
+  - enumerate_max_work    20'000'000
+  - analyze_max_count        100'000
+  - analyze_max_work     100'000'000  (only local build!)
+  - analyze_batch_size    10'000'000
+  - time_limit                    27  (only on codecup)

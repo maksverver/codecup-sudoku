@@ -195,7 +195,7 @@ CODECUP SERVER NOTES
 RELEASE INSTRUCTIONS
 
   1. `git status` # Make sure all changes are commited!
-  2. `make clean`, `make all -j4`, `make combined`
+  2. `make clean`, `make -j4 all combined`
   3. Use arbiter.py to run a competition with the new and previous players
   4. Check player logs for unexpected warnings/errors.
   5. Submit to CodeCup.
