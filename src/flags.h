@@ -6,13 +6,18 @@
 #include <cmath>
 #include <functional>
 #include <limits>
+#include <ostream>
 #include <string>
 #include <string_view>
 #include <sstream>
 #include <vector>
 
 // Registers a flag (typically, this is called only indirectly via DECLARE_FLAG()).
-void RegisterFlag(std::string_view id, std::function<bool(std::string_view)> parse);
+void RegisterFlag(
+    std::string_view id,
+    std::string help,
+    std::string default_value,
+    std::function<bool(std::string_view)> parse);
 
 // Parses flags from command line arguments of the form `--id=value`.
 //
@@ -25,6 +30,8 @@ bool ParseFlags(int argc, char *argv[]);
 // Same as above, but allows non-flag arguments that are stored in plain_args.
 bool ParseFlags(int argc, char *argv[], std::vector<char *> &plain_args);
 
+void PrintFlagUsage(std::ostream &os, std::string_view line_prefix="\t");
+
 // Declare a variable with the given type and default value, and register a
 // command line flag with the given identifier. For example:
 //
@@ -32,8 +39,12 @@ bool ParseFlags(int argc, char *argv[], std::vector<char *> &plain_args);
 //
 // declares a variable `int foo = 42` that can be overridden with "--bar=123".
 //
-#define DECLARE_FLAG(type, var_id, default_value, flag_id) \
-  type var_id = (RegisterFlag(flag_id, ::flags::internal::Parser(&var_id)), default_value)
+#define DECLARE_FLAG(type, var_id, default_value, flag_id, flag_help) \
+  type var_id = ( \
+      RegisterFlag(flag_id, flag_help, \
+          ::flags::internal::FormatValue<type>(default_value), \
+          ::flags::internal::Parser<type>(&var_id)), \
+      default_value)
 
 namespace flags::internal {
 
@@ -75,6 +86,14 @@ template<> inline bool ParseValue<int64_t>(std::string_view s, int64_t &value) {
   return ParseIntegralValue(s, value);
 }
 
+template<> inline bool ParseValue<bool>(std::string_view s, bool &value) {
+  // Maybe later: support "on"/"off", and "yes"/"no".
+  // Maybe later: support case insensitive-matching.
+  if (s.empty() || s == "1" || s == "true") { value = true; return true; }
+  if (s == "0" || s == "false") { value = false; return true; }
+  return false;
+}
+
 template<typename T> class Parser {
 public:
   Parser(T *value) : value(value) {}
@@ -86,6 +105,31 @@ public:
 private:
   T *value;
 };
+
+
+template<class T> inline std::string FormatGenericValue(const T &value) {
+  std::ostringstream oss;
+  oss << value;
+  return oss.str();
+}
+
+template<class T> std::string FormatValue(const T &value);
+
+template<> inline std::string FormatValue<std::string>(const std::string &value) {
+  return '"' + value + '"';
+}
+
+template<> inline std::string FormatValue<int>(const int &value) {
+  return FormatGenericValue(value);
+}
+
+template<> inline std::string FormatValue<int64_t>(const int64_t &value) {
+  return FormatGenericValue(value);
+}
+
+template<> inline std::string FormatValue<bool>(const bool &value) {
+  return value ? "true" : "false";
+}
 
 }  // namespace flags::internal
 

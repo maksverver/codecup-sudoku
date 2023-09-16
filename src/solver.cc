@@ -17,11 +17,18 @@
 
 namespace {
 
-DECLARE_FLAG(int64_t, analyze_max_work,        1e18, "analyze_max_work");
-DECLARE_FLAG(int64_t, analyze_batch_size,       1e7, "analyze_batch_size");
-DECLARE_FLAG(int,     enumerate_max_count,      1e6, "enumerate_max_count");
-DECLARE_FLAG(int,     max_print,                100, "max_print");
-DECLARE_FLAG(int,     max_winning_moves,          1, "max_winning_moves");
+DECLARE_FLAG(bool, arg_help, false, "help", "");
+
+DECLARE_FLAG(int64_t, analyze_max_work,        1e18, "analyze_max_work",
+    "work limit for analysis");
+DECLARE_FLAG(int64_t, analyze_batch_size,       1e7, "analyze_batch_size",
+    "batch size for analsysis");
+DECLARE_FLAG(int,     enumerate_max_count,      1e6, "enumerate_max_count",
+    "max. number of solutions to enumerate");
+DECLARE_FLAG(int,     max_print,                100, "max_print",
+    "max. number of solutions to print");
+DECLARE_FLAG(int,     max_winning_moves,          1, "max_winning_moves",
+    "max. number of winning moves to list");
 
 char Char(int d, char zero='.') {
   assert(d >= 0 && d < 10);
@@ -270,18 +277,13 @@ void Process(State &state) {
 
 int main(int argc, char *argv[]) {
   std::vector<char *> plain_args;
-  if (!ParseFlags(argc, argv, plain_args)) return EXIT_FAILURE;
-
-  if (plain_args.size() != 1) {
-    std::cerr << "Usage:\n"
+  if (!ParseFlags(argc, argv, plain_args) || plain_args.size() != 1 || arg_help) {
+    std::clog << "Usage:\n"
         "\tsolver [<options>] <state>  (solves a single state)\n"
         "\tsolver [<options>] -        (solve states read from standard input)\n\n"
-        "Options:\n"
-        "\t--analyze_max_work=1000000000 (work limit for analysis)\n"
-        "\t--enumerate_max_count=1000000 (max. number of solutions to enumerate)\n"
-        "\t--max_print=100               (max. number of solutions to print)\n"
-        "\t--max_winning_moves=1         (max. number of winning moves to list)\n";
-    return 1;
+        "Options:\n";
+    PrintFlagUsage(std::clog);
+    return EXIT_FAILURE;
   }
 
   const char *arg = plain_args[0];
