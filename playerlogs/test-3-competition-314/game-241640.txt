@@ -1,32 +1,32 @@
-ID Numberwang (64 bit) (compiler v11.3.0) (commit 6b24623)
-SEED 9e9bf1f9b420327edb2a01033b3c6c81
-IO RCVD [Aa1]
-TURN 1 1................................................................................ 0
-SOLUTIONS 200000+
-TIME 189 ENUMERATE 164 ANALYZE 0
-IO SEND [Ca4]
-IO RCVD [Ab2]
-PAUSE 23 23
-TURN 3 12................4.............................................................. 190
-SOLUTIONS 200000+
-TIME 144 ENUMERATE 118 ANALYZE 0
-IO SEND [Dg8]
-IO RCVD [Ac3]
-PAUSE 23 46
-TURN 5 123...............4..............8............................................... 334
-SOLUTIONS 200000+
-TIME 181 ENUMERATE 155 ANALYZE 0
-IO SEND [Bh7]
-IO RCVD [Ad4]
-PAUSE 23 70
-TURN 7 1234............7.4..............8............................................... 516
-SOLUTIONS 200000+
-TIME 155 ENUMERATE 129 ANALYZE 0
-IO SEND [Gg7]
-IO RCVD [Ae5]
-PAUSE 23 93
-TURN 9 12345...........7.4..............8..........................7.................... 672
-SOLUTIONS 200000+
-TIME 182 ENUMERATE 157 ANALYZE 0
-IO SEND [Bi4]
+ID Numberwang (64 bit) (compiler v11.3.0) (commit 6b24623)
+SEED 9e9bf1f9b420327edb2a01033b3c6c81
+IO RCVD [Aa1]
+TURN 1 1................................................................................ 0
+SOLUTIONS 200000+
+TIME 189 ENUMERATE 164 ANALYZE 0
+IO SEND [Ca4]
+IO RCVD [Ab2]
+PAUSE 23 23
+TURN 3 12................4.............................................................. 190
+SOLUTIONS 200000+
+TIME 144 ENUMERATE 118 ANALYZE 0
+IO SEND [Dg8]
+IO RCVD [Ac3]
+PAUSE 23 46
+TURN 5 123...............4..............8............................................... 334
+SOLUTIONS 200000+
+TIME 181 ENUMERATE 155 ANALYZE 0
+IO SEND [Bh7]
+IO RCVD [Ad4]
+PAUSE 23 70
+TURN 7 1234............7.4..............8............................................... 516
+SOLUTIONS 200000+
+TIME 155 ENUMERATE 129 ANALYZE 0
+IO SEND [Gg7]
+IO RCVD [Ae5]
+PAUSE 23 93
+TURN 9 12345...........7.4..............8..........................7.................... 672
+SOLUTIONS 200000+
+TIME 182 ENUMERATE 157 ANALYZE 0
+IO SEND [Bi4]
 # Total time used: 0.859 seconds
