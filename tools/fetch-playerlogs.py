@@ -51,6 +51,7 @@ def FetchGame(game_id, codecupid, filename):
   player_log = PLAYERLOG_RE.search(response_text).group(1)
   player_log = html.unescape(player_log)
   player_log = player_log.replace('<br>' , '\n')
+  player_log = player_log.replace('\u00a0' , ' ')  # non-breaking space
   with open(filename, 'wt') as f:
     f.write(player_log)
     print(f'# Total time used: {time_used} seconds', file=f)
