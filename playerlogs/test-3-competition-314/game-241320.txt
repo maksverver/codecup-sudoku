@@ -1,0 +1,68 @@
+ID Numberwang (64 bit) (compiler v11.3.0) (commit 6b24623)
+SEED 6f66eeed00c6d8a7b1c6962055e2f498
+IO RCVD [Ei6]
+TURN 1 ............................................6.................................... 0
+SOLUTIONS 200000+
+TIME 261 ENUMERATE 231 ANALYZE 0
+IO SEND [Ea5]
+IO RCVD [Gd8]
+PAUSE 23 23
+TURN 3 ....................................5.......6............8....................... 261
+SOLUTIONS 200000+
+TIME 209 ENUMERATE 179 ANALYZE 0
+IO SEND [Fd3]
+IO RCVD [Hg5]
+PAUSE 23 47
+TURN 5 ....................................5.......6...3........8...........5........... 471
+SOLUTIONS 200000+
+TIME 164 ENUMERATE 135 ANALYZE 0
+IO SEND [Ed1]
+IO RCVD [Hf4]
+PAUSE 23 71
+TURN 7 ....................................5..1....6...3........8..........45........... 636
+SOLUTIONS 200000+
+TIME 173 ENUMERATE 143 ANALYZE 0
+IO SEND [Fg1]
+IO RCVD [Ff6]
+PAUSE 23 94
+TURN 9 ....................................5..1....6...3.61.....8..........45........... 809
+SOLUTIONS 200000+
+TIME 211 ENUMERATE 182 ANALYZE 0
+IO SEND [Cd9]
+IO RCVD [De4]
+PAUSE 23 118
+TURN 11 .....................9.........4....5..1....6...3.61.....8..........45........... 1022
+SOLUTIONS 200000+
+TIME 210 ENUMERATE 180 ANALYZE 0
+IO SEND [Eb9]
+IO RCVD [Cg3]
+PAUSE 23 142
+TURN 13 .....................9..3......4....59.1....6...3.61.....8..........45........... 1232
+SOLUTIONS 200000+
+TIME 176 ENUMERATE 146 ANALYZE 0
+IO SEND [Ge5]
+IO RCVD [Ec8]
+PAUSE 23 165
+TURN 15 .....................9..3......4....5981....6...3.61.....85.........45........... 1410
+SOLUTIONS 200000+
+TIME 195 ENUMERATE 165 ANALYZE 0
+IO SEND [Fe9]
+IO RCVD [Hc6]
+PAUSE 23 189
+TURN 17 .....................9..3......4....5981....6...3961.....85......6..45........... 1605
+SOLUTIONS 200000+
+TIME 193 ENUMERATE 163 ANALYZE 0
+IO SEND [Cf1]
+IO RCVD [Ic1]
+PAUSE 23 212
+TURN 19 .....................9.13......4....5981....6...3961.....85......6..45....1...... 1799
+SOLUTIONS 200000+
+TIME 194 ENUMERATE 164 ANALYZE 0
+IO SEND [Hd2]
+IO RCVD [Da1]
+PAUSE 23 235
+TURN 21 .....................9.13..1...4....5981....6...3961.....85......62.45....1...... 1993
+SOLUTIONS 146152
+TIME 194 ENUMERATE 124 ANALYZE 0
+IO SEND [Db6]
+# Total time used: 2.199 seconds

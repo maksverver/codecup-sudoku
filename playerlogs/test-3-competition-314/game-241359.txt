@@ -1,0 +1,32 @@
+ID Numberwang (64 bit) (compiler v11.3.0) (commit 6b24623)
+SEED 23cccbeb372ebde1c48978cfe16f0e8c
+IO RCVD [Start]
+TURN 0 ................................................................................. 0
+SOLUTIONS 200000+
+TIME 206 ENUMERATE 177 ANALYZE 0
+IO SEND [Bg1]
+IO RCVD [Hc2]
+PAUSE 90 90
+TURN 2 ...............1.................................................2............... 207
+SOLUTIONS 200000+
+TIME 218 ENUMERATE 188 ANALYZE 0
+IO SEND [Be9]
+IO RCVD [Ff8]
+PAUSE 89 179
+TURN 4 .............9.1..................................8..............2............... 425
+SOLUTIONS 200000+
+TIME 177 ENUMERATE 147 ANALYZE 0
+IO SEND [Ci9]
+IO RCVD [Ab9]
+PAUSE 188 368
+TURN 6 .9...........9.1..........9.......................8..............2............... 603
+SOLUTIONS 200000+
+TIME 167 ENUMERATE 137 ANALYZE 0
+IO SEND [Cd6]
+IO RCVD [Gh8]
+PAUSE 100 468
+TURN 8 .9...........9.1.....6....9.......................8..........8...2............... 770
+SOLUTIONS 200000+
+TIME 183 ENUMERATE 154 ANALYZE 0
+IO SEND [Cb4]
+# Total time used: 0.96 seconds
