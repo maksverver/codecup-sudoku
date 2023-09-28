@@ -4,6 +4,18 @@ DEPENDENCIES
  - GNU Make
 
 
+GIT BRANCHES
+
+  - master: main development
+  - BitSet-test
+  - double-move: experiment with allowing a two moves in the final turn
+    (Louis' rule; see CodeCup forum for details)
+  - no-reduce: player from before the rule change (MUST_REDUCE=0)
+    (obsolete; should be deleted)
+  - proof-number-search-wip: partial implementation of proof-number-search
+    (obsolete; should be deleted)
+
+
 BUILDING
 
 To build all binaries, simply run make:
@@ -110,6 +122,21 @@ than 20s on analysis, I should set the analysis work limit to 120e6.
 
 NOTE: above analysis is based on data from before the rule change, so it is
 not necessarily valid anymore!
+
+Comparison of performance before/after move ordering and without/with solution
+reduction rule in effect. Benchmarked with:
+
+% time awk '{ print $3 }' data/random-play-until-2k-cases.txt | head -100 | xargs -IX backups/ordering\=0_must_reduce\=0/release/solver X | stdbuf -oL grep Outcome | stdbuf -oL nl
+
+User time reported:
+
+  - must_reduce=0 ordering=0:   56.668s
+  - must_reduce=0 ordering=1:    2.147s (26.39x speedup!)
+  - must_reduce=1 ordering=0: 1028.438s
+  - must_reduce=1 ordering=1:   12.763s (80.58x speedup!)
+
+Conclusion: move ordering is highly effective, and even more so with the
+new rule change.
 
 
 OPEN QUESTIONS
