@@ -83,6 +83,8 @@ template<typename T> std::vector<T> Remove(std::span<const T> v, T i) {
   return res;
 }
 
+/*
+
 // Rearranges the span of solutions into three parts:
 //
 //  Part 1: solution[pos] < A
@@ -124,6 +126,8 @@ void SortByDigitAtPosition(std::span<HashedSolution> solutions, position_t pos) 
 #endif
 }
 
+*/
+
 std::span<HashedSolution> FilterSolutions(std::span<HashedSolution> solutions, Move move) {
   return std::span<HashedSolution>(
     solutions.begin(),
@@ -155,23 +159,21 @@ size_t GenerateRankedMoves(
     std::span<HashedSolution> solutions,
     std::span<const position_t> choice_positions,
     RankedMove (&moves)[max_moves]) {
-  // TODO: optimize this. Instead of sorting repeatedly, I can just count similar
-  // to the logic at the top of IsWinning().
   size_t nmove = 0;
   for (position_t pos : choice_positions) {
-    SortByDigitAtPosition(solutions, pos);
-    size_t i = 0;
-    while (i < solutions.size()) {
-      int digit = solutions[i].solution[pos];
-      size_t j = i + 1;
-      while (j < solutions.size() && solutions[j].solution[pos] == digit) ++j;
-      size_t n = j - i;
-      assert(n > 1);
-      moves[nmove++] = RankedMove{
-        .move = Move{.pos = pos, .digit = digit},
-        .solution_count = static_cast<int>(n),
-      };
-      i = j;
+    int solution_count[9] = {};
+    for (const auto &entry : solutions) {
+      ++solution_count[entry.solution[pos] - 1];
+    }
+    for (int digit = 1; digit <= 9; ++digit) {
+      int n = solution_count[digit - 1];
+      if (n > 0) {
+        assert((size_t) n < solutions.size());
+        moves[nmove++] = RankedMove{
+          .move = Move{.pos = pos, .digit = digit},
+          .solution_count = n,
+        };
+      }
     }
   }
   std::sort(&moves[0], &moves[nmove]);
@@ -190,12 +192,12 @@ std::vector<Move> FindImmediatelyWinningMoves(
   assert(choice_positions.size() > 0);
   std::vector<Move> result;
   for (position_t pos : choice_positions) {
-    int solution_count[10] = {};
+    int solution_count[9] = {};
     for (const solution_t &solution : solutions) {
-      ++solution_count[solution[pos]];
+      ++solution_count[solution[pos] - 1];
     }
     for (int digit = 1; digit <= 9; ++digit) {
-      if (solution_count[digit] == 1) {
+      if (solution_count[digit - 1] == 1) {
         result.push_back(Move{pos, digit});
       }
     }
