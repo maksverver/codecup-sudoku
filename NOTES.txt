@@ -25,61 +25,26 @@ To only build e.g. a release build of the solver:
 % make -f Makefile.release solver
 
 
+RULE CHANGE
+
+After the start of the CodeCup, the rules were changed so that each move must
+reduce the number of solutions (in addition to keeping at least 1 solution).
+Without that change, the game was always winnable by Player 1. See discussion
+here: https://forum.codecup.nl/read.php?31,2248
+
+I've deleted the notes related to the strategy in the old version of the game.
+
+
 STRATEGY
 
 Let's call the digits that were already placed in the grid the *givens*, or more
 accurately: the givens are nonconflicting (cell, digit) pairs.
 
 For a set of givens, we can (sometimes) enumerate all possible solutions in the
-grid. Assume we have a full set of solutions.
-
-Let's call the candidates of a cell the set of digits that occurs in that cell
-in some solution. That means our move should chose exactly one candidate to fill
-in.
-
-Let's distinguish between cells with a single candidate (I call those
-*inferred digits/cells* because the digit is fixed but not yet filled in), and
-multiple candidates (I call those *choice cells* because if I fill in this cell
-I have to make a choice which candidate to use). I call the set of inferred
-cell/digit pairs F with size |F|.
-
-Now we want to determine if the current state is winning or losing, and (if
-winning) what a winning move is.
-
-If |F| is even, then the value of the state is the same as the state in which
-all the inferred cells have been filled in.
-
-Proof: let's call the states S and T0 respectively. If I have a winning strategy
-in T0, I can infer a winning strategy in S by playing according to the winning
-stategy in T0, except that whenever my opponent makes a move in F, I respond with
-a move in F too. Eventually F is empty (if I don't win earlier).
-
-Conversely, if I don't have a winning strategy in T, I can either keep making
-losing moves in T, or make a move in F which my opponent can counter.
-
-This means that whenever |F| is even we can solve the problem recursively, and
-pick an arbitrary move that leads to a state that is losing for the opponent.
-
-When |F| is odd the situation is more interesting. My initial thought was that
-filling in one digit would invert the grid value. But that's not the case! (See
-tools/check-parity-assumption.py for some tests and a few more details.)
-
-It does turn out that only the parity of |F| matters.
-
-The general player algorithm works as follows:
-
-  1. Calculate all solutions (if this is not possible, abort and move randomly).
-  2. Identify inferred cells (F) and choice cells (C).
-  3. Search for immediately winning solutions; if there is one, return it.
-  4. If not, recursively solve C:
-      - If |F| is odd, try filling in an inferred digit and solving the
-        resulting grid. If the resulting grid is losing, report a win.
-      - Otherwise, try filling in one of the choice cells C, and for each
-        chosen cell and digit, go to step 2. If the grid is losing, report
-        a win.
-
-The hard parts of the algorithms are 1 (EnumerateSolutions() in state.cc) and
-4 (DetermineWinningMove() in analysis.cc).
+grid. Assume we have a full set of solutions. Let's call the candidates of a
+cell the set of digits that occurs in that cell across all solutions. We are
+only allowed to play in a cell if it has at least two candidates (otherwise, we
+would not reduce the number of solutions).
 
 
 TRANSPOSITION TABLE
@@ -89,10 +54,8 @@ naive search algorithm would evaluate the same position many times. To avoid
 duplicate work, I have implemented a transposition table to cache intermediate
 results (see src/memo.h).
 
-The result of a state is determined by the set of solutions and the parity of
-the number of inferred digits. The memo is indexed with a 64-bit key that is
-calculated by hashing the solution set, and then XOR'ing in a fixed random
-number if the number of inferred digits is odd (see HashInferredCount()).
+The result of a state is determined by the set of solutions. The memo is indexed
+with a 64-bit key that is calculated by hashing the solution set.
 
 The solutions hash is calculated by assigned a hash code to each solution
 (a 64-bit FNV-1a hash of the digits 1-9), and calculating the hash of a solution
@@ -132,6 +95,9 @@ sorting algorithm should be optimized for those cases. Note however that sorting
 time is also proportional to size: i.e. the 1% largest sets probably take more
 than 1% of the time!
 
+NOTE: above analysis is based on data from before the rule change, so it is
+not necessarily valid anymore!
+
 
 ANALYSIS TIMING
 
@@ -141,6 +107,9 @@ solutions per second on my laptop.
 
 So assuming CodeCup servers are twice as slow and I don't want to spend more
 than 20s on analysis, I should set the analysis work limit to 120e6.
+
+NOTE: above analysis is based on data from before the rule change, so it is
+not necessarily valid anymore!
 
 
 OPEN QUESTIONS
@@ -159,13 +128,8 @@ For example, if we have only the top-left box with the following candidates:
 Then the puzzle can be decomposed into 3 parts (the rows of the box) which
 are solved independently.
 
-There are two problems:
-
-  1. This doesn't account for the existence of inferred digits, which ruin the
-     Sprague-Grundy theorem.
-  2. It doesn't seem to happen very often in practice that parts of the grid
-     are independent (at least not early in the game, when a solver would
-     benefit the most from this kind of deomposition).
+The main problem here is that earlier in the game, when it matters the most,
+there typically aren't obvious independent parts.
 
 
 CAIA NOTES
