@@ -1,1000 +1,1000 @@
-Outcome: WIN1
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN1
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN1
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN1
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN1
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN1
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN1
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN1
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN1
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN1
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: LOSS
-Outcome: LOSS
-Outcome: WIN2
-Outcome: LOSS
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: WIN2
-Outcome: LOSS
+     1	Outcome: WIN1
+     2	Outcome: WIN2
+     3	Outcome: WIN2
+     4	Outcome: WIN2
+     5	Outcome: WIN2
+     6	Outcome: WIN2
+     7	Outcome: WIN2
+     8	Outcome: WIN2
+     9	Outcome: WIN2
+    10	Outcome: WIN2
+    11	Outcome: WIN2
+    12	Outcome: WIN2
+    13	Outcome: WIN2
+    14	Outcome: WIN2
+    15	Outcome: WIN2
+    16	Outcome: WIN2
+    17	Outcome: WIN2
+    18	Outcome: WIN2
+    19	Outcome: WIN2
+    20	Outcome: WIN2
+    21	Outcome: WIN2
+    22	Outcome: WIN2
+    23	Outcome: WIN2
+    24	Outcome: WIN2
+    25	Outcome: WIN2
+    26	Outcome: WIN2
+    27	Outcome: WIN2
+    28	Outcome: WIN2
+    29	Outcome: WIN2
+    30	Outcome: WIN2
+    31	Outcome: WIN2
+    32	Outcome: WIN2
+    33	Outcome: WIN2
+    34	Outcome: WIN2
+    35	Outcome: WIN2
+    36	Outcome: WIN2
+    37	Outcome: WIN2
+    38	Outcome: WIN2
+    39	Outcome: WIN2
+    40	Outcome: WIN2
+    41	Outcome: WIN2
+    42	Outcome: WIN2
+    43	Outcome: WIN2
+    44	Outcome: WIN2
+    45	Outcome: WIN2
+    46	Outcome: WIN2
+    47	Outcome: WIN2
+    48	Outcome: WIN2
+    49	Outcome: WIN2
+    50	Outcome: WIN2
+    51	Outcome: LOSS
+    52	Outcome: WIN2
+    53	Outcome: WIN2
+    54	Outcome: WIN2
+    55	Outcome: WIN2
+    56	Outcome: WIN1
+    57	Outcome: WIN2
+    58	Outcome: WIN2
+    59	Outcome: WIN2
+    60	Outcome: LOSS
+    61	Outcome: WIN2
+    62	Outcome: WIN2
+    63	Outcome: WIN2
+    64	Outcome: WIN2
+    65	Outcome: WIN2
+    66	Outcome: WIN2
+    67	Outcome: WIN2
+    68	Outcome: WIN2
+    69	Outcome: WIN2
+    70	Outcome: WIN2
+    71	Outcome: LOSS
+    72	Outcome: WIN2
+    73	Outcome: WIN2
+    74	Outcome: WIN2
+    75	Outcome: WIN2
+    76	Outcome: WIN2
+    77	Outcome: WIN2
+    78	Outcome: WIN2
+    79	Outcome: WIN2
+    80	Outcome: WIN2
+    81	Outcome: WIN2
+    82	Outcome: WIN2
+    83	Outcome: WIN2
+    84	Outcome: WIN2
+    85	Outcome: WIN2
+    86	Outcome: WIN2
+    87	Outcome: WIN2
+    88	Outcome: WIN2
+    89	Outcome: WIN2
+    90	Outcome: WIN2
+    91	Outcome: WIN2
+    92	Outcome: WIN2
+    93	Outcome: WIN2
+    94	Outcome: WIN2
+    95	Outcome: WIN2
+    96	Outcome: WIN2
+    97	Outcome: WIN2
+    98	Outcome: WIN2
+    99	Outcome: WIN2
+   100	Outcome: WIN2
+   101	Outcome: WIN2
+   102	Outcome: WIN2
+   103	Outcome: WIN2
+   104	Outcome: WIN2
+   105	Outcome: WIN2
+   106	Outcome: WIN2
+   107	Outcome: WIN2
+   108	Outcome: WIN2
+   109	Outcome: WIN2
+   110	Outcome: WIN2
+   111	Outcome: WIN2
+   112	Outcome: WIN2
+   113	Outcome: WIN2
+   114	Outcome: WIN2
+   115	Outcome: WIN2
+   116	Outcome: WIN2
+   117	Outcome: WIN2
+   118	Outcome: WIN2
+   119	Outcome: WIN2
+   120	Outcome: WIN2
+   121	Outcome: WIN2
+   122	Outcome: WIN2
+   123	Outcome: WIN2
+   124	Outcome: WIN2
+   125	Outcome: WIN2
+   126	Outcome: WIN2
+   127	Outcome: WIN2
+   128	Outcome: WIN2
+   129	Outcome: WIN2
+   130	Outcome: WIN2
+   131	Outcome: WIN1
+   132	Outcome: WIN2
+   133	Outcome: WIN2
+   134	Outcome: WIN2
+   135	Outcome: WIN2
+   136	Outcome: WIN2
+   137	Outcome: WIN2
+   138	Outcome: WIN2
+   139	Outcome: WIN2
+   140	Outcome: WIN2
+   141	Outcome: WIN2
+   142	Outcome: WIN2
+   143	Outcome: WIN2
+   144	Outcome: WIN2
+   145	Outcome: WIN2
+   146	Outcome: WIN2
+   147	Outcome: WIN2
+   148	Outcome: WIN2
+   149	Outcome: WIN2
+   150	Outcome: WIN2
+   151	Outcome: WIN2
+   152	Outcome: WIN2
+   153	Outcome: WIN2
+   154	Outcome: WIN2
+   155	Outcome: WIN2
+   156	Outcome: WIN2
+   157	Outcome: WIN2
+   158	Outcome: WIN2
+   159	Outcome: WIN2
+   160	Outcome: WIN2
+   161	Outcome: WIN2
+   162	Outcome: WIN2
+   163	Outcome: WIN2
+   164	Outcome: WIN2
+   165	Outcome: WIN2
+   166	Outcome: WIN2
+   167	Outcome: WIN2
+   168	Outcome: WIN2
+   169	Outcome: WIN2
+   170	Outcome: WIN2
+   171	Outcome: WIN2
+   172	Outcome: WIN2
+   173	Outcome: LOSS
+   174	Outcome: WIN2
+   175	Outcome: WIN2
+   176	Outcome: WIN2
+   177	Outcome: WIN2
+   178	Outcome: WIN2
+   179	Outcome: WIN2
+   180	Outcome: WIN2
+   181	Outcome: WIN2
+   182	Outcome: WIN2
+   183	Outcome: WIN2
+   184	Outcome: WIN2
+   185	Outcome: WIN2
+   186	Outcome: WIN2
+   187	Outcome: WIN2
+   188	Outcome: WIN2
+   189	Outcome: WIN2
+   190	Outcome: WIN2
+   191	Outcome: WIN2
+   192	Outcome: WIN2
+   193	Outcome: WIN2
+   194	Outcome: WIN2
+   195	Outcome: WIN2
+   196	Outcome: WIN2
+   197	Outcome: WIN2
+   198	Outcome: WIN2
+   199	Outcome: WIN2
+   200	Outcome: WIN2
+   201	Outcome: WIN2
+   202	Outcome: WIN2
+   203	Outcome: WIN2
+   204	Outcome: WIN2
+   205	Outcome: WIN2
+   206	Outcome: WIN2
+   207	Outcome: WIN2
+   208	Outcome: WIN2
+   209	Outcome: WIN2
+   210	Outcome: WIN2
+   211	Outcome: WIN2
+   212	Outcome: WIN2
+   213	Outcome: WIN2
+   214	Outcome: WIN2
+   215	Outcome: WIN2
+   216	Outcome: WIN2
+   217	Outcome: WIN2
+   218	Outcome: WIN2
+   219	Outcome: WIN2
+   220	Outcome: WIN2
+   221	Outcome: WIN2
+   222	Outcome: WIN2
+   223	Outcome: WIN2
+   224	Outcome: WIN2
+   225	Outcome: WIN2
+   226	Outcome: WIN2
+   227	Outcome: WIN2
+   228	Outcome: WIN2
+   229	Outcome: WIN2
+   230	Outcome: WIN2
+   231	Outcome: WIN2
+   232	Outcome: WIN2
+   233	Outcome: WIN2
+   234	Outcome: WIN2
+   235	Outcome: WIN2
+   236	Outcome: WIN2
+   237	Outcome: WIN2
+   238	Outcome: WIN2
+   239	Outcome: WIN2
+   240	Outcome: WIN2
+   241	Outcome: WIN2
+   242	Outcome: WIN2
+   243	Outcome: WIN2
+   244	Outcome: WIN2
+   245	Outcome: WIN2
+   246	Outcome: WIN2
+   247	Outcome: WIN2
+   248	Outcome: WIN2
+   249	Outcome: WIN2
+   250	Outcome: WIN2
+   251	Outcome: WIN2
+   252	Outcome: WIN2
+   253	Outcome: WIN2
+   254	Outcome: WIN2
+   255	Outcome: WIN2
+   256	Outcome: WIN2
+   257	Outcome: WIN2
+   258	Outcome: WIN2
+   259	Outcome: WIN2
+   260	Outcome: WIN2
+   261	Outcome: WIN2
+   262	Outcome: WIN2
+   263	Outcome: WIN2
+   264	Outcome: WIN2
+   265	Outcome: WIN2
+   266	Outcome: WIN2
+   267	Outcome: WIN2
+   268	Outcome: WIN2
+   269	Outcome: WIN2
+   270	Outcome: WIN2
+   271	Outcome: WIN2
+   272	Outcome: WIN2
+   273	Outcome: WIN2
+   274	Outcome: WIN2
+   275	Outcome: WIN2
+   276	Outcome: WIN2
+   277	Outcome: WIN2
+   278	Outcome: WIN2
+   279	Outcome: WIN2
+   280	Outcome: WIN2
+   281	Outcome: WIN2
+   282	Outcome: WIN2
+   283	Outcome: WIN2
+   284	Outcome: WIN2
+   285	Outcome: WIN2
+   286	Outcome: WIN2
+   287	Outcome: WIN2
+   288	Outcome: WIN2
+   289	Outcome: WIN2
+   290	Outcome: WIN2
+   291	Outcome: WIN2
+   292	Outcome: WIN2
+   293	Outcome: WIN2
+   294	Outcome: WIN2
+   295	Outcome: WIN2
+   296	Outcome: WIN2
+   297	Outcome: WIN2
+   298	Outcome: WIN2
+   299	Outcome: WIN2
+   300	Outcome: LOSS
+   301	Outcome: WIN2
+   302	Outcome: WIN2
+   303	Outcome: WIN2
+   304	Outcome: WIN2
+   305	Outcome: WIN2
+   306	Outcome: WIN2
+   307	Outcome: WIN2
+   308	Outcome: WIN1
+   309	Outcome: WIN2
+   310	Outcome: WIN2
+   311	Outcome: WIN2
+   312	Outcome: WIN2
+   313	Outcome: WIN2
+   314	Outcome: WIN2
+   315	Outcome: WIN2
+   316	Outcome: WIN2
+   317	Outcome: WIN2
+   318	Outcome: WIN2
+   319	Outcome: WIN2
+   320	Outcome: WIN2
+   321	Outcome: WIN2
+   322	Outcome: WIN2
+   323	Outcome: WIN2
+   324	Outcome: WIN2
+   325	Outcome: WIN2
+   326	Outcome: WIN2
+   327	Outcome: WIN2
+   328	Outcome: WIN2
+   329	Outcome: WIN2
+   330	Outcome: WIN2
+   331	Outcome: WIN2
+   332	Outcome: WIN2
+   333	Outcome: WIN2
+   334	Outcome: WIN2
+   335	Outcome: WIN2
+   336	Outcome: WIN2
+   337	Outcome: WIN2
+   338	Outcome: WIN2
+   339	Outcome: WIN2
+   340	Outcome: WIN2
+   341	Outcome: LOSS
+   342	Outcome: WIN2
+   343	Outcome: WIN2
+   344	Outcome: WIN2
+   345	Outcome: WIN2
+   346	Outcome: WIN2
+   347	Outcome: WIN2
+   348	Outcome: WIN2
+   349	Outcome: WIN2
+   350	Outcome: WIN2
+   351	Outcome: WIN2
+   352	Outcome: WIN2
+   353	Outcome: WIN2
+   354	Outcome: WIN2
+   355	Outcome: WIN2
+   356	Outcome: WIN2
+   357	Outcome: WIN2
+   358	Outcome: WIN2
+   359	Outcome: WIN2
+   360	Outcome: WIN2
+   361	Outcome: WIN2
+   362	Outcome: WIN2
+   363	Outcome: WIN2
+   364	Outcome: WIN2
+   365	Outcome: WIN2
+   366	Outcome: WIN2
+   367	Outcome: WIN2
+   368	Outcome: WIN2
+   369	Outcome: WIN2
+   370	Outcome: WIN2
+   371	Outcome: WIN2
+   372	Outcome: WIN2
+   373	Outcome: WIN2
+   374	Outcome: WIN2
+   375	Outcome: WIN2
+   376	Outcome: WIN2
+   377	Outcome: WIN2
+   378	Outcome: WIN2
+   379	Outcome: WIN2
+   380	Outcome: WIN2
+   381	Outcome: WIN2
+   382	Outcome: WIN2
+   383	Outcome: WIN2
+   384	Outcome: WIN2
+   385	Outcome: WIN2
+   386	Outcome: WIN2
+   387	Outcome: WIN2
+   388	Outcome: WIN2
+   389	Outcome: WIN2
+   390	Outcome: WIN2
+   391	Outcome: WIN2
+   392	Outcome: WIN2
+   393	Outcome: WIN2
+   394	Outcome: WIN2
+   395	Outcome: WIN2
+   396	Outcome: WIN2
+   397	Outcome: WIN2
+   398	Outcome: WIN2
+   399	Outcome: WIN2
+   400	Outcome: WIN2
+   401	Outcome: WIN2
+   402	Outcome: WIN2
+   403	Outcome: WIN2
+   404	Outcome: WIN2
+   405	Outcome: WIN2
+   406	Outcome: WIN2
+   407	Outcome: WIN2
+   408	Outcome: WIN2
+   409	Outcome: WIN2
+   410	Outcome: WIN2
+   411	Outcome: WIN2
+   412	Outcome: WIN2
+   413	Outcome: WIN2
+   414	Outcome: WIN2
+   415	Outcome: WIN2
+   416	Outcome: WIN2
+   417	Outcome: WIN2
+   418	Outcome: WIN2
+   419	Outcome: WIN2
+   420	Outcome: WIN2
+   421	Outcome: WIN2
+   422	Outcome: WIN2
+   423	Outcome: WIN2
+   424	Outcome: WIN2
+   425	Outcome: WIN1
+   426	Outcome: WIN2
+   427	Outcome: WIN2
+   428	Outcome: WIN2
+   429	Outcome: WIN2
+   430	Outcome: WIN2
+   431	Outcome: WIN2
+   432	Outcome: WIN1
+   433	Outcome: WIN2
+   434	Outcome: WIN2
+   435	Outcome: WIN2
+   436	Outcome: WIN2
+   437	Outcome: WIN2
+   438	Outcome: WIN2
+   439	Outcome: WIN2
+   440	Outcome: WIN2
+   441	Outcome: WIN2
+   442	Outcome: WIN2
+   443	Outcome: WIN2
+   444	Outcome: WIN2
+   445	Outcome: WIN2
+   446	Outcome: WIN2
+   447	Outcome: WIN2
+   448	Outcome: WIN2
+   449	Outcome: WIN2
+   450	Outcome: WIN2
+   451	Outcome: WIN2
+   452	Outcome: WIN2
+   453	Outcome: WIN2
+   454	Outcome: WIN2
+   455	Outcome: WIN2
+   456	Outcome: WIN2
+   457	Outcome: WIN2
+   458	Outcome: WIN2
+   459	Outcome: WIN2
+   460	Outcome: WIN1
+   461	Outcome: WIN2
+   462	Outcome: WIN2
+   463	Outcome: WIN2
+   464	Outcome: WIN2
+   465	Outcome: WIN2
+   466	Outcome: WIN2
+   467	Outcome: WIN2
+   468	Outcome: WIN2
+   469	Outcome: WIN2
+   470	Outcome: WIN2
+   471	Outcome: LOSS
+   472	Outcome: WIN2
+   473	Outcome: WIN2
+   474	Outcome: WIN2
+   475	Outcome: WIN2
+   476	Outcome: WIN2
+   477	Outcome: WIN2
+   478	Outcome: WIN2
+   479	Outcome: WIN2
+   480	Outcome: WIN2
+   481	Outcome: WIN2
+   482	Outcome: WIN2
+   483	Outcome: WIN2
+   484	Outcome: WIN2
+   485	Outcome: WIN2
+   486	Outcome: WIN2
+   487	Outcome: WIN2
+   488	Outcome: WIN2
+   489	Outcome: WIN2
+   490	Outcome: LOSS
+   491	Outcome: WIN2
+   492	Outcome: WIN2
+   493	Outcome: WIN2
+   494	Outcome: WIN2
+   495	Outcome: WIN2
+   496	Outcome: WIN2
+   497	Outcome: WIN2
+   498	Outcome: WIN2
+   499	Outcome: WIN2
+   500	Outcome: WIN2
+   501	Outcome: WIN2
+   502	Outcome: WIN2
+   503	Outcome: WIN2
+   504	Outcome: WIN2
+   505	Outcome: WIN2
+   506	Outcome: WIN2
+   507	Outcome: WIN2
+   508	Outcome: WIN2
+   509	Outcome: WIN2
+   510	Outcome: WIN2
+   511	Outcome: WIN2
+   512	Outcome: WIN2
+   513	Outcome: WIN2
+   514	Outcome: WIN2
+   515	Outcome: WIN2
+   516	Outcome: WIN2
+   517	Outcome: WIN2
+   518	Outcome: WIN2
+   519	Outcome: WIN2
+   520	Outcome: WIN2
+   521	Outcome: WIN2
+   522	Outcome: WIN2
+   523	Outcome: WIN2
+   524	Outcome: WIN2
+   525	Outcome: WIN2
+   526	Outcome: WIN2
+   527	Outcome: WIN2
+   528	Outcome: WIN2
+   529	Outcome: WIN2
+   530	Outcome: WIN2
+   531	Outcome: WIN2
+   532	Outcome: WIN2
+   533	Outcome: WIN2
+   534	Outcome: WIN2
+   535	Outcome: WIN2
+   536	Outcome: WIN2
+   537	Outcome: WIN2
+   538	Outcome: WIN2
+   539	Outcome: WIN2
+   540	Outcome: WIN2
+   541	Outcome: WIN2
+   542	Outcome: WIN2
+   543	Outcome: WIN2
+   544	Outcome: WIN2
+   545	Outcome: WIN2
+   546	Outcome: WIN2
+   547	Outcome: WIN2
+   548	Outcome: WIN2
+   549	Outcome: WIN2
+   550	Outcome: WIN2
+   551	Outcome: WIN2
+   552	Outcome: WIN2
+   553	Outcome: WIN2
+   554	Outcome: WIN2
+   555	Outcome: WIN2
+   556	Outcome: WIN2
+   557	Outcome: WIN2
+   558	Outcome: WIN2
+   559	Outcome: WIN2
+   560	Outcome: WIN2
+   561	Outcome: WIN2
+   562	Outcome: WIN2
+   563	Outcome: WIN2
+   564	Outcome: WIN2
+   565	Outcome: WIN2
+   566	Outcome: WIN2
+   567	Outcome: WIN2
+   568	Outcome: WIN2
+   569	Outcome: WIN1
+   570	Outcome: WIN2
+   571	Outcome: WIN2
+   572	Outcome: WIN2
+   573	Outcome: WIN2
+   574	Outcome: WIN2
+   575	Outcome: WIN2
+   576	Outcome: WIN2
+   577	Outcome: WIN2
+   578	Outcome: WIN2
+   579	Outcome: WIN2
+   580	Outcome: WIN2
+   581	Outcome: WIN2
+   582	Outcome: WIN2
+   583	Outcome: WIN2
+   584	Outcome: WIN2
+   585	Outcome: WIN2
+   586	Outcome: WIN2
+   587	Outcome: WIN2
+   588	Outcome: WIN2
+   589	Outcome: WIN2
+   590	Outcome: WIN2
+   591	Outcome: WIN2
+   592	Outcome: WIN2
+   593	Outcome: WIN2
+   594	Outcome: WIN2
+   595	Outcome: WIN2
+   596	Outcome: WIN2
+   597	Outcome: WIN2
+   598	Outcome: WIN2
+   599	Outcome: WIN2
+   600	Outcome: WIN2
+   601	Outcome: WIN2
+   602	Outcome: WIN2
+   603	Outcome: WIN2
+   604	Outcome: WIN2
+   605	Outcome: WIN2
+   606	Outcome: WIN2
+   607	Outcome: WIN2
+   608	Outcome: WIN2
+   609	Outcome: WIN2
+   610	Outcome: WIN2
+   611	Outcome: WIN2
+   612	Outcome: WIN2
+   613	Outcome: WIN2
+   614	Outcome: WIN2
+   615	Outcome: WIN2
+   616	Outcome: WIN2
+   617	Outcome: WIN2
+   618	Outcome: LOSS
+   619	Outcome: WIN2
+   620	Outcome: WIN2
+   621	Outcome: WIN2
+   622	Outcome: WIN2
+   623	Outcome: WIN2
+   624	Outcome: WIN2
+   625	Outcome: WIN2
+   626	Outcome: WIN2
+   627	Outcome: WIN2
+   628	Outcome: WIN2
+   629	Outcome: WIN2
+   630	Outcome: WIN2
+   631	Outcome: WIN2
+   632	Outcome: WIN2
+   633	Outcome: WIN2
+   634	Outcome: WIN2
+   635	Outcome: WIN2
+   636	Outcome: WIN2
+   637	Outcome: WIN2
+   638	Outcome: WIN2
+   639	Outcome: WIN2
+   640	Outcome: WIN2
+   641	Outcome: WIN2
+   642	Outcome: WIN2
+   643	Outcome: WIN2
+   644	Outcome: WIN2
+   645	Outcome: WIN2
+   646	Outcome: WIN2
+   647	Outcome: WIN2
+   648	Outcome: WIN2
+   649	Outcome: WIN2
+   650	Outcome: WIN2
+   651	Outcome: WIN2
+   652	Outcome: WIN2
+   653	Outcome: WIN2
+   654	Outcome: WIN2
+   655	Outcome: WIN2
+   656	Outcome: WIN2
+   657	Outcome: WIN2
+   658	Outcome: WIN2
+   659	Outcome: WIN2
+   660	Outcome: WIN2
+   661	Outcome: WIN2
+   662	Outcome: WIN2
+   663	Outcome: WIN2
+   664	Outcome: WIN2
+   665	Outcome: LOSS
+   666	Outcome: WIN2
+   667	Outcome: WIN2
+   668	Outcome: WIN2
+   669	Outcome: WIN2
+   670	Outcome: WIN2
+   671	Outcome: WIN2
+   672	Outcome: WIN2
+   673	Outcome: WIN2
+   674	Outcome: WIN2
+   675	Outcome: WIN2
+   676	Outcome: WIN2
+   677	Outcome: WIN2
+   678	Outcome: WIN2
+   679	Outcome: WIN2
+   680	Outcome: WIN2
+   681	Outcome: WIN2
+   682	Outcome: WIN2
+   683	Outcome: WIN2
+   684	Outcome: LOSS
+   685	Outcome: WIN2
+   686	Outcome: WIN2
+   687	Outcome: WIN2
+   688	Outcome: WIN2
+   689	Outcome: WIN2
+   690	Outcome: WIN2
+   691	Outcome: WIN2
+   692	Outcome: WIN2
+   693	Outcome: WIN2
+   694	Outcome: WIN2
+   695	Outcome: WIN2
+   696	Outcome: WIN2
+   697	Outcome: WIN2
+   698	Outcome: WIN2
+   699	Outcome: WIN2
+   700	Outcome: WIN2
+   701	Outcome: WIN2
+   702	Outcome: WIN2
+   703	Outcome: WIN2
+   704	Outcome: WIN2
+   705	Outcome: WIN2
+   706	Outcome: WIN2
+   707	Outcome: WIN2
+   708	Outcome: WIN2
+   709	Outcome: WIN2
+   710	Outcome: WIN2
+   711	Outcome: WIN2
+   712	Outcome: WIN2
+   713	Outcome: WIN2
+   714	Outcome: WIN2
+   715	Outcome: WIN2
+   716	Outcome: WIN2
+   717	Outcome: WIN2
+   718	Outcome: WIN2
+   719	Outcome: WIN2
+   720	Outcome: WIN2
+   721	Outcome: WIN2
+   722	Outcome: WIN2
+   723	Outcome: WIN2
+   724	Outcome: WIN2
+   725	Outcome: WIN2
+   726	Outcome: WIN2
+   727	Outcome: WIN2
+   728	Outcome: WIN2
+   729	Outcome: WIN2
+   730	Outcome: WIN2
+   731	Outcome: WIN2
+   732	Outcome: WIN2
+   733	Outcome: WIN2
+   734	Outcome: LOSS
+   735	Outcome: WIN2
+   736	Outcome: WIN2
+   737	Outcome: WIN2
+   738	Outcome: WIN2
+   739	Outcome: LOSS
+   740	Outcome: WIN2
+   741	Outcome: WIN2
+   742	Outcome: WIN2
+   743	Outcome: WIN2
+   744	Outcome: WIN2
+   745	Outcome: WIN2
+   746	Outcome: WIN2
+   747	Outcome: WIN2
+   748	Outcome: WIN2
+   749	Outcome: WIN2
+   750	Outcome: WIN2
+   751	Outcome: WIN2
+   752	Outcome: WIN2
+   753	Outcome: WIN2
+   754	Outcome: WIN2
+   755	Outcome: WIN2
+   756	Outcome: WIN2
+   757	Outcome: WIN2
+   758	Outcome: WIN2
+   759	Outcome: WIN2
+   760	Outcome: WIN2
+   761	Outcome: WIN2
+   762	Outcome: WIN2
+   763	Outcome: WIN2
+   764	Outcome: WIN2
+   765	Outcome: WIN2
+   766	Outcome: WIN2
+   767	Outcome: WIN2
+   768	Outcome: WIN2
+   769	Outcome: WIN2
+   770	Outcome: WIN2
+   771	Outcome: WIN2
+   772	Outcome: WIN2
+   773	Outcome: WIN2
+   774	Outcome: WIN2
+   775	Outcome: WIN2
+   776	Outcome: WIN2
+   777	Outcome: WIN2
+   778	Outcome: WIN2
+   779	Outcome: WIN2
+   780	Outcome: WIN2
+   781	Outcome: WIN2
+   782	Outcome: WIN2
+   783	Outcome: WIN2
+   784	Outcome: WIN2
+   785	Outcome: WIN2
+   786	Outcome: WIN2
+   787	Outcome: WIN2
+   788	Outcome: WIN2
+   789	Outcome: WIN2
+   790	Outcome: WIN2
+   791	Outcome: WIN2
+   792	Outcome: WIN2
+   793	Outcome: WIN2
+   794	Outcome: WIN2
+   795	Outcome: WIN2
+   796	Outcome: WIN2
+   797	Outcome: WIN2
+   798	Outcome: WIN2
+   799	Outcome: WIN2
+   800	Outcome: WIN2
+   801	Outcome: WIN2
+   802	Outcome: WIN2
+   803	Outcome: WIN2
+   804	Outcome: WIN2
+   805	Outcome: WIN2
+   806	Outcome: WIN2
+   807	Outcome: WIN2
+   808	Outcome: WIN2
+   809	Outcome: WIN2
+   810	Outcome: WIN2
+   811	Outcome: WIN2
+   812	Outcome: WIN2
+   813	Outcome: WIN2
+   814	Outcome: WIN2
+   815	Outcome: WIN2
+   816	Outcome: WIN2
+   817	Outcome: WIN2
+   818	Outcome: WIN2
+   819	Outcome: WIN2
+   820	Outcome: WIN2
+   821	Outcome: WIN2
+   822	Outcome: WIN2
+   823	Outcome: WIN2
+   824	Outcome: WIN2
+   825	Outcome: WIN2
+   826	Outcome: WIN2
+   827	Outcome: WIN2
+   828	Outcome: WIN2
+   829	Outcome: WIN2
+   830	Outcome: WIN2
+   831	Outcome: WIN2
+   832	Outcome: WIN2
+   833	Outcome: WIN2
+   834	Outcome: WIN2
+   835	Outcome: WIN2
+   836	Outcome: WIN2
+   837	Outcome: LOSS
+   838	Outcome: WIN2
+   839	Outcome: WIN2
+   840	Outcome: WIN2
+   841	Outcome: WIN2
+   842	Outcome: WIN2
+   843	Outcome: WIN2
+   844	Outcome: WIN2
+   845	Outcome: WIN2
+   846	Outcome: WIN2
+   847	Outcome: WIN2
+   848	Outcome: WIN2
+   849	Outcome: WIN2
+   850	Outcome: LOSS
+   851	Outcome: WIN2
+   852	Outcome: WIN2
+   853	Outcome: WIN2
+   854	Outcome: LOSS
+   855	Outcome: WIN2
+   856	Outcome: WIN2
+   857	Outcome: WIN2
+   858	Outcome: WIN2
+   859	Outcome: WIN2
+   860	Outcome: WIN2
+   861	Outcome: WIN2
+   862	Outcome: WIN2
+   863	Outcome: WIN2
+   864	Outcome: WIN2
+   865	Outcome: WIN2
+   866	Outcome: LOSS
+   867	Outcome: WIN2
+   868	Outcome: WIN2
+   869	Outcome: WIN2
+   870	Outcome: WIN2
+   871	Outcome: WIN2
+   872	Outcome: WIN2
+   873	Outcome: WIN2
+   874	Outcome: WIN2
+   875	Outcome: WIN2
+   876	Outcome: WIN2
+   877	Outcome: WIN2
+   878	Outcome: WIN2
+   879	Outcome: WIN2
+   880	Outcome: WIN2
+   881	Outcome: WIN2
+   882	Outcome: WIN2
+   883	Outcome: WIN2
+   884	Outcome: WIN2
+   885	Outcome: WIN2
+   886	Outcome: WIN2
+   887	Outcome: WIN2
+   888	Outcome: WIN2
+   889	Outcome: WIN2
+   890	Outcome: WIN2
+   891	Outcome: WIN2
+   892	Outcome: WIN2
+   893	Outcome: WIN2
+   894	Outcome: WIN2
+   895	Outcome: WIN2
+   896	Outcome: WIN2
+   897	Outcome: WIN2
+   898	Outcome: WIN2
+   899	Outcome: WIN2
+   900	Outcome: WIN1
+   901	Outcome: WIN2
+   902	Outcome: WIN2
+   903	Outcome: WIN2
+   904	Outcome: WIN2
+   905	Outcome: WIN2
+   906	Outcome: WIN2
+   907	Outcome: WIN2
+   908	Outcome: WIN2
+   909	Outcome: WIN2
+   910	Outcome: WIN2
+   911	Outcome: WIN2
+   912	Outcome: WIN2
+   913	Outcome: WIN2
+   914	Outcome: WIN2
+   915	Outcome: WIN2
+   916	Outcome: WIN2
+   917	Outcome: WIN2
+   918	Outcome: WIN2
+   919	Outcome: WIN2
+   920	Outcome: WIN2
+   921	Outcome: LOSS
+   922	Outcome: WIN2
+   923	Outcome: WIN2
+   924	Outcome: WIN2
+   925	Outcome: WIN2
+   926	Outcome: WIN2
+   927	Outcome: WIN2
+   928	Outcome: WIN2
+   929	Outcome: WIN2
+   930	Outcome: WIN2
+   931	Outcome: WIN2
+   932	Outcome: WIN2
+   933	Outcome: WIN2
+   934	Outcome: WIN2
+   935	Outcome: WIN2
+   936	Outcome: WIN2
+   937	Outcome: WIN2
+   938	Outcome: WIN2
+   939	Outcome: WIN1
+   940	Outcome: WIN2
+   941	Outcome: WIN2
+   942	Outcome: WIN2
+   943	Outcome: WIN2
+   944	Outcome: WIN2
+   945	Outcome: WIN2
+   946	Outcome: WIN2
+   947	Outcome: WIN2
+   948	Outcome: WIN2
+   949	Outcome: WIN2
+   950	Outcome: WIN2
+   951	Outcome: WIN2
+   952	Outcome: WIN2
+   953	Outcome: WIN2
+   954	Outcome: WIN2
+   955	Outcome: WIN2
+   956	Outcome: WIN2
+   957	Outcome: WIN2
+   958	Outcome: WIN2
+   959	Outcome: WIN2
+   960	Outcome: WIN2
+   961	Outcome: WIN2
+   962	Outcome: WIN2
+   963	Outcome: WIN2
+   964	Outcome: WIN2
+   965	Outcome: WIN2
+   966	Outcome: WIN2
+   967	Outcome: WIN2
+   968	Outcome: WIN2
+   969	Outcome: WIN2
+   970	Outcome: WIN2
+   971	Outcome: WIN2
+   972	Outcome: WIN2
+   973	Outcome: WIN2
+   974	Outcome: WIN2
+   975	Outcome: WIN2
+   976	Outcome: WIN2
+   977	Outcome: WIN2
+   978	Outcome: WIN2
+   979	Outcome: WIN2
+   980	Outcome: WIN2
+   981	Outcome: WIN2
+   982	Outcome: WIN2
+   983	Outcome: WIN2
+   984	Outcome: WIN2
+   985	Outcome: WIN2
+   986	Outcome: WIN2
+   987	Outcome: WIN2
+   988	Outcome: WIN2
+   989	Outcome: WIN2
+   990	Outcome: WIN2
+   991	Outcome: WIN2
+   992	Outcome: WIN2
+   993	Outcome: WIN2
+   994	Outcome: WIN2
+   995	Outcome: WIN2
+   996	Outcome: WIN2
+   997	Outcome: WIN2
+   998	Outcome: WIN2
+   999	Outcome: WIN2
+  1000	Outcome: WIN2
