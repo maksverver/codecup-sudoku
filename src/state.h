@@ -16,9 +16,6 @@
 #include <string>
 #include <vector>
 
-// Set to 2 to allow double-moves in the final turn.
-#define MAX_MOVES 1
-
 // Set to 1 to require that each move reduces the solution set.
 #define MUST_REDUCE 1
 
@@ -41,7 +38,7 @@ struct Move {
 struct Turn {
   bool claim_unique;
   int move_count;
-  Move moves[MAX_MOVES];
+  Move moves[1];
 
   Turn(const Turn &t) = default;
   Turn &operator=(const Turn &t) = default;
@@ -56,13 +53,6 @@ struct Turn {
     moves[0] = move;
     move_count = 1;
   }
-#if MAX_MOVES > 1
-  Turn(const Move &move1, const Move &move2, bool claim_unique = false) : claim_unique(claim_unique), move_count(1) {
-    moves[0] = move1;
-    moves[1] = move2;
-    move_count = 2;
-  }
-#endif
 };
 
 std::ostream &operator<<(std::ostream &os, const Move &move);
