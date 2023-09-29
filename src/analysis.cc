@@ -213,6 +213,7 @@ std::vector<Move> FindImmediatelyWinningMoves(
 // This function is mutually recursive with IsWinning() (defined below) and
 // its results are memoized in IsWinning().
 bool IsWinning2(
+    std::span<RankedMove> moves,
     std::span<HashedSolution> solutions,
     std::span<position_t> choice_positions,
     int inferred_count,
@@ -253,23 +254,20 @@ bool IsWinning(
   //     is an inferred digit and we omit it from the new choice positions.
   //  2. Check if there is a digit that occurs in exactly 1 solution. If so,
   //     then this is an immediately winning move.
-  //
-  // maybe TODO: it might be effective to also calculated RankedMoves here, so
-  // we don't have to call GetRankedMoves() later.
+  int solution_counts[81][9] = {};
   position_t choice_positions_data[81];
   size_t choice_positions_size = 0;
   for (position_t pos : old_choice_positions) {
-    int solution_count[9] = {};
     bool inferred = false;
     for (const auto &entry : solutions) {
-      if (++solution_count[entry.solution[pos] - 1] == (int) solutions.size()) {
+      if (++solution_counts[pos][entry.solution[pos] - 1] == (int) solutions.size()) {
         ++inferred_count;
         inferred = true;
         break;
       }
     }
     if (!inferred) {
-      for (int c : solution_count) if (c == 1) {
+      for (int c : solution_counts[pos]) if (c == 1) {
         // Immediately winning!
         counters.immediately_won.Inc();
         return true;
@@ -277,6 +275,24 @@ bool IsWinning(
       choice_positions_data[choice_positions_size++] = pos;
     }
   }
+
+  std::span<position_t> choice_positions(choice_positions_data, choice_positions_size);
+
+  RankedMove moves_data[max_moves];
+  size_t moves_size = 0;
+  for (position_t pos : choice_positions) {
+    for (int digit = 1; digit <= 9; ++digit) {
+      int solution_count = solution_counts[pos][digit - 1];
+      if (solution_count > 0) {
+        moves_data[moves_size++] = RankedMove{
+          .move = Move{.pos = pos, .digit = digit},
+          .solution_count = solution_count,
+        };
+      }
+    }
+  }
+  std::sort(&moves_data[0], &moves_data[moves_size]);
+  std::span<RankedMove> moves(moves_data, moves_size);
 
   bool winning;
 
@@ -289,8 +305,7 @@ bool IsWinning(
     winning = mem.GetWinning();
   } else {
     // Solve recursively.
-    std::span<position_t> choice_positions(choice_positions_data, choice_positions_size);
-    winning = IsWinning2(solutions, choice_positions, inferred_count, depth, work_left);
+    winning = IsWinning2(moves, solutions, choice_positions, inferred_count, depth, work_left);
     if (work_left < 0) return false;  // Search aborted.
     mem.SetWinning(winning);
   }
@@ -299,14 +314,12 @@ bool IsWinning(
 }
 
 bool IsWinning2(
+    std::span<RankedMove> moves,
     std::span<HashedSolution> solutions,
     std::span<position_t> choice_positions,
     int inferred_count,
     int depth,
     int64_t &work_left) {
-
-  RankedMove moves_buf[max_moves];
-  std::span moves(moves_buf, GenerateRankedMoves(solutions, choice_positions, moves_buf));
 
   for (const auto &[move, rank] : moves) {
     bool winning = IsWinning(
