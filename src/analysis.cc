@@ -176,11 +176,13 @@ struct RankedMove {
   auto operator<=>(const RankedMove &o) const { return solution_count <=> o.solution_count; }
 };
 
-size_t GenerateRankedMoves(
+// Generates stably sorted ranked moves, sorted by increasing solution count.
+// This may include immediately winning moves with solution count == 1, which
+// will necessarily appear at the front of the list.
+std::vector<RankedMove> GenerateRankedMoves(
     std::span<HashedSolution> solutions,
-    std::span<const position_t> choice_positions,
-    RankedMove (&moves)[max_moves]) {
-  size_t nmove = 0;
+    std::span<const position_t> choice_positions) {
+  std::vector<RankedMove> moves;
   for (position_t pos : choice_positions) {
     int solution_count[9] = {};
     for (const auto &entry : solutions) {
@@ -190,55 +192,16 @@ size_t GenerateRankedMoves(
       int n = solution_count[digit - 1];
       if (n > 0) {
         assert((size_t) n < solutions.size());
-        moves[nmove++] = RankedMove{
-          .move = Move{.pos = pos, .digit = digit},
-          .solution_count = n,
-        };
+        moves.push_back(RankedMove{
+              .move = Move{.pos = pos, .digit = digit},
+              .solution_count = n,
+            });
       }
     }
   }
-  std::sort(&moves[0], &moves[nmove]);
-  return nmove;
+  std::stable_sort(moves.begin(), moves.end());
+  return moves;
 }
-
-// Let solutions be the subset {all_solutions[i] for all i in possibilites}.
-//
-// An immediately-winning move is a move that reduces the set of solutions to a
-// single solution. i.e., it is a position and digit such that only one solution
-// has that digit in that position.
-std::vector<Move> FindImmediatelyWinningMoves(
-    std::span<const solution_t> solutions,
-    std::span<const position_t> choice_positions) {
-  assert(solutions.size() > 1);
-  assert(choice_positions.size() > 0);
-  std::vector<Move> result;
-  for (position_t pos : choice_positions) {
-    int solution_count[9] = {};
-    for (const solution_t &solution : solutions) {
-      ++solution_count[solution[pos] - 1];
-    }
-    for (int digit = 1; digit <= 9; ++digit) {
-      if (solution_count[digit - 1] == 1) {
-        result.push_back(Move{pos, digit});
-      }
-    }
-  }
-  return result;
-}
-
-// Recursively solves the given state assuming that:
-//  - there are at least two solutions left,
-//  - no immediately winning moves exist, and
-//  - all single-candidate cells have been removed from choice_positions.
-//
-// This function is mutually recursive with IsWinning() (defined below) and
-// its results are memoized in IsWinning().
-bool IsWinning2(
-    std::span<RankedMove> moves,
-    std::span<HashedSolution> solutions,
-    std::span<position_t> choice_positions,
-    int depth,
-    int64_t &work_left);
 
 // This function determines if the given state is winning for the next player.
 bool IsWinning(
@@ -301,9 +264,8 @@ bool IsWinning(
       }
     }
   }
-  std::span<RankedMove> moves(moves_data, moves_size);
 
-  bool winning;
+  bool winning = false;
 
   // Memoization happens here.
   counters.memo_accessed.Inc();
@@ -313,30 +275,22 @@ bool IsWinning(
     counters.memo_returned.Inc();
     winning = mem.GetWinning();
   } else {
-    // Solve recursively.
-    winning = IsWinning2(moves, solutions, choice_positions, depth, work_left);
-    if (work_left < 0) return false;  // Search aborted.
+    // Solve recursively. We consider all possible moves: if there is a move
+    // that leads to a position that is losing for the opponent, then that
+    // move is winning for the current player.
+    std::span<RankedMove> moves(moves_data, moves_size);
+    for (const auto [move, solution_count] : SortingIterable(moves)) {
+      bool next_losing = !IsWinning(
+          FilterSolutions(solutions, move),
+          FilterPositions(choice_positions, move.pos),
+          depth + 1, work_left);
+      if (work_left < 0) return false;  // Search aborted.
+      if (next_losing) { winning = true; break; }
+    }
     mem.SetWinning(winning);
   }
 
   return winning;
-}
-
-bool IsWinning2(
-    std::span<RankedMove> moves,
-    std::span<HashedSolution> solutions,
-    std::span<position_t> choice_positions,
-    int depth,
-    int64_t &work_left) {
-  for (const auto [move, solution_count] : SortingIterable(moves)) {
-    bool winning = IsWinning(
-        FilterSolutions(solutions, move),
-        FilterPositions(choice_positions, move.pos),
-        depth + 1, work_left);
-    if (work_left < 0) return false;  // Search aborted.
-    if (!winning) return true;  // Winning move found!
-  }
-  return false;
 }
 
 std::vector<Turn> Turns(std::span<const Move> moves, bool claim_unique=false) {
@@ -354,8 +308,9 @@ std::vector<Turn> Turns(std::span<const Move> moves, bool claim_unique=false) {
 // This is very similar to IsWinning2() except this also returns an optimal
 // move to play.
 AnalyzeResult SelectMoveFromSolutions2(
-    std::vector<position_t> &choice_positions,
     std::span<HashedSolution> solutions,
+    std::vector<position_t> &choice_positions,
+    const std::vector<RankedMove> &ranked_moves,
     int max_winning_turns,
     int64_t work_left) {
   assert(solutions.size() > 1);
@@ -367,13 +322,12 @@ AnalyzeResult SelectMoveFromSolutions2(
   size_t max_solutions_remaining = 0;
 #endif
 
-  RankedMove moves_buf[max_moves];
-  std::span moves(moves_buf, GenerateRankedMoves(solutions, choice_positions, moves_buf));
-  for (const auto &[move, rank] : moves) {
+  for (const auto &[move, solution_count] : ranked_moves) {
     auto remaining_solutions = FilterSolutions(solutions, move);
     auto remaining_choice_positions = FilterPositions(choice_positions, move.pos);
     // We should have found immediately-winning moves already before.
-    assert(remaining_solutions.size() > 1 && remaining_solutions.size() < solutions.size());
+    assert(remaining_solutions.size() == (size_t) solution_count &&
+        solution_count > 1 && (size_t) solution_count < solutions.size());
     bool winning = IsWinning(remaining_solutions, remaining_choice_positions, 1, work_left);
     if (work_left < 0) return AnalyzeResult{};  // Search aborted.
     if (winning) {
@@ -414,7 +368,6 @@ std::ostream &operator<<(std::ostream &os, const Outcome &outcome) {
   case Outcome::LOSS: return os << "LOSS";
   case Outcome::WIN1: return os << "WIN1";
   case Outcome::WIN2: return os << "WIN2";
-  case Outcome::WIN3: return os << "WIN3";
   default:
     assert(false);
     return os;
@@ -462,21 +415,28 @@ AnalyzeResult Analyze(
     }
   }
 
-  // If there is an immediately winning move, always take it!
-  if (auto immediately_winning = FindImmediatelyWinningMoves(solutions, choice_positions);
-      !immediately_winning.empty()) {
-    return AnalyzeResult{Outcome::WIN1, Turns(immediately_winning, true)};
-  }
-
   std::vector<HashedSolution> hashed_solutions;
   hashed_solutions.reserve(solutions.size());
   for (const auto &solution : solutions) {
     hashed_solutions.push_back(HashedSolution{Hash(solution), solution});
   }
 
+  std::vector<RankedMove> ranked_moves = GenerateRankedMoves(hashed_solutions, choice_positions);
+  assert(!ranked_moves.empty());
+
+  // If there is an immediately winning move, always take it!
+  if (ranked_moves.front().solution_count == 1) {
+    std::vector<Move> immediately_winning;
+    for (auto [move, solution_count] : ranked_moves) {
+      if (solution_count != 1) break;
+      immediately_winning.push_back(move);
+    }
+    return AnalyzeResult{Outcome::WIN1, Turns(immediately_winning, true)};
+  }
+
   // Otherwise, recursively search for a winning move.
   return SelectMoveFromSolutions2(
-      choice_positions, hashed_solutions, max_winning_turns,
+      hashed_solutions, choice_positions, ranked_moves, max_winning_turns,
       max_work - solutions.size());
 
   // Note: we could clear the memo before returning to save memory, but keeping

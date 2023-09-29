@@ -23,11 +23,10 @@ enum class Outcome {
   LOSS,
   WIN1,  // Immediately winning move detected
   WIN2,  // Winning, but not immediately.
-  WIN3,  // Winning, by filling in an inferred digit
 };
 
 inline bool IsWinning(Outcome o) {
-  return o == Outcome::WIN1 || o == Outcome::WIN2 || o == Outcome::WIN3;
+  return o == Outcome::WIN1 || o == Outcome::WIN2;
 }
 
 std::ostream &operator<<(std::ostream &os, const Outcome &outcome);
