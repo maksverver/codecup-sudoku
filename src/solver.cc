@@ -261,8 +261,9 @@ void EnumerateSolutions(State &state) {
       std::cout << "Outcome: " << *result.outcome << '\n';
       std::cout << result.optimal_turns.size() << " optimal turns:";
       for (const Turn &turn : result.optimal_turns) std::cout << ' ' << turn;
-      std::cout << '\n' << counters << '\n';
+      std::cout << '\n';
     }
+    std::cout << '\n' << counters << '\n';
   }
 }
 
