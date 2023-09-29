@@ -83,6 +83,47 @@ template<typename T> std::vector<T> Remove(std::span<const T> v, T i) {
   return res;
 }
 
+// std::span<T> wrapper that allows iteration in sorted order.
+//
+// Construction takes O(N) time, dereferencing an iterator takes O(1) time
+// and incrementing an iterator takes O(log N) time.
+//
+// This is useful in the case where it is unlikely that the entire range
+// is iterated over.
+//
+// Note that the elements of the span are reordered during iteration!
+template<class T> class SortingIterable {
+  struct Iterator {
+    std::span<T>::iterator begin, end;
+
+    T &operator*() { return *begin; }
+
+    Iterator &operator++() {
+      std::pop_heap(begin, end, std::greater<T>());
+      --end;
+      return *this;
+    }
+
+    bool operator==(const Iterator &o) const { return end == o.end; }
+  };
+
+public:
+  explicit SortingIterable(std::span<T> data) : data(data) {};
+
+  Iterator begin() {
+    std::make_heap(data.begin(), data.end(), std::greater<T>());
+    return Iterator{data.begin(), data.end()};
+  }
+
+  Iterator end() {
+    return Iterator{data.begin(), data.begin()};
+  }
+
+private:
+
+  std::span<T> data;
+};
+
 /*
 
 // Rearranges the span of solutions into three parts:
@@ -152,7 +193,7 @@ struct RankedMove {
   Move move;
   int solution_count;
 
-  bool operator<(const RankedMove &o) const { return solution_count < o.solution_count; }
+  auto operator<=>(const RankedMove &o) const { return solution_count <=> o.solution_count; }
 };
 
 size_t GenerateRankedMoves(
@@ -291,7 +332,6 @@ bool IsWinning(
       }
     }
   }
-  std::sort(&moves_data[0], &moves_data[moves_size]);
   std::span<RankedMove> moves(moves_data, moves_size);
 
   bool winning;
@@ -320,8 +360,7 @@ bool IsWinning2(
     int inferred_count,
     int depth,
     int64_t &work_left) {
-
-  for (const auto &[move, rank] : moves) {
+  for (const auto [move, solution_count] : SortingIterable(moves)) {
     bool winning = IsWinning(
         FilterSolutions(solutions, move),
         FilterPositions(choice_positions, move.pos),
