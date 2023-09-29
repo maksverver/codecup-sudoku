@@ -16,9 +16,6 @@
 #include <string>
 #include <vector>
 
-// Set to 1 to require that each move reduces the solution set.
-#define MUST_REDUCE 1
-
 // Set to 0 to not maximize the number of solutions that remain
 // when making a losing move.
 #define MAXIMIZE_SOLUTIONS_REMAINING 1

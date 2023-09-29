@@ -157,12 +157,10 @@ Move PickRandomMove(const State &state, rng_t &rng) {
   for (int pos = 0; pos < 81; ++pos) {
     if (state.Digit(pos) == 0) {
       unsigned unused = state.CellUnused(pos);
-#if MUST_REDUCE
       // Skip cells that are known to be unique. (Passing this check doesn't
       // mean the move is valid, but it's not known to be invalid, which is
       // better than nothing!)
       if ((unused & (unused - 1)) == 0) continue;
-#endif
       for (int digit = 1; digit <= 9; ++digit) if (unused & (1u << digit)) {
         moves.push_back(Move{.pos = pos, .digit = digit});
       }
@@ -191,9 +189,7 @@ Move PickMoveIncomplete(const State &state, std::span<const solution_t> solution
       for (int digit = 1; digit <= 9; ++digit) {
         size_t c = count[pos][digit];
         assert(c <= solutions.size());
-#if MUST_REDUCE
         if (c == solutions.size()) continue;  // Must reduce solution set size!
-#endif
 #if MAXIMIZE_SOLUTIONS_REMAINING
         if (c > max_count) {
           max_count = c;
