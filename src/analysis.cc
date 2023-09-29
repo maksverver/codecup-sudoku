@@ -56,26 +56,6 @@ candidates_t CalculateCandidates(std::span<const solution_t> solutions) {
 
 constexpr bool Determined(unsigned mask) { return (mask & (mask - 1)) == 0; }
 
-// Returns how many times it would make sense to place an inferred digit.
-//
-// Currently I believe it only makes sense to try placing an inferred digit when
-// the count is odd, since otherwise, each inferred digit filled in could be
-// countered by the opponent by filling in another inferred digit, which doesn't
-// change the value of the position.
-//
-// The reason that this is a separate function is that it allows testing the
-// hypothesis that only the parity of `inferred_count` matters, by changing the
-// implementation into `return inferred_count;` In that case, analysis would run
-// slower, but should give the same results.
-constexpr int ReduceInferredCount(int inferred_count) {
-  return inferred_count & 1;
-}
-
-constexpr memo_key_t HashInferredCount(int inferred_count) {
-  const memo_key_t key = 0x2ac473eb0dac37ae;  // randomly generated
-  return key * ReduceInferredCount(inferred_count);
-}
-
 template<typename T> std::vector<T> Remove(std::span<const T> v, T i) {
   std::vector<T> res;
   res.reserve(v.size() - 1);
@@ -257,23 +237,13 @@ bool IsWinning2(
     std::span<RankedMove> moves,
     std::span<HashedSolution> solutions,
     std::span<position_t> choice_positions,
-    int inferred_count,
     int depth,
     int64_t &work_left);
 
 // This function determines if the given state is winning for the next player.
-//
-//  1. Remove inferred digits.
-//  2. Search for immediately winning positions.
-//  3. Call IsWinning2() to solve the reduced grid without inferred digits.
-//
-// Step 3 is memoized to avoid duplicate work. Note that step 1 and 2 are
-// not memoized, since the return value depends on the parity of the number
-// of inferred digits.
 bool IsWinning(
     std::span<HashedSolution> solutions,
     std::span<const position_t> old_choice_positions,
-    int inferred_count,
     int depth,
     int64_t &work_left) {
   assert(solutions.size() > 1);
@@ -302,7 +272,6 @@ bool IsWinning(
     bool inferred = false;
     for (const auto &entry : solutions) {
       if (++solution_counts[pos][entry.solution[pos] - 1] == (int) solutions.size()) {
-        ++inferred_count;
         inferred = true;
         break;
       }
@@ -338,14 +307,14 @@ bool IsWinning(
 
   // Memoization happens here.
   counters.memo_accessed.Inc();
-  memo_key_t key = HashSolutionSet(solutions) ^ HashInferredCount(inferred_count);
+  memo_key_t key = HashSolutionSet(solutions);
   auto mem = memo.Lookup(key);
   if (mem.HasValue()) {
     counters.memo_returned.Inc();
     winning = mem.GetWinning();
   } else {
     // Solve recursively.
-    winning = IsWinning2(moves, solutions, choice_positions, inferred_count, depth, work_left);
+    winning = IsWinning2(moves, solutions, choice_positions, depth, work_left);
     if (work_left < 0) return false;  // Search aborted.
     mem.SetWinning(winning);
   }
@@ -357,14 +326,13 @@ bool IsWinning2(
     std::span<RankedMove> moves,
     std::span<HashedSolution> solutions,
     std::span<position_t> choice_positions,
-    int inferred_count,
     int depth,
     int64_t &work_left) {
   for (const auto [move, solution_count] : SortingIterable(moves)) {
     bool winning = IsWinning(
         FilterSolutions(solutions, move),
         FilterPositions(choice_positions, move.pos),
-        inferred_count, depth + 1, work_left);
+        depth + 1, work_left);
     if (work_left < 0) return false;  // Search aborted.
     if (!winning) return true;  // Winning move found!
   }
@@ -382,13 +350,11 @@ std::vector<Turn> Turns(std::span<const Move> moves, bool claim_unique=false) {
 //
 //  - there are at least two solutions left,
 //  - no immediately winning moves exist,
-//  - inferred_moves have been removed from choice_positions.
 //
 // This is very similar to IsWinning2() except this also returns an optimal
 // move to play.
 AnalyzeResult SelectMoveFromSolutions2(
     std::vector<position_t> &choice_positions,
-    const std::vector<Move> &inferred_moves,
     std::span<HashedSolution> solutions,
     int max_winning_turns,
     int64_t work_left) {
@@ -408,8 +374,7 @@ AnalyzeResult SelectMoveFromSolutions2(
     auto remaining_choice_positions = FilterPositions(choice_positions, move.pos);
     // We should have found immediately-winning moves already before.
     assert(remaining_solutions.size() > 1 && remaining_solutions.size() < solutions.size());
-    bool winning = IsWinning(remaining_solutions, remaining_choice_positions,
-            inferred_moves.size(), 1, work_left);
+    bool winning = IsWinning(remaining_solutions, remaining_choice_positions, 1, work_left);
     if (work_left < 0) return AnalyzeResult{};  // Search aborted.
     if (winning) {
       // Winning for the next player => losing for the previous player.
@@ -489,13 +454,9 @@ AnalyzeResult Analyze(
 
   candidates_t candidates = CalculateCandidates(solutions);
   std::vector<position_t> choice_positions;
-  std::vector<Move> inferred_moves;
   for (int i = 0; i < 81; ++i) {
     if (givens[i] == 0) {
-      if (Determined(candidates[i])) {
-        int digit = std::countr_zero(candidates[i]);
-        inferred_moves.push_back(Move{.pos = i, .digit = digit});
-      } else {
+      if (!Determined(candidates[i])) {
         choice_positions.push_back(i);
       }
     }
@@ -515,7 +476,7 @@ AnalyzeResult Analyze(
 
   // Otherwise, recursively search for a winning move.
   return SelectMoveFromSolutions2(
-      choice_positions, inferred_moves, hashed_solutions, max_winning_turns,
+      choice_positions, hashed_solutions, max_winning_turns,
       max_work - solutions.size());
 
   // Note: we could clear the memo before returning to save memory, but keeping
