@@ -220,6 +220,15 @@ bool IsWinning(
   work_left -= solutions.size();
   if (work_left < 0) return false;  // Search aborted.
 
+  // Check memo for cached result.
+  counters.memo_accessed.Inc();
+  memo_key_t key = HashSolutionSet(solutions);
+  auto mem = memo.Lookup(key);
+  if (mem.HasValue()) {
+    counters.memo_returned.Inc();
+    return mem.GetWinning();
+  }
+
   // Calculate new choice positions and detect immediately winning moves.
   //
   // For each choice position:
@@ -243,6 +252,7 @@ bool IsWinning(
       for (int c : solution_counts[pos]) if (c == 1) {
         // Immediately winning!
         counters.immediately_won.Inc();
+        mem.SetWinning(true);
         return true;
       }
       choice_positions_data[choice_positions_size++] = pos;
@@ -265,31 +275,20 @@ bool IsWinning(
     }
   }
 
+  // Solve recursively. We consider all possible moves: if there is a move
+  // that leads to a position that is losing for the opponent, then that
+  // move is winning for the current player.
   bool winning = false;
-
-  // Memoization happens here.
-  counters.memo_accessed.Inc();
-  memo_key_t key = HashSolutionSet(solutions);
-  auto mem = memo.Lookup(key);
-  if (mem.HasValue()) {
-    counters.memo_returned.Inc();
-    winning = mem.GetWinning();
-  } else {
-    // Solve recursively. We consider all possible moves: if there is a move
-    // that leads to a position that is losing for the opponent, then that
-    // move is winning for the current player.
-    std::span<RankedMove> moves(moves_data, moves_size);
-    for (const auto [move, solution_count] : SortingIterable(moves)) {
-      bool next_losing = !IsWinning(
-          FilterSolutions(solutions, move),
-          FilterPositions(choice_positions, move.pos),
-          depth + 1, work_left);
-      if (work_left < 0) return false;  // Search aborted.
-      if (next_losing) { winning = true; break; }
-    }
-    mem.SetWinning(winning);
+  std::span<RankedMove> moves(moves_data, moves_size);
+  for (const auto [move, solution_count] : SortingIterable(moves)) {
+    bool next_losing = !IsWinning(
+        FilterSolutions(solutions, move),
+        FilterPositions(choice_positions, move.pos),
+        depth + 1, work_left);
+    if (work_left < 0) return false;  // Search aborted.
+    if (next_losing) { winning = true; break; }
   }
-
+  mem.SetWinning(winning);
   return winning;
 }
 
