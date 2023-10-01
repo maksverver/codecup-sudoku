@@ -390,8 +390,9 @@ int main(int argc, char *argv[]) {
   LogId(player_name);
 
   if (!ParseFlags(argc, argv) || arg_help) {
-    std::clog << "\nOptions:\n";
-    PrintFlagUsage(std::clog);
+    std::ostream &os = arg_help ? std::cout : std::clog;
+    os << "\nOptions:\n";
+    PrintFlagUsage(os);
     return EXIT_FAILURE;
   }
 

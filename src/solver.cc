@@ -283,11 +283,12 @@ void Process(State &state) {
 int main(int argc, char *argv[]) {
   std::vector<char *> plain_args;
   if (!ParseFlags(argc, argv, plain_args) || plain_args.size() != 1 || arg_help) {
-    std::clog << "Usage:\n"
+    std::ostream &os = arg_help ? std::cout : std::clog;
+    os << "Usage:\n"
         "\tsolver [<options>] <state>  (solves a single state)\n"
         "\tsolver [<options>] -        (solve states read from standard input)\n\n"
         "Options:\n";
-    PrintFlagUsage(std::clog);
+    PrintFlagUsage(os);
     return EXIT_FAILURE;
   }
 
