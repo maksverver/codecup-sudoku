@@ -18,7 +18,7 @@
 namespace {
 
 DECLARE_FLAG(bool, arg_help, false, "help", "");
-
+DECLARE_FLAG(bool, arg_count_only, false, "count_only", "only count solutions");
 DECLARE_FLAG(int64_t, analyze_max_work,        1e18, "analyze_max_work",
     "work limit for analysis");
 DECLARE_FLAG(int64_t, analyze_batch_size,       1e7, "analyze_batch_size",
@@ -274,8 +274,7 @@ void EnumerateSolutions(State &state) {
 void Process(State &state) {
   CountSolutions(state);
 
-  // TODO: make printing this optional
-  EnumerateSolutions(state);
+  if (!arg_count_only) EnumerateSolutions(state);
 }
 
 }  // namespace
