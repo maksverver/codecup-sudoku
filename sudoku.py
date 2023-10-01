@@ -60,6 +60,19 @@ def MakeCnf(grid):
   return cnf
 
 
+def PrintCnf(cnf, file=sys.stdout):
+  '''Outputs cnf to file in DIMACS format.'''
+  print('p', 'cnf', 9*9*9, len(cnf), file=file)
+  for terms in cnf:
+    print(*(terms + [0]), file=file)
+
+
+def DumpCnf(cnf, filename):
+  '''Writes cnf to a file in DIMACS format.'''
+  with open(filename, 'wt') as file:
+    PrintCnf(cnf, file=file)
+
+
 def HasSolution(grid):
   cnf = MakeCnf(grid)
   res = pycosat.solve(cnf)
