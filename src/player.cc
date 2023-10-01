@@ -241,6 +241,9 @@ bool PlayGame(rng_t &rng) {
             next_solutions.push_back(solution);
           }
         }
+        if (solutions.size() == next_solutions.size()) {
+          LogWarning() << "Non-reducing move: " << move;
+        }
         solutions.swap(next_solutions);
         assert(!solutions.empty());
       }
