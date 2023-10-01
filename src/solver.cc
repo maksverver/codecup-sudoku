@@ -17,17 +17,20 @@
 
 namespace {
 
-DECLARE_FLAG(bool, arg_help, false, "help", "");
-DECLARE_FLAG(bool, arg_count_only, false, "count_only", "only count solutions");
-DECLARE_FLAG(int64_t, analyze_max_work,        1e18, "analyze_max_work",
+DECLARE_FLAG(bool, arg_help,       false, "help",
+    "show usage information");
+DECLARE_FLAG(bool, arg_count_only, false, "count-only",
+    "only count solutions");
+
+DECLARE_FLAG(int64_t, analyze_max_work,        1e18, "analyze-max-work",
     "work limit for analysis");
-DECLARE_FLAG(int64_t, analyze_batch_size,       1e7, "analyze_batch_size",
+DECLARE_FLAG(int64_t, analyze_batch_size,       1e7, "analyze-batch_size",
     "batch size for analsysis");
-DECLARE_FLAG(int,     enumerate_max_count,      1e6, "enumerate_max_count",
+DECLARE_FLAG(int,     enumerate_max_count,      1e6, "enumerate-max-count",
     "max. number of solutions to enumerate");
-DECLARE_FLAG(int,     max_print,                100, "max_print",
+DECLARE_FLAG(int,     max_print,                100, "max-print",
     "max. number of solutions to print");
-DECLARE_FLAG(int,     max_winning_moves,          1, "max_winning_moves",
+DECLARE_FLAG(int,     max_winning_moves,          1, "max-winning-moves",
     "max. number of winning moves to list");
 
 char Char(int d, char zero='.') {

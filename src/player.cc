@@ -27,28 +27,29 @@ namespace {
 
 const std::string player_name = "Numberwang";
 
-DECLARE_FLAG(bool, arg_help, false, "help", "");
+DECLARE_FLAG(bool, arg_help, false, "help",
+    "show usage information");
 
 DECLARE_FLAG(std::string, arg_seed, "", "seed",
     "Random seed in hexadecimal format. If empty, pick randomly. "
     "The chosen seed will be logged to stderr for reproducibility.");
 
-DECLARE_FLAG(int, arg_enumerate_max_count, 200'000, "enumerate_max_count",
+DECLARE_FLAG(int, arg_enumerate_max_count, 200'000, "enumerate-max-count",
     "Maximum number of solutions to enumerate.");
 
-DECLARE_FLAG(int64_t, arg_enumerate_max_work, 20'000'000, "enumerate_max_work",
+DECLARE_FLAG(int64_t, arg_enumerate_max_work, 20'000'000, "enumerate-max-work",
     "Maximum number of recursive calls used to enumerate solutions.");
 
-DECLARE_FLAG(int, arg_analyze_max_count, 100'000, "analyze_max_count",
+DECLARE_FLAG(int, arg_analyze_max_count, 100'000, "analyze-max-count",
     "Maximum number of solutions to enable analysis. That is, endgame analysis "
     "does not start until the solution count is less than or equal to this value.");
 
-DECLARE_FLAG(int64_t, arg_analyze_max_work, 100'000'000, "analyze_max_work",
+DECLARE_FLAG(int64_t, arg_analyze_max_work, 100'000'000, "analyze-max-work",
     "Maximum amount of work to perform during analysis (number of recursive calls "
     "times average number of solutions remaining). This only applies when no time "
     "limit is given.");
 
-DECLARE_FLAG(int, arg_time_limit, LOCAL_BUILD ? 0 : 27, "time_limit",
+DECLARE_FLAG(int, arg_time_limit, LOCAL_BUILD ? 0 : 27, "time-limit",
     "Time limit in seconds (or 0 to disable time-based performance). "
     "On each turn, the player uses a fraction of time remaining on analysis. "
     "Note that this should be slightly lower than the official time limit to "
@@ -60,7 +61,7 @@ DECLARE_FLAG(int, arg_time_limit, LOCAL_BUILD ? 0 : 27, "time_limit",
 // Before the move ordering implemented in commit 331998f, 10 million
 // corresponded with approximately 1 second on the CodeCup server, but this
 // might not be true anymore!
-DECLARE_FLAG(int64_t, arg_analyze_batch_size, 10'000'000, "analyze_batch_size",
+DECLARE_FLAG(int64_t, arg_analyze_batch_size, 10'000'000, "analyze-batch-size",
     "Amount of work to do at once when using a time limit.");
 
 
