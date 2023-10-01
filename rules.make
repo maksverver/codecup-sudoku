@@ -4,14 +4,14 @@
 
 BINARIES=$(BIN)player $(BIN)solver
 
-COMMON_HDRS=$(SRC)analysis.h $(SRC)check.h $(SRC)counters.h $(SRC)flags.h $(SRC)logging.h $(SRC)random.h $(SRC)state.h
-COMMON_SRCS=$(SRC)analysis.cc $(SRC)check.cc $(SRC)counters.cc $(SRC)flags.cc $(SRC)random.cc $(SRC)state.cc
-COMMON_OBJS=$(OBJ)analysis.o $(OBJ)check.o $(OBJ)counters.o $(OBJ)flags.o $(OBJ)random.o $(OBJ)state.o
+COMMON_HDRS=$(SRC)analysis.h $(SRC)check.h $(SRC)counters.h $(SRC)logging.h $(SRC)options.h $(SRC)random.h $(SRC)state.h
+COMMON_SRCS=$(SRC)analysis.cc $(SRC)check.cc $(SRC)counters.cc $(SRC)options.h $(SRC)random.cc $(SRC)state.cc
+COMMON_OBJS=$(OBJ)analysis.o $(OBJ)check.o $(OBJ)counters.o $(OBJ)options.o $(OBJ)random.o $(OBJ)state.o
 PLAYER_OBJS=$(OBJ)player.o $(COMMON_OBJS)
 SOLVER_OBJS=$(OBJ)solver.o $(COMMON_OBJS)
 
 # Note that headers must be included in dependency order.
-COMBINED_SRCS=$(SRC)check.h $(SRC)check.cc $(SRC)flags.h $(SRC)flags.cc \
+COMBINED_SRCS=$(SRC)check.h $(SRC)check.cc $(SRC)options.h $(SRC)options.cc \
     $(SRC)counters.h $(SRC)counters.cc $(SRC)random.h $(SRC)random.cc \
     $(SRC)state.h $(SRC)state.cc $(SRC)memo.h $(SRC)analysis.h $(SRC)analysis.cc \
     $(SRC)logging.h $(SRC)player.cc
@@ -24,10 +24,10 @@ $(OBJ)analysis.o: $(SRC)analysis.cc $(SRC)analysis.h $(SRC)counters.h $(SRC)memo
 $(OBJ)check.o: $(SRC)check.cc $(SRC)check.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(OBJ)flags.o: $(SRC)flags.cc $(SRC)flags.h
+$(OBJ)counters.o: $(SRC)counters.cc $(SRC)counters.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(OBJ)counters.o: $(SRC)counters.cc $(SRC)counters.h
+$(OBJ)options.o: $(SRC)options.cc $(SRC)options.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(OBJ)random.o: $(SRC)random.cc $(SRC)random.h

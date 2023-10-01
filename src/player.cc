@@ -1,6 +1,6 @@
 #include "analysis.h"
 #include "check.h"
-#include "flags.h"
+#include "options.h"
 #include "logging.h"
 #include "random.h"
 #include "state.h"
@@ -27,29 +27,29 @@ namespace {
 
 const std::string player_name = "Numberwang";
 
-DECLARE_FLAG(bool, arg_help, false, "help",
+DECLARE_OPTION(bool, arg_help, false, "help",
     "show usage information");
 
-DECLARE_FLAG(std::string, arg_seed, "", "seed",
+DECLARE_OPTION(std::string, arg_seed, "", "seed",
     "Random seed in hexadecimal format. If empty, pick randomly. "
     "The chosen seed will be logged to stderr for reproducibility.");
 
-DECLARE_FLAG(int, arg_enumerate_max_count, 200'000, "enumerate-max-count",
+DECLARE_OPTION(int, arg_enumerate_max_count, 200'000, "enumerate-max-count",
     "Maximum number of solutions to enumerate.");
 
-DECLARE_FLAG(int64_t, arg_enumerate_max_work, 20'000'000, "enumerate-max-work",
+DECLARE_OPTION(int64_t, arg_enumerate_max_work, 20'000'000, "enumerate-max-work",
     "Maximum number of recursive calls used to enumerate solutions.");
 
-DECLARE_FLAG(int, arg_analyze_max_count, 100'000, "analyze-max-count",
+DECLARE_OPTION(int, arg_analyze_max_count, 100'000, "analyze-max-count",
     "Maximum number of solutions to enable analysis. That is, endgame analysis "
     "does not start until the solution count is less than or equal to this value.");
 
-DECLARE_FLAG(int64_t, arg_analyze_max_work, 100'000'000, "analyze-max-work",
+DECLARE_OPTION(int64_t, arg_analyze_max_work, 100'000'000, "analyze-max-work",
     "Maximum amount of work to perform during analysis (number of recursive calls "
     "times average number of solutions remaining). This only applies when no time "
     "limit is given.");
 
-DECLARE_FLAG(int, arg_time_limit, LOCAL_BUILD ? 0 : 27, "time-limit",
+DECLARE_OPTION(int, arg_time_limit, LOCAL_BUILD ? 0 : 27, "time-limit",
     "Time limit in seconds (or 0 to disable time-based performance). "
     "On each turn, the player uses a fraction of time remaining on analysis. "
     "Note that this should be slightly lower than the official time limit to "
@@ -61,7 +61,7 @@ DECLARE_FLAG(int, arg_time_limit, LOCAL_BUILD ? 0 : 27, "time-limit",
 // Before the move ordering implemented in commit 331998f, 10 million
 // corresponded with approximately 1 second on the CodeCup server, but this
 // might not be true anymore!
-DECLARE_FLAG(int64_t, arg_analyze_batch_size, 10'000'000, "analyze-batch-size",
+DECLARE_OPTION(int64_t, arg_analyze_batch_size, 10'000'000, "analyze-batch-size",
     "Amount of work to do at once when using a time limit.");
 
 
@@ -299,7 +299,7 @@ bool PlayGame(rng_t &rng) {
         } else {
           // Heuristic: each turn, use 1/3 of the remaining time for analysis.
           // For a 30 second time limit this allocates: 10, 6.67, 4.44, 2.96, etc.
-          // Maybe TODO: make the fraction a flag?
+          // Maybe TODO: make the fraction a command-line option?
           log_duration_t
             time_elapsed = total_timer.Elapsed(),
             time_remaining = std::chrono::seconds(arg_time_limit) - time_elapsed,
@@ -390,10 +390,10 @@ bool InitializeSeed(rng_seed_t &seed, std::string_view hex_string) {
 int main(int argc, char *argv[]) {
   LogId(player_name);
 
-  if (!ParseFlags(argc, argv) || arg_help) {
+  if (!ParseOptions(argc, argv) || arg_help) {
     std::ostream &os = arg_help ? std::cout : std::clog;
     os << "\nOptions:\n";
-    PrintFlagUsage(os);
+    PrintOptionUsage(os);
     return EXIT_FAILURE;
   }
 
