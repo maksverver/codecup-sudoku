@@ -111,6 +111,26 @@ NOTE: above analysis is based on data from before the rule change, so it is
 not necessarily valid anymore!
 
 
+SOLUTION ENUMERATION TIMING
+
+Using 100 cases with solution counts below 1,000,000 (average 410,817)
+from data/random-play-until-1m-cases.txt, I timed how long it took to count the
+number of solutions:
+
+   JCZSolve10: 10.76 s
+   tdoku:      12.10 s  (based on SAT, SIMD optimized)
+   My solver:  18.94 s
+   fss2:       22.66 s
+
+My solver is a straightforward backtracking solver which always backtracks on
+the most constrained cell (i.e. with the fewest candidates remaining). Main
+takeways:
+
+  1. My solver is quite competitive for this task: it is only about twice as
+     slow as the fastest solver!
+  2. EnumerateSolutions() is not noticably slower than CountSolutions().
+
+
 ANALYSIS TIMING
 
 I collected some timing statistics. If I use the total_solutions counter as
