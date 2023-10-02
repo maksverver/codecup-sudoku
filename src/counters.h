@@ -46,7 +46,11 @@ std::ostream &operator<<(std::ostream &os, const RealCounter<T> &counter) {
   return os << counter.Name() << '=' << counter.MaxValue();
 }
 
+#if LOCAL_BUILD
 template <typename T> using counter_t = RealCounter<T>;
+#else
+template <typename T> using counter_t = DummyCounter<T>;
+#endif
 
 struct Counters {
   counter_t<int>     max_depth        = counter_t<int>("max_depth");
