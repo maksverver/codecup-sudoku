@@ -92,23 +92,45 @@ backups/hash_determined_digits_instead_of_solutions.diff
 STATISTICS
 
 I did some profiling of analysis.cc and found the following stats on the number
-of solutions (solutions.size()) that are passed to SortByDigitAtPosition()
-called from IsWinning2() in analysis.cc, on this state:
-......3.....3...........6..6...39..5.9.264.8.43.8.57..8....2......1..89..4..5..1.
+of solutions (solutions.size()) that are passed to IsWinning() for this state:
 
- - Minimum:         4
- - Median (50%):   25
- - Average:        34
- - 99%:           154
- - Maximum:      1583
+% time output/release/solver --analyze-batch_size=1e8 \
+8..1......36..7..9.1.43.......3...48.......5.3........5.....8.3....82...2........
+
+(..)
+
+              samples  avg.    0%   10%   20%   30%   40%   50%   60%   70%   80%   90%   91%   92%   93%   94%   95%   96%   97%   98%   99%  100%
+win. sols     1115342  15.2     2     3     5     6     8    11    13    17    22    32    33    35    37    40    43    47    52    60    75  2530
+rem. sols      383400  25.4     4     6     8    10    12    16    20    25    34    51    54    57    61    66    71    79    90   108   151  4380
+rem. posits    383400  26.2     8    14    18    21    24    27    29    32    34    38    38    38    39    39    40    40    41    42    43    54
+rem. moves     383400  64.3    16    30    38    46    54    61    69    78    89   103   105   107   109   112   115   118   122   127   136   224
+
+Outcome: WIN2
+1 optimal turns: Ag6
+
+Counters{
+        max_depth=18,
+        recursive_calls=9920857,
+        total_solutions=76708443,
+        immediately_won=1115342,  # 1115342 / 1498742 = ~74%
+        memo_accessed=9920856,
+        memo_returned=8422114,  # ~85%
+        memo_collisions=0,
+}
+
+real    0m3.844s
+user    0m3.780s
+sys     0m0.043s
+
+This shows a few interesting things:
+
+    - ~85% of calls can be served from the memo.
+    - of the remaining states, ~75% have an immmediately winning move.
+    - the number of solutions is low (mean 25.4, median of 16),
+      so are the number of choice positions and number of moves.
 
 This shows solution sets are skewed towards relatively small sizes, and the
-sorting algorithm should be optimized for those cases. Note however that sorting
-time is also proportional to size: i.e. the 1% largest sets probably take more
-than 1% of the time!
-
-NOTE: above analysis is based on data from before the rule change, so it is
-not necessarily valid anymore!
+sorting algorithm should be optimized for those cases.
 
 
 SOLUTION ENUMERATION TIMING

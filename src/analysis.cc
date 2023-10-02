@@ -6,12 +6,52 @@
 #include <algorithm>
 #include <cassert>
 #include <cstdint>
+#include <iomanip>
 #include <optional>
 #include <random>
 #include <span>
 #include <vector>
 
+// Enable to collect detailed statistics.
+#define COLLECT_STATS 0
+
 namespace {
+
+
+#if COLLECT_STATS
+
+constexpr int percentiles[] = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100};
+
+std::vector<int> stats_solutions;
+std::vector<int> stats_positions;
+std::vector<int> stats_moves;
+std::vector<int> stats_winning_positions;
+std::vector<int> stats_winning_solutions;
+
+void DumpStats(std::vector<int> &stats) {
+  assert(!stats.empty());
+  std::cout << std::setw(9) << stats.size()
+      << std::fixed << std::setw(6) << std::setprecision(1)
+      << 1.0*std::accumulate(stats.begin(), stats.end(), uint64_t{0}) / stats.size();
+  std::ranges::sort(stats);
+  for (int percentile : percentiles) {
+    std::cout << std::setw(6) << stats[(uint64_t{stats.size()} - 1) * percentile / 100];
+  }
+}
+
+void DumpStats() {
+  std::cout << "            " << std::setw(9) << "samples" << std::setw(6) << "avg.";
+  for (int percentile : percentiles) {
+    std::cout << std::setw(5) << percentile << '%';
+  }
+  std::cout << "\nwin. sols   "; DumpStats(stats_winning_solutions);
+  std::cout << "\nrem. sols   "; DumpStats(stats_solutions);
+  std::cout << "\nrem. posits "; DumpStats(stats_positions);
+  std::cout << "\nrem. moves  "; DumpStats(stats_moves);
+  std::cout << std::endl;
+}
+
+#endif // COLLECT_STATS
 
 using position_t = int_fast8_t;
 
@@ -253,6 +293,9 @@ bool IsWinning(
         // Immediately winning!
         counters.immediately_won.Inc();
         mem.SetWinning(true);
+#if COLLECT_STATS
+        stats_winning_solutions.push_back(solutions.size());
+#endif
         return true;
       }
       choice_positions_data[choice_positions_size++] = pos;
@@ -274,6 +317,12 @@ bool IsWinning(
       }
     }
   }
+
+#if COLLECT_STATS
+  stats_solutions.push_back(solutions.size());
+  stats_positions.push_back(choice_positions_size);
+  stats_moves.push_back(moves_size);
+#endif
 
   // Solve recursively. We consider all possible moves: if there is a move
   // that leads to a position that is losing for the opponent, then that
@@ -434,7 +483,7 @@ AnalyzeResult Analyze(
   }
 
   // Otherwise, recursively search for a winning move.
-  return SelectMoveFromSolutions2(
+  auto res = SelectMoveFromSolutions2(
       hashed_solutions, choice_positions, ranked_moves, max_winning_turns,
       max_work - solutions.size());
 
@@ -442,4 +491,10 @@ AnalyzeResult Analyze(
   // it populated will help with future searches especially in the common case
   // where both players fill in an inferred digit, which doesn't change the
   // analysis.
+
+#if COLLECT_STATS
+  DumpStats();
+#endif
+
+  return res;
 }
