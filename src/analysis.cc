@@ -17,7 +17,6 @@
 
 namespace {
 
-
 #if COLLECT_STATS
 
 constexpr int percentiles[] = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100};
@@ -247,13 +246,11 @@ std::vector<RankedMove> GenerateRankedMoves(
 bool IsWinning(
     std::span<HashedSolution> solutions,
     std::span<const position_t> old_choice_positions,
-    int depth,
     int64_t &work_left) {
   assert(solutions.size() > 1);
   assert(!old_choice_positions.empty());
 
   // Update counters.
-  counters.max_depth.SetMax(depth);
   counters.recursive_calls.Inc();
   counters.total_solutions.Add(solutions.size());
 
@@ -330,10 +327,12 @@ bool IsWinning(
   bool winning = false;
   std::span<RankedMove> moves(moves_data, moves_size);
   for (const auto [move, solution_count] : SortingIterable(moves)) {
+    counters.max_depth.Inc();
     bool next_losing = !IsWinning(
         FilterSolutions(solutions, move),
         FilterPositions(choice_positions, move.pos),
-        depth + 1, work_left);
+        work_left);
+    counters.max_depth.Dec();
     if (work_left < 0) return false;  // Search aborted.
     if (next_losing) { winning = true; break; }
   }
@@ -376,7 +375,9 @@ AnalyzeResult SelectMoveFromSolutions2(
     // We should have found immediately-winning moves already before.
     assert(remaining_solutions.size() == (size_t) solution_count &&
         solution_count > 1 && (size_t) solution_count < solutions.size());
-    bool winning = IsWinning(remaining_solutions, remaining_choice_positions, 1, work_left);
+    counters.max_depth.Inc();
+    bool winning = IsWinning(remaining_solutions, remaining_choice_positions, work_left);
+    counters.max_depth.Dec();
     if (work_left < 0) return AnalyzeResult{};  // Search aborted.
     if (winning) {
       // Winning for the next player => losing for the previous player.

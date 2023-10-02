@@ -7,11 +7,12 @@
 
 template <typename T> class DummyCounter {
 public:
-  DummyCounter(const char *name);
-  T Value() const { return 0; }
-  void Inc() { }
-  void Add(T unused) { (void) unused; }
-  void SetMax(T unused) { (void) unused; }
+  DummyCounter(const char *) {};
+  T CurValue() const { return 0; }
+  T MaxValue() const { return 0; }
+  void Inc() {}
+  void Add(T) {}
+  void Dec() {}
 };
 
 template <typename T>
@@ -23,19 +24,26 @@ template <typename T> struct RealCounter {
 public:
   explicit RealCounter(const char *name) : name(name) {}
   const char *Name() const { return name; }
-  T Value() const { return value; }
-  void Inc() { ++value; }
-  void Add(T v) { value += v; }
-  void SetMax(T v) { if (v > value) value = v; }
+  T CurValue() const { return cur_value; }
+  T MaxValue() const { return cur_value > max_value ? cur_value : max_value; }
+  void Inc() { ++cur_value; }
+  void Add(T v) { cur_value += v; }
+  void Dec() {
+    // Only update max_value when decrementing, to avoid performance penalty
+    // for counters that only increase.
+    if (cur_value > max_value) max_value = cur_value;
+    --cur_value;
+  }
 
 private:
   const char *name;
-  T value = 0;
+  T cur_value = 0;
+  T max_value = 0;
 };
 
 template <typename T>
 std::ostream &operator<<(std::ostream &os, const RealCounter<T> &counter) {
-  return os << counter.Name() << '=' << counter.Value();
+  return os << counter.Name() << '=' << counter.MaxValue();
 }
 
 template <typename T> using counter_t = RealCounter<T>;
