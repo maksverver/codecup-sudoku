@@ -113,6 +113,11 @@ def ParseDigit(ch, zero_char='.'):
   return d
 
 
+def ParseGrid(line):
+  assert len(line) == 81
+  return list(map(ParseDigit, line))
+
+
 def FormatDigit(d, zero_char='.'):
   if d == 0: return zero_char
   assert 1 <= d <= 9
@@ -124,8 +129,5 @@ if __name__ == '__main__':
     print('Usage: sudoku.py <state>')
     sys.exit(1)
 
-  grid = list(map(ParseDigit, sys.argv[1]))
-  assert len(grid) == 81
-
-  for solution in EnumerateSolutions(grid):
+  for solution in EnumerateSolutions(ParseGrid(sys.argv[1])):
     print(''.join(map(FormatDigit, solution)))
