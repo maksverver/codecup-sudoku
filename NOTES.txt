@@ -117,10 +117,11 @@ Using 100 cases with solution counts below 1,000,000 (average 410,817)
 from data/random-play-until-1m-cases.txt, I timed how long it took to count the
 number of solutions:
 
-   JCZSolve10: 10.76 s
-   tdoku:      12.10 s  (based on SAT, SIMD optimized)
-   My solver:  18.94 s
-   fss2:       22.66 s
+   JCZSolve10:     10.76 s
+   tdoku:          12.10 s  (SAT solver, SIMD optimized)
+   My solver:      18.94 s  (recursive backtracking)
+   fss2:           22.66 s
+   alphadoku dlxc: 31.51 s  (DLX, C++)
 
 My solver is a straightforward backtracking solver which always backtracks on
 the most constrained cell (i.e. with the fewest candidates remaining). Main
