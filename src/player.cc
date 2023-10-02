@@ -34,7 +34,10 @@ DECLARE_OPTION(std::string, arg_seed, "", "seed",
     "Random seed in hexadecimal format. If empty, pick randomly. "
     "The chosen seed will be logged to stderr for reproducibility.");
 
-DECLARE_OPTION(int, arg_enumerate_max_count, 200'000, "enumerate-max-count",
+DECLARE_OPTION(int, arg_enumerate_min_clues, 8, "enumerate-min-clues",
+    "Minimum number of clues placed before enumerating solutions.");
+
+DECLARE_OPTION(int, arg_enumerate_max_count, 400'000, "enumerate-max-count",
     "Maximum number of solutions to enumerate.");
 
 DECLARE_OPTION(int64_t, arg_enumerate_max_work, 20'000'000, "enumerate-max-work",
@@ -263,7 +266,7 @@ bool PlayGame(rng_t &rng) {
       Timer turn_timer;
       log_duration_t enumerate_time(0);
       log_duration_t analyze_time(0);
-      if (!solutions_complete) {
+      if (!solutions_complete && turn >= arg_enumerate_min_clues) {
         // Try to enumerate all solutions.
         Timer timer;
         EnumerateResult er = state.EnumerateSolutions(
