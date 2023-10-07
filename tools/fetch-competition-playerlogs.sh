@@ -40,6 +40,9 @@ game_ids=($(grep -F "$user_name" "$input_csv" | cut -d',' -f1))
 echo -n 'CodeCupId: '
 read codecupid
 
+# Create output directory (if it doesn't already exist)
+mkdir -p "$output_dir"
+
 # Actually fetch the player logs. The codecupid is passed as an environmental
 # variable instead of a command line arugment to avoid leaking it in the
 # process table.
