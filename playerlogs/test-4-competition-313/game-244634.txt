@@ -1,0 +1,133 @@
+ID Numberwang (64 bit) (compiler v11.3.0) (commit 43ec2a4)
+SEED d07f3e76279c3ad3d0f760930bfbffcf
+IO RCVD [Aa2]
+TURN 1 2................................................................................ 0
+SOLUTIONS 0+
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Ih5]
+IO RCVD [Ab3]
+PAUSE 102 102
+TURN 3 23.............................................................................5. 0
+SOLUTIONS 0+
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Ee8]
+IO RCVD [Ac4]
+PAUSE 91 193
+TURN 5 234.....................................8......................................5. 0
+SOLUTIONS 0+
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Fd3]
+IO RCVD [Ad5]
+PAUSE 104 298
+TURN 7 2345....................................8.......3..............................5. 0
+SOLUTIONS 0+
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Bd7]
+IO RCVD [Ae6]
+PAUSE 94 393
+TURN 9 23456.......7...........................8.......3..............................5. 0
+SOLUTIONS 400000+
+TIME 495 ENUMERATE 436 ANALYZE 0
+IO SEND [De9]
+IO RCVD [Af8]
+PAUSE 97 490
+TURN 11 234568......7..................9........8.......3..............................5. 496
+SOLUTIONS 400000+
+TIME 366 ENUMERATE 308 ANALYZE 0
+IO SEND [Cb7]
+IO RCVD [Ag7]
+PAUSE 96 586
+TURN 13 2345687.....7......7...........9........8.......3..............................5. 863
+SOLUTIONS 400000+
+TIME 394 ENUMERATE 335 ANALYZE 0
+IO SEND [Hd9]
+IO RCVD [Ah9]
+PAUSE 104 691
+TURN 15 23456879....7......7...........9........8.......3.................9............5. 1258
+SOLUTIONS 400000+
+TIME 392 ENUMERATE 334 ANALYZE 0
+IO SEND [Bh6]
+IO RCVD [Ba5]
+PAUSE 102 794
+TURN 17 23456879.5..7...6..7...........9........8.......3.................9............5. 1651
+SOLUTIONS 400000+
+TIME 397 ENUMERATE 339 ANALYZE 0
+IO SEND [Ed1]
+IO RCVD [Bb8]
+PAUSE 102 897
+TURN 19 23456879.58.7...6..7...........9.......18.......3.................9............5. 2049
+SOLUTIONS 400000+
+TIME 398 ENUMERATE 339 ANALYZE 0
+IO SEND [Bi4]
+IO RCVD [Bc9]
+PAUSE 95 993
+TURN 21 23456879.5897...64.7...........9.......18.......3.................9............5. 2448
+SOLUTIONS 400000+
+TIME 396 ENUMERATE 338 ANALYZE 0
+IO SEND [Id6]
+IO RCVD [Be2]
+PAUSE 103 1096
+TURN 23 23456879.58972..64.7...........9.......18.......3.................9........6...5. 2845
+SOLUTIONS 400000+
+TIME 391 ENUMERATE 334 ANALYZE 0
+IO SEND [Cc1]
+IO RCVD [Cg5]
+PAUSE 94 1191
+TURN 25 23456879.58972..64.71...5......9.......18.......3.................9........6...5. 3237
+SOLUTIONS 400000+
+TIME 342 ENUMERATE 291 ANALYZE 0
+IO SEND [Ci8]
+IO RCVD [Da3]
+PAUSE 99 1290
+TURN 27 23456879.58972..64.71...5.83...9.......18.......3.................9........6...5. 3580
+SOLUTIONS 57618
+INFO Continuing analysis
+INFO Continuing analysis
+INFO Continuing analysis
+INFO Continuing analysis
+INFO Continuing analysis
+INFO Continuing analysis
+INFO Continuing analysis
+INFO Continuing analysis
+WARNING Analysis aborted!
+TIME 8051 ENUMERATE 43 ANALYZE 7987
+IO SEND [Eh3]
+IO RCVD [Db4]
+PAUSE 110 1401
+TURN 29 23456879.58972..64.71...5.834..9.......18..3....3.................9........6...5. 11633
+SOLUTIONS 8530
+INFO Continuing analysis
+INFO Continuing analysis
+OUTCOME WIN2
+TIME 3172 ENUMERATE 0 ANALYZE 3172
+IO SEND [Ff7]
+IO RCVD [Df6]
+PAUSE 948 2349
+TURN 31 23456879.58972..64.71...5.834..96......18..3....3.7...............9........6...5. 14805
+SOLUTIONS 1313
+OUTCOME WIN2
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Ga7]
+IO RCVD [Di5]
+PAUSE 193 2543
+TURN 33 23456879.58972..64.71...5.834..96..5...18..3....3.7...7...........9........6...5. 14806
+SOLUTIONS 121
+OUTCOME WIN2
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Hg8]
+IO RCVD [Ef4]
+PAUSE 7088 9631
+TURN 35 23456879.58972..64.71...5.834..96..5...184.3....3.7...7...........9..8.....6...5. 14806
+SOLUTIONS 55
+OUTCOME WIN2
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Fg2]
+IO RCVD [Eb2]
+PAUSE 24 9656
+TURN 37 23456879.58972..64.71...5.834..96..5.2.184.3....3.72..7...........9..8.....6...5. 14807
+SOLUTIONS 4
+OUTCOME WIN1
+INFO That's Numberwang!
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Hi2!]
+# Total time used: 14.824 seconds
