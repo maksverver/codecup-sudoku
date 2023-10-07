@@ -235,3 +235,27 @@ RELEASE INSTRUCTIONS
   5. Submit to CodeCup.
   6. `git tag submission-#-id-#`
   7. Make a backup: `cp -r output/ backups/$(git rev-parse --short HEAD)`
+
+
+AFTER EACH TEST COMPETITION
+
+   1. Download competition csv, move to:
+      competition-results/test-X-competition-Y.csv
+
+   2. Download game details for competition:
+
+      % tools/fetch-competition.py
+          tmp/cache/ \
+          competition-results/test-X-competition-Y.csv \
+          competition-results/test-X-competition-Y-games.csv
+
+   3. Download my playerlogs:
+
+      % tools/fetch-competition-playerlogs.sh test-X-competition-Y 'Maks Verver'
+
+   4. Commit to git
+
+      % git add competition-results/ playerlogs/
+      % git commit -m 'Add test competition X data.'
+
+   5. Post to CodeCup forum: https://forum.codecup.nl/read.php?31,2264
