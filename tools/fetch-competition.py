@@ -77,7 +77,11 @@ def FetchGame(cachedir, game_id):
       f.write(text)
 
   # Parse content (this should be in a separate function but whatever)
-  users, moves = map(json.loads, GAME_RE.search(text).groups())
+  m = GAME_RE.search(text)
+  if m is None:
+    print('Skipping game', game_id, 'url:', url)
+    return None
+  users, moves = map(json.loads, m.groups())
   assert len(users) == 2
   assert all(isinstance(elem, str) for elem in users)
   assert all(isinstance(elem, str) for elem in moves)
@@ -107,8 +111,10 @@ if __name__ == '__main__':
       print('%d / %d' % (i + 1, len(games)), file=sys.stderr)
       assert game.moves is None
       assert game.solution is None
-      users, moves, solution = FetchGame(cachedir, game.game_id)
-      assert users == [game.user1, game.user2]
-      game.moves = ' '.join(moves)
-      game.solution = solution
+      details = FetchGame(cachedir, game.game_id)
+      if details is not None:
+        users, moves, solution = details
+        assert users == [game.user1, game.user2]
+        game.moves = ' '.join(moves)
+        game.solution = solution
     WriteAnnotatedCsv(games_csv, games)

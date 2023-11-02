@@ -1,0 +1,2701 @@
+Game,Round,IsSwiss,Player,User,Score,Status
+247853,1,swiss,First,"Abdessamad El Kasimi",2,WIN
+247853,1,swiss,Second,"Frank Corporaal",1,NO_SOLUTION_DECREASED
+247854,1,swiss,First,"Frank Corporaal",1,NO_SOLUTION_DECREASED
+247854,1,swiss,Second,"Abdessamad El Kasimi",2,WIN
+247855,1,swiss,First,"Maks Verver",2,WIN
+247855,1,swiss,Second,"Frank Meert",1,LOSE
+247856,1,swiss,First,"Frank Meert",1,NO_SOLUTION_DECREASED
+247856,1,swiss,Second,"Maks Verver",2,WIN
+247857,1,swiss,First,"Jan Nunnink",1,NO_SOLUTIONS_LEFT
+247857,1,swiss,Second,"Andor Michels",2,WIN
+247858,1,swiss,First,"Andor Michels",2,WIN
+247858,1,swiss,Second,"Jan Nunnink",1,NO_SOLUTIONS_LEFT
+247859,1,swiss,First,"Willem van der Vegt",2,WIN
+247859,1,swiss,Second,"Joe Rahn",1,NO_SOLUTION_DECREASED
+247860,1,swiss,First,"Joe Rahn",1,NO_SOLUTION_DECREASED
+247860,1,swiss,Second,"Willem van der Vegt",2,WIN
+247861,1,swiss,First,"Marc Oldenhof",2,WIN
+247861,1,swiss,Second,"Mees Broer",1,NO_SOLUTION_DECREASED
+247862,1,swiss,First,"Mees Broer",1,NO_SOLUTION_DECREASED
+247862,1,swiss,Second,"Marc Oldenhof",2,WIN
+247863,1,swiss,First,"Ludo Pulles",1,LOSE
+247863,1,swiss,Second,"Matthijs Tijink",2,WIN
+247864,1,swiss,First,"Matthijs Tijink",2,WIN
+247864,1,swiss,Second,"Ludo Pulles",1,LOSE
+247865,1,swiss,First,"Corné Beukhof",1,TIMEOUT
+247865,1,swiss,Second,"Boris de Wilde",2,WIN
+247866,1,swiss,First,"Boris de Wilde",2,WIN
+247866,1,swiss,Second,"Corné Beukhof",1,TIMEOUT
+247867,1,swiss,First,"Jorik Mandemaker",2,WIN
+247867,1,swiss,Second,"Anne Lu",1,NO_SOLUTION_DECREASED
+247868,1,swiss,First,"Anne Lu",1,NO_SOLUTION_DECREASED
+247868,1,swiss,Second,"Jorik Mandemaker",2,WIN
+247869,1,swiss,First,"Mark ter Brugge",2,WIN
+247869,1,swiss,Second,"Pieter Marsman",1,LOSE
+247870,1,swiss,First,"Pieter Marsman",1,LOSE
+247870,1,swiss,Second,"Mark ter Brugge",2,WIN
+247871,1,swiss,First,"Bùi Quang Nguyên",2,WIN
+247871,1,swiss,Second,"Sebastiaan Roodenburg",1,NO_SOLUTION_DECREASED
+247872,1,swiss,First,"Sebastiaan Roodenburg",1,NO_SOLUTION_DECREASED
+247872,1,swiss,Second,"Bùi Quang Nguyên",2,WIN
+247873,1,swiss,First,"Jelmer Hinssen",1,LOSE
+247873,1,swiss,Second,"Michiel Smits",2,WIN
+247874,1,swiss,First,"Michiel Smits",2,WIN
+247874,1,swiss,Second,"Jelmer Hinssen",1,LOSE
+247875,1,swiss,First,"Le Minh Hoang",2,WIN
+247875,1,swiss,Second,"Fabio Murer",1,NO_SOLUTION_DECREASED
+247876,1,swiss,First,"Fabio Murer",1,NO_SOLUTION_DECREASED
+247876,1,swiss,Second,"Le Minh Hoang",2,WIN
+247877,1,swiss,First,"Jelmer Firet",2,WIN
+247877,1,swiss,Second,"Lucas Kuunders",1,NO_SOLUTION_DECREASED
+247878,1,swiss,First,"Lucas Kuunders",1,NO_SOLUTIONS_LEFT
+247878,1,swiss,Second,"Jelmer Firet",2,WIN
+247879,1,swiss,First,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+247879,1,swiss,Second,"Antonio Morillas",2,WIN
+247880,1,swiss,First,"Antonio Morillas",2,WIN
+247880,1,swiss,Second,"Jens Heuseveldt",1,LOSE
+247881,1,swiss,First,"Anthony Bresler",1,TIMEOUT
+247881,1,swiss,Second,"Leopold Tschanter",2,WIN
+247882,1,swiss,First,"Leopold Tschanter",2,WIN
+247882,1,swiss,Second,"Anthony Bresler",1,NO_SOLUTION_DECREASED
+247883,1,swiss,First,"Niklas Een",2,WIN
+247883,1,swiss,Second,"Louis Verhaard",1,LOSE
+247884,1,swiss,First,"Louis Verhaard",1,LOSE
+247884,1,swiss,Second,"Niklas Een",2,WIN
+247885,1,swiss,First,"ZhengYi Chen",1,TIMEOUT
+247885,1,swiss,Second,"Boas Bakker",2,WIN
+247886,1,swiss,First,"Boas Bakker",2,WIN
+247886,1,swiss,Second,"ZhengYi Chen",1,TIMEOUT
+247887,1,swiss,First,"Marcel Vlastuin",1,LOSE
+247887,1,swiss,Second,"Jorn Hoofwijk",2,WIN
+247888,1,swiss,First,"Jorn Hoofwijk",2,WIN
+247888,1,swiss,Second,"Marcel Vlastuin",1,LOSE
+247889,1,swiss,First,"SAAD YOUSFI",2,WIN
+247889,1,swiss,Second,"Jasper van Merle",1,NO_SOLUTION_DECREASED
+247890,1,swiss,First,"Jasper van Merle",1,NO_SOLUTION_DECREASED
+247890,1,swiss,Second,"SAAD YOUSFI",2,WIN
+247891,1,swiss,First,"Milan Veul",1,TIMEOUT
+247891,1,swiss,Second,"Lukas Pestalozzi",2,WIN
+247892,1,swiss,First,"Lukas Pestalozzi",2,WIN
+247892,1,swiss,Second,"Milan Veul",1,TIMEOUT
+247893,1,swiss,First,"Fiodar Prystauka",1,TIMEOUT
+247893,1,swiss,Second,"Vlad Shcherbina",2,WIN
+247894,1,swiss,First,"Vlad Shcherbina",2,WIN
+247894,1,swiss,Second,"Fiodar Prystauka",1,TIMEOUT
+247895,1,swiss,First,"Rust Kokkie",1,LOSE
+247895,1,swiss,Second,"Duy Truot Tuyen",2,WIN
+247896,1,swiss,First,"Duy Truot Tuyen",1,LOSE
+247896,1,swiss,Second,"Rust Kokkie",2,WIN
+247897,1,swiss,First,"Nguyen Khang",1,TIMEOUT
+247897,1,swiss,Second,"Jeroen van Oorschot",2,WIN
+247898,1,swiss,First,"Jeroen van Oorschot",2,WIN
+247898,1,swiss,Second,"Nguyen Khang",1,TIMEOUT
+247899,1,swiss,First,"Zino Onomiwo",1,LOSE
+247899,1,swiss,Second,"Nathan Fenner",2,WIN
+247900,1,swiss,First,"Nathan Fenner",1,LOSE
+247900,1,swiss,Second,"Zino Onomiwo",2,WIN
+247901,2,swiss,First,"Abdessamad El Kasimi",1,LOSE
+247901,2,swiss,Second,"Maks Verver",2,WIN
+247902,2,swiss,First,"Maks Verver",2,WIN
+247902,2,swiss,Second,"Abdessamad El Kasimi",1,LOSE
+247903,2,swiss,First,"Andor Michels",2,WIN
+247903,2,swiss,Second,"Willem van der Vegt",1,NO_SOLUTIONS_LEFT
+247904,2,swiss,First,"Willem van der Vegt",2,WIN
+247904,2,swiss,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+247905,2,swiss,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+247905,2,swiss,Second,"Matthijs Tijink",2,WIN
+247906,2,swiss,First,"Matthijs Tijink",2,WIN
+247906,2,swiss,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+247907,2,swiss,First,"Boris de Wilde",1,NO_SOLUTION_DECREASED
+247907,2,swiss,Second,"Jorik Mandemaker",2,WIN
+247908,2,swiss,First,"Jorik Mandemaker",2,WIN
+247908,2,swiss,Second,"Boris de Wilde",1,NO_SOLUTION_DECREASED
+247909,2,swiss,First,"Mark ter Brugge",2,WIN
+247909,2,swiss,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+247910,2,swiss,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+247910,2,swiss,Second,"Mark ter Brugge",2,WIN
+247911,2,swiss,First,"Michiel Smits",2,WIN
+247911,2,swiss,Second,"Le Minh Hoang",1,NO_SOLUTION_DECREASED
+247912,2,swiss,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+247912,2,swiss,Second,"Michiel Smits",2,WIN
+247913,2,swiss,First,"Jelmer Firet",1,LOSE
+247913,2,swiss,Second,"Antonio Morillas",2,WIN
+247914,2,swiss,First,"Antonio Morillas",2,WIN
+247914,2,swiss,Second,"Jelmer Firet",1,LOSE
+247915,2,swiss,First,"Leopold Tschanter",1,LOSE
+247915,2,swiss,Second,"Niklas Een",2,WIN
+247916,2,swiss,First,"Niklas Een",2,WIN
+247916,2,swiss,Second,"Leopold Tschanter",1,LOSE
+247917,2,swiss,First,"Boas Bakker",1,LOSE
+247917,2,swiss,Second,"Jorn Hoofwijk",2,WIN
+247918,2,swiss,First,"Jorn Hoofwijk",2,WIN
+247918,2,swiss,Second,"Boas Bakker",1,LOSE
+247919,2,swiss,First,"SAAD YOUSFI",2,WIN
+247919,2,swiss,Second,"Lukas Pestalozzi",1,NO_SOLUTION_DECREASED
+247920,2,swiss,First,"Lukas Pestalozzi",1,LOSE
+247920,2,swiss,Second,"SAAD YOUSFI",2,WIN
+247921,2,swiss,First,"Vlad Shcherbina",2,WIN
+247921,2,swiss,Second,"Jeroen van Oorschot",1,LOSE
+247922,2,swiss,First,"Jeroen van Oorschot",1,LOSE
+247922,2,swiss,Second,"Vlad Shcherbina",2,WIN
+247923,2,swiss,First,"Rust Kokkie",1,LOSE
+247923,2,swiss,Second,"Zino Onomiwo",2,WIN
+247924,2,swiss,First,"Duy Truot Tuyen",2,WIN
+247924,2,swiss,Second,"Nathan Fenner",1,LOSE
+247925,2,swiss,First,"Zino Onomiwo",1,LOSE
+247925,2,swiss,Second,"Rust Kokkie",2,WIN
+247926,2,swiss,First,"Nathan Fenner",2,WIN
+247926,2,swiss,Second,"Duy Truot Tuyen",1,LOSE
+247927,2,swiss,First,"Ludo Pulles",2,WIN
+247927,2,swiss,Second,"Pieter Marsman",1,LOSE
+247928,2,swiss,First,"Pieter Marsman",2,WIN
+247928,2,swiss,Second,"Ludo Pulles",1,LOSE
+247929,2,swiss,First,"Jelmer Hinssen",1,LOSE
+247929,2,swiss,Second,"Louis Verhaard",2,WIN
+247930,2,swiss,First,"Louis Verhaard",2,WIN
+247930,2,swiss,Second,"Jelmer Hinssen",1,LOSE
+247931,2,swiss,First,"Marcel Vlastuin",2,WIN
+247931,2,swiss,Second,"Frank Meert",1,NO_SOLUTION_DECREASED
+247932,2,swiss,First,"Frank Meert",1,NO_SOLUTION_DECREASED
+247932,2,swiss,Second,"Marcel Vlastuin",2,WIN
+247933,2,swiss,First,"Jens Heuseveldt",2,WIN
+247933,2,swiss,Second,"Frank Corporaal",1,NO_SOLUTIONS_LEFT
+247934,2,swiss,First,"Frank Corporaal",1,NO_SOLUTIONS_LEFT
+247934,2,swiss,Second,"Jens Heuseveldt",2,WIN
+247935,2,swiss,First,"Jan Nunnink",2,WIN
+247935,2,swiss,Second,"Joe Rahn",1,TIMEOUT
+247936,2,swiss,First,"Joe Rahn",1,NO_SOLUTION_DECREASED
+247936,2,swiss,Second,"Jan Nunnink",2,WIN
+247937,2,swiss,First,"Mees Broer",2,WIN
+247937,2,swiss,Second,"Corné Beukhof",1,TIMEOUT
+247938,2,swiss,First,"Corné Beukhof",1,TIMEOUT
+247938,2,swiss,Second,"Mees Broer",2,WIN
+247939,2,swiss,First,"Anne Lu",1,NO_SOLUTION_DECREASED
+247939,2,swiss,Second,"Sebastiaan Roodenburg",2,WIN
+247940,2,swiss,First,"Sebastiaan Roodenburg",1,NO_SOLUTION_DECREASED
+247940,2,swiss,Second,"Anne Lu",2,WIN
+247941,2,swiss,First,"Fabio Murer",1,NO_SOLUTION_DECREASED
+247941,2,swiss,Second,"Lucas Kuunders",2,WIN
+247942,2,swiss,First,"Lucas Kuunders",2,WIN
+247942,2,swiss,Second,"Fabio Murer",1,NO_SOLUTION_DECREASED
+247943,2,swiss,First,"Anthony Bresler",2,WIN
+247943,2,swiss,Second,"ZhengYi Chen",1,TIMEOUT
+247944,2,swiss,First,"ZhengYi Chen",1,TIMEOUT
+247944,2,swiss,Second,"Anthony Bresler",2,WIN
+247945,2,swiss,First,"Jasper van Merle",2,WIN
+247945,2,swiss,Second,"Milan Veul",1,TIMEOUT
+247946,2,swiss,First,"Milan Veul",1,TIMEOUT
+247946,2,swiss,Second,"Jasper van Merle",2,WIN
+247947,2,swiss,First,"Fiodar Prystauka",1,TIMEOUT
+247947,2,swiss,Second,"Nguyen Khang",2,WIN
+247948,2,swiss,First,"Nguyen Khang",2,WIN
+247948,2,swiss,Second,"Fiodar Prystauka",1,TIMEOUT
+247949,3,swiss,First,"Maks Verver",2,WIN
+247949,3,swiss,Second,"Matthijs Tijink",1,LOSE
+247950,3,swiss,First,"Matthijs Tijink",1,LOSE
+247950,3,swiss,Second,"Maks Verver",2,WIN
+247951,3,swiss,First,"Jorik Mandemaker",1,LOSE
+247951,3,swiss,Second,"Mark ter Brugge",2,WIN
+247952,3,swiss,First,"Mark ter Brugge",2,WIN
+247952,3,swiss,Second,"Jorik Mandemaker",1,LOSE
+247953,3,swiss,First,"Michiel Smits",2,WIN
+247953,3,swiss,Second,"Antonio Morillas",1,LOSE
+247954,3,swiss,First,"Antonio Morillas",1,LOSE
+247954,3,swiss,Second,"Michiel Smits",2,WIN
+247955,3,swiss,First,"Niklas Een",2,WIN
+247955,3,swiss,Second,"Jorn Hoofwijk",1,TIMEOUT
+247956,3,swiss,First,"Jorn Hoofwijk",1,LOSE
+247956,3,swiss,Second,"Niklas Een",2,WIN
+247957,3,swiss,First,"SAAD YOUSFI",1,LOSE
+247957,3,swiss,Second,"Vlad Shcherbina",2,WIN
+247958,3,swiss,First,"Vlad Shcherbina",2,WIN
+247958,3,swiss,Second,"SAAD YOUSFI",1,LOSE
+247959,3,swiss,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+247959,3,swiss,Second,"Abdessamad El Kasimi",2,WIN
+247960,3,swiss,First,"Willem van der Vegt",1,NO_SOLUTION_DECREASED
+247960,3,swiss,Second,"Jelmer Firet",2,WIN
+247961,3,swiss,First,"Abdessamad El Kasimi",2,WIN
+247961,3,swiss,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+247962,3,swiss,First,"Jelmer Firet",2,WIN
+247962,3,swiss,Second,"Willem van der Vegt",1,NO_SOLUTIONS_LEFT
+247963,3,swiss,First,"Leopold Tschanter",1,LOSE
+247963,3,swiss,Second,"Louis Verhaard",2,WIN
+247964,3,swiss,First,"Louis Verhaard",2,WIN
+247964,3,swiss,Second,"Leopold Tschanter",1,LOSE
+247965,3,swiss,First,"Boas Bakker",2,WIN
+247965,3,swiss,Second,"Marcel Vlastuin",1,LOSE
+247966,3,swiss,First,"Marcel Vlastuin",1,LOSE
+247966,3,swiss,Second,"Boas Bakker",2,WIN
+247967,3,swiss,First,"Rust Kokkie",2,WIN
+247967,3,swiss,Second,"Jeroen van Oorschot",1,LOSE
+247968,3,swiss,First,"Duy Truot Tuyen",2,WIN
+247968,3,swiss,Second,"Zino Onomiwo",1,LOSE
+247969,3,swiss,First,"Jeroen van Oorschot",1,LOSE
+247969,3,swiss,Second,"Rust Kokkie",2,WIN
+247970,3,swiss,First,"Zino Onomiwo",1,LOSE
+247970,3,swiss,Second,"Duy Truot Tuyen",2,WIN
+247971,3,swiss,First,"Nathan Fenner",2,WIN
+247971,3,swiss,Second,"Jens Heuseveldt",1,LOSE
+247972,3,swiss,First,"Jens Heuseveldt",1,LOSE
+247972,3,swiss,Second,"Nathan Fenner",2,WIN
+247973,3,swiss,First,"Lukas Pestalozzi",2,WIN
+247973,3,swiss,Second,"Jan Nunnink",1,NO_SOLUTIONS_LEFT
+247974,3,swiss,First,"Jan Nunnink",1,NO_SOLUTIONS_LEFT
+247974,3,swiss,Second,"Lukas Pestalozzi",2,WIN
+247975,3,swiss,First,"Marc Oldenhof",2,WIN
+247975,3,swiss,Second,"Boris de Wilde",1,NO_SOLUTION_DECREASED
+247976,3,swiss,First,"Mees Broer",1,NO_SOLUTION_DECREASED
+247976,3,swiss,Second,"Bùi Quang Nguyên",2,WIN
+247977,3,swiss,First,"Boris de Wilde",1,NO_SOLUTION_DECREASED
+247977,3,swiss,Second,"Marc Oldenhof",2,WIN
+247978,3,swiss,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+247978,3,swiss,Second,"Mees Broer",2,WIN
+247979,3,swiss,First,"Le Minh Hoang",2,WIN
+247979,3,swiss,Second,"Lucas Kuunders",1,NO_SOLUTIONS_LEFT
+247980,3,swiss,First,"Lucas Kuunders",1,NO_SOLUTIONS_LEFT
+247980,3,swiss,Second,"Le Minh Hoang",2,WIN
+247981,3,swiss,First,"Anthony Bresler",1,NO_SOLUTION_DECREASED
+247981,3,swiss,Second,"Jasper van Merle",2,WIN
+247982,3,swiss,First,"Jasper van Merle",2,WIN
+247982,3,swiss,Second,"Anthony Bresler",1,TIMEOUT
+247983,3,swiss,First,"Nguyen Khang",2,WIN
+247983,3,swiss,Second,"Ludo Pulles",1,LOSE
+247984,3,swiss,First,"Ludo Pulles",2,WIN
+247984,3,swiss,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+247985,3,swiss,First,"Pieter Marsman",2,WIN
+247985,3,swiss,Second,"Anne Lu",1,NO_SOLUTION_DECREASED
+247986,3,swiss,First,"Anne Lu",1,NO_SOLUTION_DECREASED
+247986,3,swiss,Second,"Pieter Marsman",2,WIN
+247987,3,swiss,First,"Sebastiaan Roodenburg",1,NO_SOLUTION_DECREASED
+247987,3,swiss,Second,"Jelmer Hinssen",2,WIN
+247988,3,swiss,First,"Jelmer Hinssen",2,WIN
+247988,3,swiss,Second,"Sebastiaan Roodenburg",1,NO_SOLUTION_DECREASED
+247989,3,swiss,First,"Frank Meert",2,WIN
+247989,3,swiss,Second,"Frank Corporaal",1,NO_SOLUTION_DECREASED
+247990,3,swiss,First,"Frank Corporaal",1,NO_SOLUTIONS_LEFT
+247990,3,swiss,Second,"Frank Meert",2,WIN
+247991,3,swiss,First,"Joe Rahn",2,WIN
+247991,3,swiss,Second,"Corné Beukhof",1,TIMEOUT
+247992,3,swiss,First,"Corné Beukhof",1,TIMEOUT
+247992,3,swiss,Second,"Joe Rahn",2,WIN
+247993,3,swiss,First,"Fabio Murer",2,WIN
+247993,3,swiss,Second,"ZhengYi Chen",1,TIMEOUT
+247994,3,swiss,First,"ZhengYi Chen",1,TIMEOUT
+247994,3,swiss,Second,"Fabio Murer",2,WIN
+247995,3,swiss,First,"Milan Veul",1,TIMEOUT
+247995,3,swiss,Second,"Fiodar Prystauka",2,WIN
+247996,3,swiss,First,"Fiodar Prystauka",1,TIMEOUT
+247996,3,swiss,Second,"Milan Veul",2,WIN
+247997,4,swiss,First,"Maks Verver",2,WIN
+247997,4,swiss,Second,"Mark ter Brugge",1,LOSE
+247998,4,swiss,First,"Mark ter Brugge",1,LOSE
+247998,4,swiss,Second,"Maks Verver",2,WIN
+247999,4,swiss,First,"Michiel Smits",1,LOSE
+247999,4,swiss,Second,"Niklas Een",2,WIN
+248000,4,swiss,First,"Niklas Een",2,WIN
+248000,4,swiss,Second,"Michiel Smits",1,LOSE
+248001,4,swiss,First,"Vlad Shcherbina",2,WIN
+248001,4,swiss,Second,"Abdessamad El Kasimi",1,LOSE
+248002,4,swiss,First,"Abdessamad El Kasimi",1,LOSE
+248002,4,swiss,Second,"Vlad Shcherbina",2,WIN
+248003,4,swiss,First,"Matthijs Tijink",2,WIN
+248003,4,swiss,Second,"Jorik Mandemaker",1,LOSE
+248004,4,swiss,First,"Jorik Mandemaker",1,LOSE
+248004,4,swiss,Second,"Matthijs Tijink",2,WIN
+248005,4,swiss,First,"Jelmer Firet",1,LOSE
+248005,4,swiss,Second,"Louis Verhaard",2,WIN
+248006,4,swiss,First,"Antonio Morillas",2,WIN
+248006,4,swiss,Second,"Boas Bakker",1,LOSE
+248007,4,swiss,First,"Louis Verhaard",2,WIN
+248007,4,swiss,Second,"Jelmer Firet",1,LOSE
+248008,4,swiss,First,"Boas Bakker",1,LOSE
+248008,4,swiss,Second,"Antonio Morillas",2,WIN
+248009,4,swiss,First,"SAAD YOUSFI",1,LOSE
+248009,4,swiss,Second,"Rust Kokkie",2,WIN
+248010,4,swiss,First,"Rust Kokkie",2,WIN
+248010,4,swiss,Second,"SAAD YOUSFI",1,LOSE
+248011,4,swiss,First,"Duy Truot Tuyen",1,LOSE
+248011,4,swiss,Second,"Jorn Hoofwijk",2,WIN
+248012,4,swiss,First,"Nathan Fenner",2,WIN
+248012,4,swiss,Second,"Lukas Pestalozzi",1,TIMEOUT
+248013,4,swiss,First,"Jorn Hoofwijk",2,WIN
+248013,4,swiss,Second,"Duy Truot Tuyen",1,LOSE
+248014,4,swiss,First,"Lukas Pestalozzi",1,TIMEOUT
+248014,4,swiss,Second,"Nathan Fenner",2,WIN
+248015,4,swiss,First,"Marc Oldenhof",2,WIN
+248015,4,swiss,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248016,4,swiss,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248016,4,swiss,Second,"Marc Oldenhof",2,WIN
+248017,4,swiss,First,"Jasper van Merle",2,WIN
+248017,4,swiss,Second,"Pieter Marsman",1,LOSE
+248018,4,swiss,First,"Pieter Marsman",2,WIN
+248018,4,swiss,Second,"Jasper van Merle",1,NO_SOLUTION_DECREASED
+248019,4,swiss,First,"Andor Michels",2,WIN
+248019,4,swiss,Second,"Mees Broer",1,NO_SOLUTION_DECREASED
+248020,4,swiss,First,"Willem van der Vegt",1,NO_SOLUTIONS_LEFT
+248020,4,swiss,Second,"Bùi Quang Nguyên",2,WIN
+248021,4,swiss,First,"Mees Broer",1,NO_SOLUTION_DECREASED
+248021,4,swiss,Second,"Andor Michels",2,WIN
+248022,4,swiss,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248022,4,swiss,Second,"Willem van der Vegt",2,WIN
+248023,4,swiss,First,"Nguyen Khang",2,WIN
+248023,4,swiss,Second,"Jelmer Hinssen",1,LOSE
+248024,4,swiss,First,"Ludo Pulles",1,LOSE
+248024,4,swiss,Second,"Leopold Tschanter",2,WIN
+248025,4,swiss,First,"Jelmer Hinssen",2,WIN
+248025,4,swiss,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248026,4,swiss,First,"Leopold Tschanter",2,WIN
+248026,4,swiss,Second,"Ludo Pulles",1,LOSE
+248027,4,swiss,First,"Marcel Vlastuin",2,WIN
+248027,4,swiss,Second,"Jeroen van Oorschot",1,LOSE
+248028,4,swiss,First,"Jeroen van Oorschot",2,WIN
+248028,4,swiss,Second,"Marcel Vlastuin",1,LOSE
+248029,4,swiss,First,"Zino Onomiwo",2,WIN
+248029,4,swiss,Second,"Jens Heuseveldt",1,LOSE
+248030,4,swiss,First,"Jens Heuseveldt",1,LOSE
+248030,4,swiss,Second,"Zino Onomiwo",2,WIN
+248031,4,swiss,First,"Frank Meert",1,NO_SOLUTION_DECREASED
+248031,4,swiss,Second,"Jan Nunnink",2,WIN
+248032,4,swiss,First,"Jan Nunnink",1,NO_SOLUTIONS_LEFT
+248032,4,swiss,Second,"Frank Meert",2,WIN
+248033,4,swiss,First,"Joe Rahn",1,NO_SOLUTION_DECREASED
+248033,4,swiss,Second,"Boris de Wilde",2,WIN
+248034,4,swiss,First,"Boris de Wilde",1,NO_SOLUTION_DECREASED
+248034,4,swiss,Second,"Joe Rahn",2,WIN
+248035,4,swiss,First,"Fabio Murer",1,NO_SOLUTION_DECREASED
+248035,4,swiss,Second,"Anthony Bresler",2,WIN
+248036,4,swiss,First,"Lucas Kuunders",2,WIN
+248036,4,swiss,Second,"Anne Lu",1,NO_SOLUTION_DECREASED
+248037,4,swiss,First,"Anthony Bresler",1,NO_SOLUTION_DECREASED
+248037,4,swiss,Second,"Fabio Murer",2,WIN
+248038,4,swiss,First,"Anne Lu",1,NO_SOLUTION_DECREASED
+248038,4,swiss,Second,"Lucas Kuunders",2,WIN
+248039,4,swiss,First,"Sebastiaan Roodenburg",2,WIN
+248039,4,swiss,Second,"Milan Veul",1,TIMEOUT
+248040,4,swiss,First,"Milan Veul",1,TIMEOUT
+248040,4,swiss,Second,"Sebastiaan Roodenburg",2,WIN
+248041,4,swiss,First,"Fiodar Prystauka",1,TIMEOUT
+248041,4,swiss,Second,"Frank Corporaal",2,WIN
+248042,4,swiss,First,"Frank Corporaal",2,WIN
+248042,4,swiss,Second,"Fiodar Prystauka",1,TIMEOUT
+248043,4,swiss,First,"Corné Beukhof",2,WIN
+248043,4,swiss,Second,"ZhengYi Chen",1,TIMEOUT
+248044,4,swiss,First,"ZhengYi Chen",1,TIMEOUT
+248044,4,swiss,Second,"Corné Beukhof",2,WIN
+248045,5,swiss,First,"Maks Verver",2,WIN
+248045,5,swiss,Second,"Niklas Een",1,LOSE
+248046,5,swiss,First,"Niklas Een",1,LOSE
+248046,5,swiss,Second,"Maks Verver",2,WIN
+248047,5,swiss,First,"Vlad Shcherbina",2,WIN
+248047,5,swiss,Second,"Matthijs Tijink",1,LOSE
+248048,5,swiss,First,"Matthijs Tijink",1,LOSE
+248048,5,swiss,Second,"Vlad Shcherbina",2,WIN
+248049,5,swiss,First,"Mark ter Brugge",2,WIN
+248049,5,swiss,Second,"Michiel Smits",1,LOSE
+248050,5,swiss,First,"Michiel Smits",1,LOSE
+248050,5,swiss,Second,"Mark ter Brugge",2,WIN
+248051,5,swiss,First,"Antonio Morillas",1,LOSE
+248051,5,swiss,Second,"Louis Verhaard",2,WIN
+248052,5,swiss,First,"Louis Verhaard",2,WIN
+248052,5,swiss,Second,"Antonio Morillas",1,LOSE
+248053,5,swiss,First,"Rust Kokkie",1,LOSE
+248053,5,swiss,Second,"Nathan Fenner",2,WIN
+248054,5,swiss,First,"Nathan Fenner",2,WIN
+248054,5,swiss,Second,"Rust Kokkie",1,LOSE
+248055,5,swiss,First,"Jorn Hoofwijk",2,WIN
+248055,5,swiss,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248056,5,swiss,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248056,5,swiss,Second,"Jorn Hoofwijk",2,WIN
+248057,5,swiss,First,"Andor Michels",2,WIN
+248057,5,swiss,Second,"Jasper van Merle",1,NO_SOLUTION_DECREASED
+248058,5,swiss,First,"Jasper van Merle",1,NO_SOLUTION_DECREASED
+248058,5,swiss,Second,"Andor Michels",2,WIN
+248059,5,swiss,First,"Abdessamad El Kasimi",2,WIN
+248059,5,swiss,Second,"Jorik Mandemaker",1,LOSE
+248060,5,swiss,First,"Jorik Mandemaker",1,LOSE
+248060,5,swiss,Second,"Abdessamad El Kasimi",2,WIN
+248061,5,swiss,First,"Pieter Marsman",1,LOSE
+248061,5,swiss,Second,"Jelmer Firet",2,WIN
+248062,5,swiss,First,"Jelmer Firet",2,WIN
+248062,5,swiss,Second,"Pieter Marsman",1,NO_SOLUTIONS_LEFT
+248063,5,swiss,First,"Leopold Tschanter",2,WIN
+248063,5,swiss,Second,"Boas Bakker",1,TIMEOUT
+248064,5,swiss,First,"Boas Bakker",1,LOSE
+248064,5,swiss,Second,"Leopold Tschanter",2,WIN
+248065,5,swiss,First,"SAAD YOUSFI",1,LOSE
+248065,5,swiss,Second,"Duy Truot Tuyen",2,WIN
+248066,5,swiss,First,"Duy Truot Tuyen",2,WIN
+248066,5,swiss,Second,"SAAD YOUSFI",1,LOSE
+248067,5,swiss,First,"Zino Onomiwo",2,WIN
+248067,5,swiss,Second,"Lukas Pestalozzi",1,TIMEOUT
+248068,5,swiss,First,"Lukas Pestalozzi",1,TIMEOUT
+248068,5,swiss,Second,"Zino Onomiwo",2,WIN
+248069,5,swiss,First,"Willem van der Vegt",2,WIN
+248069,5,swiss,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248070,5,swiss,First,"Bùi Quang Nguyên",2,WIN
+248070,5,swiss,Second,"Lucas Kuunders",1,NO_SOLUTION_DECREASED
+248071,5,swiss,First,"Le Minh Hoang",2,WIN
+248071,5,swiss,Second,"Willem van der Vegt",1,NO_SOLUTIONS_LEFT
+248072,5,swiss,First,"Lucas Kuunders",2,WIN
+248072,5,swiss,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248073,5,swiss,First,"Nguyen Khang",2,WIN
+248073,5,swiss,Second,"Marcel Vlastuin",1,LOSE
+248074,5,swiss,First,"Jelmer Hinssen",2,WIN
+248074,5,swiss,Second,"Jeroen van Oorschot",1,LOSE
+248075,5,swiss,First,"Marcel Vlastuin",2,WIN
+248075,5,swiss,Second,"Nguyen Khang",1,TIMEOUT
+248076,5,swiss,First,"Jeroen van Oorschot",1,LOSE
+248076,5,swiss,Second,"Jelmer Hinssen",2,WIN
+248077,5,swiss,First,"Frank Meert",2,WIN
+248077,5,swiss,Second,"Joe Rahn",1,NO_SOLUTION_DECREASED
+248078,5,swiss,First,"Jan Nunnink",2,WIN
+248078,5,swiss,Second,"Mees Broer",1,NO_SOLUTION_DECREASED
+248079,5,swiss,First,"Joe Rahn",1,NO_SOLUTION_DECREASED
+248079,5,swiss,Second,"Frank Meert",2,WIN
+248080,5,swiss,First,"Mees Broer",1,NO_SOLUTION_DECREASED
+248080,5,swiss,Second,"Jan Nunnink",2,WIN
+248081,5,swiss,First,"Boris de Wilde",1,NO_SOLUTION_DECREASED
+248081,5,swiss,Second,"Sebastiaan Roodenburg",2,WIN
+248082,5,swiss,First,"Sebastiaan Roodenburg",1,NO_SOLUTION_DECREASED
+248082,5,swiss,Second,"Boris de Wilde",2,WIN
+248083,5,swiss,First,"Fabio Murer",1,NO_SOLUTION_DECREASED
+248083,5,swiss,Second,"Ludo Pulles",2,WIN
+248084,5,swiss,First,"Anthony Bresler",1,TIMEOUT
+248084,5,swiss,Second,"Jens Heuseveldt",2,WIN
+248085,5,swiss,First,"Ludo Pulles",2,WIN
+248085,5,swiss,Second,"Fabio Murer",1,NO_SOLUTION_DECREASED
+248086,5,swiss,First,"Jens Heuseveldt",2,WIN
+248086,5,swiss,Second,"Anthony Bresler",1,TIMEOUT
+248087,5,swiss,First,"Frank Corporaal",2,WIN
+248087,5,swiss,Second,"Corné Beukhof",1,TIMEOUT
+248088,5,swiss,First,"Corné Beukhof",1,TIMEOUT
+248088,5,swiss,Second,"Frank Corporaal",2,WIN
+248089,5,swiss,First,"Anne Lu",2,WIN
+248089,5,swiss,Second,"Milan Veul",1,TIMEOUT
+248090,5,swiss,First,"Milan Veul",1,TIMEOUT
+248090,5,swiss,Second,"Anne Lu",2,WIN
+248091,5,swiss,First,"Fiodar Prystauka",1,TIMEOUT
+248091,5,swiss,Second,"ZhengYi Chen",2,WIN
+248092,5,swiss,First,"ZhengYi Chen",1,TIMEOUT
+248092,5,swiss,Second,"Fiodar Prystauka",2,WIN
+248093,6,swiss,First,"Maks Verver",2,WIN
+248093,6,swiss,Second,"Vlad Shcherbina",1,LOSE
+248094,6,swiss,First,"Vlad Shcherbina",1,LOSE
+248094,6,swiss,Second,"Maks Verver",2,WIN
+248095,6,swiss,First,"Mark ter Brugge",1,LOSE
+248095,6,swiss,Second,"Niklas Een",2,WIN
+248096,6,swiss,First,"Niklas Een",2,WIN
+248096,6,swiss,Second,"Mark ter Brugge",1,LOSE
+248097,6,swiss,First,"Louis Verhaard",2,WIN
+248097,6,swiss,Second,"Nathan Fenner",1,LOSE
+248098,6,swiss,First,"Nathan Fenner",1,LOSE
+248098,6,swiss,Second,"Louis Verhaard",2,WIN
+248099,6,swiss,First,"Jorn Hoofwijk",2,WIN
+248099,6,swiss,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+248100,6,swiss,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248100,6,swiss,Second,"Jorn Hoofwijk",2,WIN
+248101,6,swiss,First,"Abdessamad El Kasimi",2,WIN
+248101,6,swiss,Second,"Matthijs Tijink",1,LOSE
+248102,6,swiss,First,"Matthijs Tijink",2,WIN
+248102,6,swiss,Second,"Abdessamad El Kasimi",1,LOSE
+248103,6,swiss,First,"Michiel Smits",2,WIN
+248103,6,swiss,Second,"Jelmer Firet",1,LOSE
+248104,6,swiss,First,"Jelmer Firet",1,LOSE
+248104,6,swiss,Second,"Michiel Smits",2,WIN
+248105,6,swiss,First,"Antonio Morillas",1,LOSE
+248105,6,swiss,Second,"Leopold Tschanter",2,WIN
+248106,6,swiss,First,"Leopold Tschanter",2,WIN
+248106,6,swiss,Second,"Antonio Morillas",1,LOSE
+248107,6,swiss,First,"Rust Kokkie",2,WIN
+248107,6,swiss,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248108,6,swiss,First,"Duy Truot Tuyen",2,WIN
+248108,6,swiss,Second,"Jelmer Hinssen",1,LOSE
+248109,6,swiss,First,"Zino Onomiwo",2,WIN
+248109,6,swiss,Second,"Frank Meert",1,LOSE
+248110,6,swiss,First,"Marc Oldenhof",2,WIN
+248110,6,swiss,Second,"Rust Kokkie",1,LOSE
+248111,6,swiss,First,"Jelmer Hinssen",1,LOSE
+248111,6,swiss,Second,"Duy Truot Tuyen",2,WIN
+248112,6,swiss,First,"Frank Meert",1,LOSE
+248112,6,swiss,Second,"Zino Onomiwo",2,WIN
+248113,6,swiss,First,"Jan Nunnink",1,NO_SOLUTIONS_LEFT
+248113,6,swiss,Second,"Willem van der Vegt",2,WIN
+248114,6,swiss,First,"Willem van der Vegt",1,NO_SOLUTIONS_LEFT
+248114,6,swiss,Second,"Jan Nunnink",2,WIN
+248115,6,swiss,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248115,6,swiss,Second,"Le Minh Hoang",2,WIN
+248116,6,swiss,First,"Le Minh Hoang",2,WIN
+248116,6,swiss,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248117,6,swiss,First,"Lucas Kuunders",1,NO_SOLUTIONS_LEFT
+248117,6,swiss,Second,"Jasper van Merle",2,WIN
+248118,6,swiss,First,"Jasper van Merle",1,NO_SOLUTION_DECREASED
+248118,6,swiss,Second,"Lucas Kuunders",2,WIN
+248119,6,swiss,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248119,6,swiss,Second,"Jorik Mandemaker",2,WIN
+248120,6,swiss,First,"Ludo Pulles",2,WIN
+248120,6,swiss,Second,"Marcel Vlastuin",1,LOSE
+248121,6,swiss,First,"Jorik Mandemaker",2,WIN
+248121,6,swiss,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248122,6,swiss,First,"Marcel Vlastuin",1,LOSE
+248122,6,swiss,Second,"Ludo Pulles",2,WIN
+248123,6,swiss,First,"SAAD YOUSFI",2,WIN
+248123,6,swiss,Second,"Pieter Marsman",1,LOSE
+248124,6,swiss,First,"Pieter Marsman",1,LOSE
+248124,6,swiss,Second,"SAAD YOUSFI",2,WIN
+248125,6,swiss,First,"Jens Heuseveldt",1,LOSE
+248125,6,swiss,Second,"Boas Bakker",2,WIN
+248126,6,swiss,First,"Boas Bakker",1,LOSE
+248126,6,swiss,Second,"Jens Heuseveldt",2,WIN
+248127,6,swiss,First,"Lukas Pestalozzi",2,WIN
+248127,6,swiss,Second,"Frank Corporaal",1,NO_SOLUTION_DECREASED
+248128,6,swiss,First,"Frank Corporaal",1,NO_SOLUTION_DECREASED
+248128,6,swiss,Second,"Lukas Pestalozzi",2,WIN
+248129,6,swiss,First,"Boris de Wilde",1,NO_SOLUTION_DECREASED
+248129,6,swiss,Second,"Jeroen van Oorschot",2,WIN
+248130,6,swiss,First,"Sebastiaan Roodenburg",1,NO_SOLUTION_DECREASED
+248130,6,swiss,Second,"Joe Rahn",2,WIN
+248131,6,swiss,First,"Jeroen van Oorschot",2,WIN
+248131,6,swiss,Second,"Boris de Wilde",1,NO_SOLUTION_DECREASED
+248132,6,swiss,First,"Joe Rahn",1,NO_SOLUTION_DECREASED
+248132,6,swiss,Second,"Sebastiaan Roodenburg",2,WIN
+248133,6,swiss,First,"Mees Broer",2,WIN
+248133,6,swiss,Second,"Anne Lu",1,NO_SOLUTION_DECREASED
+248134,6,swiss,First,"Anne Lu",2,WIN
+248134,6,swiss,Second,"Mees Broer",1,NO_SOLUTION_DECREASED
+248135,6,swiss,First,"Fabio Murer",2,WIN
+248135,6,swiss,Second,"Corné Beukhof",1,TIMEOUT
+248136,6,swiss,First,"Anthony Bresler",2,WIN
+248136,6,swiss,Second,"Fiodar Prystauka",1,TIMEOUT
+248137,6,swiss,First,"Corné Beukhof",1,TIMEOUT
+248137,6,swiss,Second,"Fabio Murer",2,WIN
+248138,6,swiss,First,"Fiodar Prystauka",1,TIMEOUT
+248138,6,swiss,Second,"Anthony Bresler",2,WIN
+248139,6,swiss,First,"ZhengYi Chen",1,TIMEOUT
+248139,6,swiss,Second,"Milan Veul",2,WIN
+248140,6,swiss,First,"Milan Veul",1,TIMEOUT
+248140,6,swiss,Second,"ZhengYi Chen",2,WIN
+248141,7,swiss,First,"Maks Verver",2,WIN
+248141,7,swiss,Second,"Louis Verhaard",1,LOSE
+248142,7,swiss,First,"Niklas Een",2,WIN
+248142,7,swiss,Second,"Vlad Shcherbina",1,LOSE
+248143,7,swiss,First,"Louis Verhaard",1,LOSE
+248143,7,swiss,Second,"Maks Verver",2,WIN
+248144,7,swiss,First,"Vlad Shcherbina",1,LOSE
+248144,7,swiss,Second,"Niklas Een",2,WIN
+248145,7,swiss,First,"Jorn Hoofwijk",1,LOSE
+248145,7,swiss,Second,"Mark ter Brugge",2,WIN
+248146,7,swiss,First,"Mark ter Brugge",2,WIN
+248146,7,swiss,Second,"Jorn Hoofwijk",1,LOSE
+248147,7,swiss,First,"Michiel Smits",2,WIN
+248147,7,swiss,Second,"Leopold Tschanter",1,LOSE
+248148,7,swiss,First,"Leopold Tschanter",2,WIN
+248148,7,swiss,Second,"Michiel Smits",1,LOSE
+248149,7,swiss,First,"Duy Truot Tuyen",1,LOSE
+248149,7,swiss,Second,"Abdessamad El Kasimi",2,WIN
+248150,7,swiss,First,"Zino Onomiwo",1,LOSE
+248150,7,swiss,Second,"Matthijs Tijink",2,WIN
+248151,7,swiss,First,"Nathan Fenner",1,LOSE
+248151,7,swiss,Second,"Andor Michels",2,WIN
+248152,7,swiss,First,"Abdessamad El Kasimi",2,WIN
+248152,7,swiss,Second,"Duy Truot Tuyen",1,NO_SOLUTIONS_LEFT
+248153,7,swiss,First,"Matthijs Tijink",1,LOSE
+248153,7,swiss,Second,"Zino Onomiwo",2,WIN
+248154,7,swiss,First,"Rust Kokkie",2,WIN
+248154,7,swiss,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248155,7,swiss,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248155,7,swiss,Second,"Nathan Fenner",2,WIN
+248156,7,swiss,First,"Marc Oldenhof",2,WIN
+248156,7,swiss,Second,"Ludo Pulles",1,LOSE
+248157,7,swiss,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248157,7,swiss,Second,"Rust Kokkie",2,WIN
+248158,7,swiss,First,"Ludo Pulles",1,LOSE
+248158,7,swiss,Second,"Marc Oldenhof",2,WIN
+248159,7,swiss,First,"Jorik Mandemaker",2,WIN
+248159,7,swiss,Second,"Jelmer Firet",1,LOSE
+248160,7,swiss,First,"Jelmer Firet",1,LOSE
+248160,7,swiss,Second,"Jorik Mandemaker",2,WIN
+248161,7,swiss,First,"Antonio Morillas",2,WIN
+248161,7,swiss,Second,"SAAD YOUSFI",1,LOSE
+248162,7,swiss,First,"SAAD YOUSFI",2,WIN
+248162,7,swiss,Second,"Antonio Morillas",1,LOSE
+248163,7,swiss,First,"Lukas Pestalozzi",2,WIN
+248163,7,swiss,Second,"Willem van der Vegt",1,NO_SOLUTION_DECREASED
+248164,7,swiss,First,"Jan Nunnink",2,WIN
+248164,7,swiss,Second,"Lucas Kuunders",1,NO_SOLUTIONS_LEFT
+248165,7,swiss,First,"Willem van der Vegt",1,NO_SOLUTIONS_LEFT
+248165,7,swiss,Second,"Lukas Pestalozzi",2,WIN
+248166,7,swiss,First,"Lucas Kuunders",2,WIN
+248166,7,swiss,Second,"Jan Nunnink",1,NO_SOLUTIONS_LEFT
+248167,7,swiss,First,"Jasper van Merle",2,WIN
+248167,7,swiss,Second,"Jelmer Hinssen",1,LOSE
+248168,7,swiss,First,"Jelmer Hinssen",2,WIN
+248168,7,swiss,Second,"Jasper van Merle",1,NO_SOLUTION_DECREASED
+248169,7,swiss,First,"Jeroen van Oorschot",1,LOSE
+248169,7,swiss,Second,"Jens Heuseveldt",2,WIN
+248170,7,swiss,First,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+248170,7,swiss,Second,"Jeroen van Oorschot",2,WIN
+248171,7,swiss,First,"Boas Bakker",2,WIN
+248171,7,swiss,Second,"Frank Meert",1,LOSE
+248172,7,swiss,First,"Frank Meert",2,WIN
+248172,7,swiss,Second,"Boas Bakker",1,TIMEOUT
+248173,7,swiss,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248173,7,swiss,Second,"Fabio Murer",2,WIN
+248174,7,swiss,First,"Sebastiaan Roodenburg",1,NO_SOLUTION_DECREASED
+248174,7,swiss,Second,"Anthony Bresler",2,WIN
+248175,7,swiss,First,"Fabio Murer",2,WIN
+248175,7,swiss,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248176,7,swiss,First,"Anthony Bresler",2,WIN
+248176,7,swiss,Second,"Sebastiaan Roodenburg",1,NO_SOLUTION_DECREASED
+248177,7,swiss,First,"Nguyen Khang",2,WIN
+248177,7,swiss,Second,"Pieter Marsman",1,LOSE
+248178,7,swiss,First,"Marcel Vlastuin",2,WIN
+248178,7,swiss,Second,"Frank Corporaal",1,NO_SOLUTIONS_LEFT
+248179,7,swiss,First,"Pieter Marsman",2,WIN
+248179,7,swiss,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248180,7,swiss,First,"Frank Corporaal",1,NO_SOLUTIONS_LEFT
+248180,7,swiss,Second,"Marcel Vlastuin",2,WIN
+248181,7,swiss,First,"Joe Rahn",1,NO_SOLUTION_DECREASED
+248181,7,swiss,Second,"Mees Broer",2,WIN
+248182,7,swiss,First,"Mees Broer",2,WIN
+248182,7,swiss,Second,"Joe Rahn",1,NO_SOLUTION_DECREASED
+248183,7,swiss,First,"Boris de Wilde",2,WIN
+248183,7,swiss,Second,"ZhengYi Chen",1,TIMEOUT
+248184,7,swiss,First,"Anne Lu",2,WIN
+248184,7,swiss,Second,"Fiodar Prystauka",1,TIMEOUT
+248185,7,swiss,First,"Corné Beukhof",2,WIN
+248185,7,swiss,Second,"Milan Veul",1,TIMEOUT
+248186,7,swiss,First,"ZhengYi Chen",1,TIMEOUT
+248186,7,swiss,Second,"Boris de Wilde",2,WIN
+248187,7,swiss,First,"Milan Veul",1,TIMEOUT
+248187,7,swiss,Second,"Corné Beukhof",2,WIN
+248188,7,swiss,First,"Fiodar Prystauka",1,TIMEOUT
+248188,7,swiss,Second,"Anne Lu",2,WIN
+248189,8,swiss,First,"Maks Verver",2,WIN
+248189,8,swiss,Second,"Jorn Hoofwijk",1,LOSE
+248190,8,swiss,First,"Niklas Een",2,WIN
+248190,8,swiss,Second,"Abdessamad El Kasimi",1,LOSE
+248191,8,swiss,First,"Mark ter Brugge",1,LOSE
+248191,8,swiss,Second,"Louis Verhaard",2,WIN
+248192,8,swiss,First,"Louis Verhaard",2,WIN
+248192,8,swiss,Second,"Mark ter Brugge",1,LOSE
+248193,8,swiss,First,"Vlad Shcherbina",2,WIN
+248193,8,swiss,Second,"Michiel Smits",1,LOSE
+248194,8,swiss,First,"Jorn Hoofwijk",1,LOSE
+248194,8,swiss,Second,"Maks Verver",2,WIN
+248195,8,swiss,First,"Abdessamad El Kasimi",1,LOSE
+248195,8,swiss,Second,"Niklas Een",2,WIN
+248196,8,swiss,First,"Michiel Smits",1,LOSE
+248196,8,swiss,Second,"Vlad Shcherbina",2,WIN
+248197,8,swiss,First,"Leopold Tschanter",2,WIN
+248197,8,swiss,Second,"Rust Kokkie",1,LOSE
+248198,8,swiss,First,"Rust Kokkie",1,LOSE
+248198,8,swiss,Second,"Leopold Tschanter",2,WIN
+248199,8,swiss,First,"Zino Onomiwo",1,LOSE
+248199,8,swiss,Second,"Marc Oldenhof",2,WIN
+248200,8,swiss,First,"Nathan Fenner",1,LOSE
+248200,8,swiss,Second,"Matthijs Tijink",2,WIN
+248201,8,swiss,First,"Marc Oldenhof",2,WIN
+248201,8,swiss,Second,"Zino Onomiwo",1,LOSE
+248202,8,swiss,First,"Matthijs Tijink",2,WIN
+248202,8,swiss,Second,"Nathan Fenner",1,LOSE
+248203,8,swiss,First,"Jorik Mandemaker",1,LOSE
+248203,8,swiss,Second,"Duy Truot Tuyen",2,WIN
+248204,8,swiss,First,"Duy Truot Tuyen",2,WIN
+248204,8,swiss,Second,"Jorik Mandemaker",1,LOSE
+248205,8,swiss,First,"Lukas Pestalozzi",2,WIN
+248205,8,swiss,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+248206,8,swiss,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248206,8,swiss,Second,"Lukas Pestalozzi",2,WIN
+248207,8,swiss,First,"Antonio Morillas",2,WIN
+248207,8,swiss,Second,"Jan Nunnink",1,NO_SOLUTIONS_LEFT
+248208,8,swiss,First,"SAAD YOUSFI",2,WIN
+248208,8,swiss,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248209,8,swiss,First,"Jan Nunnink",1,NO_SOLUTIONS_LEFT
+248209,8,swiss,Second,"Antonio Morillas",2,WIN
+248210,8,swiss,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248210,8,swiss,Second,"SAAD YOUSFI",2,WIN
+248211,8,swiss,First,"Fabio Murer",1,NO_SOLUTION_DECREASED
+248211,8,swiss,Second,"Jasper van Merle",2,WIN
+248212,8,swiss,First,"Lucas Kuunders",2,WIN
+248212,8,swiss,Second,"Anthony Bresler",1,TIMEOUT
+248213,8,swiss,First,"Anthony Bresler",1,NO_SOLUTION_DECREASED
+248213,8,swiss,Second,"Lucas Kuunders",2,WIN
+248214,8,swiss,First,"Jasper van Merle",2,WIN
+248214,8,swiss,Second,"Fabio Murer",1,NO_SOLUTION_DECREASED
+248215,8,swiss,First,"Ludo Pulles",1,LOSE
+248215,8,swiss,Second,"Jelmer Hinssen",2,WIN
+248216,8,swiss,First,"Jelmer Hinssen",1,LOSE
+248216,8,swiss,Second,"Ludo Pulles",2,WIN
+248217,8,swiss,First,"Jelmer Firet",1,LOSE
+248217,8,swiss,Second,"Marcel Vlastuin",2,WIN
+248218,8,swiss,First,"Marcel Vlastuin",2,WIN
+248218,8,swiss,Second,"Jelmer Firet",1,LOSE
+248219,8,swiss,First,"Jeroen van Oorschot",2,WIN
+248219,8,swiss,Second,"Boas Bakker",1,TIMEOUT
+248220,8,swiss,First,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+248220,8,swiss,Second,"Frank Meert",2,WIN
+248221,8,swiss,First,"Boas Bakker",2,WIN
+248221,8,swiss,Second,"Jeroen van Oorschot",1,LOSE
+248222,8,swiss,First,"Frank Meert",1,NO_SOLUTION_DECREASED
+248222,8,swiss,Second,"Jens Heuseveldt",2,WIN
+248223,8,swiss,First,"Willem van der Vegt",2,WIN
+248223,8,swiss,Second,"Mees Broer",1,NO_SOLUTION_DECREASED
+248224,8,swiss,First,"Mees Broer",1,NO_SOLUTION_DECREASED
+248224,8,swiss,Second,"Willem van der Vegt",2,WIN
+248225,8,swiss,First,"Boris de Wilde",1,NO_SOLUTION_DECREASED
+248225,8,swiss,Second,"Anne Lu",2,WIN
+248226,8,swiss,First,"Anne Lu",1,NO_SOLUTION_DECREASED
+248226,8,swiss,Second,"Boris de Wilde",2,WIN
+248227,8,swiss,First,"Nguyen Khang",2,WIN
+248227,8,swiss,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248228,8,swiss,First,"Pieter Marsman",2,WIN
+248228,8,swiss,Second,"Sebastiaan Roodenburg",1,NO_SOLUTION_DECREASED
+248229,8,swiss,First,"Bùi Quang Nguyên",2,WIN
+248229,8,swiss,Second,"Nguyen Khang",1,TIMEOUT
+248230,8,swiss,First,"Sebastiaan Roodenburg",1,NO_SOLUTION_DECREASED
+248230,8,swiss,Second,"Pieter Marsman",2,WIN
+248231,8,swiss,First,"Frank Corporaal",2,WIN
+248231,8,swiss,Second,"ZhengYi Chen",1,TIMEOUT
+248232,8,swiss,First,"Joe Rahn",2,WIN
+248232,8,swiss,Second,"Milan Veul",1,TIMEOUT
+248233,8,swiss,First,"Corné Beukhof",2,WIN
+248233,8,swiss,Second,"Fiodar Prystauka",1,TIMEOUT
+248234,8,swiss,First,"ZhengYi Chen",1,TIMEOUT
+248234,8,swiss,Second,"Frank Corporaal",2,WIN
+248235,8,swiss,First,"Milan Veul",1,TIMEOUT
+248235,8,swiss,Second,"Joe Rahn",2,WIN
+248236,8,swiss,First,"Fiodar Prystauka",1,TIMEOUT
+248236,8,swiss,Second,"Corné Beukhof",2,WIN
+248237,9,swiss,First,"Maks Verver",2,WIN
+248237,9,swiss,Second,"Leopold Tschanter",1,LOSE
+248238,9,swiss,First,"Niklas Een",2,WIN
+248238,9,swiss,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248239,9,swiss,First,"Louis Verhaard",1,LOSE
+248239,9,swiss,Second,"Vlad Shcherbina",2,WIN
+248240,9,swiss,First,"Vlad Shcherbina",2,WIN
+248240,9,swiss,Second,"Louis Verhaard",1,LOSE
+248241,9,swiss,First,"Leopold Tschanter",1,LOSE
+248241,9,swiss,Second,"Maks Verver",2,WIN
+248242,9,swiss,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248242,9,swiss,Second,"Niklas Een",2,WIN
+248243,9,swiss,First,"Matthijs Tijink",1,LOSE
+248243,9,swiss,Second,"Mark ter Brugge",2,WIN
+248244,9,swiss,First,"Mark ter Brugge",2,WIN
+248244,9,swiss,Second,"Matthijs Tijink",1,LOSE
+248245,9,swiss,First,"Jorn Hoofwijk",2,WIN
+248245,9,swiss,Second,"Lukas Pestalozzi",1,LOSE
+248246,9,swiss,First,"Duy Truot Tuyen",1,LOSE
+248246,9,swiss,Second,"Michiel Smits",2,WIN
+248247,9,swiss,First,"Lukas Pestalozzi",1,LOSE
+248247,9,swiss,Second,"Jorn Hoofwijk",2,WIN
+248248,9,swiss,First,"Abdessamad El Kasimi",1,LOSE
+248248,9,swiss,Second,"Antonio Morillas",2,WIN
+248249,9,swiss,First,"Michiel Smits",2,WIN
+248249,9,swiss,Second,"Duy Truot Tuyen",1,LOSE
+248250,9,swiss,First,"Antonio Morillas",2,WIN
+248250,9,swiss,Second,"Abdessamad El Kasimi",1,LOSE
+248251,9,swiss,First,"SAAD YOUSFI",2,WIN
+248251,9,swiss,Second,"Zino Onomiwo",1,LOSE
+248252,9,swiss,First,"Rust Kokkie",2,WIN
+248252,9,swiss,Second,"Lucas Kuunders",1,NO_SOLUTIONS_LEFT
+248253,9,swiss,First,"Zino Onomiwo",1,LOSE
+248253,9,swiss,Second,"SAAD YOUSFI",2,WIN
+248254,9,swiss,First,"Nathan Fenner",2,WIN
+248254,9,swiss,Second,"Jasper van Merle",1,NO_SOLUTION_DECREASED
+248255,9,swiss,First,"Lucas Kuunders",1,NO_SOLUTIONS_LEFT
+248255,9,swiss,Second,"Rust Kokkie",2,WIN
+248256,9,swiss,First,"Jasper van Merle",1,NO_SOLUTION_DECREASED
+248256,9,swiss,Second,"Nathan Fenner",2,WIN
+248257,9,swiss,First,"Jorik Mandemaker",1,LOSE
+248257,9,swiss,Second,"Marcel Vlastuin",2,WIN
+248258,9,swiss,First,"Marcel Vlastuin",1,LOSE
+248258,9,swiss,Second,"Jorik Mandemaker",2,WIN
+248259,9,swiss,First,"Andor Michels",2,WIN
+248259,9,swiss,Second,"Ludo Pulles",1,LOSE
+248260,9,swiss,First,"Willem van der Vegt",1,NO_SOLUTIONS_LEFT
+248260,9,swiss,Second,"Jelmer Hinssen",2,WIN
+248261,9,swiss,First,"Ludo Pulles",1,LOSE
+248261,9,swiss,Second,"Andor Michels",2,WIN
+248262,9,swiss,First,"Jelmer Hinssen",2,WIN
+248262,9,swiss,Second,"Willem van der Vegt",1,NO_SOLUTIONS_LEFT
+248263,9,swiss,First,"Jeroen van Oorschot",1,LOSE
+248263,9,swiss,Second,"Pieter Marsman",2,WIN
+248264,9,swiss,First,"Pieter Marsman",1,LOSE
+248264,9,swiss,Second,"Jeroen van Oorschot",2,WIN
+248265,9,swiss,First,"Jens Heuseveldt",2,WIN
+248265,9,swiss,Second,"Jan Nunnink",1,NO_SOLUTIONS_LEFT
+248266,9,swiss,First,"Boas Bakker",2,WIN
+248266,9,swiss,Second,"Boris de Wilde",1,NO_SOLUTION_DECREASED
+248267,9,swiss,First,"Frank Meert",2,WIN
+248267,9,swiss,Second,"Anne Lu",1,NO_SOLUTION_DECREASED
+248268,9,swiss,First,"Jan Nunnink",1,NO_SOLUTIONS_LEFT
+248268,9,swiss,Second,"Jens Heuseveldt",2,WIN
+248269,9,swiss,First,"Boris de Wilde",1,NO_SOLUTION_DECREASED
+248269,9,swiss,Second,"Boas Bakker",2,WIN
+248270,9,swiss,First,"Anne Lu",1,NO_SOLUTION_DECREASED
+248270,9,swiss,Second,"Frank Meert",2,WIN
+248271,9,swiss,First,"Le Minh Hoang",2,WIN
+248271,9,swiss,Second,"Anthony Bresler",1,TIMEOUT
+248272,9,swiss,First,"Fabio Murer",1,NO_SOLUTION_DECREASED
+248272,9,swiss,Second,"Nguyen Khang",2,WIN
+248273,9,swiss,First,"Anthony Bresler",2,WIN
+248273,9,swiss,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248274,9,swiss,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248274,9,swiss,Second,"Fabio Murer",2,WIN
+248275,9,swiss,First,"Jelmer Firet",2,WIN
+248275,9,swiss,Second,"Frank Corporaal",1,NO_SOLUTION_DECREASED
+248276,9,swiss,First,"Frank Corporaal",1,NO_SOLUTIONS_LEFT
+248276,9,swiss,Second,"Jelmer Firet",2,WIN
+248277,9,swiss,First,"Joe Rahn",2,WIN
+248277,9,swiss,Second,"ZhengYi Chen",1,TIMEOUT
+248278,9,swiss,First,"Mees Broer",2,WIN
+248278,9,swiss,Second,"Milan Veul",1,TIMEOUT
+248279,9,swiss,First,"Corné Beukhof",1,TIMEOUT
+248279,9,swiss,Second,"Bùi Quang Nguyên",2,WIN
+248280,9,swiss,First,"Bùi Quang Nguyên",2,WIN
+248280,9,swiss,Second,"Corné Beukhof",1,TIMEOUT
+248281,9,swiss,First,"Sebastiaan Roodenburg",2,WIN
+248281,9,swiss,Second,"Fiodar Prystauka",1,TIMEOUT
+248282,9,swiss,First,"ZhengYi Chen",1,TIMEOUT
+248282,9,swiss,Second,"Joe Rahn",2,WIN
+248283,9,swiss,First,"Milan Veul",1,TIMEOUT
+248283,9,swiss,Second,"Mees Broer",2,WIN
+248284,9,swiss,First,"Fiodar Prystauka",1,TIMEOUT
+248284,9,swiss,Second,"Sebastiaan Roodenburg",2,WIN
+248285,10,swiss,First,"Maks Verver",2,WIN
+248285,10,swiss,Second,"Michiel Smits",1,LOSE
+248286,10,swiss,First,"Niklas Een",2,WIN
+248286,10,swiss,Second,"Antonio Morillas",1,LOSE
+248287,10,swiss,First,"Vlad Shcherbina",2,WIN
+248287,10,swiss,Second,"Mark ter Brugge",1,LOSE
+248288,10,swiss,First,"Mark ter Brugge",1,LOSE
+248288,10,swiss,Second,"Vlad Shcherbina",2,WIN
+248289,10,swiss,First,"Louis Verhaard",2,WIN
+248289,10,swiss,Second,"Jorn Hoofwijk",1,LOSE
+248290,10,swiss,First,"Jorn Hoofwijk",1,LOSE
+248290,10,swiss,Second,"Louis Verhaard",2,WIN
+248291,10,swiss,First,"Michiel Smits",1,LOSE
+248291,10,swiss,Second,"Maks Verver",2,WIN
+248292,10,swiss,First,"Antonio Morillas",1,LOSE
+248292,10,swiss,Second,"Niklas Een",2,WIN
+248293,10,swiss,First,"Leopold Tschanter",2,WIN
+248293,10,swiss,Second,"SAAD YOUSFI",1,LOSE
+248294,10,swiss,First,"SAAD YOUSFI",1,LOSE
+248294,10,swiss,Second,"Leopold Tschanter",2,WIN
+248295,10,swiss,First,"Rust Kokkie",2,WIN
+248295,10,swiss,Second,"Matthijs Tijink",1,LOSE
+248296,10,swiss,First,"Nathan Fenner",2,WIN
+248296,10,swiss,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248297,10,swiss,First,"Marc Oldenhof",2,WIN
+248297,10,swiss,Second,"Nathan Fenner",1,LOSE
+248298,10,swiss,First,"Matthijs Tijink",2,WIN
+248298,10,swiss,Second,"Rust Kokkie",1,LOSE
+248299,10,swiss,First,"Duy Truot Tuyen",2,WIN
+248299,10,swiss,Second,"Lukas Pestalozzi",1,TIMEOUT
+248300,10,swiss,First,"Lukas Pestalozzi",1,TIMEOUT
+248300,10,swiss,Second,"Duy Truot Tuyen",2,WIN
+248301,10,swiss,First,"Andor Michels",2,WIN
+248301,10,swiss,Second,"Jorik Mandemaker",1,LOSE
+248302,10,swiss,First,"Abdessamad El Kasimi",2,WIN
+248302,10,swiss,Second,"Jelmer Hinssen",1,LOSE
+248303,10,swiss,First,"Jorik Mandemaker",1,LOSE
+248303,10,swiss,Second,"Andor Michels",2,WIN
+248304,10,swiss,First,"Jelmer Hinssen",1,LOSE
+248304,10,swiss,Second,"Abdessamad El Kasimi",2,WIN
+248305,10,swiss,First,"Marcel Vlastuin",1,LOSE
+248305,10,swiss,Second,"Zino Onomiwo",2,WIN
+248306,10,swiss,First,"Zino Onomiwo",2,WIN
+248306,10,swiss,Second,"Marcel Vlastuin",1,LOSE
+248307,10,swiss,First,"Jens Heuseveldt",2,WIN
+248307,10,swiss,Second,"Lucas Kuunders",1,NO_SOLUTIONS_LEFT
+248308,10,swiss,First,"Boas Bakker",2,WIN
+248308,10,swiss,Second,"Jasper van Merle",1,NO_SOLUTION_DECREASED
+248309,10,swiss,First,"Frank Meert",1,LOSE
+248309,10,swiss,Second,"Jelmer Firet",2,WIN
+248310,10,swiss,First,"Lucas Kuunders",1,NO_SOLUTIONS_LEFT
+248310,10,swiss,Second,"Jens Heuseveldt",2,WIN
+248311,10,swiss,First,"Jasper van Merle",1,NO_SOLUTION_DECREASED
+248311,10,swiss,Second,"Boas Bakker",2,WIN
+248312,10,swiss,First,"Jelmer Firet",2,WIN
+248312,10,swiss,Second,"Frank Meert",1,NO_SOLUTION_DECREASED
+248313,10,swiss,First,"Jeroen van Oorschot",2,WIN
+248313,10,swiss,Second,"Willem van der Vegt",1,NO_SOLUTIONS_LEFT
+248314,10,swiss,First,"Pieter Marsman",2,WIN
+248314,10,swiss,Second,"Joe Rahn",1,NO_SOLUTION_DECREASED
+248315,10,swiss,First,"Willem van der Vegt",1,NO_SOLUTIONS_LEFT
+248315,10,swiss,Second,"Jeroen van Oorschot",2,WIN
+248316,10,swiss,First,"Joe Rahn",1,NO_SOLUTION_DECREASED
+248316,10,swiss,Second,"Pieter Marsman",2,WIN
+248317,10,swiss,First,"Mees Broer",1,NO_SOLUTION_DECREASED
+248317,10,swiss,Second,"Le Minh Hoang",2,WIN
+248318,10,swiss,First,"Bùi Quang Nguyên",2,WIN
+248318,10,swiss,Second,"Anthony Bresler",1,TIMEOUT
+248319,10,swiss,First,"Le Minh Hoang",2,WIN
+248319,10,swiss,Second,"Mees Broer",1,NO_SOLUTION_DECREASED
+248320,10,swiss,First,"Fabio Murer",1,NO_SOLUTION_DECREASED
+248320,10,swiss,Second,"Jan Nunnink",2,WIN
+248321,10,swiss,First,"Anthony Bresler",1,NO_SOLUTION_DECREASED
+248321,10,swiss,Second,"Bùi Quang Nguyên",2,WIN
+248322,10,swiss,First,"Nguyen Khang",2,WIN
+248322,10,swiss,Second,"Boris de Wilde",1,NO_SOLUTION_DECREASED
+248323,10,swiss,First,"Ludo Pulles",2,WIN
+248323,10,swiss,Second,"Fiodar Prystauka",1,TIMEOUT
+248324,10,swiss,First,"Jan Nunnink",1,NO_SOLUTIONS_LEFT
+248324,10,swiss,Second,"Fabio Murer",2,WIN
+248325,10,swiss,First,"Boris de Wilde",1,NO_SOLUTION_DECREASED
+248325,10,swiss,Second,"Nguyen Khang",2,WIN
+248326,10,swiss,First,"Anne Lu",2,WIN
+248326,10,swiss,Second,"Corné Beukhof",1,TIMEOUT
+248327,10,swiss,First,"Sebastiaan Roodenburg",2,WIN
+248327,10,swiss,Second,"ZhengYi Chen",1,TIMEOUT
+248328,10,swiss,First,"Frank Corporaal",2,WIN
+248328,10,swiss,Second,"Milan Veul",1,TIMEOUT
+248329,10,swiss,First,"Corné Beukhof",1,TIMEOUT
+248329,10,swiss,Second,"Anne Lu",2,WIN
+248330,10,swiss,First,"ZhengYi Chen",1,TIMEOUT
+248330,10,swiss,Second,"Sebastiaan Roodenburg",2,WIN
+248331,10,swiss,First,"Milan Veul",1,TIMEOUT
+248331,10,swiss,Second,"Frank Corporaal",2,WIN
+248332,10,swiss,First,"Fiodar Prystauka",1,TIMEOUT
+248332,10,swiss,Second,"Ludo Pulles",2,WIN
+248333,11,final,First,"Maks Verver",2,WIN
+248333,11,final,Second,"Jelmer Hinssen",1,LOSE
+248334,11,final,First,"Jelmer Hinssen",1,LOSE
+248334,11,final,Second,"Maks Verver",2,WIN
+248335,11,final,First,"Niklas Een",2,WIN
+248335,11,final,Second,"Jorik Mandemaker",1,LOSE
+248336,11,final,First,"Jorik Mandemaker",1,LOSE
+248336,11,final,Second,"Niklas Een",2,WIN
+248337,11,final,First,"Vlad Shcherbina",2,WIN
+248337,11,final,Second,"Ludo Pulles",1,LOSE
+248338,11,final,First,"Ludo Pulles",1,LOSE
+248338,11,final,Second,"Vlad Shcherbina",2,WIN
+248339,11,final,First,"Louis Verhaard",2,WIN
+248339,11,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248340,11,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248340,11,final,Second,"Louis Verhaard",2,WIN
+248341,11,final,First,"Leopold Tschanter",2,WIN
+248341,11,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248342,11,final,First,"Le Minh Hoang",1,LOSE
+248342,11,final,Second,"Leopold Tschanter",2,WIN
+248343,11,final,First,"Mark ter Brugge",2,WIN
+248343,11,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248344,11,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248344,11,final,Second,"Mark ter Brugge",2,WIN
+248345,11,final,First,"Rust Kokkie",2,WIN
+248345,11,final,Second,"Lukas Pestalozzi",1,TIMEOUT
+248346,11,final,First,"Lukas Pestalozzi",1,LOSE
+248346,11,final,Second,"Rust Kokkie",2,WIN
+248347,11,final,First,"Nathan Fenner",2,WIN
+248347,11,final,Second,"Pieter Marsman",1,LOSE
+248348,11,final,First,"Pieter Marsman",1,LOSE
+248348,11,final,Second,"Nathan Fenner",2,WIN
+248349,11,final,First,"Jorn Hoofwijk",2,WIN
+248349,11,final,Second,"Jeroen van Oorschot",1,TIMEOUT
+248350,11,final,First,"Jeroen van Oorschot",1,NO_SOLUTION_DECREASED
+248350,11,final,Second,"Jorn Hoofwijk",2,WIN
+248351,11,final,First,"Duy Truot Tuyen",2,WIN
+248351,11,final,Second,"Jelmer Firet",1,LOSE
+248352,11,final,First,"Jelmer Firet",2,WIN
+248352,11,final,Second,"Duy Truot Tuyen",1,LOSE
+248353,11,final,First,"Andor Michels",2,WIN
+248353,11,final,Second,"Boas Bakker",1,TIMEOUT
+248354,11,final,First,"Boas Bakker",1,TIMEOUT
+248354,11,final,Second,"Andor Michels",2,WIN
+248355,11,final,First,"Marc Oldenhof",2,WIN
+248355,11,final,Second,"Jens Heuseveldt",1,LOSE
+248356,11,final,First,"Jens Heuseveldt",1,LOSE
+248356,11,final,Second,"Marc Oldenhof",2,WIN
+248357,11,final,First,"Abdessamad El Kasimi",2,WIN
+248357,11,final,Second,"Zino Onomiwo",1,LOSE
+248358,11,final,First,"Zino Onomiwo",1,LOSE
+248358,11,final,Second,"Abdessamad El Kasimi",2,WIN
+248359,11,final,First,"Matthijs Tijink",2,WIN
+248359,11,final,Second,"SAAD YOUSFI",1,LOSE
+248360,11,final,First,"SAAD YOUSFI",1,LOSE
+248360,11,final,Second,"Matthijs Tijink",2,WIN
+248361,11,final,First,"Michiel Smits",2,WIN
+248361,11,final,Second,"Antonio Morillas",1,LOSE
+248362,11,final,First,"Antonio Morillas",1,LOSE
+248362,11,final,Second,"Michiel Smits",2,WIN
+248363,12,final,First,"Maks Verver",2,WIN
+248363,12,final,Second,"Jorik Mandemaker",1,LOSE
+248364,12,final,First,"Jorik Mandemaker",1,LOSE
+248364,12,final,Second,"Maks Verver",2,WIN
+248365,12,final,First,"Jelmer Hinssen",2,WIN
+248365,12,final,Second,"Ludo Pulles",1,LOSE
+248366,12,final,First,"Ludo Pulles",1,LOSE
+248366,12,final,Second,"Jelmer Hinssen",2,WIN
+248367,12,final,First,"Niklas Een",2,WIN
+248367,12,final,Second,"Nguyen Khang",1,TIMEOUT
+248368,12,final,First,"Nguyen Khang",1,TIMEOUT
+248368,12,final,Second,"Niklas Een",2,WIN
+248369,12,final,First,"Vlad Shcherbina",2,WIN
+248369,12,final,Second,"Le Minh Hoang",1,NO_SOLUTION_DECREASED
+248370,12,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248370,12,final,Second,"Vlad Shcherbina",2,WIN
+248371,12,final,First,"Louis Verhaard",2,WIN
+248371,12,final,Second,"Bùi Quang Nguyên",1,TIMEOUT
+248372,12,final,First,"Bùi Quang Nguyên",1,TIMEOUT
+248372,12,final,Second,"Louis Verhaard",2,WIN
+248373,12,final,First,"Leopold Tschanter",2,WIN
+248373,12,final,Second,"Lukas Pestalozzi",1,LOSE
+248374,12,final,First,"Lukas Pestalozzi",1,LOSE
+248374,12,final,Second,"Leopold Tschanter",2,WIN
+248375,12,final,First,"Mark ter Brugge",2,WIN
+248375,12,final,Second,"Pieter Marsman",1,LOSE
+248376,12,final,First,"Pieter Marsman",1,LOSE
+248376,12,final,Second,"Mark ter Brugge",2,WIN
+248377,12,final,First,"Rust Kokkie",2,WIN
+248377,12,final,Second,"Jeroen van Oorschot",1,LOSE
+248378,12,final,First,"Jeroen van Oorschot",1,LOSE
+248378,12,final,Second,"Rust Kokkie",2,WIN
+248379,12,final,First,"Nathan Fenner",2,WIN
+248379,12,final,Second,"Jelmer Firet",1,LOSE
+248380,12,final,First,"Jelmer Firet",1,LOSE
+248380,12,final,Second,"Nathan Fenner",2,WIN
+248381,12,final,First,"Jorn Hoofwijk",2,WIN
+248381,12,final,Second,"Boas Bakker",1,LOSE
+248382,12,final,First,"Boas Bakker",1,LOSE
+248382,12,final,Second,"Jorn Hoofwijk",2,WIN
+248383,12,final,First,"Duy Truot Tuyen",2,WIN
+248383,12,final,Second,"Jens Heuseveldt",1,LOSE
+248384,12,final,First,"Jens Heuseveldt",1,LOSE
+248384,12,final,Second,"Duy Truot Tuyen",2,WIN
+248385,12,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248385,12,final,Second,"Zino Onomiwo",2,WIN
+248386,12,final,First,"Zino Onomiwo",1,LOSE
+248386,12,final,Second,"Andor Michels",2,WIN
+248387,12,final,First,"Marc Oldenhof",2,WIN
+248387,12,final,Second,"SAAD YOUSFI",1,LOSE
+248388,12,final,First,"SAAD YOUSFI",1,LOSE
+248388,12,final,Second,"Marc Oldenhof",2,WIN
+248389,12,final,First,"Abdessamad El Kasimi",2,WIN
+248389,12,final,Second,"Antonio Morillas",1,LOSE
+248390,12,final,First,"Antonio Morillas",2,WIN
+248390,12,final,Second,"Abdessamad El Kasimi",1,LOSE
+248391,12,final,First,"Matthijs Tijink",1,LOSE
+248391,12,final,Second,"Michiel Smits",2,WIN
+248392,12,final,First,"Michiel Smits",2,WIN
+248392,12,final,Second,"Matthijs Tijink",1,LOSE
+248393,13,final,First,"Maks Verver",2,WIN
+248393,13,final,Second,"Ludo Pulles",1,LOSE
+248394,13,final,First,"Ludo Pulles",1,LOSE
+248394,13,final,Second,"Maks Verver",2,WIN
+248395,13,final,First,"Jorik Mandemaker",2,WIN
+248395,13,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248396,13,final,First,"Nguyen Khang",2,WIN
+248396,13,final,Second,"Jorik Mandemaker",1,LOSE
+248397,13,final,First,"Jelmer Hinssen",2,WIN
+248397,13,final,Second,"Le Minh Hoang",1,LOSE
+248398,13,final,First,"Le Minh Hoang",1,LOSE
+248398,13,final,Second,"Jelmer Hinssen",2,WIN
+248399,13,final,First,"Niklas Een",2,WIN
+248399,13,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248400,13,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248400,13,final,Second,"Niklas Een",2,WIN
+248401,13,final,First,"Vlad Shcherbina",2,WIN
+248401,13,final,Second,"Lukas Pestalozzi",1,LOSE
+248402,13,final,First,"Lukas Pestalozzi",1,LOSE
+248402,13,final,Second,"Vlad Shcherbina",2,WIN
+248403,13,final,First,"Louis Verhaard",2,WIN
+248403,13,final,Second,"Pieter Marsman",1,LOSE
+248404,13,final,First,"Pieter Marsman",1,LOSE
+248404,13,final,Second,"Louis Verhaard",2,WIN
+248405,13,final,First,"Leopold Tschanter",2,WIN
+248405,13,final,Second,"Jeroen van Oorschot",1,LOSE
+248406,13,final,First,"Jeroen van Oorschot",1,LOSE
+248406,13,final,Second,"Leopold Tschanter",2,WIN
+248407,13,final,First,"Mark ter Brugge",2,WIN
+248407,13,final,Second,"Jelmer Firet",1,LOSE
+248408,13,final,First,"Jelmer Firet",1,LOSE
+248408,13,final,Second,"Mark ter Brugge",2,WIN
+248409,13,final,First,"Rust Kokkie",1,LOSE
+248409,13,final,Second,"Boas Bakker",2,WIN
+248410,13,final,First,"Boas Bakker",1,LOSE
+248410,13,final,Second,"Rust Kokkie",2,WIN
+248411,13,final,First,"Nathan Fenner",2,WIN
+248411,13,final,Second,"Jens Heuseveldt",1,LOSE
+248412,13,final,First,"Jens Heuseveldt",1,LOSE
+248412,13,final,Second,"Nathan Fenner",2,WIN
+248413,13,final,First,"Jorn Hoofwijk",2,WIN
+248413,13,final,Second,"Zino Onomiwo",1,LOSE
+248414,13,final,First,"Zino Onomiwo",1,LOSE
+248414,13,final,Second,"Jorn Hoofwijk",2,WIN
+248415,13,final,First,"Duy Truot Tuyen",2,WIN
+248415,13,final,Second,"SAAD YOUSFI",1,LOSE
+248416,13,final,First,"SAAD YOUSFI",1,LOSE
+248416,13,final,Second,"Duy Truot Tuyen",2,WIN
+248417,13,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248417,13,final,Second,"Antonio Morillas",2,WIN
+248418,13,final,First,"Antonio Morillas",2,WIN
+248418,13,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+248419,13,final,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248419,13,final,Second,"Michiel Smits",2,WIN
+248420,13,final,First,"Michiel Smits",2,WIN
+248420,13,final,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248421,13,final,First,"Abdessamad El Kasimi",2,WIN
+248421,13,final,Second,"Matthijs Tijink",1,NO_SOLUTION_DECREASED
+248422,13,final,First,"Matthijs Tijink",2,WIN
+248422,13,final,Second,"Abdessamad El Kasimi",1,LOSE
+248423,14,final,First,"Maks Verver",2,WIN
+248423,14,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248424,14,final,First,"Nguyen Khang",1,TIMEOUT
+248424,14,final,Second,"Maks Verver",2,WIN
+248425,14,final,First,"Ludo Pulles",2,WIN
+248425,14,final,Second,"Le Minh Hoang",1,LOSE
+248426,14,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248426,14,final,Second,"Ludo Pulles",2,WIN
+248427,14,final,First,"Jorik Mandemaker",2,WIN
+248427,14,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248428,14,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248428,14,final,Second,"Jorik Mandemaker",2,WIN
+248429,14,final,First,"Jelmer Hinssen",2,WIN
+248429,14,final,Second,"Lukas Pestalozzi",1,LOSE
+248430,14,final,First,"Lukas Pestalozzi",1,LOSE
+248430,14,final,Second,"Jelmer Hinssen",2,WIN
+248431,14,final,First,"Niklas Een",2,WIN
+248431,14,final,Second,"Pieter Marsman",1,LOSE
+248432,14,final,First,"Pieter Marsman",1,LOSE
+248432,14,final,Second,"Niklas Een",2,WIN
+248433,14,final,First,"Vlad Shcherbina",2,WIN
+248433,14,final,Second,"Jeroen van Oorschot",1,LOSE
+248434,14,final,First,"Jeroen van Oorschot",1,LOSE
+248434,14,final,Second,"Vlad Shcherbina",2,WIN
+248435,14,final,First,"Louis Verhaard",2,WIN
+248435,14,final,Second,"Jelmer Firet",1,LOSE
+248436,14,final,First,"Jelmer Firet",1,LOSE
+248436,14,final,Second,"Louis Verhaard",2,WIN
+248437,14,final,First,"Leopold Tschanter",2,WIN
+248437,14,final,Second,"Boas Bakker",1,LOSE
+248438,14,final,First,"Boas Bakker",1,TIMEOUT
+248438,14,final,Second,"Leopold Tschanter",2,WIN
+248439,14,final,First,"Mark ter Brugge",2,WIN
+248439,14,final,Second,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+248440,14,final,First,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+248440,14,final,Second,"Mark ter Brugge",2,WIN
+248441,14,final,First,"Rust Kokkie",1,LOSE
+248441,14,final,Second,"Zino Onomiwo",2,WIN
+248442,14,final,First,"Zino Onomiwo",1,LOSE
+248442,14,final,Second,"Rust Kokkie",2,WIN
+248443,14,final,First,"Nathan Fenner",1,LOSE
+248443,14,final,Second,"SAAD YOUSFI",2,WIN
+248444,14,final,First,"SAAD YOUSFI",1,LOSE
+248444,14,final,Second,"Nathan Fenner",2,WIN
+248445,14,final,First,"Jorn Hoofwijk",2,WIN
+248445,14,final,Second,"Antonio Morillas",1,LOSE
+248446,14,final,First,"Antonio Morillas",2,WIN
+248446,14,final,Second,"Jorn Hoofwijk",1,LOSE
+248447,14,final,First,"Duy Truot Tuyen",1,LOSE
+248447,14,final,Second,"Michiel Smits",2,WIN
+248448,14,final,First,"Michiel Smits",2,WIN
+248448,14,final,Second,"Duy Truot Tuyen",1,LOSE
+248449,14,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248449,14,final,Second,"Matthijs Tijink",2,WIN
+248450,14,final,First,"Matthijs Tijink",2,WIN
+248450,14,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+248451,14,final,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248451,14,final,Second,"Abdessamad El Kasimi",2,WIN
+248452,14,final,First,"Abdessamad El Kasimi",1,LOSE
+248452,14,final,Second,"Marc Oldenhof",2,WIN
+248453,15,final,First,"Maks Verver",2,WIN
+248453,15,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248454,15,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248454,15,final,Second,"Maks Verver",2,WIN
+248455,15,final,First,"Nguyen Khang",2,WIN
+248455,15,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248456,15,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248456,15,final,Second,"Nguyen Khang",2,WIN
+248457,15,final,First,"Ludo Pulles",2,WIN
+248457,15,final,Second,"Lukas Pestalozzi",1,LOSE
+248458,15,final,First,"Lukas Pestalozzi",1,LOSE
+248458,15,final,Second,"Ludo Pulles",2,WIN
+248459,15,final,First,"Jorik Mandemaker",1,LOSE
+248459,15,final,Second,"Pieter Marsman",2,WIN
+248460,15,final,First,"Pieter Marsman",1,LOSE
+248460,15,final,Second,"Jorik Mandemaker",2,WIN
+248461,15,final,First,"Jelmer Hinssen",2,WIN
+248461,15,final,Second,"Jeroen van Oorschot",1,LOSE
+248462,15,final,First,"Jeroen van Oorschot",1,LOSE
+248462,15,final,Second,"Jelmer Hinssen",2,WIN
+248463,15,final,First,"Niklas Een",2,WIN
+248463,15,final,Second,"Jelmer Firet",1,LOSE
+248464,15,final,First,"Jelmer Firet",1,LOSE
+248464,15,final,Second,"Niklas Een",2,WIN
+248465,15,final,First,"Vlad Shcherbina",2,WIN
+248465,15,final,Second,"Boas Bakker",1,LOSE
+248466,15,final,First,"Boas Bakker",1,LOSE
+248466,15,final,Second,"Vlad Shcherbina",2,WIN
+248467,15,final,First,"Louis Verhaard",2,WIN
+248467,15,final,Second,"Jens Heuseveldt",1,LOSE
+248468,15,final,First,"Jens Heuseveldt",1,LOSE
+248468,15,final,Second,"Louis Verhaard",2,WIN
+248469,15,final,First,"Leopold Tschanter",2,WIN
+248469,15,final,Second,"Zino Onomiwo",1,LOSE
+248470,15,final,First,"Zino Onomiwo",1,LOSE
+248470,15,final,Second,"Leopold Tschanter",2,WIN
+248471,15,final,First,"Mark ter Brugge",2,WIN
+248471,15,final,Second,"SAAD YOUSFI",1,LOSE
+248472,15,final,First,"SAAD YOUSFI",1,LOSE
+248472,15,final,Second,"Mark ter Brugge",2,WIN
+248473,15,final,First,"Rust Kokkie",1,LOSE
+248473,15,final,Second,"Antonio Morillas",2,WIN
+248474,15,final,First,"Antonio Morillas",2,WIN
+248474,15,final,Second,"Rust Kokkie",1,LOSE
+248475,15,final,First,"Nathan Fenner",1,LOSE
+248475,15,final,Second,"Michiel Smits",2,WIN
+248476,15,final,First,"Michiel Smits",2,WIN
+248476,15,final,Second,"Nathan Fenner",1,LOSE
+248477,15,final,First,"Jorn Hoofwijk",1,LOSE
+248477,15,final,Second,"Matthijs Tijink",2,WIN
+248478,15,final,First,"Matthijs Tijink",2,WIN
+248478,15,final,Second,"Jorn Hoofwijk",1,LOSE
+248479,15,final,First,"Duy Truot Tuyen",1,LOSE
+248479,15,final,Second,"Abdessamad El Kasimi",2,WIN
+248480,15,final,First,"Abdessamad El Kasimi",2,WIN
+248480,15,final,Second,"Duy Truot Tuyen",1,LOSE
+248481,15,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248481,15,final,Second,"Marc Oldenhof",2,WIN
+248482,15,final,First,"Marc Oldenhof",2,WIN
+248482,15,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+248483,16,final,First,"Maks Verver",2,WIN
+248483,16,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248484,16,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248484,16,final,Second,"Maks Verver",2,WIN
+248485,16,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248485,16,final,Second,"Lukas Pestalozzi",2,WIN
+248486,16,final,First,"Lukas Pestalozzi",2,WIN
+248486,16,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248487,16,final,First,"Nguyen Khang",1,TIMEOUT
+248487,16,final,Second,"Pieter Marsman",2,WIN
+248488,16,final,First,"Pieter Marsman",1,LOSE
+248488,16,final,Second,"Nguyen Khang",2,WIN
+248489,16,final,First,"Ludo Pulles",2,WIN
+248489,16,final,Second,"Jeroen van Oorschot",1,LOSE
+248490,16,final,First,"Jeroen van Oorschot",1,LOSE
+248490,16,final,Second,"Ludo Pulles",2,WIN
+248491,16,final,First,"Jorik Mandemaker",2,WIN
+248491,16,final,Second,"Jelmer Firet",1,LOSE
+248492,16,final,First,"Jelmer Firet",1,LOSE
+248492,16,final,Second,"Jorik Mandemaker",2,WIN
+248493,16,final,First,"Jelmer Hinssen",2,WIN
+248493,16,final,Second,"Boas Bakker",1,TIMEOUT
+248494,16,final,First,"Boas Bakker",1,LOSE
+248494,16,final,Second,"Jelmer Hinssen",2,WIN
+248495,16,final,First,"Niklas Een",2,WIN
+248495,16,final,Second,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+248496,16,final,First,"Jens Heuseveldt",1,LOSE
+248496,16,final,Second,"Niklas Een",2,WIN
+248497,16,final,First,"Vlad Shcherbina",2,WIN
+248497,16,final,Second,"Zino Onomiwo",1,LOSE
+248498,16,final,First,"Zino Onomiwo",1,LOSE
+248498,16,final,Second,"Vlad Shcherbina",2,WIN
+248499,16,final,First,"Louis Verhaard",2,WIN
+248499,16,final,Second,"SAAD YOUSFI",1,LOSE
+248500,16,final,First,"SAAD YOUSFI",1,LOSE
+248500,16,final,Second,"Louis Verhaard",2,WIN
+248501,16,final,First,"Leopold Tschanter",2,WIN
+248501,16,final,Second,"Antonio Morillas",1,LOSE
+248502,16,final,First,"Antonio Morillas",1,LOSE
+248502,16,final,Second,"Leopold Tschanter",2,WIN
+248503,16,final,First,"Mark ter Brugge",2,WIN
+248503,16,final,Second,"Michiel Smits",1,LOSE
+248504,16,final,First,"Michiel Smits",1,LOSE
+248504,16,final,Second,"Mark ter Brugge",2,WIN
+248505,16,final,First,"Rust Kokkie",1,LOSE
+248505,16,final,Second,"Matthijs Tijink",2,WIN
+248506,16,final,First,"Matthijs Tijink",2,WIN
+248506,16,final,Second,"Rust Kokkie",1,LOSE
+248507,16,final,First,"Nathan Fenner",1,LOSE
+248507,16,final,Second,"Abdessamad El Kasimi",2,WIN
+248508,16,final,First,"Abdessamad El Kasimi",2,WIN
+248508,16,final,Second,"Nathan Fenner",1,LOSE
+248509,16,final,First,"Jorn Hoofwijk",2,WIN
+248509,16,final,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248510,16,final,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248510,16,final,Second,"Jorn Hoofwijk",2,WIN
+248511,16,final,First,"Duy Truot Tuyen",1,LOSE
+248511,16,final,Second,"Andor Michels",2,WIN
+248512,16,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248512,16,final,Second,"Duy Truot Tuyen",2,WIN
+248513,17,final,First,"Maks Verver",2,WIN
+248513,17,final,Second,"Lukas Pestalozzi",1,TIMEOUT
+248514,17,final,First,"Lukas Pestalozzi",1,LOSE
+248514,17,final,Second,"Maks Verver",2,WIN
+248515,17,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248515,17,final,Second,"Pieter Marsman",2,WIN
+248516,17,final,First,"Pieter Marsman",2,WIN
+248516,17,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248517,17,final,First,"Le Minh Hoang",1,NO_SOLUTION_DECREASED
+248517,17,final,Second,"Jeroen van Oorschot",2,WIN
+248518,17,final,First,"Jeroen van Oorschot",2,WIN
+248518,17,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248519,17,final,First,"Nguyen Khang",1,TIMEOUT
+248519,17,final,Second,"Jelmer Firet",2,WIN
+248520,17,final,First,"Jelmer Firet",2,WIN
+248520,17,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248521,17,final,First,"Ludo Pulles",1,LOSE
+248521,17,final,Second,"Boas Bakker",2,WIN
+248522,17,final,First,"Boas Bakker",2,WIN
+248522,17,final,Second,"Ludo Pulles",1,LOSE
+248523,17,final,First,"Jorik Mandemaker",2,WIN
+248523,17,final,Second,"Jens Heuseveldt",1,LOSE
+248524,17,final,First,"Jens Heuseveldt",1,LOSE
+248524,17,final,Second,"Jorik Mandemaker",2,WIN
+248525,17,final,First,"Jelmer Hinssen",2,WIN
+248525,17,final,Second,"Zino Onomiwo",1,NO_SOLUTION_DECREASED
+248526,17,final,First,"Zino Onomiwo",1,LOSE
+248526,17,final,Second,"Jelmer Hinssen",2,WIN
+248527,17,final,First,"Niklas Een",2,WIN
+248527,17,final,Second,"SAAD YOUSFI",1,LOSE
+248528,17,final,First,"SAAD YOUSFI",1,LOSE
+248528,17,final,Second,"Niklas Een",2,WIN
+248529,17,final,First,"Vlad Shcherbina",2,WIN
+248529,17,final,Second,"Antonio Morillas",1,LOSE
+248530,17,final,First,"Antonio Morillas",1,LOSE
+248530,17,final,Second,"Vlad Shcherbina",2,WIN
+248531,17,final,First,"Louis Verhaard",2,WIN
+248531,17,final,Second,"Michiel Smits",1,LOSE
+248532,17,final,First,"Michiel Smits",1,LOSE
+248532,17,final,Second,"Louis Verhaard",2,WIN
+248533,17,final,First,"Leopold Tschanter",2,WIN
+248533,17,final,Second,"Matthijs Tijink",1,LOSE
+248534,17,final,First,"Matthijs Tijink",1,LOSE
+248534,17,final,Second,"Leopold Tschanter",2,WIN
+248535,17,final,First,"Mark ter Brugge",2,WIN
+248535,17,final,Second,"Abdessamad El Kasimi",1,LOSE
+248536,17,final,First,"Abdessamad El Kasimi",1,LOSE
+248536,17,final,Second,"Mark ter Brugge",2,WIN
+248537,17,final,First,"Rust Kokkie",2,WIN
+248537,17,final,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248538,17,final,First,"Marc Oldenhof",2,WIN
+248538,17,final,Second,"Rust Kokkie",1,LOSE
+248539,17,final,First,"Nathan Fenner",2,WIN
+248539,17,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+248540,17,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248540,17,final,Second,"Nathan Fenner",2,WIN
+248541,17,final,First,"Jorn Hoofwijk",2,WIN
+248541,17,final,Second,"Duy Truot Tuyen",1,NO_SOLUTIONS_LEFT
+248542,17,final,First,"Duy Truot Tuyen",1,LOSE
+248542,17,final,Second,"Jorn Hoofwijk",2,WIN
+248543,18,final,First,"Maks Verver",2,WIN
+248543,18,final,Second,"Pieter Marsman",1,LOSE
+248544,18,final,First,"Pieter Marsman",1,LOSE
+248544,18,final,Second,"Maks Verver",2,WIN
+248545,18,final,First,"Lukas Pestalozzi",2,WIN
+248545,18,final,Second,"Jeroen van Oorschot",1,LOSE
+248546,18,final,First,"Jeroen van Oorschot",2,WIN
+248546,18,final,Second,"Lukas Pestalozzi",1,TIMEOUT
+248547,18,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248547,18,final,Second,"Jelmer Firet",2,WIN
+248548,18,final,First,"Jelmer Firet",1,LOSE
+248548,18,final,Second,"Bùi Quang Nguyên",2,WIN
+248549,18,final,First,"Le Minh Hoang",1,LOSE
+248549,18,final,Second,"Boas Bakker",2,WIN
+248550,18,final,First,"Boas Bakker",2,WIN
+248550,18,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248551,18,final,First,"Nguyen Khang",2,WIN
+248551,18,final,Second,"Jens Heuseveldt",1,NO_SOLUTION_DECREASED
+248552,18,final,First,"Jens Heuseveldt",2,WIN
+248552,18,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248553,18,final,First,"Ludo Pulles",1,LOSE
+248553,18,final,Second,"Zino Onomiwo",2,WIN
+248554,18,final,First,"Zino Onomiwo",1,NO_SOLUTION_DECREASED
+248554,18,final,Second,"Ludo Pulles",2,WIN
+248555,18,final,First,"Jorik Mandemaker",1,LOSE
+248555,18,final,Second,"SAAD YOUSFI",2,WIN
+248556,18,final,First,"SAAD YOUSFI",2,WIN
+248556,18,final,Second,"Jorik Mandemaker",1,LOSE
+248557,18,final,First,"Jelmer Hinssen",2,WIN
+248557,18,final,Second,"Antonio Morillas",1,LOSE
+248558,18,final,First,"Antonio Morillas",2,WIN
+248558,18,final,Second,"Jelmer Hinssen",1,LOSE
+248559,18,final,First,"Niklas Een",2,WIN
+248559,18,final,Second,"Michiel Smits",1,LOSE
+248560,18,final,First,"Michiel Smits",1,LOSE
+248560,18,final,Second,"Niklas Een",2,WIN
+248561,18,final,First,"Vlad Shcherbina",2,WIN
+248561,18,final,Second,"Matthijs Tijink",1,LOSE
+248562,18,final,First,"Matthijs Tijink",1,NO_SOLUTION_DECREASED
+248562,18,final,Second,"Vlad Shcherbina",2,WIN
+248563,18,final,First,"Louis Verhaard",2,WIN
+248563,18,final,Second,"Abdessamad El Kasimi",1,LOSE
+248564,18,final,First,"Abdessamad El Kasimi",1,LOSE
+248564,18,final,Second,"Louis Verhaard",2,WIN
+248565,18,final,First,"Leopold Tschanter",2,WIN
+248565,18,final,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248566,18,final,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248566,18,final,Second,"Leopold Tschanter",2,WIN
+248567,18,final,First,"Mark ter Brugge",2,WIN
+248567,18,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+248568,18,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248568,18,final,Second,"Mark ter Brugge",2,WIN
+248569,18,final,First,"Rust Kokkie",1,LOSE
+248569,18,final,Second,"Duy Truot Tuyen",2,WIN
+248570,18,final,First,"Duy Truot Tuyen",1,LOSE
+248570,18,final,Second,"Rust Kokkie",2,WIN
+248571,18,final,First,"Nathan Fenner",1,LOSE
+248571,18,final,Second,"Jorn Hoofwijk",2,WIN
+248572,18,final,First,"Jorn Hoofwijk",2,WIN
+248572,18,final,Second,"Nathan Fenner",1,LOSE
+248573,19,final,First,"Maks Verver",2,WIN
+248573,19,final,Second,"Jeroen van Oorschot",1,LOSE
+248574,19,final,First,"Jeroen van Oorschot",1,LOSE
+248574,19,final,Second,"Maks Verver",2,WIN
+248575,19,final,First,"Pieter Marsman",1,LOSE
+248575,19,final,Second,"Jelmer Firet",2,WIN
+248576,19,final,First,"Jelmer Firet",2,WIN
+248576,19,final,Second,"Pieter Marsman",1,NO_SOLUTIONS_LEFT
+248577,19,final,First,"Lukas Pestalozzi",1,LOSE
+248577,19,final,Second,"Boas Bakker",2,WIN
+248578,19,final,First,"Boas Bakker",2,WIN
+248578,19,final,Second,"Lukas Pestalozzi",1,LOSE
+248579,19,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248579,19,final,Second,"Jens Heuseveldt",2,WIN
+248580,19,final,First,"Jens Heuseveldt",2,WIN
+248580,19,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248581,19,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248581,19,final,Second,"Zino Onomiwo",2,WIN
+248582,19,final,First,"Zino Onomiwo",2,WIN
+248582,19,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248583,19,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248583,19,final,Second,"SAAD YOUSFI",2,WIN
+248584,19,final,First,"SAAD YOUSFI",2,WIN
+248584,19,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248585,19,final,First,"Ludo Pulles",1,LOSE
+248585,19,final,Second,"Antonio Morillas",2,WIN
+248586,19,final,First,"Antonio Morillas",2,WIN
+248586,19,final,Second,"Ludo Pulles",1,LOSE
+248587,19,final,First,"Jorik Mandemaker",1,LOSE
+248587,19,final,Second,"Michiel Smits",2,WIN
+248588,19,final,First,"Michiel Smits",2,WIN
+248588,19,final,Second,"Jorik Mandemaker",1,LOSE
+248589,19,final,First,"Jelmer Hinssen",1,LOSE
+248589,19,final,Second,"Matthijs Tijink",2,WIN
+248590,19,final,First,"Matthijs Tijink",1,NO_SOLUTION_DECREASED
+248590,19,final,Second,"Jelmer Hinssen",2,WIN
+248591,19,final,First,"Niklas Een",2,WIN
+248591,19,final,Second,"Abdessamad El Kasimi",1,LOSE
+248592,19,final,First,"Abdessamad El Kasimi",1,LOSE
+248592,19,final,Second,"Niklas Een",2,WIN
+248593,19,final,First,"Vlad Shcherbina",2,WIN
+248593,19,final,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248594,19,final,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248594,19,final,Second,"Vlad Shcherbina",2,WIN
+248595,19,final,First,"Louis Verhaard",2,WIN
+248595,19,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+248596,19,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248596,19,final,Second,"Louis Verhaard",2,WIN
+248597,19,final,First,"Leopold Tschanter",2,WIN
+248597,19,final,Second,"Duy Truot Tuyen",1,NO_SOLUTIONS_LEFT
+248598,19,final,First,"Duy Truot Tuyen",1,LOSE
+248598,19,final,Second,"Leopold Tschanter",2,WIN
+248599,19,final,First,"Mark ter Brugge",2,WIN
+248599,19,final,Second,"Jorn Hoofwijk",1,LOSE
+248600,19,final,First,"Jorn Hoofwijk",1,LOSE
+248600,19,final,Second,"Mark ter Brugge",2,WIN
+248601,19,final,First,"Rust Kokkie",1,LOSE
+248601,19,final,Second,"Nathan Fenner",2,WIN
+248602,19,final,First,"Nathan Fenner",2,WIN
+248602,19,final,Second,"Rust Kokkie",1,LOSE
+248603,20,final,First,"Maks Verver",2,WIN
+248603,20,final,Second,"Jelmer Firet",1,LOSE
+248604,20,final,First,"Jelmer Firet",1,LOSE
+248604,20,final,Second,"Maks Verver",2,WIN
+248605,20,final,First,"Jeroen van Oorschot",2,WIN
+248605,20,final,Second,"Boas Bakker",1,TIMEOUT
+248606,20,final,First,"Boas Bakker",2,WIN
+248606,20,final,Second,"Jeroen van Oorschot",1,LOSE
+248607,20,final,First,"Pieter Marsman",2,WIN
+248607,20,final,Second,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+248608,20,final,First,"Jens Heuseveldt",1,LOSE
+248608,20,final,Second,"Pieter Marsman",2,WIN
+248609,20,final,First,"Lukas Pestalozzi",1,TIMEOUT
+248609,20,final,Second,"Zino Onomiwo",2,WIN
+248610,20,final,First,"Zino Onomiwo",2,WIN
+248610,20,final,Second,"Lukas Pestalozzi",1,LOSE
+248611,20,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248611,20,final,Second,"SAAD YOUSFI",2,WIN
+248612,20,final,First,"SAAD YOUSFI",2,WIN
+248612,20,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248613,20,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248613,20,final,Second,"Antonio Morillas",2,WIN
+248614,20,final,First,"Antonio Morillas",2,WIN
+248614,20,final,Second,"Le Minh Hoang",1,LOSE
+248615,20,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248615,20,final,Second,"Michiel Smits",2,WIN
+248616,20,final,First,"Michiel Smits",2,WIN
+248616,20,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248617,20,final,First,"Ludo Pulles",1,LOSE
+248617,20,final,Second,"Matthijs Tijink",2,WIN
+248618,20,final,First,"Matthijs Tijink",2,WIN
+248618,20,final,Second,"Ludo Pulles",1,LOSE
+248619,20,final,First,"Jorik Mandemaker",1,LOSE
+248619,20,final,Second,"Abdessamad El Kasimi",2,WIN
+248620,20,final,First,"Abdessamad El Kasimi",2,WIN
+248620,20,final,Second,"Jorik Mandemaker",1,LOSE
+248621,20,final,First,"Jelmer Hinssen",2,WIN
+248621,20,final,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248622,20,final,First,"Marc Oldenhof",2,WIN
+248622,20,final,Second,"Jelmer Hinssen",1,LOSE
+248623,20,final,First,"Niklas Een",2,WIN
+248623,20,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+248624,20,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248624,20,final,Second,"Niklas Een",2,WIN
+248625,20,final,First,"Vlad Shcherbina",2,WIN
+248625,20,final,Second,"Duy Truot Tuyen",1,LOSE
+248626,20,final,First,"Duy Truot Tuyen",1,LOSE
+248626,20,final,Second,"Vlad Shcherbina",2,WIN
+248627,20,final,First,"Louis Verhaard",2,WIN
+248627,20,final,Second,"Jorn Hoofwijk",1,LOSE
+248628,20,final,First,"Jorn Hoofwijk",1,LOSE
+248628,20,final,Second,"Louis Verhaard",2,WIN
+248629,20,final,First,"Leopold Tschanter",2,WIN
+248629,20,final,Second,"Nathan Fenner",1,LOSE
+248630,20,final,First,"Nathan Fenner",1,LOSE
+248630,20,final,Second,"Leopold Tschanter",2,WIN
+248631,20,final,First,"Mark ter Brugge",2,WIN
+248631,20,final,Second,"Rust Kokkie",1,LOSE
+248632,20,final,First,"Rust Kokkie",1,LOSE
+248632,20,final,Second,"Mark ter Brugge",2,WIN
+248633,21,final,First,"Maks Verver",2,WIN
+248633,21,final,Second,"Boas Bakker",1,LOSE
+248634,21,final,First,"Boas Bakker",1,LOSE
+248634,21,final,Second,"Maks Verver",2,WIN
+248635,21,final,First,"Jelmer Firet",2,WIN
+248635,21,final,Second,"Jens Heuseveldt",1,LOSE
+248636,21,final,First,"Jens Heuseveldt",1,LOSE
+248636,21,final,Second,"Jelmer Firet",2,WIN
+248637,21,final,First,"Jeroen van Oorschot",1,LOSE
+248637,21,final,Second,"Zino Onomiwo",2,WIN
+248638,21,final,First,"Zino Onomiwo",2,WIN
+248638,21,final,Second,"Jeroen van Oorschot",1,LOSE
+248639,21,final,First,"Pieter Marsman",1,LOSE
+248639,21,final,Second,"SAAD YOUSFI",2,WIN
+248640,21,final,First,"SAAD YOUSFI",2,WIN
+248640,21,final,Second,"Pieter Marsman",1,LOSE
+248641,21,final,First,"Lukas Pestalozzi",1,LOSE
+248641,21,final,Second,"Antonio Morillas",2,WIN
+248642,21,final,First,"Antonio Morillas",2,WIN
+248642,21,final,Second,"Lukas Pestalozzi",1,LOSE
+248643,21,final,First,"Bùi Quang Nguyên",1,TIMEOUT
+248643,21,final,Second,"Michiel Smits",2,WIN
+248644,21,final,First,"Michiel Smits",2,WIN
+248644,21,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248645,21,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248645,21,final,Second,"Matthijs Tijink",2,WIN
+248646,21,final,First,"Matthijs Tijink",2,WIN
+248646,21,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248647,21,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248647,21,final,Second,"Abdessamad El Kasimi",2,WIN
+248648,21,final,First,"Abdessamad El Kasimi",2,WIN
+248648,21,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248649,21,final,First,"Ludo Pulles",1,LOSE
+248649,21,final,Second,"Marc Oldenhof",2,WIN
+248650,21,final,First,"Marc Oldenhof",2,WIN
+248650,21,final,Second,"Ludo Pulles",1,LOSE
+248651,21,final,First,"Jorik Mandemaker",1,LOSE
+248651,21,final,Second,"Andor Michels",2,WIN
+248652,21,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248652,21,final,Second,"Jorik Mandemaker",2,WIN
+248653,21,final,First,"Jelmer Hinssen",2,WIN
+248653,21,final,Second,"Duy Truot Tuyen",1,LOSE
+248654,21,final,First,"Duy Truot Tuyen",2,WIN
+248654,21,final,Second,"Jelmer Hinssen",1,LOSE
+248655,21,final,First,"Niklas Een",2,WIN
+248655,21,final,Second,"Jorn Hoofwijk",1,LOSE
+248656,21,final,First,"Jorn Hoofwijk",1,LOSE
+248656,21,final,Second,"Niklas Een",2,WIN
+248657,21,final,First,"Vlad Shcherbina",2,WIN
+248657,21,final,Second,"Nathan Fenner",1,LOSE
+248658,21,final,First,"Nathan Fenner",1,LOSE
+248658,21,final,Second,"Vlad Shcherbina",2,WIN
+248659,21,final,First,"Louis Verhaard",2,WIN
+248659,21,final,Second,"Rust Kokkie",1,LOSE
+248660,21,final,First,"Rust Kokkie",1,LOSE
+248660,21,final,Second,"Louis Verhaard",2,WIN
+248661,21,final,First,"Leopold Tschanter",2,WIN
+248661,21,final,Second,"Mark ter Brugge",1,LOSE
+248662,21,final,First,"Mark ter Brugge",2,WIN
+248662,21,final,Second,"Leopold Tschanter",1,LOSE
+248663,22,final,First,"Maks Verver",2,WIN
+248663,22,final,Second,"Jens Heuseveldt",1,LOSE
+248664,22,final,First,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+248664,22,final,Second,"Maks Verver",2,WIN
+248665,22,final,First,"Boas Bakker",1,LOSE
+248665,22,final,Second,"Zino Onomiwo",2,WIN
+248666,22,final,First,"Zino Onomiwo",2,WIN
+248666,22,final,Second,"Boas Bakker",1,TIMEOUT
+248667,22,final,First,"Jelmer Firet",1,LOSE
+248667,22,final,Second,"SAAD YOUSFI",2,WIN
+248668,22,final,First,"SAAD YOUSFI",2,WIN
+248668,22,final,Second,"Jelmer Firet",1,LOSE
+248669,22,final,First,"Jeroen van Oorschot",1,LOSE
+248669,22,final,Second,"Antonio Morillas",2,WIN
+248670,22,final,First,"Antonio Morillas",2,WIN
+248670,22,final,Second,"Jeroen van Oorschot",1,LOSE
+248671,22,final,First,"Pieter Marsman",1,LOSE
+248671,22,final,Second,"Michiel Smits",2,WIN
+248672,22,final,First,"Michiel Smits",2,WIN
+248672,22,final,Second,"Pieter Marsman",1,LOSE
+248673,22,final,First,"Lukas Pestalozzi",1,LOSE
+248673,22,final,Second,"Matthijs Tijink",2,WIN
+248674,22,final,First,"Matthijs Tijink",2,WIN
+248674,22,final,Second,"Lukas Pestalozzi",1,NO_SOLUTION_DECREASED
+248675,22,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248675,22,final,Second,"Abdessamad El Kasimi",2,WIN
+248676,22,final,First,"Abdessamad El Kasimi",2,WIN
+248676,22,final,Second,"Bùi Quang Nguyên",1,TIMEOUT
+248677,22,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248677,22,final,Second,"Marc Oldenhof",2,WIN
+248678,22,final,First,"Marc Oldenhof",2,WIN
+248678,22,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248679,22,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248679,22,final,Second,"Andor Michels",2,WIN
+248680,22,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248680,22,final,Second,"Nguyen Khang",2,WIN
+248681,22,final,First,"Ludo Pulles",2,WIN
+248681,22,final,Second,"Duy Truot Tuyen",1,LOSE
+248682,22,final,First,"Duy Truot Tuyen",1,LOSE
+248682,22,final,Second,"Ludo Pulles",2,WIN
+248683,22,final,First,"Jorik Mandemaker",1,LOSE
+248683,22,final,Second,"Jorn Hoofwijk",2,WIN
+248684,22,final,First,"Jorn Hoofwijk",2,WIN
+248684,22,final,Second,"Jorik Mandemaker",1,LOSE
+248685,22,final,First,"Jelmer Hinssen",2,WIN
+248685,22,final,Second,"Nathan Fenner",1,LOSE
+248686,22,final,First,"Nathan Fenner",2,WIN
+248686,22,final,Second,"Jelmer Hinssen",1,LOSE
+248687,22,final,First,"Niklas Een",2,WIN
+248687,22,final,Second,"Rust Kokkie",1,LOSE
+248688,22,final,First,"Rust Kokkie",1,LOSE
+248688,22,final,Second,"Niklas Een",2,WIN
+248689,22,final,First,"Vlad Shcherbina",2,WIN
+248689,22,final,Second,"Mark ter Brugge",1,LOSE
+248690,22,final,First,"Mark ter Brugge",1,LOSE
+248690,22,final,Second,"Vlad Shcherbina",2,WIN
+248691,22,final,First,"Louis Verhaard",1,LOSE
+248691,22,final,Second,"Leopold Tschanter",2,WIN
+248692,22,final,First,"Leopold Tschanter",2,WIN
+248692,22,final,Second,"Louis Verhaard",1,LOSE
+248693,23,final,First,"Maks Verver",2,WIN
+248693,23,final,Second,"Zino Onomiwo",1,LOSE
+248694,23,final,First,"Zino Onomiwo",1,LOSE
+248694,23,final,Second,"Maks Verver",2,WIN
+248695,23,final,First,"Jens Heuseveldt",1,LOSE
+248695,23,final,Second,"SAAD YOUSFI",2,WIN
+248696,23,final,First,"SAAD YOUSFI",2,WIN
+248696,23,final,Second,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+248697,23,final,First,"Boas Bakker",1,LOSE
+248697,23,final,Second,"Antonio Morillas",2,WIN
+248698,23,final,First,"Antonio Morillas",2,WIN
+248698,23,final,Second,"Boas Bakker",1,TIMEOUT
+248699,23,final,First,"Jelmer Firet",1,LOSE
+248699,23,final,Second,"Michiel Smits",2,WIN
+248700,23,final,First,"Michiel Smits",2,WIN
+248700,23,final,Second,"Jelmer Firet",1,LOSE
+248701,23,final,First,"Jeroen van Oorschot",1,LOSE
+248701,23,final,Second,"Matthijs Tijink",2,WIN
+248702,23,final,First,"Matthijs Tijink",2,WIN
+248702,23,final,Second,"Jeroen van Oorschot",1,LOSE
+248703,23,final,First,"Pieter Marsman",1,LOSE
+248703,23,final,Second,"Abdessamad El Kasimi",2,WIN
+248704,23,final,First,"Abdessamad El Kasimi",2,WIN
+248704,23,final,Second,"Pieter Marsman",1,LOSE
+248705,23,final,First,"Lukas Pestalozzi",1,LOSE
+248705,23,final,Second,"Marc Oldenhof",2,WIN
+248706,23,final,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248706,23,final,Second,"Lukas Pestalozzi",2,WIN
+248707,23,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248707,23,final,Second,"Andor Michels",2,WIN
+248708,23,final,First,"Andor Michels",1,NO_SOLUTIONS_LEFT
+248708,23,final,Second,"Bùi Quang Nguyên",2,WIN
+248709,23,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248709,23,final,Second,"Duy Truot Tuyen",2,WIN
+248710,23,final,First,"Duy Truot Tuyen",2,WIN
+248710,23,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248711,23,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248711,23,final,Second,"Jorn Hoofwijk",2,WIN
+248712,23,final,First,"Jorn Hoofwijk",2,WIN
+248712,23,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248713,23,final,First,"Ludo Pulles",1,LOSE
+248713,23,final,Second,"Nathan Fenner",2,WIN
+248714,23,final,First,"Nathan Fenner",2,WIN
+248714,23,final,Second,"Ludo Pulles",1,LOSE
+248715,23,final,First,"Jorik Mandemaker",1,LOSE
+248715,23,final,Second,"Rust Kokkie",2,WIN
+248716,23,final,First,"Rust Kokkie",2,WIN
+248716,23,final,Second,"Jorik Mandemaker",1,LOSE
+248717,23,final,First,"Jelmer Hinssen",1,LOSE
+248717,23,final,Second,"Mark ter Brugge",2,WIN
+248718,23,final,First,"Mark ter Brugge",2,WIN
+248718,23,final,Second,"Jelmer Hinssen",1,LOSE
+248719,23,final,First,"Niklas Een",2,WIN
+248719,23,final,Second,"Leopold Tschanter",1,LOSE
+248720,23,final,First,"Leopold Tschanter",1,LOSE
+248720,23,final,Second,"Niklas Een",2,WIN
+248721,23,final,First,"Vlad Shcherbina",2,WIN
+248721,23,final,Second,"Louis Verhaard",1,LOSE
+248722,23,final,First,"Louis Verhaard",2,WIN
+248722,23,final,Second,"Vlad Shcherbina",1,LOSE
+248723,24,final,First,"Maks Verver",2,WIN
+248723,24,final,Second,"SAAD YOUSFI",1,LOSE
+248724,24,final,First,"SAAD YOUSFI",1,LOSE
+248724,24,final,Second,"Maks Verver",2,WIN
+248725,24,final,First,"Zino Onomiwo",1,LOSE
+248725,24,final,Second,"Antonio Morillas",2,WIN
+248726,24,final,First,"Antonio Morillas",2,WIN
+248726,24,final,Second,"Zino Onomiwo",1,LOSE
+248727,24,final,First,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+248727,24,final,Second,"Michiel Smits",2,WIN
+248728,24,final,First,"Michiel Smits",2,WIN
+248728,24,final,Second,"Jens Heuseveldt",1,LOSE
+248729,24,final,First,"Boas Bakker",1,LOSE
+248729,24,final,Second,"Matthijs Tijink",2,WIN
+248730,24,final,First,"Matthijs Tijink",2,WIN
+248730,24,final,Second,"Boas Bakker",1,TIMEOUT
+248731,24,final,First,"Jelmer Firet",1,LOSE
+248731,24,final,Second,"Abdessamad El Kasimi",2,WIN
+248732,24,final,First,"Abdessamad El Kasimi",2,WIN
+248732,24,final,Second,"Jelmer Firet",1,LOSE
+248733,24,final,First,"Jeroen van Oorschot",1,LOSE
+248733,24,final,Second,"Marc Oldenhof",2,WIN
+248734,24,final,First,"Marc Oldenhof",2,WIN
+248734,24,final,Second,"Jeroen van Oorschot",1,LOSE
+248735,24,final,First,"Pieter Marsman",2,WIN
+248735,24,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+248736,24,final,First,"Andor Michels",2,WIN
+248736,24,final,Second,"Pieter Marsman",1,LOSE
+248737,24,final,First,"Lukas Pestalozzi",1,TIMEOUT
+248737,24,final,Second,"Duy Truot Tuyen",2,WIN
+248738,24,final,First,"Duy Truot Tuyen",2,WIN
+248738,24,final,Second,"Lukas Pestalozzi",1,LOSE
+248739,24,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248739,24,final,Second,"Jorn Hoofwijk",2,WIN
+248740,24,final,First,"Jorn Hoofwijk",2,WIN
+248740,24,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248741,24,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248741,24,final,Second,"Nathan Fenner",2,WIN
+248742,24,final,First,"Nathan Fenner",2,WIN
+248742,24,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248743,24,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248743,24,final,Second,"Rust Kokkie",2,WIN
+248744,24,final,First,"Rust Kokkie",2,WIN
+248744,24,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248745,24,final,First,"Ludo Pulles",1,LOSE
+248745,24,final,Second,"Mark ter Brugge",2,WIN
+248746,24,final,First,"Mark ter Brugge",2,WIN
+248746,24,final,Second,"Ludo Pulles",1,LOSE
+248747,24,final,First,"Jorik Mandemaker",1,LOSE
+248747,24,final,Second,"Leopold Tschanter",2,WIN
+248748,24,final,First,"Leopold Tschanter",2,WIN
+248748,24,final,Second,"Jorik Mandemaker",1,LOSE
+248749,24,final,First,"Jelmer Hinssen",1,LOSE
+248749,24,final,Second,"Louis Verhaard",2,WIN
+248750,24,final,First,"Louis Verhaard",2,WIN
+248750,24,final,Second,"Jelmer Hinssen",1,LOSE
+248751,24,final,First,"Niklas Een",1,LOSE
+248751,24,final,Second,"Vlad Shcherbina",2,WIN
+248752,24,final,First,"Vlad Shcherbina",2,WIN
+248752,24,final,Second,"Niklas Een",1,LOSE
+248753,25,final,First,"Maks Verver",2,WIN
+248753,25,final,Second,"Antonio Morillas",1,LOSE
+248754,25,final,First,"Antonio Morillas",1,LOSE
+248754,25,final,Second,"Maks Verver",2,WIN
+248755,25,final,First,"SAAD YOUSFI",1,LOSE
+248755,25,final,Second,"Michiel Smits",2,WIN
+248756,25,final,First,"Michiel Smits",2,WIN
+248756,25,final,Second,"SAAD YOUSFI",1,LOSE
+248757,25,final,First,"Zino Onomiwo",1,LOSE
+248757,25,final,Second,"Matthijs Tijink",2,WIN
+248758,25,final,First,"Matthijs Tijink",2,WIN
+248758,25,final,Second,"Zino Onomiwo",1,NO_SOLUTION_DECREASED
+248759,25,final,First,"Jens Heuseveldt",1,LOSE
+248759,25,final,Second,"Abdessamad El Kasimi",2,WIN
+248760,25,final,First,"Abdessamad El Kasimi",2,WIN
+248760,25,final,Second,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+248761,25,final,First,"Boas Bakker",2,WIN
+248761,25,final,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248762,25,final,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248762,25,final,Second,"Boas Bakker",2,WIN
+248763,25,final,First,"Jelmer Firet",1,LOSE
+248763,25,final,Second,"Andor Michels",2,WIN
+248764,25,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248764,25,final,Second,"Jelmer Firet",2,WIN
+248765,25,final,First,"Jeroen van Oorschot",1,LOSE
+248765,25,final,Second,"Duy Truot Tuyen",2,WIN
+248766,25,final,First,"Duy Truot Tuyen",2,WIN
+248766,25,final,Second,"Jeroen van Oorschot",1,LOSE
+248767,25,final,First,"Pieter Marsman",1,LOSE
+248767,25,final,Second,"Jorn Hoofwijk",2,WIN
+248768,25,final,First,"Jorn Hoofwijk",2,WIN
+248768,25,final,Second,"Pieter Marsman",1,LOSE
+248769,25,final,First,"Lukas Pestalozzi",1,TIMEOUT
+248769,25,final,Second,"Nathan Fenner",2,WIN
+248770,25,final,First,"Nathan Fenner",2,WIN
+248770,25,final,Second,"Lukas Pestalozzi",1,TIMEOUT
+248771,25,final,First,"Bùi Quang Nguyên",1,TIMEOUT
+248771,25,final,Second,"Rust Kokkie",2,WIN
+248772,25,final,First,"Rust Kokkie",2,WIN
+248772,25,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248773,25,final,First,"Le Minh Hoang",1,LOSE
+248773,25,final,Second,"Mark ter Brugge",2,WIN
+248774,25,final,First,"Mark ter Brugge",2,WIN
+248774,25,final,Second,"Le Minh Hoang",1,LOSE
+248775,25,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248775,25,final,Second,"Leopold Tschanter",2,WIN
+248776,25,final,First,"Leopold Tschanter",2,WIN
+248776,25,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248777,25,final,First,"Ludo Pulles",1,LOSE
+248777,25,final,Second,"Louis Verhaard",2,WIN
+248778,25,final,First,"Louis Verhaard",2,WIN
+248778,25,final,Second,"Ludo Pulles",1,LOSE
+248779,25,final,First,"Jorik Mandemaker",1,LOSE
+248779,25,final,Second,"Vlad Shcherbina",2,WIN
+248780,25,final,First,"Vlad Shcherbina",2,WIN
+248780,25,final,Second,"Jorik Mandemaker",1,LOSE
+248781,25,final,First,"Jelmer Hinssen",1,LOSE
+248781,25,final,Second,"Niklas Een",2,WIN
+248782,25,final,First,"Niklas Een",2,WIN
+248782,25,final,Second,"Jelmer Hinssen",1,LOSE
+248783,26,final,First,"Maks Verver",2,WIN
+248783,26,final,Second,"Michiel Smits",1,LOSE
+248784,26,final,First,"Michiel Smits",1,LOSE
+248784,26,final,Second,"Maks Verver",2,WIN
+248785,26,final,First,"Antonio Morillas",1,LOSE
+248785,26,final,Second,"Matthijs Tijink",2,WIN
+248786,26,final,First,"Matthijs Tijink",2,WIN
+248786,26,final,Second,"Antonio Morillas",1,LOSE
+248787,26,final,First,"SAAD YOUSFI",1,LOSE
+248787,26,final,Second,"Abdessamad El Kasimi",2,WIN
+248788,26,final,First,"Abdessamad El Kasimi",1,LOSE
+248788,26,final,Second,"SAAD YOUSFI",2,WIN
+248789,26,final,First,"Zino Onomiwo",1,LOSE
+248789,26,final,Second,"Marc Oldenhof",2,WIN
+248790,26,final,First,"Marc Oldenhof",2,WIN
+248790,26,final,Second,"Zino Onomiwo",1,LOSE
+248791,26,final,First,"Jens Heuseveldt",1,LOSE
+248791,26,final,Second,"Andor Michels",2,WIN
+248792,26,final,First,"Andor Michels",2,WIN
+248792,26,final,Second,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+248793,26,final,First,"Boas Bakker",1,LOSE
+248793,26,final,Second,"Duy Truot Tuyen",2,WIN
+248794,26,final,First,"Duy Truot Tuyen",2,WIN
+248794,26,final,Second,"Boas Bakker",1,TIMEOUT
+248795,26,final,First,"Jelmer Firet",1,LOSE
+248795,26,final,Second,"Jorn Hoofwijk",2,WIN
+248796,26,final,First,"Jorn Hoofwijk",2,WIN
+248796,26,final,Second,"Jelmer Firet",1,LOSE
+248797,26,final,First,"Jeroen van Oorschot",1,LOSE
+248797,26,final,Second,"Nathan Fenner",2,WIN
+248798,26,final,First,"Nathan Fenner",2,WIN
+248798,26,final,Second,"Jeroen van Oorschot",1,LOSE
+248799,26,final,First,"Pieter Marsman",1,LOSE
+248799,26,final,Second,"Rust Kokkie",2,WIN
+248800,26,final,First,"Rust Kokkie",1,LOSE
+248800,26,final,Second,"Pieter Marsman",2,WIN
+248801,26,final,First,"Lukas Pestalozzi",1,TIMEOUT
+248801,26,final,Second,"Mark ter Brugge",2,WIN
+248802,26,final,First,"Mark ter Brugge",2,WIN
+248802,26,final,Second,"Lukas Pestalozzi",1,LOSE
+248803,26,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248803,26,final,Second,"Leopold Tschanter",2,WIN
+248804,26,final,First,"Leopold Tschanter",2,WIN
+248804,26,final,Second,"Bùi Quang Nguyên",1,TIMEOUT
+248805,26,final,First,"Le Minh Hoang",1,LOSE
+248805,26,final,Second,"Louis Verhaard",2,WIN
+248806,26,final,First,"Louis Verhaard",2,WIN
+248806,26,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248807,26,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248807,26,final,Second,"Vlad Shcherbina",2,WIN
+248808,26,final,First,"Vlad Shcherbina",2,WIN
+248808,26,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248809,26,final,First,"Ludo Pulles",1,LOSE
+248809,26,final,Second,"Niklas Een",2,WIN
+248810,26,final,First,"Niklas Een",2,WIN
+248810,26,final,Second,"Ludo Pulles",1,LOSE
+248811,26,final,First,"Jorik Mandemaker",1,LOSE
+248811,26,final,Second,"Jelmer Hinssen",2,WIN
+248812,26,final,First,"Jelmer Hinssen",2,WIN
+248812,26,final,Second,"Jorik Mandemaker",1,LOSE
+248813,27,final,First,"Maks Verver",2,WIN
+248813,27,final,Second,"Matthijs Tijink",1,LOSE
+248814,27,final,First,"Matthijs Tijink",1,LOSE
+248814,27,final,Second,"Maks Verver",2,WIN
+248815,27,final,First,"Michiel Smits",2,WIN
+248815,27,final,Second,"Abdessamad El Kasimi",1,LOSE
+248816,27,final,First,"Abdessamad El Kasimi",1,LOSE
+248816,27,final,Second,"Michiel Smits",2,WIN
+248817,27,final,First,"Antonio Morillas",2,WIN
+248817,27,final,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248818,27,final,First,"Marc Oldenhof",2,WIN
+248818,27,final,Second,"Antonio Morillas",1,LOSE
+248819,27,final,First,"SAAD YOUSFI",2,WIN
+248819,27,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+248820,27,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248820,27,final,Second,"SAAD YOUSFI",2,WIN
+248821,27,final,First,"Zino Onomiwo",1,LOSE
+248821,27,final,Second,"Duy Truot Tuyen",2,WIN
+248822,27,final,First,"Duy Truot Tuyen",2,WIN
+248822,27,final,Second,"Zino Onomiwo",1,LOSE
+248823,27,final,First,"Jens Heuseveldt",1,LOSE
+248823,27,final,Second,"Jorn Hoofwijk",2,WIN
+248824,27,final,First,"Jorn Hoofwijk",2,WIN
+248824,27,final,Second,"Jens Heuseveldt",1,LOSE
+248825,27,final,First,"Boas Bakker",1,LOSE
+248825,27,final,Second,"Nathan Fenner",2,WIN
+248826,27,final,First,"Nathan Fenner",2,WIN
+248826,27,final,Second,"Boas Bakker",1,LOSE
+248827,27,final,First,"Jelmer Firet",1,LOSE
+248827,27,final,Second,"Rust Kokkie",2,WIN
+248828,27,final,First,"Rust Kokkie",2,WIN
+248828,27,final,Second,"Jelmer Firet",1,LOSE
+248829,27,final,First,"Jeroen van Oorschot",1,LOSE
+248829,27,final,Second,"Mark ter Brugge",2,WIN
+248830,27,final,First,"Mark ter Brugge",2,WIN
+248830,27,final,Second,"Jeroen van Oorschot",1,LOSE
+248831,27,final,First,"Pieter Marsman",1,LOSE
+248831,27,final,Second,"Leopold Tschanter",2,WIN
+248832,27,final,First,"Leopold Tschanter",2,WIN
+248832,27,final,Second,"Pieter Marsman",1,LOSE
+248833,27,final,First,"Lukas Pestalozzi",1,LOSE
+248833,27,final,Second,"Louis Verhaard",2,WIN
+248834,27,final,First,"Louis Verhaard",2,WIN
+248834,27,final,Second,"Lukas Pestalozzi",1,LOSE
+248835,27,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248835,27,final,Second,"Vlad Shcherbina",2,WIN
+248836,27,final,First,"Vlad Shcherbina",2,WIN
+248836,27,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248837,27,final,First,"Le Minh Hoang",1,LOSE
+248837,27,final,Second,"Niklas Een",2,WIN
+248838,27,final,First,"Niklas Een",2,WIN
+248838,27,final,Second,"Le Minh Hoang",1,LOSE
+248839,27,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248839,27,final,Second,"Jelmer Hinssen",2,WIN
+248840,27,final,First,"Jelmer Hinssen",2,WIN
+248840,27,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248841,27,final,First,"Ludo Pulles",1,LOSE
+248841,27,final,Second,"Jorik Mandemaker",2,WIN
+248842,27,final,First,"Jorik Mandemaker",2,WIN
+248842,27,final,Second,"Ludo Pulles",1,LOSE
+248843,28,final,First,"Maks Verver",2,WIN
+248843,28,final,Second,"Abdessamad El Kasimi",1,LOSE
+248844,28,final,First,"Abdessamad El Kasimi",1,LOSE
+248844,28,final,Second,"Maks Verver",2,WIN
+248845,28,final,First,"Matthijs Tijink",2,WIN
+248845,28,final,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248846,28,final,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248846,28,final,Second,"Matthijs Tijink",2,WIN
+248847,28,final,First,"Michiel Smits",2,WIN
+248847,28,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+248848,28,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248848,28,final,Second,"Michiel Smits",2,WIN
+248849,28,final,First,"Antonio Morillas",2,WIN
+248849,28,final,Second,"Duy Truot Tuyen",1,LOSE
+248850,28,final,First,"Duy Truot Tuyen",1,LOSE
+248850,28,final,Second,"Antonio Morillas",2,WIN
+248851,28,final,First,"SAAD YOUSFI",1,LOSE
+248851,28,final,Second,"Jorn Hoofwijk",2,WIN
+248852,28,final,First,"Jorn Hoofwijk",2,WIN
+248852,28,final,Second,"SAAD YOUSFI",1,LOSE
+248853,28,final,First,"Zino Onomiwo",1,LOSE
+248853,28,final,Second,"Nathan Fenner",2,WIN
+248854,28,final,First,"Nathan Fenner",1,LOSE
+248854,28,final,Second,"Zino Onomiwo",2,WIN
+248855,28,final,First,"Jens Heuseveldt",1,LOSE
+248855,28,final,Second,"Rust Kokkie",2,WIN
+248856,28,final,First,"Rust Kokkie",2,WIN
+248856,28,final,Second,"Jens Heuseveldt",1,LOSE
+248857,28,final,First,"Boas Bakker",1,LOSE
+248857,28,final,Second,"Mark ter Brugge",2,WIN
+248858,28,final,First,"Mark ter Brugge",2,WIN
+248858,28,final,Second,"Boas Bakker",1,LOSE
+248859,28,final,First,"Jelmer Firet",1,LOSE
+248859,28,final,Second,"Leopold Tschanter",2,WIN
+248860,28,final,First,"Leopold Tschanter",2,WIN
+248860,28,final,Second,"Jelmer Firet",1,LOSE
+248861,28,final,First,"Jeroen van Oorschot",1,LOSE
+248861,28,final,Second,"Louis Verhaard",2,WIN
+248862,28,final,First,"Louis Verhaard",2,WIN
+248862,28,final,Second,"Jeroen van Oorschot",1,LOSE
+248863,28,final,First,"Pieter Marsman",1,LOSE
+248863,28,final,Second,"Vlad Shcherbina",2,WIN
+248864,28,final,First,"Vlad Shcherbina",2,WIN
+248864,28,final,Second,"Pieter Marsman",1,LOSE
+248865,28,final,First,"Lukas Pestalozzi",1,TIMEOUT
+248865,28,final,Second,"Niklas Een",2,WIN
+248866,28,final,First,"Niklas Een",2,WIN
+248866,28,final,Second,"Lukas Pestalozzi",1,LOSE
+248867,28,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248867,28,final,Second,"Jelmer Hinssen",2,WIN
+248868,28,final,First,"Jelmer Hinssen",2,WIN
+248868,28,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248869,28,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248869,28,final,Second,"Jorik Mandemaker",2,WIN
+248870,28,final,First,"Jorik Mandemaker",2,WIN
+248870,28,final,Second,"Le Minh Hoang",1,LOSE
+248871,28,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248871,28,final,Second,"Ludo Pulles",2,WIN
+248872,28,final,First,"Ludo Pulles",1,LOSE
+248872,28,final,Second,"Nguyen Khang",2,WIN
+248873,29,final,First,"Maks Verver",2,WIN
+248873,29,final,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248874,29,final,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248874,29,final,Second,"Maks Verver",2,WIN
+248875,29,final,First,"Abdessamad El Kasimi",1,LOSE
+248875,29,final,Second,"Andor Michels",2,WIN
+248876,29,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248876,29,final,Second,"Abdessamad El Kasimi",2,WIN
+248877,29,final,First,"Matthijs Tijink",2,WIN
+248877,29,final,Second,"Duy Truot Tuyen",1,LOSE
+248878,29,final,First,"Duy Truot Tuyen",1,LOSE
+248878,29,final,Second,"Matthijs Tijink",2,WIN
+248879,29,final,First,"Michiel Smits",2,WIN
+248879,29,final,Second,"Jorn Hoofwijk",1,LOSE
+248880,29,final,First,"Jorn Hoofwijk",1,LOSE
+248880,29,final,Second,"Michiel Smits",2,WIN
+248881,29,final,First,"Antonio Morillas",2,WIN
+248881,29,final,Second,"Nathan Fenner",1,LOSE
+248882,29,final,First,"Nathan Fenner",1,LOSE
+248882,29,final,Second,"Antonio Morillas",2,WIN
+248883,29,final,First,"SAAD YOUSFI",1,LOSE
+248883,29,final,Second,"Rust Kokkie",2,WIN
+248884,29,final,First,"Rust Kokkie",2,WIN
+248884,29,final,Second,"SAAD YOUSFI",1,LOSE
+248885,29,final,First,"Zino Onomiwo",1,LOSE
+248885,29,final,Second,"Mark ter Brugge",2,WIN
+248886,29,final,First,"Mark ter Brugge",2,WIN
+248886,29,final,Second,"Zino Onomiwo",1,LOSE
+248887,29,final,First,"Jens Heuseveldt",1,LOSE
+248887,29,final,Second,"Leopold Tschanter",2,WIN
+248888,29,final,First,"Leopold Tschanter",2,WIN
+248888,29,final,Second,"Jens Heuseveldt",1,LOSE
+248889,29,final,First,"Boas Bakker",1,NO_SOLUTIONS_LEFT
+248889,29,final,Second,"Louis Verhaard",2,WIN
+248890,29,final,First,"Louis Verhaard",2,WIN
+248890,29,final,Second,"Boas Bakker",1,LOSE
+248891,29,final,First,"Jelmer Firet",1,LOSE
+248891,29,final,Second,"Vlad Shcherbina",2,WIN
+248892,29,final,First,"Vlad Shcherbina",2,WIN
+248892,29,final,Second,"Jelmer Firet",1,LOSE
+248893,29,final,First,"Jeroen van Oorschot",1,LOSE
+248893,29,final,Second,"Niklas Een",2,WIN
+248894,29,final,First,"Niklas Een",2,WIN
+248894,29,final,Second,"Jeroen van Oorschot",1,LOSE
+248895,29,final,First,"Pieter Marsman",1,LOSE
+248895,29,final,Second,"Jelmer Hinssen",2,WIN
+248896,29,final,First,"Jelmer Hinssen",2,WIN
+248896,29,final,Second,"Pieter Marsman",1,LOSE
+248897,29,final,First,"Lukas Pestalozzi",1,LOSE
+248897,29,final,Second,"Jorik Mandemaker",2,WIN
+248898,29,final,First,"Jorik Mandemaker",2,WIN
+248898,29,final,Second,"Lukas Pestalozzi",1,LOSE
+248899,29,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248899,29,final,Second,"Ludo Pulles",2,WIN
+248900,29,final,First,"Ludo Pulles",2,WIN
+248900,29,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248901,29,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248901,29,final,Second,"Nguyen Khang",2,WIN
+248902,29,final,First,"Nguyen Khang",2,WIN
+248902,29,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248903,30,final,First,"Maks Verver",2,WIN
+248903,30,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+248904,30,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248904,30,final,Second,"Maks Verver",2,WIN
+248905,30,final,First,"Marc Oldenhof",2,WIN
+248905,30,final,Second,"Duy Truot Tuyen",1,LOSE
+248906,30,final,First,"Duy Truot Tuyen",1,LOSE
+248906,30,final,Second,"Marc Oldenhof",2,WIN
+248907,30,final,First,"Abdessamad El Kasimi",1,LOSE
+248907,30,final,Second,"Jorn Hoofwijk",2,WIN
+248908,30,final,First,"Jorn Hoofwijk",2,WIN
+248908,30,final,Second,"Abdessamad El Kasimi",1,LOSE
+248909,30,final,First,"Matthijs Tijink",1,LOSE
+248909,30,final,Second,"Nathan Fenner",2,WIN
+248910,30,final,First,"Nathan Fenner",1,LOSE
+248910,30,final,Second,"Matthijs Tijink",2,WIN
+248911,30,final,First,"Michiel Smits",2,WIN
+248911,30,final,Second,"Rust Kokkie",1,LOSE
+248912,30,final,First,"Rust Kokkie",1,LOSE
+248912,30,final,Second,"Michiel Smits",2,WIN
+248913,30,final,First,"Antonio Morillas",1,LOSE
+248913,30,final,Second,"Mark ter Brugge",2,WIN
+248914,30,final,First,"Mark ter Brugge",2,WIN
+248914,30,final,Second,"Antonio Morillas",1,LOSE
+248915,30,final,First,"SAAD YOUSFI",1,LOSE
+248915,30,final,Second,"Leopold Tschanter",2,WIN
+248916,30,final,First,"Leopold Tschanter",2,WIN
+248916,30,final,Second,"SAAD YOUSFI",1,LOSE
+248917,30,final,First,"Zino Onomiwo",1,LOSE
+248917,30,final,Second,"Louis Verhaard",2,WIN
+248918,30,final,First,"Louis Verhaard",2,WIN
+248918,30,final,Second,"Zino Onomiwo",1,LOSE
+248919,30,final,First,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+248919,30,final,Second,"Vlad Shcherbina",2,WIN
+248920,30,final,First,"Vlad Shcherbina",2,WIN
+248920,30,final,Second,"Jens Heuseveldt",1,LOSE
+248921,30,final,First,"Boas Bakker",1,TIMEOUT
+248921,30,final,Second,"Niklas Een",2,WIN
+248922,30,final,First,"Niklas Een",2,WIN
+248922,30,final,Second,"Boas Bakker",1,LOSE
+248923,30,final,First,"Jelmer Firet",1,LOSE
+248923,30,final,Second,"Jelmer Hinssen",2,WIN
+248924,30,final,First,"Jelmer Hinssen",2,WIN
+248924,30,final,Second,"Jelmer Firet",1,LOSE
+248925,30,final,First,"Jeroen van Oorschot",2,WIN
+248925,30,final,Second,"Jorik Mandemaker",1,LOSE
+248926,30,final,First,"Jorik Mandemaker",2,WIN
+248926,30,final,Second,"Jeroen van Oorschot",1,LOSE
+248927,30,final,First,"Pieter Marsman",2,WIN
+248927,30,final,Second,"Ludo Pulles",1,LOSE
+248928,30,final,First,"Ludo Pulles",1,LOSE
+248928,30,final,Second,"Pieter Marsman",2,WIN
+248929,30,final,First,"Lukas Pestalozzi",2,WIN
+248929,30,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248930,30,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248930,30,final,Second,"Lukas Pestalozzi",2,WIN
+248931,30,final,First,"Bùi Quang Nguyên",2,WIN
+248931,30,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248932,30,final,First,"Le Minh Hoang",2,WIN
+248932,30,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248933,31,final,First,"Maks Verver",2,WIN
+248933,31,final,Second,"Duy Truot Tuyen",1,LOSE
+248934,31,final,First,"Duy Truot Tuyen",1,NO_SOLUTIONS_LEFT
+248934,31,final,Second,"Maks Verver",2,WIN
+248935,31,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248935,31,final,Second,"Jorn Hoofwijk",2,WIN
+248936,31,final,First,"Jorn Hoofwijk",2,WIN
+248936,31,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+248937,31,final,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248937,31,final,Second,"Nathan Fenner",2,WIN
+248938,31,final,First,"Nathan Fenner",2,WIN
+248938,31,final,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248939,31,final,First,"Abdessamad El Kasimi",2,WIN
+248939,31,final,Second,"Rust Kokkie",1,LOSE
+248940,31,final,First,"Rust Kokkie",1,LOSE
+248940,31,final,Second,"Abdessamad El Kasimi",2,WIN
+248941,31,final,First,"Matthijs Tijink",1,LOSE
+248941,31,final,Second,"Mark ter Brugge",2,WIN
+248942,31,final,First,"Mark ter Brugge",2,WIN
+248942,31,final,Second,"Matthijs Tijink",1,LOSE
+248943,31,final,First,"Michiel Smits",1,LOSE
+248943,31,final,Second,"Leopold Tschanter",2,WIN
+248944,31,final,First,"Leopold Tschanter",2,WIN
+248944,31,final,Second,"Michiel Smits",1,LOSE
+248945,31,final,First,"Antonio Morillas",1,LOSE
+248945,31,final,Second,"Louis Verhaard",2,WIN
+248946,31,final,First,"Louis Verhaard",2,WIN
+248946,31,final,Second,"Antonio Morillas",1,LOSE
+248947,31,final,First,"SAAD YOUSFI",1,LOSE
+248947,31,final,Second,"Vlad Shcherbina",2,WIN
+248948,31,final,First,"Vlad Shcherbina",2,WIN
+248948,31,final,Second,"SAAD YOUSFI",1,LOSE
+248949,31,final,First,"Zino Onomiwo",1,LOSE
+248949,31,final,Second,"Niklas Een",2,WIN
+248950,31,final,First,"Niklas Een",2,WIN
+248950,31,final,Second,"Zino Onomiwo",1,LOSE
+248951,31,final,First,"Jens Heuseveldt",1,LOSE
+248951,31,final,Second,"Jelmer Hinssen",2,WIN
+248952,31,final,First,"Jelmer Hinssen",2,WIN
+248952,31,final,Second,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+248953,31,final,First,"Boas Bakker",2,WIN
+248953,31,final,Second,"Jorik Mandemaker",1,LOSE
+248954,31,final,First,"Jorik Mandemaker",2,WIN
+248954,31,final,Second,"Boas Bakker",1,TIMEOUT
+248955,31,final,First,"Jelmer Firet",1,LOSE
+248955,31,final,Second,"Ludo Pulles",2,WIN
+248956,31,final,First,"Ludo Pulles",1,LOSE
+248956,31,final,Second,"Jelmer Firet",2,WIN
+248957,31,final,First,"Jeroen van Oorschot",2,WIN
+248957,31,final,Second,"Nguyen Khang",1,TIMEOUT
+248958,31,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248958,31,final,Second,"Jeroen van Oorschot",2,WIN
+248959,31,final,First,"Pieter Marsman",2,WIN
+248959,31,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248960,31,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248960,31,final,Second,"Pieter Marsman",2,WIN
+248961,31,final,First,"Lukas Pestalozzi",2,WIN
+248961,31,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248962,31,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248962,31,final,Second,"Lukas Pestalozzi",2,WIN
+248963,32,final,First,"Maks Verver",2,WIN
+248963,32,final,Second,"Jorn Hoofwijk",1,LOSE
+248964,32,final,First,"Jorn Hoofwijk",1,LOSE
+248964,32,final,Second,"Maks Verver",2,WIN
+248965,32,final,First,"Duy Truot Tuyen",2,WIN
+248965,32,final,Second,"Nathan Fenner",1,LOSE
+248966,32,final,First,"Nathan Fenner",2,WIN
+248966,32,final,Second,"Duy Truot Tuyen",1,LOSE
+248967,32,final,First,"Andor Michels",1,NO_SOLUTIONS_LEFT
+248967,32,final,Second,"Rust Kokkie",2,WIN
+248968,32,final,First,"Rust Kokkie",2,WIN
+248968,32,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+248969,32,final,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248969,32,final,Second,"Mark ter Brugge",2,WIN
+248970,32,final,First,"Mark ter Brugge",2,WIN
+248970,32,final,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+248971,32,final,First,"Abdessamad El Kasimi",1,LOSE
+248971,32,final,Second,"Leopold Tschanter",2,WIN
+248972,32,final,First,"Leopold Tschanter",2,WIN
+248972,32,final,Second,"Abdessamad El Kasimi",1,LOSE
+248973,32,final,First,"Matthijs Tijink",1,NO_SOLUTION_DECREASED
+248973,32,final,Second,"Louis Verhaard",2,WIN
+248974,32,final,First,"Louis Verhaard",2,WIN
+248974,32,final,Second,"Matthijs Tijink",1,LOSE
+248975,32,final,First,"Michiel Smits",1,LOSE
+248975,32,final,Second,"Vlad Shcherbina",2,WIN
+248976,32,final,First,"Vlad Shcherbina",2,WIN
+248976,32,final,Second,"Michiel Smits",1,LOSE
+248977,32,final,First,"Antonio Morillas",1,LOSE
+248977,32,final,Second,"Niklas Een",2,WIN
+248978,32,final,First,"Niklas Een",2,WIN
+248978,32,final,Second,"Antonio Morillas",1,LOSE
+248979,32,final,First,"SAAD YOUSFI",2,WIN
+248979,32,final,Second,"Jelmer Hinssen",1,LOSE
+248980,32,final,First,"Jelmer Hinssen",1,LOSE
+248980,32,final,Second,"SAAD YOUSFI",2,WIN
+248981,32,final,First,"Zino Onomiwo",1,LOSE
+248981,32,final,Second,"Jorik Mandemaker",2,WIN
+248982,32,final,First,"Jorik Mandemaker",1,LOSE
+248982,32,final,Second,"Zino Onomiwo",2,WIN
+248983,32,final,First,"Jens Heuseveldt",1,LOSE
+248983,32,final,Second,"Ludo Pulles",2,WIN
+248984,32,final,First,"Ludo Pulles",2,WIN
+248984,32,final,Second,"Jens Heuseveldt",1,LOSE
+248985,32,final,First,"Boas Bakker",2,WIN
+248985,32,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+248986,32,final,First,"Nguyen Khang",1,TIMEOUT
+248986,32,final,Second,"Boas Bakker",2,WIN
+248987,32,final,First,"Jelmer Firet",2,WIN
+248987,32,final,Second,"Le Minh Hoang",1,LOSE
+248988,32,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+248988,32,final,Second,"Jelmer Firet",2,WIN
+248989,32,final,First,"Jeroen van Oorschot",2,WIN
+248989,32,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248990,32,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+248990,32,final,Second,"Jeroen van Oorschot",2,WIN
+248991,32,final,First,"Pieter Marsman",2,WIN
+248991,32,final,Second,"Lukas Pestalozzi",1,LOSE
+248992,32,final,First,"Lukas Pestalozzi",2,WIN
+248992,32,final,Second,"Pieter Marsman",1,LOSE
+248993,33,final,First,"Maks Verver",2,WIN
+248993,33,final,Second,"Nathan Fenner",1,LOSE
+248994,33,final,First,"Nathan Fenner",1,LOSE
+248994,33,final,Second,"Maks Verver",2,WIN
+248995,33,final,First,"Jorn Hoofwijk",2,WIN
+248995,33,final,Second,"Rust Kokkie",1,LOSE
+248996,33,final,First,"Rust Kokkie",1,LOSE
+248996,33,final,Second,"Jorn Hoofwijk",2,WIN
+248997,33,final,First,"Duy Truot Tuyen",1,LOSE
+248997,33,final,Second,"Mark ter Brugge",2,WIN
+248998,33,final,First,"Mark ter Brugge",2,WIN
+248998,33,final,Second,"Duy Truot Tuyen",1,LOSE
+248999,33,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+248999,33,final,Second,"Leopold Tschanter",2,WIN
+249000,33,final,First,"Leopold Tschanter",2,WIN
+249000,33,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+249001,33,final,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+249001,33,final,Second,"Louis Verhaard",2,WIN
+249002,33,final,First,"Louis Verhaard",2,WIN
+249002,33,final,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+249003,33,final,First,"Abdessamad El Kasimi",1,LOSE
+249003,33,final,Second,"Vlad Shcherbina",2,WIN
+249004,33,final,First,"Vlad Shcherbina",2,WIN
+249004,33,final,Second,"Abdessamad El Kasimi",1,LOSE
+249005,33,final,First,"Matthijs Tijink",1,LOSE
+249005,33,final,Second,"Niklas Een",2,WIN
+249006,33,final,First,"Niklas Een",2,WIN
+249006,33,final,Second,"Matthijs Tijink",1,LOSE
+249007,33,final,First,"Michiel Smits",2,WIN
+249007,33,final,Second,"Jelmer Hinssen",1,LOSE
+249008,33,final,First,"Jelmer Hinssen",1,LOSE
+249008,33,final,Second,"Michiel Smits",2,WIN
+249009,33,final,First,"Antonio Morillas",2,WIN
+249009,33,final,Second,"Jorik Mandemaker",1,LOSE
+249010,33,final,First,"Jorik Mandemaker",1,LOSE
+249010,33,final,Second,"Antonio Morillas",2,WIN
+249011,33,final,First,"SAAD YOUSFI",2,WIN
+249011,33,final,Second,"Ludo Pulles",1,LOSE
+249012,33,final,First,"Ludo Pulles",1,LOSE
+249012,33,final,Second,"SAAD YOUSFI",2,WIN
+249013,33,final,First,"Zino Onomiwo",2,WIN
+249013,33,final,Second,"Nguyen Khang",1,TIMEOUT
+249014,33,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+249014,33,final,Second,"Zino Onomiwo",2,WIN
+249015,33,final,First,"Jens Heuseveldt",2,WIN
+249015,33,final,Second,"Le Minh Hoang",1,NO_SOLUTION_DECREASED
+249016,33,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+249016,33,final,Second,"Jens Heuseveldt",2,WIN
+249017,33,final,First,"Boas Bakker",1,TIMEOUT
+249017,33,final,Second,"Bùi Quang Nguyên",2,WIN
+249018,33,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+249018,33,final,Second,"Boas Bakker",2,WIN
+249019,33,final,First,"Jelmer Firet",2,WIN
+249019,33,final,Second,"Lukas Pestalozzi",1,LOSE
+249020,33,final,First,"Lukas Pestalozzi",1,LOSE
+249020,33,final,Second,"Jelmer Firet",2,WIN
+249021,33,final,First,"Jeroen van Oorschot",1,LOSE
+249021,33,final,Second,"Pieter Marsman",2,WIN
+249022,33,final,First,"Pieter Marsman",1,LOSE
+249022,33,final,Second,"Jeroen van Oorschot",2,WIN
+249023,34,final,First,"Maks Verver",2,WIN
+249023,34,final,Second,"Rust Kokkie",1,LOSE
+249024,34,final,First,"Rust Kokkie",1,LOSE
+249024,34,final,Second,"Maks Verver",2,WIN
+249025,34,final,First,"Nathan Fenner",1,LOSE
+249025,34,final,Second,"Mark ter Brugge",2,WIN
+249026,34,final,First,"Mark ter Brugge",2,WIN
+249026,34,final,Second,"Nathan Fenner",1,LOSE
+249027,34,final,First,"Jorn Hoofwijk",1,LOSE
+249027,34,final,Second,"Leopold Tschanter",2,WIN
+249028,34,final,First,"Leopold Tschanter",2,WIN
+249028,34,final,Second,"Jorn Hoofwijk",1,LOSE
+249029,34,final,First,"Duy Truot Tuyen",1,LOSE
+249029,34,final,Second,"Louis Verhaard",2,WIN
+249030,34,final,First,"Louis Verhaard",2,WIN
+249030,34,final,Second,"Duy Truot Tuyen",1,NO_SOLUTIONS_LEFT
+249031,34,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+249031,34,final,Second,"Vlad Shcherbina",2,WIN
+249032,34,final,First,"Vlad Shcherbina",2,WIN
+249032,34,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+249033,34,final,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+249033,34,final,Second,"Niklas Een",2,WIN
+249034,34,final,First,"Niklas Een",2,WIN
+249034,34,final,Second,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+249035,34,final,First,"Abdessamad El Kasimi",2,WIN
+249035,34,final,Second,"Jelmer Hinssen",1,LOSE
+249036,34,final,First,"Jelmer Hinssen",1,LOSE
+249036,34,final,Second,"Abdessamad El Kasimi",2,WIN
+249037,34,final,First,"Matthijs Tijink",2,WIN
+249037,34,final,Second,"Jorik Mandemaker",1,LOSE
+249038,34,final,First,"Jorik Mandemaker",1,TIMEOUT
+249038,34,final,Second,"Matthijs Tijink",2,WIN
+249039,34,final,First,"Michiel Smits",2,WIN
+249039,34,final,Second,"Ludo Pulles",1,LOSE
+249040,34,final,First,"Ludo Pulles",1,LOSE
+249040,34,final,Second,"Michiel Smits",2,WIN
+249041,34,final,First,"Antonio Morillas",2,WIN
+249041,34,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+249042,34,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+249042,34,final,Second,"Antonio Morillas",2,WIN
+249043,34,final,First,"SAAD YOUSFI",2,WIN
+249043,34,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+249044,34,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+249044,34,final,Second,"SAAD YOUSFI",2,WIN
+249045,34,final,First,"Zino Onomiwo",2,WIN
+249045,34,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+249046,34,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+249046,34,final,Second,"Zino Onomiwo",2,WIN
+249047,34,final,First,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+249047,34,final,Second,"Lukas Pestalozzi",2,WIN
+249048,34,final,First,"Lukas Pestalozzi",1,LOSE
+249048,34,final,Second,"Jens Heuseveldt",2,WIN
+249049,34,final,First,"Boas Bakker",2,WIN
+249049,34,final,Second,"Pieter Marsman",1,LOSE
+249050,34,final,First,"Pieter Marsman",2,WIN
+249050,34,final,Second,"Boas Bakker",1,TIMEOUT
+249051,34,final,First,"Jelmer Firet",2,WIN
+249051,34,final,Second,"Jeroen van Oorschot",1,LOSE
+249052,34,final,First,"Jeroen van Oorschot",1,LOSE
+249052,34,final,Second,"Jelmer Firet",2,WIN
+249053,35,final,First,"Maks Verver",2,WIN
+249053,35,final,Second,"Mark ter Brugge",1,LOSE
+249054,35,final,First,"Mark ter Brugge",1,LOSE
+249054,35,final,Second,"Maks Verver",2,WIN
+249055,35,final,First,"Rust Kokkie",1,LOSE
+249055,35,final,Second,"Leopold Tschanter",2,WIN
+249056,35,final,First,"Leopold Tschanter",2,WIN
+249056,35,final,Second,"Rust Kokkie",1,LOSE
+249057,35,final,First,"Nathan Fenner",1,LOSE
+249057,35,final,Second,"Louis Verhaard",2,WIN
+249058,35,final,First,"Louis Verhaard",2,WIN
+249058,35,final,Second,"Nathan Fenner",1,LOSE
+249059,35,final,First,"Jorn Hoofwijk",1,LOSE
+249059,35,final,Second,"Vlad Shcherbina",2,WIN
+249060,35,final,First,"Vlad Shcherbina",2,WIN
+249060,35,final,Second,"Jorn Hoofwijk",1,LOSE
+249061,35,final,First,"Duy Truot Tuyen",1,LOSE
+249061,35,final,Second,"Niklas Een",2,WIN
+249062,35,final,First,"Niklas Een",2,WIN
+249062,35,final,Second,"Duy Truot Tuyen",1,LOSE
+249063,35,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+249063,35,final,Second,"Jelmer Hinssen",2,WIN
+249064,35,final,First,"Jelmer Hinssen",2,WIN
+249064,35,final,Second,"Andor Michels",1,NO_SOLUTION_DECREASED
+249065,35,final,First,"Marc Oldenhof",2,WIN
+249065,35,final,Second,"Jorik Mandemaker",1,LOSE
+249066,35,final,First,"Jorik Mandemaker",1,LOSE
+249066,35,final,Second,"Marc Oldenhof",2,WIN
+249067,35,final,First,"Abdessamad El Kasimi",2,WIN
+249067,35,final,Second,"Ludo Pulles",1,LOSE
+249068,35,final,First,"Ludo Pulles",1,LOSE
+249068,35,final,Second,"Abdessamad El Kasimi",2,WIN
+249069,35,final,First,"Matthijs Tijink",2,WIN
+249069,35,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+249070,35,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+249070,35,final,Second,"Matthijs Tijink",2,WIN
+249071,35,final,First,"Michiel Smits",2,WIN
+249071,35,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+249072,35,final,First,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+249072,35,final,Second,"Michiel Smits",2,WIN
+249073,35,final,First,"Antonio Morillas",2,WIN
+249073,35,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+249074,35,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+249074,35,final,Second,"Antonio Morillas",2,WIN
+249075,35,final,First,"SAAD YOUSFI",2,WIN
+249075,35,final,Second,"Lukas Pestalozzi",1,NO_SOLUTION_DECREASED
+249076,35,final,First,"Lukas Pestalozzi",1,TIMEOUT
+249076,35,final,Second,"SAAD YOUSFI",2,WIN
+249077,35,final,First,"Zino Onomiwo",2,WIN
+249077,35,final,Second,"Pieter Marsman",1,LOSE
+249078,35,final,First,"Pieter Marsman",1,LOSE
+249078,35,final,Second,"Zino Onomiwo",2,WIN
+249079,35,final,First,"Jens Heuseveldt",2,WIN
+249079,35,final,Second,"Jeroen van Oorschot",1,LOSE
+249080,35,final,First,"Jeroen van Oorschot",2,WIN
+249080,35,final,Second,"Jens Heuseveldt",1,LOSE
+249081,35,final,First,"Boas Bakker",2,WIN
+249081,35,final,Second,"Jelmer Firet",1,LOSE
+249082,35,final,First,"Jelmer Firet",2,WIN
+249082,35,final,Second,"Boas Bakker",1,LOSE
+249083,36,final,First,"Maks Verver",2,WIN
+249083,36,final,Second,"Leopold Tschanter",1,LOSE
+249084,36,final,First,"Leopold Tschanter",1,LOSE
+249084,36,final,Second,"Maks Verver",2,WIN
+249085,36,final,First,"Mark ter Brugge",1,LOSE
+249085,36,final,Second,"Louis Verhaard",2,WIN
+249086,36,final,First,"Louis Verhaard",2,WIN
+249086,36,final,Second,"Mark ter Brugge",1,LOSE
+249087,36,final,First,"Rust Kokkie",1,LOSE
+249087,36,final,Second,"Vlad Shcherbina",2,WIN
+249088,36,final,First,"Vlad Shcherbina",2,WIN
+249088,36,final,Second,"Rust Kokkie",1,LOSE
+249089,36,final,First,"Nathan Fenner",1,LOSE
+249089,36,final,Second,"Niklas Een",2,WIN
+249090,36,final,First,"Niklas Een",2,WIN
+249090,36,final,Second,"Nathan Fenner",1,LOSE
+249091,36,final,First,"Jorn Hoofwijk",2,WIN
+249091,36,final,Second,"Jelmer Hinssen",1,LOSE
+249092,36,final,First,"Jelmer Hinssen",1,LOSE
+249092,36,final,Second,"Jorn Hoofwijk",2,WIN
+249093,36,final,First,"Duy Truot Tuyen",2,WIN
+249093,36,final,Second,"Jorik Mandemaker",1,LOSE
+249094,36,final,First,"Jorik Mandemaker",1,LOSE
+249094,36,final,Second,"Duy Truot Tuyen",2,WIN
+249095,36,final,First,"Andor Michels",2,WIN
+249095,36,final,Second,"Ludo Pulles",1,LOSE
+249096,36,final,First,"Ludo Pulles",1,LOSE
+249096,36,final,Second,"Andor Michels",2,WIN
+249097,36,final,First,"Marc Oldenhof",2,WIN
+249097,36,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+249098,36,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+249098,36,final,Second,"Marc Oldenhof",2,WIN
+249099,36,final,First,"Abdessamad El Kasimi",2,WIN
+249099,36,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+249100,36,final,First,"Le Minh Hoang",1,LOSE
+249100,36,final,Second,"Abdessamad El Kasimi",2,WIN
+249101,36,final,First,"Matthijs Tijink",2,WIN
+249101,36,final,Second,"Bùi Quang Nguyên",1,TIMEOUT
+249102,36,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+249102,36,final,Second,"Matthijs Tijink",2,WIN
+249103,36,final,First,"Michiel Smits",2,WIN
+249103,36,final,Second,"Lukas Pestalozzi",1,TIMEOUT
+249104,36,final,First,"Lukas Pestalozzi",1,LOSE
+249104,36,final,Second,"Michiel Smits",2,WIN
+249105,36,final,First,"Antonio Morillas",2,WIN
+249105,36,final,Second,"Pieter Marsman",1,LOSE
+249106,36,final,First,"Pieter Marsman",1,LOSE
+249106,36,final,Second,"Antonio Morillas",2,WIN
+249107,36,final,First,"SAAD YOUSFI",2,WIN
+249107,36,final,Second,"Jeroen van Oorschot",1,LOSE
+249108,36,final,First,"Jeroen van Oorschot",1,LOSE
+249108,36,final,Second,"SAAD YOUSFI",2,WIN
+249109,36,final,First,"Zino Onomiwo",2,WIN
+249109,36,final,Second,"Jelmer Firet",1,LOSE
+249110,36,final,First,"Jelmer Firet",1,LOSE
+249110,36,final,Second,"Zino Onomiwo",2,WIN
+249111,36,final,First,"Jens Heuseveldt",2,WIN
+249111,36,final,Second,"Boas Bakker",1,TIMEOUT
+249112,36,final,First,"Boas Bakker",1,TIMEOUT
+249112,36,final,Second,"Jens Heuseveldt",2,WIN
+249113,37,final,First,"Maks Verver",2,WIN
+249113,37,final,Second,"Louis Verhaard",1,LOSE
+249114,37,final,First,"Louis Verhaard",1,LOSE
+249114,37,final,Second,"Maks Verver",2,WIN
+249115,37,final,First,"Leopold Tschanter",1,LOSE
+249115,37,final,Second,"Vlad Shcherbina",2,WIN
+249116,37,final,First,"Vlad Shcherbina",2,WIN
+249116,37,final,Second,"Leopold Tschanter",1,LOSE
+249117,37,final,First,"Mark ter Brugge",1,LOSE
+249117,37,final,Second,"Niklas Een",2,WIN
+249118,37,final,First,"Niklas Een",2,WIN
+249118,37,final,Second,"Mark ter Brugge",1,LOSE
+249119,37,final,First,"Rust Kokkie",2,WIN
+249119,37,final,Second,"Jelmer Hinssen",1,LOSE
+249120,37,final,First,"Jelmer Hinssen",1,LOSE
+249120,37,final,Second,"Rust Kokkie",2,WIN
+249121,37,final,First,"Nathan Fenner",2,WIN
+249121,37,final,Second,"Jorik Mandemaker",1,LOSE
+249122,37,final,First,"Jorik Mandemaker",1,LOSE
+249122,37,final,Second,"Nathan Fenner",2,WIN
+249123,37,final,First,"Jorn Hoofwijk",2,WIN
+249123,37,final,Second,"Ludo Pulles",1,LOSE
+249124,37,final,First,"Ludo Pulles",1,LOSE
+249124,37,final,Second,"Jorn Hoofwijk",2,WIN
+249125,37,final,First,"Duy Truot Tuyen",2,WIN
+249125,37,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+249126,37,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+249126,37,final,Second,"Duy Truot Tuyen",2,WIN
+249127,37,final,First,"Andor Michels",2,WIN
+249127,37,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+249128,37,final,First,"Le Minh Hoang",2,WIN
+249128,37,final,Second,"Andor Michels",1,NO_SOLUTIONS_LEFT
+249129,37,final,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+249129,37,final,Second,"Bùi Quang Nguyên",2,WIN
+249130,37,final,First,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+249130,37,final,Second,"Marc Oldenhof",2,WIN
+249131,37,final,First,"Abdessamad El Kasimi",2,WIN
+249131,37,final,Second,"Lukas Pestalozzi",1,LOSE
+249132,37,final,First,"Lukas Pestalozzi",1,LOSE
+249132,37,final,Second,"Abdessamad El Kasimi",2,WIN
+249133,37,final,First,"Matthijs Tijink",2,WIN
+249133,37,final,Second,"Pieter Marsman",1,LOSE
+249134,37,final,First,"Pieter Marsman",1,LOSE
+249134,37,final,Second,"Matthijs Tijink",2,WIN
+249135,37,final,First,"Michiel Smits",2,WIN
+249135,37,final,Second,"Jeroen van Oorschot",1,LOSE
+249136,37,final,First,"Jeroen van Oorschot",1,LOSE
+249136,37,final,Second,"Michiel Smits",2,WIN
+249137,37,final,First,"Antonio Morillas",2,WIN
+249137,37,final,Second,"Jelmer Firet",1,LOSE
+249138,37,final,First,"Jelmer Firet",1,LOSE
+249138,37,final,Second,"Antonio Morillas",2,WIN
+249139,37,final,First,"SAAD YOUSFI",2,WIN
+249139,37,final,Second,"Boas Bakker",1,TIMEOUT
+249140,37,final,First,"Boas Bakker",1,LOSE
+249140,37,final,Second,"SAAD YOUSFI",2,WIN
+249141,37,final,First,"Zino Onomiwo",2,WIN
+249141,37,final,Second,"Jens Heuseveldt",1,LOSE
+249142,37,final,First,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+249142,37,final,Second,"Zino Onomiwo",2,WIN
+249143,38,final,First,"Maks Verver",2,WIN
+249143,38,final,Second,"Vlad Shcherbina",1,LOSE
+249144,38,final,First,"Vlad Shcherbina",2,WIN
+249144,38,final,Second,"Maks Verver",1,LOSE
+249145,38,final,First,"Louis Verhaard",1,LOSE
+249145,38,final,Second,"Niklas Een",2,WIN
+249146,38,final,First,"Niklas Een",1,LOSE
+249146,38,final,Second,"Louis Verhaard",2,WIN
+249147,38,final,First,"Leopold Tschanter",2,WIN
+249147,38,final,Second,"Jelmer Hinssen",1,LOSE
+249148,38,final,First,"Jelmer Hinssen",1,LOSE
+249148,38,final,Second,"Leopold Tschanter",2,WIN
+249149,38,final,First,"Mark ter Brugge",2,WIN
+249149,38,final,Second,"Jorik Mandemaker",1,LOSE
+249150,38,final,First,"Jorik Mandemaker",1,LOSE
+249150,38,final,Second,"Mark ter Brugge",2,WIN
+249151,38,final,First,"Rust Kokkie",2,WIN
+249151,38,final,Second,"Ludo Pulles",1,LOSE
+249152,38,final,First,"Ludo Pulles",1,LOSE
+249152,38,final,Second,"Rust Kokkie",2,WIN
+249153,38,final,First,"Nathan Fenner",2,WIN
+249153,38,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+249154,38,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+249154,38,final,Second,"Nathan Fenner",2,WIN
+249155,38,final,First,"Jorn Hoofwijk",2,WIN
+249155,38,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+249156,38,final,First,"Le Minh Hoang",1,LOSE
+249156,38,final,Second,"Jorn Hoofwijk",2,WIN
+249157,38,final,First,"Duy Truot Tuyen",2,WIN
+249157,38,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+249158,38,final,First,"Bùi Quang Nguyên",2,WIN
+249158,38,final,Second,"Duy Truot Tuyen",1,TIMEOUT
+249159,38,final,First,"Andor Michels",1,NO_SOLUTION_DECREASED
+249159,38,final,Second,"Lukas Pestalozzi",2,WIN
+249160,38,final,First,"Lukas Pestalozzi",1,LOSE
+249160,38,final,Second,"Andor Michels",2,WIN
+249161,38,final,First,"Marc Oldenhof",2,WIN
+249161,38,final,Second,"Pieter Marsman",1,LOSE
+249162,38,final,First,"Pieter Marsman",1,LOSE
+249162,38,final,Second,"Marc Oldenhof",2,WIN
+249163,38,final,First,"Abdessamad El Kasimi",2,WIN
+249163,38,final,Second,"Jeroen van Oorschot",1,LOSE
+249164,38,final,First,"Jeroen van Oorschot",1,LOSE
+249164,38,final,Second,"Abdessamad El Kasimi",2,WIN
+249165,38,final,First,"Matthijs Tijink",2,WIN
+249165,38,final,Second,"Jelmer Firet",1,LOSE
+249166,38,final,First,"Jelmer Firet",1,LOSE
+249166,38,final,Second,"Matthijs Tijink",2,WIN
+249167,38,final,First,"Michiel Smits",2,WIN
+249167,38,final,Second,"Boas Bakker",1,TIMEOUT
+249168,38,final,First,"Boas Bakker",1,TIMEOUT
+249168,38,final,Second,"Michiel Smits",2,WIN
+249169,38,final,First,"Antonio Morillas",2,WIN
+249169,38,final,Second,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+249170,38,final,First,"Jens Heuseveldt",1,LOSE
+249170,38,final,Second,"Antonio Morillas",2,WIN
+249171,38,final,First,"SAAD YOUSFI",2,WIN
+249171,38,final,Second,"Zino Onomiwo",1,LOSE
+249172,38,final,First,"Zino Onomiwo",1,LOSE
+249172,38,final,Second,"SAAD YOUSFI",2,WIN
+249173,39,final,First,"Maks Verver",2,WIN
+249173,39,final,Second,"Niklas Een",1,LOSE
+249174,39,final,First,"Niklas Een",1,LOSE
+249174,39,final,Second,"Maks Verver",2,WIN
+249175,39,final,First,"Vlad Shcherbina",2,WIN
+249175,39,final,Second,"Jelmer Hinssen",1,LOSE
+249176,39,final,First,"Jelmer Hinssen",1,LOSE
+249176,39,final,Second,"Vlad Shcherbina",2,WIN
+249177,39,final,First,"Louis Verhaard",2,WIN
+249177,39,final,Second,"Jorik Mandemaker",1,LOSE
+249178,39,final,First,"Jorik Mandemaker",1,LOSE
+249178,39,final,Second,"Louis Verhaard",2,WIN
+249179,39,final,First,"Leopold Tschanter",2,WIN
+249179,39,final,Second,"Ludo Pulles",1,LOSE
+249180,39,final,First,"Ludo Pulles",1,LOSE
+249180,39,final,Second,"Leopold Tschanter",2,WIN
+249181,39,final,First,"Mark ter Brugge",2,WIN
+249181,39,final,Second,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+249182,39,final,First,"Nguyen Khang",1,NO_SOLUTION_DECREASED
+249182,39,final,Second,"Mark ter Brugge",2,WIN
+249183,39,final,First,"Rust Kokkie",2,WIN
+249183,39,final,Second,"Le Minh Hoang",1,NO_SOLUTIONS_LEFT
+249184,39,final,First,"Le Minh Hoang",1,NO_SOLUTION_DECREASED
+249184,39,final,Second,"Rust Kokkie",2,WIN
+249185,39,final,First,"Nathan Fenner",2,WIN
+249185,39,final,Second,"Bùi Quang Nguyên",1,NO_SOLUTION_DECREASED
+249186,39,final,First,"Bùi Quang Nguyên",1,TIMEOUT
+249186,39,final,Second,"Nathan Fenner",2,WIN
+249187,39,final,First,"Jorn Hoofwijk",2,WIN
+249187,39,final,Second,"Lukas Pestalozzi",1,LOSE
+249188,39,final,First,"Lukas Pestalozzi",1,LOSE
+249188,39,final,Second,"Jorn Hoofwijk",2,WIN
+249189,39,final,First,"Duy Truot Tuyen",1,LOSE
+249189,39,final,Second,"Pieter Marsman",2,WIN
+249190,39,final,First,"Pieter Marsman",1,LOSE
+249190,39,final,Second,"Duy Truot Tuyen",2,WIN
+249191,39,final,First,"Andor Michels",1,NO_SOLUTIONS_LEFT
+249191,39,final,Second,"Jeroen van Oorschot",2,WIN
+249192,39,final,First,"Jeroen van Oorschot",1,LOSE
+249192,39,final,Second,"Andor Michels",2,WIN
+249193,39,final,First,"Marc Oldenhof",1,NO_SOLUTION_DECREASED
+249193,39,final,Second,"Jelmer Firet",2,WIN
+249194,39,final,First,"Jelmer Firet",1,LOSE
+249194,39,final,Second,"Marc Oldenhof",2,WIN
+249195,39,final,First,"Abdessamad El Kasimi",2,WIN
+249195,39,final,Second,"Boas Bakker",1,LOSE
+249196,39,final,First,"Boas Bakker",2,WIN
+249196,39,final,Second,"Abdessamad El Kasimi",1,LOSE
+249197,39,final,First,"Matthijs Tijink",2,WIN
+249197,39,final,Second,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+249198,39,final,First,"Jens Heuseveldt",1,NO_SOLUTIONS_LEFT
+249198,39,final,Second,"Matthijs Tijink",2,WIN
+249199,39,final,First,"Michiel Smits",2,WIN
+249199,39,final,Second,"Zino Onomiwo",1,LOSE
+249200,39,final,First,"Zino Onomiwo",1,LOSE
+249200,39,final,Second,"Michiel Smits",2,WIN
+249201,39,final,First,"Antonio Morillas",2,WIN
+249201,39,final,Second,"SAAD YOUSFI",1,LOSE
+249202,39,final,First,"SAAD YOUSFI",1,LOSE
+249202,39,final,Second,"Antonio Morillas",2,WIN

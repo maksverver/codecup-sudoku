@@ -244,7 +244,7 @@ AFTER EACH TEST COMPETITION
 
    2. Download game details for competition:
 
-      % tools/fetch-competition.py
+      % tools/fetch-competition.py \
           tmp/cache/ \
           competition-results/test-X-competition-Y.csv \
           competition-results/test-X-competition-Y-games.csv
