@@ -33,7 +33,7 @@ def ReadCompetitionCsv(filename):
   '''Returns a list of games in this competition.'''
   games_by_id = {}
   games = []
-  with open(filename, 'rt') as f:
+  with open(filename, 'rt', newline='') as f:
     for i, row in enumerate(csv.reader(f)):
       if i == 0:
         assert row == ['Game', 'Round', 'IsSwiss', 'Player', 'User', 'Score', 'Status']
@@ -92,8 +92,8 @@ def FetchGame(cachedir, game_id):
 
 
 def WriteAnnotatedCsv(filename, games):
-  with open(filename, 'wt') as f:
-    w = csv.writer(f)
+  with open(filename, 'wt', newline='') as f:
+    w = csv.writer(f, lineterminator='\n')
     w.writerow(('Game', 'Round', 'IsSwiss', 'User1', 'Score1', 'Status1', 'User2', 'Score2', 'Status2', 'Moves', 'Solution'))
     for game in games:
       w.writerow((game.game_id, game.round, game.is_swiss, game.user1, game.score1, game.status1, game.user2, game.score2, game.status2, game.moves, game.solution))
