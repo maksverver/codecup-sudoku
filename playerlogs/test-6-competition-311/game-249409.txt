@@ -1,0 +1,8 @@
+ID Numberwang (64 bit) (compiler v11.3.0) (commit 43ec2a4)
+SEED 900cb8e3a451e59261ef48faa6d2ed73
+IO RCVD [Ia1]
+TURN 1 ........................................................................1........ 0
+SOLUTIONS 0+
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Da2]
+# Total time used: 0.001 seconds
