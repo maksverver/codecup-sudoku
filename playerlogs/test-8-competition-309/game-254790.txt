@@ -1,0 +1,92 @@
+ID Numberwang (64 bit) (compiler v11.3.0) (commit 43ec2a4)
+SEED 9f13e2c444eb7d425028da04df952c58
+IO RCVD [Start]
+TURN 0 ................................................................................. 0
+SOLUTIONS 0+
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Da5]
+IO RCVD [Ef7]
+PAUSE 23 23
+TURN 2 ...........................5.............7....................................... 0
+SOLUTIONS 0+
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Ab9]
+IO RCVD [Gc3]
+PAUSE 24 48
+TURN 4 .9.........................5.............7..............3........................ 0
+SOLUTIONS 0+
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Ah4]
+IO RCVD [De6]
+PAUSE 30 78
+TURN 6 .9.....4...................5...6.........7..............3........................ 0
+SOLUTIONS 0+
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [If4]
+IO RCVD [Ai7]
+PAUSE 29 108
+TURN 8 .9.....47..................5...6.........7..............3....................4... 0
+SOLUTIONS 400000+
+TIME 463 ENUMERATE 404 ANALYZE 0
+IO SEND [Bc5]
+IO RCVD [He2]
+PAUSE 29 137
+TURN 10 .9.....47..5...............5...6.........7..............3..........2.........4... 464
+SOLUTIONS 400000+
+TIME 339 ENUMERATE 280 ANALYZE 0
+IO SEND [Ei5]
+IO RCVD [Cd5]
+PAUSE 123 260
+TURN 12 .9.....47..5.........5.....5...6.........7..5...........3..........2.........4... 804
+SOLUTIONS 400000+
+TIME 315 ENUMERATE 265 ANALYZE 0
+IO SEND [Gh5]
+IO RCVD [Fe4]
+PAUSE 130 391
+TURN 14 .9.....47..5.........5.....5...6.........7..5....4......3....5.....2.........4... 1120
+SOLUTIONS 400000+
+TIME 305 ENUMERATE 254 ANALYZE 0
+IO SEND [Ba7]
+IO RCVD [Ad3]
+PAUSE 110 501
+TURN 16 .9.3...477.5.........5.....5...6.........7..5....4......3....5.....2.........4... 1426
+SOLUTIONS 400000+
+TIME 307 ENUMERATE 257 ANALYZE 0
+IO SEND [Fa3]
+IO RCVD [Af1]
+PAUSE 110 611
+TURN 18 .9.3.1.477.5.........5.....5...6.........7..53...4......3....5.....2.........4... 1734
+SOLUTIONS 400000+
+TIME 306 ENUMERATE 255 ANALYZE 0
+IO SEND [Gf9]
+IO RCVD [Bg2]
+PAUSE 90 702
+TURN 20 .9.3.1.477.5...2.....5.....5...6.........7..53...4......3..9.5.....2.........4... 2041
+SOLUTIONS 219721
+TIME 222 ENUMERATE 152 ANALYZE 0
+IO SEND [Bb3]
+IO RCVD [Ih8]
+PAUSE 14435 15137
+TURN 22 .9.3.1.47735...2.....5.....5...6.........7..53...4......3..9.5.....2.........4.8. 2265
+SOLUTIONS 6479
+INFO Continuing analysis
+INFO Continuing analysis
+OUTCOME WIN2
+TIME 2000 ENUMERATE 0 ANALYZE 2000
+IO SEND [Ha1]
+IO RCVD [Db4]
+PAUSE 10217 25355
+TURN 24 .9.3.1.47735...2.....5.....54..6.........7..53...4......3..9.5.1...2.........4.8. 4266
+SOLUTIONS 101
+OUTCOME WIN2
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Dg1]
+IO RCVD [Ch9]
+PAUSE 1696 27052
+TURN 26 .9.3.1.47735...2.....5...9.54..6.1.......7..53...4......3..9.5.1...2.........4.8. 4267
+SOLUTIONS 3
+OUTCOME WIN1
+INFO That's Numberwang!
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Ed9!]
+# Total time used: 4.279 seconds
