@@ -52,7 +52,7 @@ DECLARE_OPTION(int64_t, arg_analyze_max_work, 100'000'000, "analyze-max-work",
     "times average number of solutions remaining). This only applies when no time "
     "limit is given.");
 
-DECLARE_OPTION(int, arg_time_limit, LOCAL_BUILD ? 0 : 27, "time-limit",
+DECLARE_OPTION(int, arg_time_limit, LOCAL_BUILD ? 0 : 28, "time-limit",
     "Time limit in seconds (or 0 to disable time-based performance). "
     "On each turn, the player uses a fraction of time remaining on analysis. "
     "Note that this should be slightly lower than the official time limit to "
@@ -64,7 +64,7 @@ DECLARE_OPTION(int, arg_time_limit, LOCAL_BUILD ? 0 : 27, "time-limit",
 // Before the move ordering implemented in commit 331998f, 10 million
 // corresponded with approximately 1 second on the CodeCup server, but this
 // might not be true anymore!
-DECLARE_OPTION(int64_t, arg_analyze_batch_size, 10'000'000, "analyze-batch-size",
+DECLARE_OPTION(int64_t, arg_analyze_batch_size, 25'000'000, "analyze-batch-size",
     "Amount of work to do at once when using a time limit.");
 
 
