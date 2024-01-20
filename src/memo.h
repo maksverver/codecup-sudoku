@@ -91,7 +91,9 @@ private:
 class LossyMemo {
 public:
   // 64 × 2^20 = about 67 million entries. Each entry takes 8 bytes, so total memory used is 512 MB.
-  static const size_t size = 64 << 20;
+  //static const size_t size = 64 << 20;
+  // 128 would uses 1 GB:
+  static const size_t size = 128 << 20;
 
   static_assert(size > 0 && (size & (size - 1)) == 0, "size must be a power of 2");
 
@@ -126,9 +128,15 @@ public:
 
 private:
   std::array<uint64_t, size> data;
+
+  // Declare data as a vector to allocate memory on the heap instead of the
+  // blank segment of the binary. This is necessary for larger sizes.
+  //std::vector<uint64_t> data = std::vector<uint64_t>(size);
 };
 
 // Change the type of memo here to enable/disable memoization.
-using memo_t = RealMemo;
+//using memo_t = DummyMemo;
+//using memo_t = RealMemo;
+using memo_t = LossyMemo;
 
 #endif  // ndef MEMO_H_INCLUDED
