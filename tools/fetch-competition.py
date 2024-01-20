@@ -85,6 +85,10 @@ def FetchGame(cachedir, game_id):
   assert len(users) == 2
   assert all(isinstance(elem, str) for elem in users)
   assert all(isinstance(elem, str) for elem in moves)
+  # In the CSV, players never have leading or trailing whitespace, but in the
+  # JSON data they sometimes do (see the user called "Anonymous "), so I strip
+  # the usernames here to make user names match the CSV.
+  users = [user.strip() for user in users]
   solution = None
   if moves and len(moves[-1]) == 81:
     solution = moves.pop()
@@ -108,7 +112,7 @@ if __name__ == '__main__':
     assert os.path.isdir(cachedir)
     games = ReadCompetitionCsv(competition_csv)
     for i, game in enumerate(games):
-      print('%d / %d' % (i + 1, len(games)), file=sys.stderr)
+      print('%s (%d / %d)' % (game.game_id, i + 1, len(games)), file=sys.stderr)
       assert game.moves is None
       assert game.solution is None
       details = FetchGame(cachedir, game.game_id)
