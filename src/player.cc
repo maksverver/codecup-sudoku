@@ -64,7 +64,7 @@ DECLARE_OPTION(int, arg_time_limit, LOCAL_BUILD ? 0 : 28, "time-limit",
 // Before the move ordering implemented in commit 331998f, 10 million
 // corresponded with approximately 1 second on the CodeCup server, but this
 // might not be true anymore!
-DECLARE_OPTION(int64_t, arg_analyze_batch_size, 25'000'000, "analyze-batch-size",
+DECLARE_OPTION(int64_t, arg_analyze_batch_size, 30'000'000, "analyze-batch-size",
     "Amount of work to do at once when using a time limit.");
 
 
