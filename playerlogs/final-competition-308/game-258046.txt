@@ -1,0 +1,129 @@
+ID Numberwang (64 bit) (compiler v11.3.0) (commit 998e349)
+SEED f80c28df71fed7d7a880243422f6f154
+IO RCVD [Start]
+TURN 0 ................................................................................. 0
+SOLUTIONS 0+
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Cd5]
+IO RCVD [Bi5]
+PAUSE 87 87
+TURN 2 .................5...5........................................................... 0
+SOLUTIONS 0+
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Ed8]
+IO RCVD [Ac5]
+PAUSE 80 167
+TURN 4 ..5..............5...5.................8......................................... 0
+SOLUTIONS 0+
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Cf3]
+IO RCVD [Df5]
+PAUSE 137 305
+TURN 6 ..5..............5...5.3........5......8......................................... 0
+SOLUTIONS 0+
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Fb7]
+IO RCVD [Ea5]
+PAUSE 132 438
+TURN 8 ..5..............5...5.3........5...5..8......7.................................. 0
+SOLUTIONS 400000+
+TIME 465 ENUMERATE 407 ANALYZE 0
+IO SEND [Af7]
+IO RCVD [Fg5]
+PAUSE 118 557
+TURN 10 ..5..7...........5...5.3........5...5..8......7....5............................. 466
+SOLUTIONS 400000+
+TIME 354 ENUMERATE 295 ANALYZE 0
+IO SEND [Gb2]
+IO RCVD [Ib5]
+PAUSE 113 670
+TURN 12 ..5..7...........5...5.3........5...5..8......7....5...2.................5....... 821
+SOLUTIONS 400000+
+TIME 336 ENUMERATE 276 ANALYZE 0
+IO SEND [Bb1]
+IO RCVD [Ab3]
+PAUSE 94 765
+TURN 14 .35..7....1......5...5.3........5...5..8......7....5...2.................5....... 1158
+SOLUTIONS 400000+
+TIME 344 ENUMERATE 285 ANALYZE 0
+IO SEND [Ae4]
+IO RCVD [Bf8]
+PAUSE 142 908
+TURN 16 .35.47....1...8..5...5.3........5...5..8......7....5...2.................5....... 1502
+SOLUTIONS 400000+
+TIME 331 ENUMERATE 272 ANALYZE 0
+IO SEND [Ci2]
+IO RCVD [Aa2]
+PAUSE 142 1050
+TURN 18 235.47....1...8..5...5.3..2.....5...5..8......7....5...2.................5....... 1834
+SOLUTIONS 400000+
+TIME 307 ENUMERATE 258 ANALYZE 0
+IO SEND [He5]
+IO RCVD [Bd2]
+PAUSE 144 1195
+TURN 20 235.47....1.2.8..5...5.3..2.....5...5..8......7....5...2...........5.....5....... 2142
+SOLUTIONS 400000+
+TIME 272 ENUMERATE 222 ANALYZE 0
+IO SEND [Eb4]
+IO RCVD [Cb8]
+PAUSE 348 1543
+TURN 22 235.47....1.2.8..5.8.5.3..2.....5...54.8......7....5...2...........5.....5....... 2414
+SOLUTIONS 400000+
+TIME 309 ENUMERATE 259 ANALYZE 0
+IO SEND [Cg4]
+IO RCVD [Bc4]
+PAUSE 341 1884
+TURN 24 235.47....142.8..5.8.5.34.2.....5...54.8......7....5...2...........5.....5....... 2724
+SOLUTIONS 400000+
+TIME 308 ENUMERATE 258 ANALYZE 0
+IO SEND [Ge8]
+IO RCVD [Cc7]
+PAUSE 338 2223
+TURN 26 235.47....142.8..5.875.34.2.....5...54.8......7....5...2..8........5.....5....... 3033
+SOLUTIONS 400000+
+TIME 327 ENUMERATE 275 ANALYZE 0
+IO SEND [Ce1]
+IO RCVD [Ag8]
+PAUSE 326 2549
+TURN 28 235.478...142.8..5.875134.2.....5...54.8......7....5...2..8........5.....5....... 3360
+SOLUTIONS 400000+
+TIME 322 ENUMERATE 270 ANALYZE 0
+IO SEND [Ad6]
+IO RCVD [Db9]
+PAUSE 13386 15935
+TURN 30 2356478...142.8..5.875134.2.9...5...54.8......7....5...2..8........5.....5....... 3683
+SOLUTIONS 129847
+TIME 129 ENUMERATE 89 ANALYZE 0
+IO SEND [Bg3]
+IO RCVD [Ah1]
+PAUSE 6775 22711
+TURN 32 23564781..142.83.5.875134.2.9...5...54.8......7....5...2..8........5.....5....... 3814
+SOLUTIONS 35944
+INFO Continuing analysis
+INFO Continuing analysis
+WARNING Analysis aborted!
+TIME 9473 ENUMERATE 0 ANALYZE 9467
+IO SEND [Eh9]
+IO RCVD [De7]
+PAUSE 3474 26186
+TURN 34 23564781..142.83.5.875134.2.9..75...54.8...9..7....5...2..8........5.....5....... 13288
+SOLUTIONS 10511
+OUTCOME WIN2
+TIME 104 ENUMERATE 0 ANALYZE 104
+IO SEND [Gd4]
+IO RCVD [Dd1]
+PAUSE 84 26271
+TURN 36 23564781..142.83.5.875134.2.9.175...54.8...9..7....5...2.48........5.....5....... 13393
+SOLUTIONS 480
+OUTCOME WIN2
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Fc3]
+IO RCVD [Dh3]
+PAUSE 43 26314
+TURN 38 23564781..142.83.5.875134.2.9.175.3.54.8...9..73...5...2.48........5.....5....... 13394
+SOLUTIONS 23
+OUTCOME WIN1
+INFO That's Numberwang!
+TIME 0 ENUMERATE 0 ANALYZE 0
+IO SEND [Gi1!]
+# Total time used: 13.411 seconds
