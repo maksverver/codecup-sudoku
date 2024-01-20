@@ -10,12 +10,11 @@ basedir=$(dirname $(readlink -f "$0"))
 cd "${basedir}"/..
 
 if [ $# != 1 ]; then
-  echo "Usage: $0 <competition-id>"
+  echo "Usage: $0 <games.csv>"
   exit 1
 fi
 
-competition_id=$1
-competition_csv=competition-results/${competition_id}-games.csv
+competition_csv=$1
 
 if [ ! -f "$competition_csv" ]; then
   echo "Missing input file: $competition_csv"

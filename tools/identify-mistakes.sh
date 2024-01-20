@@ -16,6 +16,9 @@ set -e -E -o pipefail
 # are not identified.
 SOLVER='output/release/solver --analyze-max-work=1e9'
 
+# For deeper analysis, try something like this:
+#SOLVER='output/release/solver --enumerate-max-count=1e7 --analyze-max-work=1e10'
+
 basedir=$(dirname $(readlink -f "$0"))
 cd "${basedir}"/..
 
