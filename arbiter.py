@@ -344,7 +344,7 @@ def RunGames(commands, names, rounds, logdir, fast=False, executor=None):
             player_outcomes[p][Outcome.FAIL],
             games_per_player,
           ), file=f)
-      print('------------------ ------ ------ ---- ---- ---- ---- ---- -----', file=f)
+      print('------------------ ------ ------ ---- ---- ---- ---- ---- ----', file=f)
 
   if logdir:
     print()
