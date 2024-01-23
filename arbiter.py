@@ -43,6 +43,7 @@ def ParseTurn(s):
     if len(s) != 3:
       return None
   moves = tuple(ParseMove(s[3*i:3*(i+1)]) for i in range(len(s) // 3))
+  if any(move is None for move in moves): return None
   return moves, claim_unique
 
 
